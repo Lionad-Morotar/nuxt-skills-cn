@@ -1,6 +1,13 @@
-# nuxt-skills
+<p align="center">
+  <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/nuxt-adan.jpg" alt="Nuxt Skills" width="100%">
+</p>
 
-Vue, Nuxt, and NuxtHub skills for AI coding assistants.
+<p align="center">Vue, Nuxt, and NuxtHub skills for AI coding assistants.</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/badge-claude-code.svg" alt="Claude Code">
+  <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/badge-opencode.svg" alt="OpenCode">
+</p>
 
 ## Skills
 

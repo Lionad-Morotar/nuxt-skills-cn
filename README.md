@@ -32,6 +32,8 @@ Specific skill:
 curl -fsSL https://raw.githubusercontent.com/onmax/nuxt-skills/main/scripts/opencode.sh | bash -s -- vue
 ```
 
+Re-run to update.
+
 ### Manual (Claude Code)
 
 ```bash

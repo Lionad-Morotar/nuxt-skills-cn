@@ -43,6 +43,21 @@ curl -fsSL https://raw.githubusercontent.com/onmax/nuxt-skills/main/scripts/open
 
 Re-run to update.
 
+### btca
+
+[btca](https://github.com/davis7dotsh/better-context) searches repos locally to answer questions.
+
+```bash
+bun add -g btca
+btca config repos add -n nuxt -u https://github.com/onmax/nuxt-skills -b main --notes "Nuxt 4, Vue 3, NuxtHub patterns. Check skills/ folder."
+```
+
+Ask questions:
+```bash
+btca ask -t nuxt -q "How do I create a server route with validation?"
+btca chat -t nuxt  # interactive mode
+```
+
 ### Manual (Claude Code)
 
 ```bash

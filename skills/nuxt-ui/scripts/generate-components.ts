@@ -1,21 +1,22 @@
 #!/usr/bin/env npx tsx
 /**
- * Generates nuxt-ui component docs from local Nuxt UI docs
+ * Generates nuxt-ui component docs from Nuxt UI repo (cloned to /tmp)
  * Run: npx tsx skills/nuxt-ui/scripts/generate-components.ts
- *
- * Requires: ~/nuxt/ui (clone of nuxt/ui repo)
  *
  * Creates:
  *   - components.md (index)
  *   - components/<name>.md (per-component)
  */
 
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { homedir } from 'node:os'
+import { execSync } from 'node:child_process'
+import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
 import { basename, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const NUXT_UI_DOCS = process.env.NUXT_UI_DOCS || join(homedir(), 'nuxt/ui/docs/content/docs/2.components')
+const TMP_DIR = join(tmpdir(), 'nuxt-ui-docs-gen')
+const REPO_URL = 'https://github.com/nuxt/ui.git'
+const DOCS_PATH = 'docs/content/docs/2.components'
 
 interface ComponentMeta {
   name: string
@@ -126,11 +127,13 @@ async function main() {
   const baseDir = join(__dirname, '..')
   const componentsDir = join(baseDir, 'components')
 
-  if (!existsSync(NUXT_UI_DOCS)) {
-    console.error(`Error: Nuxt UI docs not found at ${NUXT_UI_DOCS}`)
-    console.error('Please clone nuxt/ui to ~/nuxt/ui')
-    process.exit(1)
-  }
+  // Clean previous run and clone fresh
+  rmSync(TMP_DIR, { recursive: true, force: true })
+  console.log('Cloning nuxt/ui (sparse checkout)...')
+  execSync(`git clone --depth 1 --filter=blob:none --sparse ${REPO_URL} ${TMP_DIR}`, { stdio: 'inherit' })
+  execSync(`git sparse-checkout set ${DOCS_PATH}`, { cwd: TMP_DIR, stdio: 'inherit' })
+
+  const NUXT_UI_DOCS = join(TMP_DIR, DOCS_PATH)
 
   mkdirSync(componentsDir, { recursive: true })
 

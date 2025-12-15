@@ -130,8 +130,14 @@ async function main() {
   // Clean previous run and clone fresh
   rmSync(TMP_DIR, { recursive: true, force: true })
   console.log('Cloning nuxt/ui (sparse checkout)...')
-  execSync(`git clone --depth 1 --filter=blob:none --sparse ${REPO_URL} ${TMP_DIR}`, { stdio: 'inherit' })
-  execSync(`git sparse-checkout set ${DOCS_PATH}`, { cwd: TMP_DIR, stdio: 'inherit' })
+  try {
+    execSync(`git clone --depth 1 --filter=blob:none --sparse ${REPO_URL} ${TMP_DIR}`, { stdio: 'inherit' })
+    execSync(`git sparse-checkout set ${DOCS_PATH}`, { cwd: TMP_DIR, stdio: 'inherit' })
+  }
+  catch {
+    console.error(`\nFailed to clone ${REPO_URL}. Check network/GitHub status.`)
+    process.exit(1)
+  }
 
   const NUXT_UI_DOCS = join(TMP_DIR, DOCS_PATH)
 

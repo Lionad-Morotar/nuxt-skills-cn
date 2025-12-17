@@ -22,6 +22,7 @@
 | **nuxt-content** | Nuxt Content v3 collections, queries, MDC rendering, NuxtStudio           |
 | **nuxt-ui**      | Nuxt UI v4 components, theming, forms, overlays, composables              |
 | **reka-ui**      | Reka UI headless Vue components, accessible primitives, props/emits/slots |
+| **document-writer** | Writing documentation for Nuxt ecosystem - MDC, style, structure, code examples |
 
 ## Installation
 
@@ -36,6 +37,7 @@
 /plugin install nuxt-content@nuxt-skills
 /plugin install nuxt-ui@nuxt-skills
 /plugin install reka-ui@nuxt-skills
+/plugin install document-writer@nuxt-skills
 ```
 
 ### OpenCode
@@ -79,6 +81,7 @@ cp -r nuxt-skills/skills/nuxthub ~/.claude/skills/
 cp -r nuxt-skills/skills/nuxt-content ~/.claude/skills/
 cp -r nuxt-skills/skills/nuxt-ui ~/.claude/skills/
 cp -r nuxt-skills/skills/reka-ui ~/.claude/skills/
+cp -r nuxt-skills/skills/document-writer ~/.claude/skills/
 ```
 
 ## Structure
@@ -92,7 +95,8 @@ nuxt-skills/
 │   ├── nuxthub/
 │   ├── nuxt-content/
 │   ├── nuxt-ui/
-│   └── reka-ui/
+│   ├── reka-ui/
+│   └── document-writer/
 ├── scripts/
 │   └── opencode.sh        # OpenCode installer
 └── .claude-plugin/

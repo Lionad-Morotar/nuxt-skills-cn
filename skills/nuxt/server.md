@@ -1,5 +1,7 @@
 # Nuxt Server Patterns
 
+> **Versions:** Nuxt uses h3 v1 and nitropack v2. Patterns from h3 v2 or nitro v3 docs won't work.
+
 ## When to Use
 
 Working with `server/` directory - API routes, server middleware, server utilities.
@@ -112,6 +114,43 @@ export default defineEventHandler(async (event) => {
   const user = await createUser(body)
   setResponseStatus(event, 201)
   return user
+})
+```
+
+### Validation with Zod
+
+Use `readValidatedBody` and `getValidatedQuery` for schema validation:
+
+```ts
+// server/api/users.post.ts
+import { z } from 'zod'
+
+const userSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email()
+})
+
+export default defineEventHandler(async (event) => {
+  const body = await readValidatedBody(event, userSchema.parse)
+  // body is typed as { name: string, email: string }
+  const user = await createUser(body)
+  setResponseStatus(event, 201)
+  return user
+})
+```
+
+```ts
+// server/api/users.get.ts
+import { z } from 'zod'
+
+const querySchema = z.object({
+  page: z.coerce.number().default(1),
+  limit: z.coerce.number().default(10)
+})
+
+export default defineEventHandler(async (event) => {
+  const { page, limit } = await getValidatedQuery(event, querySchema.parse)
+  return fetchUsers({ page, limit })
 })
 ```
 
@@ -250,6 +289,54 @@ return sendNoContent(event)
 | `[id].get.ts`             | `[userId].get.ts`             |
 | `users-id.get.ts`         | `users/[id].get.ts`           |
 | Throw generic errors      | Use createError with status   |
+
+## WebSocket
+
+```ts
+// server/routes/_ws.ts
+export default defineWebSocketHandler({
+  open(peer) {
+    console.log('Client connected:', peer.id)
+  },
+  message(peer, message) {
+    peer.send(`Echo: ${message.text()}`)
+    // Broadcast to all: peer.publish('channel', message)
+  },
+  close(peer) {
+    console.log('Client disconnected:', peer.id)
+  }
+})
+```
+
+Enable in config:
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  nitro: {
+    experimental: { websocket: true }
+  }
+})
+```
+
+## Server-Sent Events (Experimental)
+
+```ts
+// server/api/stream.get.ts
+export default defineEventHandler(async (event) => {
+  const stream = createEventStream(event)
+
+  const interval = setInterval(async () => {
+    await stream.push({ data: JSON.stringify({ time: Date.now() }) })
+  }, 1000)
+
+  stream.onClosed(() => {
+    clearInterval(interval)
+  })
+
+  return stream.send()
+})
+```
 
 ## Resources
 

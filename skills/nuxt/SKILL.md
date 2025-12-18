@@ -1,6 +1,6 @@
 ---
 name: nuxt
-description: Use when working on Nuxt 4+ projects - provides server routes, file-based routing, middleware patterns, Nuxt-specific composables, and configuration with latest docs
+description: Use when working on Nuxt 4+ projects - provides server routes, file-based routing, middleware patterns, Nuxt-specific composables, and configuration with latest docs. Covers h3 v1 helpers (validation, WebSocket, SSE) and nitropack v2 patterns.
 ---
 
 # Nuxt 4+ Development
@@ -21,7 +21,7 @@ Working with:
 
 Read specific files based on current work:
 
-- **server.md** - API routes, server middleware, Nitro patterns, h3 helpers
+- **server.md** - API routes, server middleware, validation (Zod), WebSocket, SSE
 - **routing.md** - File-based routing, route groups, typed router, definePage
 - **middleware-plugins.md** - Route middleware, plugins, app lifecycle
 - **nuxt-composables.md** - Nuxt composables (useRequestURL, useFetch, navigation)

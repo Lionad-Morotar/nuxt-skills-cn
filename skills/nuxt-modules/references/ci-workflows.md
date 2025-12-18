@@ -1,6 +1,6 @@
 # CI Workflow Templates
 
-Copy-paste templates for GitHub Actions. Requires `NPM_TOKEN` secret for release.
+Copy-paste templates for GitHub Actions.
 
 ## ci.yml
 
@@ -65,7 +65,7 @@ jobs:
 
 ## release.yml
 
-Triggered by tag push. Publishes to npm with provenance + creates GitHub release.
+Triggered by tag push. Publishes to npm via OIDC (no token needed) + creates GitHub release.
 
 ```yaml
 name: release
@@ -89,7 +89,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
           registry-url: 'https://registry.npmjs.org'
 
@@ -104,12 +104,13 @@ jobs:
 
       - name: Publish to npm
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 ```
 
-## NPM_TOKEN Setup
+## npm Trusted Publishing Setup
 
-1. npm → Access Tokens → Generate New Token → Granular Access
-2. Select package, set Publish permission
-3. GitHub repo → Settings → Secrets → Actions → `NPM_TOKEN`
+No `NPM_TOKEN` needed. Uses OIDC authentication.
+
+1. Go to npmjs.com → your package → Settings
+2. Find "Trusted Publisher" section
+3. Click "GitHub Actions"
+4. Add repository and workflow file (`release.yml`)

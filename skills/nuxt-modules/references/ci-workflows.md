@@ -94,6 +94,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: pnpm install
+      - run: pnpm dev:prepare
       - run: pnpm prepack
 
       - name: GitHub Release

@@ -119,6 +119,10 @@ nuxt-skills/
     └── marketplace.json    # Claude Code marketplace
 ```
 
+## Resources
+
+- [awesome-copilot](https://github.com/github/awesome-copilot) - Community created collection of custom agents, prompts, and instructions to supercharge your GitHub Copilot experience
+
 ## License
 
 MIT

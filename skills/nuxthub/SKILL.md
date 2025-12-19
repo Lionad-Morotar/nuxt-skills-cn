@@ -11,8 +11,6 @@ Full-stack Nuxt framework with database, KV, blob, and cache. Multi-cloud suppor
 **For Nuxt server patterns:** use `nuxt` skill (server.md)
 **For content with database:** use `nuxt-content` skill
 
-Migrating from v0.9.X? See [Migration Guide](https://hub.nuxt.com/docs/getting-started/migration).
-
 ## Installation
 
 ```bash
@@ -35,23 +33,37 @@ export default defineNuxtConfig({
 })
 ```
 
+### Advanced Database Config
+
+```ts
+hub: {
+  db: {
+    dialect: 'postgresql',
+    driver: 'postgres-js', // Optional: auto-detected
+    casing: 'snake_case',  // camelCase JS -> snake_case DB
+    migrationsDirs: ['server/db/custom-migrations/'],
+    applyMigrationsDuringBuild: true // default
+  }
+}
+```
+
 ## Database
 
-Type-safe SQL via Drizzle ORM. Auto-imported on server-side.
+Type-safe SQL via Drizzle ORM. `db` and `schema` are auto-imported on server-side.
 
 ### Schema Definition
 
 Place in `server/db/schema.ts` or `server/db/schema/*.ts`:
 
 ```ts
-// server/db/schema.ts
+// server/db/schema.ts (SQLite)
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 
 export const users = sqliteTable('users', {
   id: integer().primaryKey({ autoIncrement: true }),
   name: text().notNull(),
   email: text().notNull().unique(),
-  createdAt: integer({ mode: 'timestamp' }).defaultNow()
+  createdAt: integer({ mode: 'timestamp' }).notNull()
 })
 ```
 
@@ -64,15 +76,15 @@ export const users = pgTable('users', {
   id: serial().primaryKey(),
   name: text().notNull(),
   email: text().notNull().unique(),
-  createdAt: timestamp().defaultNow()
+  createdAt: timestamp().notNull().defaultNow()
 })
 ```
 
 ### Database API
 
 ```ts
-import { db, schema } from 'hub:db'
 // db and schema are auto-imported on server-side
+import { db, schema } from 'hub:db'
 
 // Select
 const users = await db.select().from(schema.users)
@@ -100,41 +112,28 @@ npx nuxt db mark-as-migrated [NAME]   # Mark without running
 
 Migrations auto-apply during `npx nuxi dev` and `npx nuxi build`. Tracked in `_hub_migrations` table.
 
-### Type Sharing
-
-```ts
-// shared/types/db.ts
-import type { users } from '~/server/db/schema'
-
-export type User = typeof users.$inferSelect
-export type NewUser = typeof users.$inferInsert
-```
-
 ### Database Providers
 
 | Dialect    | Local                | Production                                                        |
 | ---------- | -------------------- | ----------------------------------------------------------------- |
 | sqlite     | `.data/db/sqlite.db` | D1 (Cloudflare), Turso (`TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`) |
-| postgresql | PGlite               | postgres-js (`DATABASE_URL`, `POSTGRES_URL`)                      |
+| postgresql | PGlite               | postgres-js (`DATABASE_URL`), neon-http (`DATABASE_URL`)          |
 | mysql      | -                    | mysql2 (`DATABASE_URL`, `MYSQL_URL`)                              |
 
 ## KV Storage
 
-Key-value storage. Auto-imported on server-side.
-
-### KV API
+Key-value storage. `kv` is auto-imported on server-side.
 
 ```ts
 import { kv } from 'hub:kv'
-// kv is auto-imported on server-side
 
-await kv.set('key', { data: 'value' }) // Set value
-await kv.set('key', value, { ttl: 60 }) // Set with TTL (seconds)
-const value = await kv.get('key') // Get value
-const exists = await kv.has('key') // Check existence
-await kv.del('key') // Delete
-const keys = await kv.keys('prefix:') // List keys by prefix
-await kv.clear('prefix:') // Clear by prefix
+await kv.set('key', { data: 'value' })
+await kv.set('key', value, { ttl: 60 }) // TTL in seconds
+const value = await kv.get('key')
+const exists = await kv.has('key')
+await kv.del('key')
+const keys = await kv.keys('prefix:')
+await kv.clear('prefix:')
 ```
 
 Constraints: max value 25 MiB, max key 512 bytes.
@@ -151,23 +150,22 @@ Constraints: max value 25 MiB, max key 512 bytes.
 
 ## Blob Storage
 
-File storage. Auto-imported on server-side.
+File storage. `blob` is auto-imported on server-side.
 
 ### Blob API
 
 ```ts
 import { blob } from 'hub:blob'
-// blob is auto-imported on server-side
 
 // Upload
-const result = await blob.put('path/file.txt', body, { contentType: 'text/plain' })
+const result = await blob.put('path/file.txt', body, { contentType: 'text/plain', addRandomSuffix: true, prefix: 'uploads' })
 // Returns: { pathname, contentType, size, httpEtag, uploadedAt }
 
 // Download
 const file = await blob.get('path/file.txt') // Returns Blob or null
 
 // List
-const { blobs, cursor, hasMore } = await blob.list({ prefix: 'uploads/', limit: 10 })
+const { blobs, cursor, hasMore, folders } = await blob.list({ prefix: 'uploads/', limit: 10, folded: true })
 
 // Serve (with proper headers)
 return blob.serve(event, 'path/file.txt')
@@ -183,27 +181,35 @@ const meta = await blob.head('path/file.txt')
 ### Upload Helpers
 
 ```ts
-// Validate before upload
-ensureBlob(file, { maxSize: '10MB', types: ['image/png', 'image/jpeg'] })
-
-// All-in-one upload handler
-export default defineEventHandler(async (event) => {
-  return handleUpload(event, { maxSize: '10MB', types: ['image'] })
+// Server: Validate + upload handler
+export default eventHandler(async (event) => {
+  return blob.handleUpload(event, {
+    formKey: 'files',
+    multiple: true,
+    ensure: { maxSize: '10MB', types: ['image/png', 'image/jpeg'] },
+    put: { addRandomSuffix: true, prefix: 'images' }
+  })
 })
 
-// Multipart upload for large files
-const upload = await handleMultipartUpload(event)
+// Validate before manual upload
+ensureBlob(file, { maxSize: '10MB', types: ['image'] })
+
+// Multipart upload for large files (>10MB)
+export default eventHandler(async (event) => {
+  return blob.handleMultipartUpload(event) // Route: /api/files/multipart/[action]/[...pathname]
+})
 ```
 
 ### Vue Composables
 
 ```ts
-// Client-side upload
-const { upload } = useUpload('/api/upload')
-await upload(file)
+// Simple upload
+const upload = useUpload('/api/upload')
+const result = await upload(inputElement)
 
-// Multipart upload with progress
-const { upload, progress } = useMultipartUpload('/api/upload')
+// Multipart with progress
+const mpu = useMultipartUpload('/api/files/multipart')
+const { completed, progress, abort } = mpu(file)
 ```
 
 ### Blob Providers
@@ -213,7 +219,6 @@ const { upload, progress } = useMultipartUpload('/api/upload')
 | Cloudflare R2 | -                | `BLOB` binding in wrangler.jsonc                                     |
 | Vercel Blob   | `@vercel/blob`   | `BLOB_READ_WRITE_TOKEN`                                              |
 | S3            | `aws4fetch`      | `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_REGION` |
-| Netlify Blobs | `@netlify/blobs` | `NETLIFY_BLOB_STORE_NAME`                                            |
 
 ## Cache
 
@@ -242,15 +247,6 @@ export const getStars = defineCachedFunction(
 )
 ```
 
-### Route Rules
-
-```ts
-// nuxt.config.ts
-routeRules: {
-  '/blog/**': { cache: { maxAge: 3600 } }
-}
-```
-
 ### Cache Invalidation
 
 ```ts
@@ -261,65 +257,80 @@ await useStorage('cache').removeItem('nitro:functions:getStars:repo-name.json')
 await useStorage('cache').clear('nitro:handlers')
 ```
 
+Cache key pattern: `${group}:${name}:${getKey(...args)}.json` (defaults: group='nitro', name='handlers'|'functions'|'routes')
+
 ## Deployment
 
 ### Cloudflare Workers
 
-Create `wrangler.jsonc`:
+Configure bindings in `nuxt.config.ts` (no wrangler.jsonc needed):
 
-```jsonc
-{
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "my-app",
-  "compatibility_flags": ["nodejs_compat"],
-  "d1_databases": [{ "binding": "DB", "database_name": "my-db", "database_id": "<id>" }],
-  "kv_namespaces": [
-    { "binding": "KV", "id": "<kv-id>" },
-    { "binding": "CACHE", "id": "<cache-id>" }
-  ],
-  "r2_buckets": [{ "binding": "BLOB", "bucket_name": "my-bucket" }]
-}
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  hub: {
+    db: 'sqlite',
+    kv: true,
+    blob: true,
+    cache: true
+  },
+  nitro: {
+    preset: 'cloudflare_module',
+    cloudflare: {
+      wrangler: {
+        compatibility_flags: ['nodejs_compat'],
+        d1_databases: [{ binding: 'DB', database_id: '<id>' }],
+        kv_namespaces: [
+          { binding: 'KV', id: '<kv-id>' },
+          { binding: 'CACHE', id: '<cache-id>' }
+        ],
+        r2_buckets: [{ binding: 'BLOB', bucket_name: '<bucket>' }]
+      }
+    }
+  }
+})
 ```
 
-Create resources:
+Required binding names: `DB` (D1), `KV` (KV), `CACHE` (KV), `BLOB` (R2).
+
+Create resources via CLI:
 
 ```bash
-npx wrangler d1 create my-db
-npx wrangler kv namespace create KV
-npx wrangler kv namespace create CACHE
-npx wrangler r2 bucket create my-bucket
+npx wrangler d1 create my-app-db          # Get database_id
+npx wrangler kv namespace create KV       # Get kv-id
+npx wrangler kv namespace create CACHE    # Get cache-id
+npx wrangler r2 bucket create my-bucket   # Get bucket name
 ```
 
-Required binding names: `DB`, `KV`, `CACHE`, `BLOB`.
-
-Set `nitro.preset: 'cloudflare_module'` in nuxt.config.ts.
-
-Deploy via Cloudflare Workers Builds:
-
-1. Workers & Pages → Create → Import from Git
+Deploy via Workers Builds:
+1. Workers & Pages > Create > Import from Git
 2. Build command: `pnpm build`
 3. Deploy command: `npx wrangler deploy`
+
+For environments: `CLOUDFLARE_ENV=preview nuxt build`
+
+See [references/wrangler-templates.md](references/wrangler-templates.md) for wrangler.jsonc file alternative.
 
 ### Vercel
 
 Use Vercel Marketplace for compatible storage:
-
 - Database: Vercel Postgres, Turso
-- KV: Vercel KV
+- KV: Vercel KV (Upstash)
 - Blob: Vercel Blob
 
-### Environment Variables (Optional)
+### D1 over HTTP
 
-For advanced features (presigned URLs, cache DevTools):
+Query D1 from non-Cloudflare hosts:
 
-```bash
-NUXT_HUB_CLOUDFLARE_ACCOUNT_ID=<account-id>
-NUXT_HUB_CLOUDFLARE_API_TOKEN=<token>
-NUXT_HUB_CLOUDFLARE_BUCKET_ID=<bucket-id>
-NUXT_HUB_CLOUDFLARE_CACHE_NAMESPACE_ID=<namespace-id>
+```ts
+hub: {
+  db: { dialect: 'sqlite', driver: 'd1-http' }
+}
 ```
 
-## Database Hooks (Nuxt Modules)
+Requires: `NUXT_HUB_CLOUDFLARE_ACCOUNT_ID`, `NUXT_HUB_CLOUDFLARE_API_TOKEN`, `NUXT_HUB_CLOUDFLARE_DATABASE_ID`
+
+## Build-time Hooks
 
 ```ts
 // Extend schema
@@ -338,14 +349,49 @@ nuxt.hook('hub:db:queries:paths', (paths, dialect) => {
 })
 ```
 
-## Deprecated Features
+## Type Sharing
 
-Removed in v0.10 (Cloudflare-specific):
+```ts
+// shared/types/db.ts
+import type { users } from '~/server/db/schema'
 
-- `hubAI()` → Use AI SDK with Workers AI Provider
-- `hubBrowser()` → Puppeteer
-- `hubVectorize()` → Vectorize
-- `hubAutoRAG()` → AutoRAG
+export type User = typeof users.$inferSelect
+export type NewUser = typeof users.$inferInsert
+```
+
+## WebSocket / Realtime
+
+Enable experimental WebSocket:
+
+```ts
+// nuxt.config.ts
+nitro: { experimental: { websocket: true } }
+```
+
+```ts
+// server/routes/ws/chat.ts
+export default defineWebSocketHandler({
+  open(peer) {
+    peer.subscribe('chat')
+    peer.publish('chat', 'User joined')
+  },
+  message(peer, message) {
+    peer.publish('chat', message.text())
+  },
+  close(peer) {
+    peer.unsubscribe('chat')
+  }
+})
+```
+
+## Deprecated (v0.10)
+
+Removed Cloudflare-specific features:
+- `hubAI()` -> Use AI SDK with Workers AI Provider
+- `hubBrowser()` -> Puppeteer
+- `hubVectorize()` -> Vectorize
+- NuxtHub Admin -> Sunset Dec 31, 2025
+- `npx nuxthub deploy` -> Use wrangler deploy
 
 ## Quick Reference
 
@@ -361,9 +407,8 @@ All are auto-imported on server-side.
 
 - [Installation](https://hub.nuxt.com/docs/getting-started/installation)
 - [Migration from v0.9](https://hub.nuxt.com/docs/getting-started/migration)
-- [Database](https://hub.nuxt.com/docs/features/database)
-- [KV](https://hub.nuxt.com/docs/features/kv)
-- [Blob](https://hub.nuxt.com/docs/features/blob)
-- [Cache](https://hub.nuxt.com/docs/features/cache)
+- [Database](https://hub.nuxt.com/docs/database)
+- [Blob](https://hub.nuxt.com/docs/blob)
+- [KV](https://hub.nuxt.com/docs/kv)
+- [Cache](https://hub.nuxt.com/docs/cache)
 - [Deploy](https://hub.nuxt.com/docs/getting-started/deploy)
-- [Legacy v0.9 docs](https://legacy.hub.nuxt.com)

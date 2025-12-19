@@ -133,10 +133,26 @@ jobs:
 
 **Preferred method** - No `NPM_TOKEN` secret needed. Uses OIDC for secure, tokenless authentication.
 
+**See also:** [personal-ts-setup/ci-workflows.md](../../personal-ts-setup/references/ci-workflows.md) for token-based alternative.
+
 ### Requirements
-- Workflow must have `permissions: id-token: write`
-- Publish command must include `--provenance` flag
-- Package must be configured on npmjs.com
+
+1. **Node.js 24+** (npm 11.5.1+ required for OIDC - Node 22 has npm 10.x which fails)
+2. **Workflow permissions**: `id-token: write`
+3. **Publish command**: must include `--provenance` flag
+4. **package.json**: must have `repository` field for provenance verification
+5. **npm 2FA setting**: "Require 2FA or granular access token" (first option, allows tokens)
+
+### package.json Requirements
+
+Each package must have a `repository` field or provenance verification fails:
+
+```json
+{
+  "name": "my-package",
+  "repository": { "type": "git", "url": "git+https://github.com/org/repo.git" }
+}
+```
 
 ### Setup Steps
 
@@ -151,6 +167,15 @@ jobs:
 5. **Click "Add"**
 
 Repeat for each package in your monorepo.
+
+### Troubleshooting
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| "Access token expired or revoked" E404 | npm version too old | Use Node.js 24 (npm 11.5.1+) |
+| ENEEDAUTH | Missing registry-url | Add `registry-url: 'https://registry.npmjs.org'` to setup-node |
+| "repository.url is empty" E422 | Missing repository field | Add `repository` to package.json |
+| "npm/xyz not configured as trusted publisher" | Mismatch in config | Check owner, repo, workflow filename match exactly |
 
 ### Verify Setup
 

@@ -9,6 +9,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/badge-claude-code.svg" alt="Claude Code">
   <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/badge-copilot.svg" alt="GitHub Copilot">
+  <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/badge-codex.svg" alt="OpenAI Codex">
   <img src="https://raw.githubusercontent.com/onmax/nuxt-skills/main/.github/badge-opencode.svg" alt="OpenCode">
 </p>
 
@@ -61,6 +62,31 @@ cp -r nuxt-skills/skills/personal-ts-setup .github/skills/
 ```
 
 Copilot auto-detects skills matching your prompt context.
+
+### OpenAI Codex
+
+Use the built-in skill installer:
+
+```
+$skill-installer https://github.com/onmax/nuxt-skills
+```
+
+Or copy skills to your `.codex/skills/` directory:
+
+```bash
+git clone https://github.com/onmax/nuxt-skills.git
+cp -r nuxt-skills/skills/vue ~/.codex/skills/
+cp -r nuxt-skills/skills/nuxt ~/.codex/skills/
+cp -r nuxt-skills/skills/nuxt-modules ~/.codex/skills/
+cp -r nuxt-skills/skills/nuxthub ~/.codex/skills/
+cp -r nuxt-skills/skills/nuxt-content ~/.codex/skills/
+cp -r nuxt-skills/skills/nuxt-ui ~/.codex/skills/
+cp -r nuxt-skills/skills/reka-ui ~/.codex/skills/
+cp -r nuxt-skills/skills/document-writer ~/.codex/skills/
+cp -r nuxt-skills/skills/personal-ts-setup ~/.codex/skills/
+```
+
+Invoke skills with `/skills` command or `$skill-name`.
 
 ### OpenCode
 

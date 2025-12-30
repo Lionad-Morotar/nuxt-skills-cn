@@ -46,16 +46,10 @@ The agent reads the skill's `description` field and decides when to load it. Thi
 
 ```bash
 /plugin marketplace add onmax/nuxt-skills
-/plugin install vue@nuxt-skills
-/plugin install nuxt@nuxt-skills
-/plugin install nuxt-modules@nuxt-skills
-/plugin install nuxthub@nuxt-skills
-/plugin install nuxt-content@nuxt-skills
-/plugin install nuxt-ui@nuxt-skills
-/plugin install reka-ui@nuxt-skills
-/plugin install document-writer@nuxt-skills
-/plugin install personal-ts-setup@nuxt-skills
+/plugin install nuxt-skills@nuxt-skills
 ```
+
+This installs all skills (vue, nuxt, nuxt-modules, nuxthub, nuxt-content, nuxt-ui, reka-ui, document-writer, personal-ts-setup). Skills appear in `/skills` list and auto-activate based on context.
 
 ### GitHub Copilot
 

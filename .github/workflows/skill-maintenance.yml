@@ -2,13 +2,13 @@ name: Skill Maintenance
 
 on:
   schedule:
-    - cron: "0 6 1,15 * *" # 1st and 15th of month at 6am UTC
+    - cron: '0 6 1,15 * *' # 1st and 15th of month at 6am UTC
   workflow_dispatch:
     inputs:
       skill:
         description: "Run for specific skill (or 'all')"
         required: false
-        default: "all"
+        default: all
         type: choice
         options:
           - all
@@ -39,7 +39,7 @@ jobs:
               - GitHub: vuejs/core (releases, changelog)
               - Docs: https://vuejs.org/guide/introduction.html
               - VueUse: https://vueuse.org/ (new composables)
-            focus: "Composition API, reactivity, VueUse composables, defineModel, reactive destructuring"
+            focus: 'Composition API, reactivity, VueUse composables, defineModel, reactive destructuring'
 
           - skill: nuxt
             upstream: |
@@ -47,44 +47,44 @@ jobs:
               - Docs: https://nuxt.com/docs
               - h3: https://h3.unjs.io/ (server engine)
               - Nitro: https://nitro.unjs.io/
-            focus: "Nuxt 4 patterns, server routes, file-based routing, composables, config changes"
+            focus: 'Nuxt 4 patterns, server routes, file-based routing, composables, config changes'
 
           - skill: nuxthub
             upstream: |
               - GitHub: nuxt-hub/core (releases, changelog)
               - Docs: https://hub.nuxt.com/docs
               - Migration: https://hub.nuxt.com/docs/getting-started/migration
-            focus: "v0.10 APIs, hub:db/kv/blob imports, Drizzle ORM, multi-cloud deployment, deprecated features"
+            focus: 'v0.10 APIs, hub:db/kv/blob imports, Drizzle ORM, multi-cloud deployment, deprecated features'
 
           - skill: nuxt-content
             upstream: |
               - GitHub: nuxt/content (releases, changelog)
               - Docs: https://content.nuxt.com/
-            focus: "MDC syntax, content collections, query API, rendering"
+            focus: 'MDC syntax, content collections, query API, rendering'
 
           - skill: nuxt-ui
             upstream: |
               - GitHub: nuxt/ui (releases, changelog)
               - Docs: https://ui.nuxt.com/
-            focus: "Component props, theming, new components, breaking changes"
+            focus: 'Component props, theming, new components, breaking changes'
 
           - skill: nuxt-better-auth
             upstream: |
               - GitHub: onmax/nuxt-better-auth (releases)
               - Better Auth: https://www.better-auth.com/ (core library)
-            focus: "Module config, composables, server helpers, plugins integration"
+            focus: 'Module config, composables, server helpers, plugins integration'
 
           - skill: nuxt-modules
             upstream: |
               - Docs: https://nuxt.com/docs/guide/going-further/modules
               - Kit: https://nuxt.com/docs/api/kit
-            focus: "Module authoring, hooks, runtime vs build, kit utilities"
+            focus: 'Module authoring, hooks, runtime vs build, kit utilities'
 
           - skill: reka-ui
             upstream: |
               - GitHub: unovue/reka-ui (releases, changelog)
               - Docs: https://reka-ui.com/
-            focus: "Component APIs, props/emits/slots, new components, accessibility"
+            focus: 'Component APIs, props/emits/slots, new components, accessibility'
 
     steps:
       - name: Skip if not matching manual input

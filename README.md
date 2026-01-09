@@ -108,6 +108,7 @@ Invoke skills with `/skills` command or `$skill-name`.
 ### OpenCode
 
 **Native support** included. OpenCode auto-discovers skills from:
+
 - Project: `.opencode/skill/` and `.claude/skills/`
 - Global: `~/.config/opencode/skill/` and `~/.claude/skills/`
 

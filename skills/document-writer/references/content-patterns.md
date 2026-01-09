@@ -39,8 +39,8 @@ category: Release
 
 For enhanced documentation features:
 
-| Module                                                                  | Purpose                                                      |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Module                                                                    | Purpose                                                                 |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | [`nuxt-content-twoslash`](https://github.com/antfu/nuxt-content-twoslash) | TwoSlash for Nuxt Content - inline TypeScript type hints in code blocks |
 
 ### Installation

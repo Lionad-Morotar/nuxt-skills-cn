@@ -250,11 +250,13 @@ hub: {
 ### AWS / Self-Hosted
 
 **Database:**
+
 - PostgreSQL: `DATABASE_URL`
 - MySQL: `DATABASE_URL` or `MYSQL_URL`
 - SQLite: Local filesystem
 
 **Blob (S3):**
+
 ```ts
 hub: {
   blob: {
@@ -265,6 +267,7 @@ hub: {
 ```
 
 **KV (S3 or Redis):**
+
 ```ts
 hub: {
   kv: {
@@ -292,13 +295,13 @@ nitro: {
 
 ## Environment Variables Summary
 
-| Provider   | Database                         | KV                                                 | Blob                          |
-| ---------- | -------------------------------- | -------------------------------------------------- | ----------------------------- |
-| Cloudflare | Config (database_id)             | Config (namespace_id)                              | Config (bucket_name)          |
-| Vercel     | `DATABASE_URL`                   | `KV_REST_API_URL`, `KV_REST_API_TOKEN`             | `BLOB_READ_WRITE_TOKEN`       |
-| Netlify    | `DATABASE_URL`, `TURSO_*`        | `UPSTASH_*`, `S3_*`                                | `S3_*`                        |
-| Generic    | `DATABASE_URL`, `MYSQL_URL`      | `REDIS_URL`, `UPSTASH_*`, `S3_*`                   | `S3_*`                        |
-| Deno       | `DATABASE_URL` or Turso          | Auto (Deno.openKv)                                 | `S3_*`                        |
+| Provider   | Database                    | KV                                     | Blob                    |
+| ---------- | --------------------------- | -------------------------------------- | ----------------------- |
+| Cloudflare | Config (database_id)        | Config (namespace_id)                  | Config (bucket_name)    |
+| Vercel     | `DATABASE_URL`              | `KV_REST_API_URL`, `KV_REST_API_TOKEN` | `BLOB_READ_WRITE_TOKEN` |
+| Netlify    | `DATABASE_URL`, `TURSO_*`   | `UPSTASH_*`, `S3_*`                    | `S3_*`                  |
+| Generic    | `DATABASE_URL`, `MYSQL_URL` | `REDIS_URL`, `UPSTASH_*`, `S3_*`       | `S3_*`                  |
+| Deno       | `DATABASE_URL` or Turso     | Auto (Deno.openKv)                     | `S3_*`                  |
 
 ## Best Practices
 

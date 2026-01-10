@@ -18,6 +18,8 @@ Follows [agentskills](https://github.com/agentskills/agentskills) standard forma
 
 **Always run `git pull`** before making any changes. CI auto-commits lint fixes, so your local branch may be behind.
 
+**After making changes, sync to `~/.claude/skills/`** by running `./sync-skills.sh` so Claude Code uses latest versions.
+
 ## MANDATORY: When Working on Skills
 
 **Always use the `example-skills:skill-creator` skill** when creating or editing any skill content. This ensures skills follow best practices.

@@ -4,14 +4,6 @@
   "metadata": { "description": "Vue, Nuxt, and NuxtHub skills for AI coding assistants", "version": "1.0.0" },
   "plugins": [
     {
-      "name": "nuxt-skills",
-      "version": "1.0.0",
-      "description": "[Deprecated: prefer individual skills] All Vue, Nuxt, and NuxtHub skills bundled together.",
-      "keywords": ["vue", "nuxt", "nuxthub", "nuxt-ui", "reka-ui", "vueuse", "motion"],
-      "category": "frontend",
-      "skills": ["./skills/vue", "./skills/nuxt", "./skills/nuxt-modules", "./skills/nuxthub", "./skills/nuxt-content", "./skills/nuxt-ui", "./skills/nuxt-better-auth", "./skills/reka-ui", "./skills/document-writer", "./skills/ts-library", "./skills/motion", "./skills/vueuse"]
-    },
-    {
       "name": "vue",
       "source": "./skills/vue",
       "version": "1.0.0",

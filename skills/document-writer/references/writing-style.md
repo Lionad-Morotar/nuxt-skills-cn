@@ -1,127 +1,127 @@
-# Writing Style
+# 写作风格
 
-Sentence structure, voice, tone, and paragraph patterns for Nuxt documentation.
+Nuxt 文档的句子结构、语态、语气和段落模式。
 
-## Sentence Patterns
+## 句子模式
 
-### Subject-First Declarative (60%)
+### 主语先行陈述句（60%）
 
-Place subject first, verb follows. Clear and direct.
-
-```
-The useFetch composable handles data fetching automatically.
-Nuxt provides a powerful auto-import system.
-This option controls module behavior during development.
-```
-
-### Imperative Instructions (25%)
-
-Direct commands for actions. Implied "you" subject.
+将主语置于句首，动词紧跟其后。清晰直接。
 
 ```
-Add the following to nuxt.config.ts.
-Create a new file in server/api.
-Run the development server to see changes.
+useFetch 组合式函数自动处理数据获取。
+Nuxt 提供了强大的自动导入系统。
+此选项控制模块在开发期间的行为。
 ```
 
-### Contextual Openers (15%)
+### 祈使句（25%）
 
-Context before main clause. For conditionals and prerequisites.
+直接的行动指令。隐含“你”作为主语。
 
 ```
-When using authentication, configure the session handler.
-During SSR, the composable fetches data before hydration.
-After installing the module, restart the server.
+将以下内容添加至 nuxt.config.ts。
+在 server/api 中创建新文件。
+运行开发服务器以查看更改。
 ```
 
-## Voice
+### 背景引导句（15%）
 
-### Active Voice (85%)
+先提供背景，再进入主句。适用于条件和前提。
 
-Subject performs action. Prefer this.
+```
+在使用认证时，配置会话处理器。
+在 SSR 期间，组合式函数会在水合前获取数据。
+安装模块后，重启服务器。
+```
 
-| Active (use)                    | Passive (avoid)                       |
+## 语态
+
+### 主动语态（85%）
+
+主语执行动作。优先使用。
+
+| 主动语态（推荐）                | 被动语态（避免）                        |
 | ------------------------------- | ------------------------------------- |
-| The module creates a connection | A connection is created by the module |
-| You can override defaults       | Defaults can be overridden            |
-| Nuxt handles routing            | Routing is handled by Nuxt            |
+| 模块创建一个连接                | 连接由模块创建                         |
+| 可以覆盖默认设置                | 默认设置可以被覆盖                     |
+| Nuxt 处理路由                   | 路由由 Nuxt 处理                       |
 
-### When Passive is OK (15%)
+### 被动语态适用情况（15%）
 
-- Actor unknown: "The file is loaded during startup."
-- Object more important: "Data is cached for 5 minutes."
-- System behavior: "Routes are generated from pages directory."
+- 行为主体未知："文件在启动时被加载。"
+- 宾语更重要："数据缓存五分钟。"
+- 系统行为："路由从页面目录生成。"
 
-## Tense
+## 时态
 
-**Present (90%)**: Instructions and behavior
-**Future (5%)**: Consequences ("This will create an endpoint")
-**Past (5%)**: Changelogs only
+**现在时（90%）**：说明指令与行为  
+**将来时（5%）**：结果描述（“这将创建一个端点”）  
+**过去时（5%）**：仅限变更日志
 
-## Modal Verbs
+## 情态动词
 
-| Verb     | Meaning           | Example                          |
-| -------- | ----------------- | -------------------------------- |
-| `can`    | Optional (40%)    | "You can customize colors."      |
-| `should` | Recommended (30%) | "You should validate input."     |
-| `may`    | Possibility (20%) | "This may cause issues."         |
-| `must`   | Required (10%)    | "You must install dependencies." |
+| 动词     | 含义             | 示例                           |
+| -------- | ---------------- | ------------------------------ |
+| `can`    | 可选（40%）      | "你可以自定义颜色。"           |
+| `should` | 推荐（30%）      | "你应该验证输入。"             |
+| `may`    | 可能性（20%）    | "这可能会引起问题。"           |
+| `must`   | 必须（10%）      | "你必须安装依赖。"             |
 
-Avoid weak modals: `might`, `could`, `would`
+避免使用弱情态动词：`might`, `could`, `would`
 
-## Direct Address
+## 直接称谓
 
-**Guides/tutorials**: Use "you" (70% of content)
-**API references**: Neutral voice, no "you"
+**指南/教程**：使用“你”（70% 的内容）  
+**API 参考**：中性语态，不使用“你”
 
-Stay consistent within sections.
+在章节内部保持一致。
 
-## Paragraphs
+## 段落
 
-**Length**: 2-4 sentences max
-**Structure**: Topic sentence first, then supporting details
-
-```
-Route middleware runs before navigation.
-Use it to check authentication or redirect users.
-Define middleware in the middleware directory.
-```
-
-## Opening Sentences
-
-### Page Openings
-
-Define what it is, its purpose, key benefits:
+**长度**：最多 2–4 句  
+**结构**：先总后分，主题句先行，随后展开细节
 
 ```
-Server routes create API endpoints in your Nuxt app.
-They run on the server with access to databases and external services.
+路由中间件在导航前运行。
+用于检查认证或重定向用户。
+在 middleware 目录中定义中间件。
 ```
 
-Avoid: "This page describes...", "In this guide...", "Let's explore..."
+## 开头句
 
-### Section Openings
+### 页面开头
 
-Introduce topic and why it matters:
+定义内容、目的和关键优势：
 
 ```
-## Configuration
-
-The module accepts several options that control its behavior.
+服务器路由在你的 Nuxt 应用中创建 API 端点。
+它们运行在服务器上，可以访问数据库和外部服务。
 ```
 
-## Tone by Content Type
+避免使用："本页面描述了..."、"在本指南中..."、"让我们探索..."
 
-| Type            | Tone                         |
+### 章节开头
+
+引入主题及其重要性：
+
+```
+## 配置
+
+该模块接受多个控制其行为的选项。
+```
+
+## 不同内容类型的语气
+
+| 类型            | 语气                         |
 | --------------- | ---------------------------- |
-| Getting Started | Welcoming, encouraging       |
-| Guides          | Instructional, supportive    |
-| API Reference   | Precise, neutral             |
-| Troubleshooting | Empathetic, solution-focused |
+| 快速入门        | 欢迎、鼓励                   |
+| 指南            | 指令性强、支持性             |
+| API 参考        | 精确、中立                   |
+| 故障排除        | 同理心、解决方案导向         |
 
-## Word Choice
+## 词汇选择
 
-| Avoid           | Use         |
+| 避免            | 使用        |
 | --------------- | ----------- |
 | utilize         | use         |
 | implement       | add, create |
@@ -129,9 +129,9 @@ The module accepts several options that control its behavior.
 | in order to     | to          |
 | due to the fact | because     |
 
-## Common Mistakes
+## 常见错误
 
-- Starting with "It" or "This" (unclear antecedent)
-- Stacking prepositions ("the value of the property of the config")
-- Overusing "Note that" (just state the fact)
-- Burying important info at end of long sentences
+- 以“它”或“这”开头（指代不明）  
+- 叠加介词（“配置的属性的值”）  
+- 过度使用“注意”（直接陈述即可）  
+- 将重要信息置于长句末尾

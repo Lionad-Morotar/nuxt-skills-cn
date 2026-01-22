@@ -1,11 +1,11 @@
 # isDefined
 
-Non-nullish checking type guard for Ref.
+用于 Ref 的非空检查类型保护。
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包：** `@vueuse/shared`  
+**类别：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { isDefined } from '@vueuse/core'
@@ -16,6 +16,6 @@ if (isDefined(example))
   example // Ref<string>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/isDefined/)
+[VueUse 文档](https://vueuse.org/core/isDefined/)

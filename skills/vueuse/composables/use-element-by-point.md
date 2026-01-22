@@ -1,11 +1,11 @@
 # useElementByPoint
 
-Reactive element by point.
+通过点获取响应式元素。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useElementByPoint, useMouse } from '@vueuse/core'
@@ -14,13 +14,13 @@ const { x, y } = useMouse({ type: 'client' })
 const { element } = useElementByPoint({ x, y })
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type                    |
-| ----------- | ----------------------- |
-| isSupported | `useSupported`          |
-| element     | `shallowRef&lt;any&gt;` |
+| 名称          | 类型                    |
+| ------------- | ----------------------- |
+| isSupported   | `useSupported`          |
+| element       | `shallowRef<any>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useElementByPoint/)
+[VueUse 文档](https://vueuse.org/core/useElementByPoint/)

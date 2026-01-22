@@ -1,43 +1,43 @@
-# Radio Group
+# 单选组
 
-Mutually exclusive selection
+互斥选择
 
-**Parts:** `RadioGroupRoot`, `RadioGroupItem`, `RadioGroupIndicator`
+**组件：** `RadioGroupRoot`、`RadioGroupItem`、`RadioGroupIndicator`
 
 ## RadioGroupRoot
 
-### Props
+### 属性
 
-| Prop           | Type                         | Default |
-| -------------- | ---------------------------- | ------- |
-| `as`           | `AsTag \| Component`         | `"div"` |
-| `asChild`      | `boolean`                    | -       |
-| `defaultValue` | `string`                     | -       |
-| `dir`          | `"ltr" \| "rtl"`             | -       |
-| `disabled`     | `boolean`                    | `false` |
-| `loop`         | `boolean`                    | `true`  |
-| `modelValue`   | `string`                     | -       |
-| `name`         | `string`                     | -       |
-| `orientation`  | `"vertical" \| "horizontal"` | -       |
-| `required`     | `boolean`                    | `false` |
+| 属性           | 类型                         | 默认值   |
+| -------------- | ---------------------------- | -------- |
+| `as`           | `AsTag \| Component`         | `"div"`  |
+| `asChild`      | `boolean`                    | -        |
+| `defaultValue` | `string`                     | -        |
+| `dir`          | `"ltr" \| "rtl"`             | -        |
+| `disabled`     | `boolean`                    | `false`  |
+| `loop`         | `boolean`                    | `true`   |
+| `modelValue`   | `string`                     | -        |
+| `name`         | `string`                     | -        |
+| `orientation`  | `"vertical" \| "horizontal"` | -        |
+| `required`     | `boolean`                    | `false`  |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
+| 事件                | 参数                |
 | ------------------- | ------------------- |
 | `update:modelValue` | `[payload: string]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                  |
+| 插槽         | 类型                  |
 | ------------ | --------------------- |
 | `modelValue` | `string \| undefined` |
 
 ## RadioGroupItem
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -49,9 +49,9 @@ Mutually exclusive selection
 
 ## RadioGroupIndicator
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default  |
+| 属性         | 类型                 | 默认值   |
 | ------------ | -------------------- | -------- |
 | `as`         | `AsTag \| Component` | `"span"` |
 | `asChild`    | `boolean`            | -        |

@@ -1,11 +1,11 @@
 # useArrayJoin
 
-Reactive
+响应式
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**类别：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayJoin } from '@vueuse/core'
@@ -20,6 +20,6 @@ item1.value = 'bar'
 // result.value: bar,0,[object Object]
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayJoin/)
+[VueUse 文档](https://vueuse.org/core/useArrayJoin/)

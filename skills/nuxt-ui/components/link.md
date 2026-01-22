@@ -1,11 +1,11 @@
-# Link
+# 链接
 
-A wrapper around <NuxtLink> with extra props.
+一个围绕 <NuxtLink> 的包装组件，带有额外的属性。
 
-## Usage
+## 用法
 
 ```vue
 <ULink
-  <!-- props here -->
+  <!-- 属性在此 -->
 />
 ```

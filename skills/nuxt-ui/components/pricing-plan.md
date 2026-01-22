@@ -1,15 +1,15 @@
-# PricingPlan
+# 定价计划
 
-A customizable pricing plan to display in a pricing page.
+一个可定制的定价计划，用于价格页面展示。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the PricingPlan.
-- `description`: to set the description of the PricingPlan.
-- `badge`: to display a [Badge](/docs/components/badge) next to the title of the PricingPlan.
-- `price`: to set the price of the PricingPlan.
-- `discount`: to set a discounted price that will be displayed alongside the original price (which will be shown with a strikethrough).
-- `features`: as an array of string to display a list of features on the PricingPlan:
+- `title`：用于设置定价计划的标题。
+- `description`：用于设置定价计划的描述。
+- `badge`：在定价计划标题旁显示一个 [Badge](/docs/components/badge)。
+- `price`：用于设置定价计划的价格。
+- `discount`：用于设置折扣价，该价格将与原价一同显示（原价将以删除线形式呈现）。
+- `features`：作为字符串数组，用于在定价计划中显示功能列表：
 
 ## ::component-code
 
@@ -24,16 +24,16 @@ hide:
 - features
   props:
   title: 'Solo'
-  description: 'For bootstrappers and indie hackers.
-- `button`: with any property from the [Button](/docs/components/button) component to display a button at the bottom of the PricingPlan.
-- `variant`: to change the variant of the PricingPlan.
-- `orientation`: to change the orientation of the PricingPlan.
-- `tagline`: to display a tagline text above the price.
+  description: '适用于独立开发者和极客。
+- `button`：包含 [Button](/docs/components/button) 组件的任意属性，用于在定价计划底部显示按钮。
+- `variant`：用于更改定价计划的变体。
+- `orientation`：用于更改定价计划的方向。
+- `tagline`：用于在价格上方显示标语文本。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPricingPlan
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

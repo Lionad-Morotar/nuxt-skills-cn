@@ -1,11 +1,11 @@
 # useFocusWithin
 
-Reactive utility to track if an element or one of its decendants has focus. It is meant to match the behavior of the CSS pseudo-class. A common use case would be on a form element to see if any of its inputs currently have focus.
+响应式工具，用于跟踪元素或其后代是否获得焦点。其行为旨在与 CSS 伪类一致。常见用法是在表单元素上，以检测其任何输入框当前是否获得焦点。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -33,12 +33,12 @@ watch(focused, (focused) => {
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name    | Type       |
+| 名称    | 类型       |
 | ------- | ---------- |
 | focused | `computed` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFocusWithin/)
+[VueUse 文档](https://vueuse.org/core/useFocusWithin/)

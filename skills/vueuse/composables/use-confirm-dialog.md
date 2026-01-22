@@ -1,11 +1,11 @@
 # useConfirmDialog
 
-Creates event hooks to support modals and confirmation dialog chains.
+创建事件钩子以支持模态框和确认对话框链。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`  
+**类别：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -17,18 +17,18 @@ const { isRevealed, reveal, confirm, cancel, onReveal, onConfirm, onCancel }
 
 <template>
   <button @click="reveal">
-    Reveal Modal
+    显示模态框
   </button>
 
   <teleport to="body">
     <div v-if="isRevealed" class="modal-bg">
       <div class="modal">
-        <h2>Confirm?</h2>
+        <h2>确认？</h2>
         <button @click="confirm">
-          Yes
+          是
         </button>
         <button @click="cancel">
-          Cancel
+          取消
         </button>
       </div>
     </div>
@@ -36,9 +36,9 @@ const { isRevealed, reveal, confirm, cancel, onReveal, onConfirm, onCancel }
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name       | Type  |
+| 名称       | 类型  |
 | ---------- | ----- |
 | isRevealed | `Ref` |
 | reveal     | `Ref` |
@@ -48,6 +48,6 @@ const { isRevealed, reveal, confirm, cancel, onReveal, onConfirm, onCancel }
 | onConfirm  | `Ref` |
 | onCancel   | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useConfirmDialog/)
+[VueUse 文档](https://vueuse.org/core/useConfirmDialog/)

@@ -1,11 +1,11 @@
 # useBroadcastChannel
 
-Reactive BroadcastChannel API.
+响应式 BroadcastChannel API。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useBroadcastChannel } from '@vueuse/core'
@@ -24,31 +24,31 @@ const message = shallowRef('')
 
 message.value = 'Hello, VueUse World!'
 
-// Post the message to the broadcast channel:
+// 将消息发送到广播频道：
 post(message.value)
 
-// Option to close the channel if you wish:
+// 如需关闭频道，可选操作：
 close()
 ```
 
-## Options
+## 选项
 
-| Option | Type     | Default | Description              |
-| ------ | -------- | ------- | ------------------------ |
-| name   | `string` | -       | The name of the channel. |
+| 选项 | 类型     | 默认值  | 描述               |
+| ---- | -------- | ------- | ------------------ |
+| name | `string` | -       | 频道的名称。       |
 
-## Returns
+## 返回值
 
-| Name        | Type                                           |
+| 名称        | 类型                                           |
 | ----------- | ---------------------------------------------- |
 | isSupported | `useSupported`                                 |
-| channel     | `deepRef&lt;BroadcastChannel \| undefined&gt;` |
+| channel     | `deepRef< BroadcastChannel \| undefined >`     |
 | data        | `deepRef`                                      |
 | post        | `Ref`                                          |
 | close       | `Ref`                                          |
-| error       | `shallowRef&lt;Event \| null&gt;`              |
+| error       | `shallowRef< Event \| null >`                 |
 | isClosed    | `shallowRef`                                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useBroadcastChannel/)
+[VueUse 文档](https://vueuse.org/core/useBroadcastChannel/)

@@ -1,21 +1,21 @@
-# Empty
+# 空状态组件
 
-A component to display an empty state.
+用于显示空状态的组件。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the empty state.
-- `description`: to set the description of the empty state.
-- `icon`: to set the icon of the empty state.
-- `avatar`: to set the avatar of the empty state.
-- `actions`: to add some [Button](/docs/components/button) actions to the empty state.
-- `variant`: to change the variant of the empty state.
-- `size`: to change the size of the empty state.
+- `title`：设置空状态的标题。
+- `description`：设置空状态的描述。
+- `icon`：设置空状态的图标。
+- `avatar`：设置空状态的头像。
+- `actions`：为空状态添加一些 [Button](/docs/components/button) 操作。
+- `variant`：更改空状态的变体。
+- `size`：更改空状态的尺寸。
 
-## Usage
+## 用法
 
 ```vue
 <UEmpty
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

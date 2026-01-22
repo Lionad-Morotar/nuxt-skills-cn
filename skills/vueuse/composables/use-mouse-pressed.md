@@ -1,11 +1,11 @@
 # useMousePressed
 
-Reactive mouse pressing state. Triggered by on target element and released by on window.
+响应式鼠标按下状态。由目标元素触发，由窗口释放。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useMousePressed } from '@vueuse/core'
@@ -13,13 +13,13 @@ import { useMousePressed } from '@vueuse/core'
 const { pressed } = useMousePressed()
 ```
 
-## Returns
+## 返回值
 
-| Name       | Type                                   |
+| 名称       | 类型                                   |
 | ---------- | -------------------------------------- |
 | pressed    | `shallowRef`                           |
-| sourceType | `shallowRef&lt;UseMouseSourceType&gt;` |
+| sourceType | `shallowRef<UseMouseSourceType>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMousePressed/)
+[VueUse 文档](https://vueuse.org/core/useMousePressed/)

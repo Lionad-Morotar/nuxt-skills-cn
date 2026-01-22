@@ -1,33 +1,33 @@
 # useStorageAsync
 
-Reactive Storage in with async support.
+支持异步操作的响应式存储。
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`
+**类别：** 状态
 
-## Usage
+## 用法
 
 ```ts
 import { useStorageAsync } from '@vueuse/core'
 
 const accessToken = useStorageAsync('access.token', '', SomeAsyncStorage)
 
-// accessToken.value may be empty before the async storage is ready
+// 在异步存储准备就绪之前，accessToken.value 可能为空
 console.log(accessToken.value) // ""
 
 setTimeout(() => {
-  // After some time, the async storage is ready
-  console.log(accessToken.value) // "the real value stored in storage"
+  // 经过一段时间后，异步存储准备就绪
+  console.log(accessToken.value) // "存储中实际保存的值"
 }, 500)
 ```
 
-## Options
+## 选项
 
-| Option     | Type                       | Default | Description                 |
+| 选项       | 类型                       | 默认值  | 描述                        |
 | ---------- | -------------------------- | ------- | --------------------------- |
-| serializer | `SerializerAsync&lt;T&gt;` | -       | Custom data serialization   |
-| onReady    | `(value: T) =&gt; void`    | -       | On first value loaded hook. |
+| serializer | `SerializerAsync<T>`       | -       | 自定义数据序列化            |
+| onReady    | `(value: T) => void`       | -       | 首次加载值时的钩子函数。    |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useStorageAsync/)
+[VueUse 文档](https://vueuse.org/core/useStorageAsync/)

@@ -1,10 +1,10 @@
 # watchExtractedObservable
 
-Watch the values of an RxJS as extracted from one or more composables.
+监听从一个或多个组合式函数中提取的 RxJS 观察对象的值。
 
-**Package:** `@vueuse/rxjs`
-**Category:** '@RxJS'
+**包:** `@vueuse/rxjs`
+**类别:** '@RxJS'
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchExtractedObservable/)
+[VueUse 文档](https://vueuse.org/core/watchExtractedObservable/)

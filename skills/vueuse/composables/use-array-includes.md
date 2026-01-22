@@ -1,11 +1,11 @@
 # useArrayIncludes
 
-Reactive
+响应式
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**类别：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayIncludes } from '@vueuse/core'
@@ -19,6 +19,6 @@ list.value.pop()
 // result.value: false
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayIncludes/)
+[VueUse 文档](https://vueuse.org/core/useArrayIncludes/)

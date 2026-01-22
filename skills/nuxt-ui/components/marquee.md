@@ -1,18 +1,18 @@
-# Marquee
+# 跑马灯
 
-A component to create infinite scrolling content.
+用于创建无限滚动内容的组件。
 
-## Key Props
+## 核心属性
 
-- `reverse`: to reverse the direction of the animation.
-- `orientation`: to change the scrolling direction.
-- `repeat`: to specify how many times the content should be repeated in the animation.
-- `overlay`: to remove the gradient overlays on the edges of the marquee.
+- `reverse`：用于反转动画方向。
+- `orientation`：用于更改滚动方向。
+- `repeat`：用于指定内容在动画中应重复的次数。
+- `overlay`：用于移除跑马灯边缘的渐变覆盖层。
 
-## Usage
+## 用法
 
 ```vue
 <UMarquee
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

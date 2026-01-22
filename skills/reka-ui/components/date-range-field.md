@@ -1,56 +1,56 @@
-# Date Range Field
+# 日期范围字段
 
-Date range input (alpha)
+日期范围输入（alpha）
 
-**Parts:** `DateRangeFieldRoot`, `DateRangeFieldInput`
+**组件结构：** `DateRangeFieldRoot`、`DateRangeFieldInput`
 
 ## DateRangeFieldRoot
 
-### Props
+### 属性
 
-| Prop                 | Type                                      | Default |
-| -------------------- | ----------------------------------------- | ------- |
-| `as`                 | `AsTag \| Component`                      | `"div"` |
-| `asChild`            | `boolean`                                 | -       |
-| `defaultPlaceholder` | `DateValue`                               | -       |
-| `defaultValue`       | `DateRange`                               | -       |
-| `dir`                | `"ltr" \| "rtl"`                          | -       |
-| `disabled`           | `boolean`                                 | `false` |
-| `granularity`        | `"day" \| "hour" \| "minute" \| "second"` | -       |
-| `hideTimeZone`       | `boolean`                                 | -       |
-| `hourCycle`          | `12 \| 24`                                | -       |
-| `id`                 | `string`                                  | -       |
-| `isDateUnavailable`  | `Matcher`                                 | -       |
-| `locale`             | `string`                                  | `"en"`  |
-| `maxValue`           | `DateValue`                               | -       |
-| `minValue`           | `DateValue`                               | -       |
-| `modelValue`         | `DateRange`                               | -       |
-| `name`               | `string`                                  | -       |
-| `placeholder`        | `DateValue`                               | -       |
-| `readonly`           | `boolean`                                 | `false` |
-| `required`           | `boolean`                                 | -       |
+| 属性                 | 类型                                      | 默认值   |
+| -------------------- | ----------------------------------------- | -------- |
+| `as`                 | `AsTag \| Component`                      | `"div"`  |
+| `asChild`            | `boolean`                                 | -        |
+| `defaultPlaceholder` | `DateValue`                               | -        |
+| `defaultValue`       | `DateRange`                               | -        |
+| `dir`                | `"ltr" \| "rtl"`                          | -        |
+| `disabled`           | `boolean`                                 | `false`  |
+| `granularity`        | `"day" \| "hour" \| "minute" \| "second"` | -        |
+| `hideTimeZone`       | `boolean`                                 | -        |
+| `hourCycle`          | `12 \| 24`                                | -        |
+| `id`                 | `string`                                  | -        |
+| `isDateUnavailable`  | `Matcher`                                 | -        |
+| `locale`             | `string`                                  | `"en"`   |
+| `maxValue`           | `DateValue`                               | -        |
+| `minValue`           | `DateValue`                               | -        |
+| `modelValue`         | `DateRange`                               | -        |
+| `name`               | `string`                                  | -        |
+| `placeholder`        | `DateValue`                               | -        |
+| `readonly`           | `boolean`                                 | `false`  |
+| `required`           | `boolean`                                 | -        |
 
-### Emits
+### 事件
 
-| Event                | Payload             |
+| 事件                 | 参数                |
 | -------------------- | ------------------- |
 | `update:modelValue`  | `[DateRange]`       |
 | `update:placeholder` | `[date: DateValue]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                                                 |
+| 插槽         | 类型                                                 |
 | ------------ | ---------------------------------------------------- |
 | `modelValue` | `DateRange`                                          |
 | `segments`   | `{ start: { part: SegmentPart; value: string; }[...` |
 
 ## DateRangeFieldInput
 
-### Props
+### 属性
 
-| Prop      | Type                                                      | Default |
-| --------- | --------------------------------------------------------- | ------- |
-| `as`      | `AsTag \| Component`                                      | `"div"` |
-| `asChild` | `boolean`                                                 | -       |
-| `part`\*  | `"day" \| "month" \| "year" \| "hour" \| "minute" \| ...` | -       |
-| `type`\*  | `"start" \| "end"`                                        | -       |
+| 属性      | 类型                                                      | 默认值   |
+| --------- | --------------------------------------------------------- | -------- |
+| `as`      | `AsTag \| Component`                                      | `"div"`  |
+| `asChild` | `boolean`                                                 | -        |
+| `part`\*  | `"day" \| "month" \| "year" \| "hour" \| "minute" \| ...` | -        |
+| `type`\*  | `"start" \| "end"`                                        | -        |

@@ -1,15 +1,15 @@
-# Project Setup
+# 项目设置
 
-## Single Package
+## 单包
 
 ```bash
-# Clone starter template
+# 克隆启动模板
 cp -r ~/templates/antfu/starter-ts my-lib
 cd my-lib && rm -rf .git && git init
 pnpm install
 ```
 
-Or manual setup:
+或手动设置：
 
 ```bash
 mkdir my-lib && cd my-lib
@@ -17,16 +17,16 @@ pnpm init
 pnpm add -D typescript tsdown vitest eslint @antfu/eslint-config
 ```
 
-### Directory Structure
+### 目录结构
 
 ```
 my-lib/
 ├── src/
-│   ├── index.ts      # Main entry
-│   └── types.ts      # Type definitions
+│   ├── index.ts      # 主入口
+│   └── types.ts      # 类型定义
 ├── test/
 │   └── index.test.ts
-├── dist/             # Build output (gitignored)
+├── dist/             # 构建输出（git 忽略）
 ├── package.json
 ├── tsconfig.json
 ├── tsdown.config.ts
@@ -34,7 +34,7 @@ my-lib/
 └── vitest.config.ts
 ```
 
-## Monorepo
+## 单仓库
 
 ```bash
 cp -r ~/templates/antfu/starter-monorepo my-monorepo
@@ -42,7 +42,7 @@ cd my-monorepo && rm -rf .git && git init
 pnpm install
 ```
 
-### Structure
+### 结构
 
 ```
 my-monorepo/
@@ -54,10 +54,10 @@ my-monorepo/
 │   └── cli/
 │       ├── src/
 │       └── package.json
-├── playground/          # Integration tests
+├── playground/          # 集成测试
 ├── pnpm-workspace.yaml
-├── package.json         # Root scripts, devDeps
-├── tsconfig.json        # Base config
+├── package.json         # 根脚本、开发依赖
+├── tsconfig.json        # 基础配置
 └── eslint.config.ts
 ```
 
@@ -81,19 +81,19 @@ catalogs:
     typescript: ^5.7.0
 ```
 
-## pnpm Catalogs
+## pnpm 目录
 
-Organize dependencies by purpose (from antfu's blog post):
+按用途组织依赖（来自 antfu 的博客文章）：
 
-| Category | Contents                           |
+| 分类     | 内容                               |
 | -------- | ---------------------------------- |
-| build    | tsdown, unbuild, rollup plugins    |
+| build    | tsdown, unbuild, rollup 插件       |
 | lint     | eslint, @antfu/eslint-config       |
 | test     | vitest, @vue/test-utils            |
 | types    | typescript, @types/\*              |
-| prod     | Runtime deps: consola, defu, pathe |
+| prod     | 运行时依赖：consola, defu, pathe   |
 
-### Using Catalogs
+### 使用目录
 
 ```json
 {
@@ -106,7 +106,7 @@ Organize dependencies by purpose (from antfu's blog post):
 }
 ```
 
-## ESLint Setup
+## ESLint 设置
 
 ```bash
 pnpm add -D eslint @antfu/eslint-config
@@ -123,7 +123,7 @@ export default antfu({
 })
 ```
 
-## Git Hooks
+## Git 钩子
 
 ```bash
 pnpm add -D simple-git-hooks lint-staged
@@ -137,9 +137,9 @@ pnpm add -D simple-git-hooks lint-staged
 }
 ```
 
-Run `pnpm prepare` after adding.
+添加后运行 `pnpm prepare`。
 
-## Scripts
+## 脚本
 
 ```json
 {

@@ -1,11 +1,11 @@
 # useMediaControls
 
-Reactive media controls for both and elements
+适用于 `<video>` 和 `<audio>` 元素的响应式媒体控制
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -17,7 +17,7 @@ const { playing, currentTime, duration, volume } = useMediaControls(video, {
   src: 'video.mp4',
 })
 
-// Change initial media properties
+// 更改初始媒体属性
 onMounted(() => {
   volume.value = 0.5
   currentTime.value = 60
@@ -27,22 +27,22 @@ onMounted(() => {
 <template>
   <video ref="video" />
   <button @click="playing = !playing">
-    Play / Pause
+    播放 / 暂停
   </button>
   <span>{{ currentTime }} / {{ duration }}</span>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option | Type                                                                   | Default | Description                                                                            |
-| ------ | ---------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------- |
-| src    | `MaybeRefOrGetter&lt;string \| UseMediaSource \| UseMediaSource[]&gt;` | -       | The source for the media, may either be a string, a `UseMediaSource` object, or a list |
-| tracks | `MaybeRefOrGetter&lt;UseMediaTextTrackSource[]&gt;`                    | -       | A list of text tracks for the media                                                    |
+| 选项   | 类型                                                                   | 默认值  | 描述                                                             |
+| ------ | ---------------------------------------------------------------------- | ------- | ---------------------------------------------------------------- |
+| src    | `MaybeRefOrGetter<string \| UseMediaSource \| UseMediaSource[]>`       | -       | 媒体的源，可以是字符串、`UseMediaSource` 对象或一个列表           |
+| tracks | `MaybeRefOrGetter<UseMediaTextTrackSource[]>`                          | -       | 媒体的文本轨道列表                                               |
 
-## Returns
+## 返回值
 
-| Name                   | Type                                |
+| 名称                   | 类型                                |
 | ---------------------- | ----------------------------------- |
 | currentTime            | `shallowRef`                        |
 | duration               | `shallowRef`                        |
@@ -50,17 +50,17 @@ onMounted(() => {
 | seeking                | `shallowRef`                        |
 | ended                  | `shallowRef`                        |
 | stalled                | `shallowRef`                        |
-| buffered               | `deepRef&lt;[number, number][]&gt;` |
+| buffered               | `deepRef<[number, number][]>`       |
 | playing                | `shallowRef`                        |
 | rate                   | `shallowRef`                        |
 | muted                  | `shallowRef`                        |
-| selectedTrack          | `shallowRef&lt;number&gt;`          |
+| selectedTrack          | `shallowRef<number>`                |
 | enableTrack            | `Ref`                               |
 | disableTrack           | `Ref`                               |
 | togglePictureInPicture | `Ref`                               |
 | isPictureInPicture     | `shallowRef`                        |
 | onPlaybackError        | `Ref`                               |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMediaControls/)
+[VueUse 文档](https://vueuse.org/core/useMediaControls/)

@@ -1,11 +1,11 @@
 # useDraggable
 
-Make elements draggable.
+使元素可拖拽。
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -14,7 +14,7 @@ import { useTemplateRef } from 'vue'
 
 const el = useTemplateRef('el')
 
-// `style` will be a helper computed for `left: ?px; top: ?px;`
+// `style` 将是用于 `left: ?px; top: ?px;` 的辅助计算属性
 const { x, y, style } = useDraggable(el, {
   initialValue: { x: 40, y: 40 },
 })
@@ -22,32 +22,32 @@ const { x, y, style } = useDraggable(el, {
 
 <template>
   <div ref="el" :style="style" style="position: fixed">
-    Drag me! I am at {{ x }}, {{ y }}
+    拖拽我！我位于 {{ x }}, {{ y }}
   </div>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option           | Type                                                                                           | Default   | Description                                                                  |
+| 选项             | 类型                                                                                           | 默认值    | 描述                                                                         |
 | ---------------- | ---------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------- |
-| exact            | `MaybeRefOrGetter&lt;boolean&gt;`                                                              | false     | Only start the dragging when click on the element directly                   |
-| preventDefault   | `MaybeRefOrGetter&lt;boolean&gt;`                                                              | false     | Prevent events defaults                                                      |
-| stopPropagation  | `MaybeRefOrGetter&lt;boolean&gt;`                                                              | false     | Prevent events propagation                                                   |
-| capture          | `boolean`                                                                                      | true      | Whether dispatch events in capturing phase                                   |
-| draggingElement  | `MaybeRefOrGetter&lt;HTMLElement \| SVGElement \| Window \| Document \| null \| undefined&gt;` | window    | Element to attach `pointermove` and `pointerup` events to.                   |
-| containerElement | `MaybeRefOrGetter&lt;HTMLElement \| SVGElement \| null \| undefined&gt;`                       | undefined | Element for calculating bounds (If not set, it will use the event's target). |
-| handle           | `MaybeRefOrGetter&lt;HTMLElement \| SVGElement \| null \| undefined&gt;`                       | target    | Handle that triggers the drag event                                          |
-| pointerTypes     | `PointerType[]`                                                                                | [         | Pointer types that listen to.                                                |
+| exact            | `MaybeRefOrGetter&lt;boolean&gt;`                                                              | false     | 仅在直接点击元素时开始拖拽                                                   |
+| preventDefault   | `MaybeRefOrGetter&lt;boolean&gt;`                                                              | false     | 阻止事件默认行为                                                             |
+| stopPropagation  | `MaybeRefOrGetter&lt;boolean&gt;`                                                              | false     | 阻止事件冒泡                                                                 |
+| capture          | `boolean`                                                                                      | true      | 是否在捕获阶段分发事件                                                       |
+| draggingElement  | `MaybeRefOrGetter&lt;HTMLElement \| SVGElement \| Window \| Document \| null \| undefined&gt;` | window    | 附加 `pointermove` 和 `pointerup` 事件的元素。                               |
+| containerElement | `MaybeRefOrGetter&lt;HTMLElement \| SVGElement \| null \| undefined&gt;`                       | undefined | 用于计算边界元素（若未设置，则使用事件的目标元素）。                         |
+| handle           | `MaybeRefOrGetter&lt;HTMLElement \| SVGElement \| null \| undefined&gt;`                       | target    | 触发拖拽事件的句柄                                                           |
+| pointerTypes     | `PointerType[]`                                                                                | [         | 监听的指针类型。                                                             |
 
-## Returns
+## 返回值
 
-| Name       | Type                      |
+| 名称       | 类型                      |
 | ---------- | ------------------------- |
 | position   | `deepRef&lt;Position&gt;` |
 | isDragging | `Ref`                     |
 | style      | `Ref`                     |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDraggable/)
+[VueUse 文档](https://vueuse.org/core/useDraggable/)

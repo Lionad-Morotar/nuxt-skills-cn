@@ -1,11 +1,11 @@
 # useEventBus
 
-A basic event bus.
+一个基础事件总线。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`
+**分类：** 工具
 
-## Usage
+## 用法
 
 ```ts
 import { useEventBus } from '@vueuse/core'
@@ -16,24 +16,24 @@ function listener(event: string) {
   console.log(`news: ${event}`)
 }
 
-// listen to an event
+// 监听一个事件
 const unsubscribe = bus.on(listener)
 
-// fire an event
+// 触发一个事件
 bus.emit('The Tokyo Olympics has begun')
 
-// unregister the listener
+// 取消注册监听器
 unsubscribe()
-// or
+// 或者
 bus.off(listener)
 
-// clearing all listeners
+// 清除所有监听器
 bus.reset()
 ```
 
-## Returns
+## 返回值
 
-| Name  | Type  |
+| 名称  | 类型  |
 | ----- | ----- |
 | on    | `Ref` |
 | once  | `Ref` |
@@ -41,6 +41,6 @@ bus.reset()
 | emit  | `Ref` |
 | reset | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useEventBus/)
+[VueUse 文档](https://vueuse.org/core/useEventBus/)

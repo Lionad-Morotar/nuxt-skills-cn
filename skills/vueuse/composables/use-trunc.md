@@ -1,11 +1,11 @@
 # useTrunc
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useTrunc } from '@vueuse/math'
@@ -16,6 +16,6 @@ const result1 = useTrunc(value1) // 0
 const result2 = useTrunc(value2) // -2
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTrunc/)
+[VueUse 文档](https://vueuse.org/core/useTrunc/)

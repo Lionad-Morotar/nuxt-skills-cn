@@ -1,14 +1,14 @@
-# Accordion
+# 手风琴组件
 
-Collapsible content sections
+可折叠的内容区域
 
-**Parts:** `AccordionRoot`, `AccordionItem`, `AccordionHeader`, `AccordionTrigger`, `AccordionContent`
+**组成部分：** `AccordionRoot`、`AccordionItem`、`AccordionHeader`、`AccordionTrigger`、`AccordionContent`
 
 ## AccordionRoot
 
-### Props
+### 属性
 
-| Prop           | Type                         | Default      |
+| 属性           | 类型                         | 默认值       |
 | -------------- | ---------------------------- | ------------ |
 | `as`           | `AsTag \| Component`         | `"div"`      |
 | `asChild`      | `boolean`                    | -            |
@@ -20,59 +20,59 @@ Collapsible content sections
 | `orientation`  | `"vertical" \| "horizontal"` | `"vertical"` |
 | `type`         | `"single" \| "multiple"`     | -            |
 
-### Emits
+### 事件
 
-| Event               | Payload                       |
+| 事件                | 参数                          |
 | ------------------- | ----------------------------- |
 | `update:modelValue` | `[value: string \| string[]]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                              |
+| 插槽         | 类型                              |
 | ------------ | --------------------------------- |
 | `modelValue` | `string \| string[] \| undefined` |
 
 ## AccordionItem
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default |
-| ---------- | -------------------- | ------- |
+| 属性       | 类型                 | 默认值 |
+| ---------- | -------------------- | ------ |
 | `as`       | `AsTag \| Component` | `"div"` |
-| `asChild`  | `boolean`            | -       |
-| `disabled` | `boolean`            | -       |
-| `value`\*  | `string`             | -       |
+| `asChild`  | `boolean`            | -      |
+| `disabled` | `boolean`            | -      |
+| `value`\*  | `string`             | -      |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## AccordionHeader
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"h3"`  |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"h3"` |
+| `asChild` | `boolean`            | -      |
 
 ## AccordionTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## AccordionContent
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |

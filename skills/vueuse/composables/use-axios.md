@@ -1,11 +1,10 @@
 # useAxios
 
-Wrapper for .
+`@vueuse/integrations` 的封装库。
+**包名：** `@vueuse/integrations`
+**分类：** '@Integrations'
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
-
-## Usage
+## 用法
 
 ```ts
 import { useAxios } from '@vueuse/integrations/useAxios'
@@ -13,18 +12,18 @@ import { useAxios } from '@vueuse/integrations/useAxios'
 const { data, isFinished } = useAxios('/api/posts')
 ```
 
-## Options
+## 选项
 
-| Option         | Type                      | Default | Description                                                  |
+| 选项           | 类型                      | 默认值  | 描述                                                         |
 | -------------- | ------------------------- | ------- | ------------------------------------------------------------ |
-| immediate      | `boolean`                 | -       | Will automatically run axios request when `useAxios` is used |
-| shallow        | `boolean`                 | true    | Use shallowRef.                                              |
-| abortPrevious  | `boolean`                 | true    | Abort previous request when a new request is made.           |
-| onError        | `(e: unknown) =&gt; void` | -       | Callback when error is caught.                               |
-| onSuccess      | `(data: T) =&gt; void`    | -       | Callback when success is caught.                             |
-| resetOnExecute | `boolean`                 | -       | Sets the state to initialState before executing the promise. |
-| onFinish       | `() =&gt; void`           | -       | Callback when request is finished.                           |
+| immediate      | `boolean`                 | -       | 在使用 `useAxios` 时自动运行 axios 请求                     |
+| shallow        | `boolean`                 | true    | 使用 shallowRef。                                            |
+| abortPrevious  | `boolean`                 | true    | 当发起新请求时中止之前的请求。                               |
+| onError        | `(e: unknown) => void`    | -       | 捕获错误时的回调函数。                                       |
+| onSuccess      | `(data: T) => void`       | -       | 捕获成功时的回调函数。                                       |
+| resetOnExecute | `boolean`                 | -       | 在执行 Promise 前将状态重置为 initialState。                 |
+| onFinish       | `() => void`              | -       | 请求完成时的回调函数。                                       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAxios/)
+[VueUse 文档](https://vueuse.org/core/useAxios/)

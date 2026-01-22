@@ -1,11 +1,11 @@
 # useStyleTag
 
-Inject reactive element in head.
+在 head 中注入响应式元素。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useStyleTag } from '@vueuse/core'
@@ -18,23 +18,23 @@ const {
   isLoaded,
 } = useStyleTag('.foo { margin-top: 32px; }')
 
-// Later you can modify styles
+// 后续可修改样式
 css.value = '.foo { margin-top: 64px; }'
 ```
 
-## Options
+## 选项
 
-| Option    | Type      | Default          | Description                                         |
-| --------- | --------- | ---------------- | --------------------------------------------------- |
-| media     | `string`  | -                | Media query for styles to apply                     |
-| immediate | `boolean` | true             | Load the style immediately                          |
-| manual    | `boolean` | false            | Manual controls the timing of loading and unloading |
-| id        | `string`  | auto-incremented | DOM id of the style tag                             |
-| nonce     | `string`  | undefined        | Nonce value for CSP (Content Security Policy)       |
+| 选项      | 类型      | 默认值           | 描述                                               |
+| --------- | --------- | ---------------- | -------------------------------------------------- |
+| media     | `string`  | -                | 应用样式的媒体查询                                 |
+| immediate | `boolean` | true             | 立即加载样式                                       |
+| manual    | `boolean` | false            | 手动控制加载和卸载的时机                           |
+| id        | `string`  | 自增编号         | style 标签的 DOM ID                                |
+| nonce     | `string`  | undefined        | CSP（内容安全策略）的 nonce 值                     |
 
-## Returns
+## 返回值
 
-| Name     | Type         |
+| 名称     | 类型         |
 | -------- | ------------ |
 | id       | `Ref`        |
 | css      | `Ref`        |
@@ -42,6 +42,6 @@ css.value = '.foo { margin-top: 64px; }'
 | load     | `Ref`        |
 | isLoaded | `shallowRef` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useStyleTag/)
+[VueUse 文档](https://vueuse.org/core/useStyleTag/)

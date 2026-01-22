@@ -1,41 +1,41 @@
-# Server-Side Authentication
+# 服务端认证
 
 ## serverAuth()
 
-Get the Better Auth instance for advanced operations:
+获取 Better Auth 实例以进行高级操作：
 
 ```ts
 // server/api/custom.ts
 export default defineEventHandler(async (event) => {
   const auth = serverAuth()
-  // Access full Better Auth API
+  // 访问完整的 Better Auth API
   const sessions = await auth.api.listSessions({ headers: event.headers })
   return sessions
 })
 ```
 
-Module-level singleton (safe to call multiple times - returns cached instance).
+模块级单例（可多次调用——返回缓存实例）。
 
-### Available Server Methods
+### 可用的服务端方法
 
-Via `serverAuth().api`:
+通过 `serverAuth().api`：
 
 ```ts
 const auth = serverAuth()
 
-// Session management
+// 会话管理
 await auth.api.listSessions({ headers: event.headers })
 await auth.api.revokeSession({ sessionId: 'xxx' }, { headers: event.headers })
 await auth.api.revokeOtherSessions({ headers: event.headers })
 await auth.api.revokeSessions({ headers: event.headers })
 
-// User management (with admin plugin)
+// 用户管理（配合管理员插件）
 await auth.api.setRole({ userId: 'xxx', role: 'admin' }, { headers: event.headers })
 ```
 
 ## getUserSession()
 
-Get current session without throwing (returns null if not authenticated):
+获取当前会话而不抛出异常（未认证时返回 null）：
 
 ```ts
 export default defineEventHandler(async (event) => {
@@ -47,47 +47,47 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-Returns `{ user: AuthUser, session: AuthSession } | null`.
+返回 `{ user: AuthUser, session: AuthSession } | null`。
 
 ## requireUserSession()
 
-Enforce authentication - throws if not authenticated:
+强制认证——未认证时抛出异常：
 
 ```ts
 export default defineEventHandler(async (event) => {
   const { user, session } = await requireUserSession(event)
-  // user and session are guaranteed to exist
+  // 用户和会话保证存在
   return { userId: user.id }
 })
 ```
 
-- Throws `401` if not authenticated
-- Throws `403` if user matching fails
+- 若未认证则抛出 `401`
+- 若用户匹配失败则抛出 `403`
 
-## User Matching
+## 用户匹配
 
-Restrict access based on user properties:
+基于用户属性限制访问：
 
 ```ts
-// Single value - exact match
+// 单一值——精确匹配
 await requireUserSession(event, {
   user: { role: 'admin' }
 })
 
-// Array - OR logic (any value matches)
+// 数组——OR 逻辑（任意值匹配）
 await requireUserSession(event, {
   user: { role: ['admin', 'moderator'] }
 })
 
-// Multiple fields - AND logic (all must match)
+// 多字段——AND 逻辑（全部必须匹配）
 await requireUserSession(event, {
   user: { role: 'admin', verified: true }
 })
 ```
 
-## Custom Rules
+## 自定义规则
 
-For complex validation logic:
+用于复杂的验证逻辑：
 
 ```ts
 await requireUserSession(event, {
@@ -96,17 +96,17 @@ await requireUserSession(event, {
   }
 })
 
-// Combined with user matching
+// 与用户匹配结合使用
 await requireUserSession(event, {
   user: { verified: true },
   rule: ({ user }) => user.subscription?.plan === 'pro'
 })
 ```
 
-## Pattern Examples
+## 模式示例
 
 ```ts
-// Admin-only endpoint
+// 仅管理员端点
 export default defineEventHandler(async (event) => {
   const { user } = await requireUserSession(event, {
     user: { role: 'admin' }
@@ -114,7 +114,7 @@ export default defineEventHandler(async (event) => {
   return getAdminData()
 })
 
-// Premium feature
+// 高级功能
 export default defineEventHandler(async (event) => {
   await requireUserSession(event, {
     rule: ({ user }) => ['pro', 'enterprise'].includes(user.plan)
@@ -122,7 +122,7 @@ export default defineEventHandler(async (event) => {
   return getPremiumContent()
 })
 
-// Owner-only resource
+// 仅所有者资源
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
   const { user } = await requireUserSession(event)

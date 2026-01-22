@@ -1,35 +1,35 @@
 # useMagicKeys
 
-Reactive keys pressed state, with magical keys combination support.
+响应式按键按下状态，支持魔法键组合。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useMagicKeys } from '@vueuse/core'
 
-const { shift, space, a /* keys you want to monitor */ } = useMagicKeys()
+const { shift, space, a /* 要监控的按键 */ } = useMagicKeys()
 
 watch(space, (v) => {
   if (v)
-    console.log('space has been pressed')
+    console.log('space 已被按下')
 })
 
 watchEffect(() => {
   if (shift.value && a.value)
-    console.log('Shift + A have been pressed')
+    console.log('Shift + A 已被按下')
 })
 ```
 
-## Options
+## 选项
 
-| Option   | Type                                  | Default | Description                                            |
+| 选项     | 类型                                  | 默认值  | 描述                                                   |
 | -------- | ------------------------------------- | ------- | ------------------------------------------------------ |
-| reactive | `Reactive`                            | false   | Returns a reactive object instead of an object of refs |
-| target   | `MaybeRefOrGetter&lt;EventTarget&gt;` | window  | Target for listening events                            |
+| reactive | `Reactive`                            | false   | 返回一个响应式对象，而非引用对象                       |
+| target   | `MaybeRefOrGetter&lt;EventTarget&gt;` | window  | 监听事件的目标                                         |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMagicKeys/)
+[VueUse 文档](https://vueuse.org/core/useMagicKeys/)

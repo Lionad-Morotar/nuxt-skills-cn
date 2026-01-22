@@ -1,11 +1,11 @@
 # refDebounced
 
-Debounce execution of a ref value.
+防抖 ref 值的执行。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { refDebounced } from '@vueuse/core'
@@ -31,6 +31,6 @@ await sleep(1100)
 console.log(debounced.value) // { name: 'bar', age: 18 }
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/refDebounced/)
+[VueUse 文档](https://vueuse.org/core/refDebounced/)

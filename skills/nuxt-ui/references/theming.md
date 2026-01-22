@@ -1,18 +1,18 @@
-# Theming
+# 主题
 
-## Semantic Colors
+## 语义化颜色
 
-| Color       | Default | Purpose                                     |
-| ----------- | ------- | ------------------------------------------- |
-| `primary`   | green   | CTAs, active states, brand, important links |
-| `secondary` | blue    | Secondary buttons, alternatives             |
-| `success`   | green   | Success messages, positive states           |
-| `info`      | blue    | Info alerts, help text                      |
-| `warning`   | yellow  | Warnings, pending states                    |
-| `error`     | red     | Errors, destructive actions                 |
-| `neutral`   | slate   | Text, borders, disabled states              |
+| 颜色       | 默认值   | 用途                                     |
+| ----------- | -------- | ------------------------------------------- |
+| `primary`   | 绿色     | CTAs、激活状态、品牌、重要链接             |
+| `secondary` | 蓝色     | 次要按钮、替代选项                         |
+| `success`   | 绿色     | 成功信息、积极状态                         |
+| `info`      | 蓝色     | 信息警报、帮助文本                         |
+| `warning`   | 黄色     | 警告、待处理状态                           |
+| `error`     | 红色     | 错误、破坏性操作                           |
+| `neutral`   | 灰色     | 文本、边框、禁用状态                       |
 
-## Configuring Colors
+## 配置颜色
 
 ### Nuxt (app.config.ts)
 
@@ -43,22 +43,22 @@ ui({
 })
 ```
 
-## Adding Custom Colors
+## 添加自定义颜色
 
-1. Register in theme config:
+1. 在主题配置中注册：
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   ui: {
     theme: {
-      colors: ['primary', 'secondary', 'tertiary'] // Add new color
+      colors: ['primary', 'secondary', 'tertiary'] // 添加新颜色
     }
   }
 })
 ```
 
-2. Define in CSS (all 11 shades required):
+2. 在 CSS 中定义（需要所有 11 种色调）：
 
 ```css
 @theme {
@@ -76,7 +76,7 @@ export default defineNuxtConfig({
 }
 ```
 
-3. Assign and use:
+3. 分配并使用：
 
 ```ts
 // app.config.ts
@@ -86,52 +86,52 @@ export default defineAppConfig({
 ```
 
 ```vue
-<UButton color="tertiary">Custom Color</UButton>
+<UButton color="tertiary">自定义颜色</UButton>
 ```
 
-## CSS Variables
+## CSS 变量
 
-### Text Utilities
+### 文本工具类
 
-| Class              | Light | Dark | Use                       |
-| ------------------ | ----- | ---- | ------------------------- |
-| `text-dimmed`      | 400   | 500  | Placeholders, hints       |
-| `text-muted`       | 500   | 400  | Secondary text            |
-| `text-toned`       | 600   | 300  | Subtitles                 |
-| `text-default`     | 700   | 200  | Body text                 |
-| `text-highlighted` | 900   | 100  | Headings, emphasis        |
-| `text-inverted`    | 50    | 950  | On dark/light backgrounds |
+| 类名               | 浅色  | 深色   | 使用                       |
+| ------------------ | ----- | ------ | -------------------------- |
+| `text-dimmed`      | 400   | 500    | 占位符、提示               |
+| `text-muted`       | 500   | 400    | 次要文本                   |
+| `text-toned`       | 600   | 300    | 副标题                     |
+| `text-default`     | 700   | 200    | 正文文本                   |
+| `text-highlighted` | 900   | 100    | 标题、强调                 |
+| `text-inverted`    | 50    | 950    | 在深色/浅色背景上          |
 
-### Background Utilities
+### 背景工具类
 
-| Class         | Light | Dark | Use               |
-| ------------- | ----- | ---- | ----------------- |
-| `bg-default`  | white | 900  | Page background   |
-| `bg-muted`    | 50    | 800  | Subtle sections   |
-| `bg-elevated` | white | 800  | Cards, modals     |
-| `bg-accented` | 100   | 700  | Hover states      |
-| `bg-inverted` | 900   | 100  | Inverted sections |
+| 类名            | 浅色   | 深色   | 使用               |
+| --------------- | ------ | ------ | ------------------ |
+| `bg-default`    | 白色   | 900    | 页面背景           |
+| `bg-muted`      | 50     | 800    | 微妙区域           |
+| `bg-elevated`   | 白色   | 800    | 卡片、模态框       |
+| `bg-accented`   | 100    | 700    | 悬停状态           |
+| `bg-inverted`   | 900    | 100    | 反转区域           |
 
-### Border Utilities
+### 边框工具类
 
-| Class             | Light | Dark |
-| ----------------- | ----- | ---- |
-| `border-default`  | 200   | 800  |
-| `border-muted`    | 100   | 800  |
-| `border-accented` | 200   | 700  |
-| `border-inverted` | 900   | 100  |
+| 类名               | 浅色   | 深色   |
+| ------------------ | ------ | ------ |
+| `border-default`   | 200    | 800    |
+| `border-muted`     | 100    | 800    |
+| `border-accented`  | 200    | 700    |
+| `border-inverted`  | 900    | 100    |
 
-### Global Variables
+### 全局变量
 
 ```css
 :root {
-  --ui-radius: 0.25rem; /* Base border radius */
-  --ui-container: 80rem; /* Container max-width */
-  --ui-header-height: 4rem; /* Header height */
+  --ui-radius: 0.25rem; /* 基础边框圆角 */
+  --ui-container: 80rem; /* 容器最大宽度 */
+  --ui-header-height: 4rem; /* 头部高度 */
 }
 ```
 
-## Custom CSS Variables
+## 自定义 CSS 变量
 
 ```css
 /* assets/css/main.css */
@@ -144,9 +144,9 @@ export default defineAppConfig({
 }
 ```
 
-## Solid Colors (Black/White)
+## 实心颜色（黑/白）
 
-Can't use `primary: 'black'` - set in CSS:
+不能使用 `primary: 'black'` —— 应在 CSS 中设置：
 
 ```css
 :root {
@@ -157,9 +157,9 @@ Can't use `primary: 'black'` - set in CSS:
 }
 ```
 
-## Tailwind Variants Override
+## Tailwind 变体覆盖
 
-### Global Override (app.config.ts)
+### 全局覆盖（app.config.ts）
 
 ```ts
 export default defineAppConfig({
@@ -187,26 +187,26 @@ export default defineAppConfig({
 })
 ```
 
-### Per-Component Override
+### 组件级覆盖
 
 ```vue
-<!-- ui prop overrides slots -->
-<UButton :ui="{ base: 'font-mono' }">Custom</UButton>
+<!-- ui 属性覆盖 slots -->
+<UButton :ui="{ base: 'font-mono' }">自定义</UButton>
 
-<!-- class prop overrides root/base slot -->
-<UButton class="rounded-none">Square</UButton>
+<!-- class 属性覆盖根/base slot -->
+<UButton class="rounded-none">方形</UButton>
 ```
 
-## Matching Theme Structure in app.config
+## 在 app.config 中匹配主题结构
 
-**CRITICAL**: Components have two theme structure patterns. Your app.config MUST match the component's theme structure.
+**重要提示**：组件有两种主题结构模式。您的 app.config 必须与组件的主题结构相匹配。
 
-### Pattern 1: Slots-Based Themes (Most Components)
+### 模式 1：基于 Slots 的主题（大多数组件）
 
-Components like Button, Card, Input, Select use `slots:` in their theme:
+像 Button、Card、Input 和 Select 这样的组件在其主题中使用 `slots:`：
 
 ```ts
-// Component theme (Button, Card, etc.)
+// 组件主题（Button、Card 等）
 export default {
   slots: {
     base: '...',
@@ -216,65 +216,65 @@ export default {
 }
 ```
 
-**app.config usage**:
+**app.config 使用方法**：
 
 ```ts
 ui: {
   button: {
-    slots: { base: 'font-bold' }  // ✅ Match slots structure
+    slots: { base: 'font-bold' }  // ✅ 匹配 slots 结构
   }
 }
 ```
 
-### Pattern 2: Flat Base Themes (Container, Skeleton, etc.)
+### 模式 2：平铺基础主题（Container、Skeleton 等）
 
-Components like Container, Skeleton, Form, Main use flat `base:` in their theme:
+像 Container、Skeleton、Form 和 Main 这样的组件在其主题中使用平铺的 `base:`：
 
 ```ts
-// Component theme (Container, Skeleton, etc.)
+// 组件主题（Container、Skeleton 等）
 export default {
   base: 'w-full max-w-container'
 }
 ```
 
-**app.config usage**:
+**app.config 使用方法**：
 
 ```ts
 ui: {
   container: {
-    base: 'max-w-lg'  // ✅ Match flat structure
+    base: 'max-w-lg'  // ✅ 匹配平铺结构
   }
 }
 ```
 
-### Common Mistake
+### 常见错误
 
 ```ts
-// ❌ WRONG - Don't use slots for flat-base components
+// ❌ 错误 —— 对于平铺基础组件不要使用 slots
 ui: {
   container: {
-    slots: { base: 'max-w-lg' }  // TypeScript error!
+    slots: { base: 'max-w-lg' }  // TypeScript 错误！
   }
 }
 
-// ❌ WRONG - Don't use flat for slots-based components
+// ❌ 错误 —— 对于基于 slots 的组件不要使用平铺结构
 ui: {
   button: {
-    base: 'font-bold'  // Won't work correctly
+    base: 'font-bold'  // 不会正常工作
   }
 }
 ```
 
-### How to Check Component Structure
+### 如何检查组件结构
 
-1. Check component docs: https://ui.nuxt.com/components/[component]
-2. Look at "Theme" section - shows the structure
-3. Match that structure in your app.config
+1. 查看组件文档：https://ui.nuxt.com/components/[component]
+2. 查看“Theme”部分 —— 显示结构
+3. 在您的 app.config 中匹配该结构
 
-## Component Theme Structure
+## 组件主题结构
 
 ```ts
-// Each component has slots, variants, compoundVariants, defaultVariants
+// 每个组件都有 slots、variants、compoundVariants 和 defaultVariants
 export default {
   slots: {
     root: 'relative',
@@ -299,9 +299,9 @@ export default {
 }
 ```
 
-## Dark Mode
+## 深色模式
 
-Handled by `@nuxtjs/color-mode`. Access via:
+由 `@nuxtjs/color-mode` 处理。可通过以下方式访问：
 
 ```ts
 const colorMode = useColorMode()
@@ -309,15 +309,15 @@ colorMode.preference = 'dark' // 'light', 'dark', 'system'
 ```
 
 ```vue
-<UColorModeButton /> <!-- Toggle button -->
-<UColorModeSelect /> <!-- Dropdown select -->
+<UColorModeButton /> <!-- 切换按钮 -->
+<UColorModeSelect /> <!-- 下拉选择 -->
 ```
 
-## Best Practices
+## 最佳实践
 
-| Do                                     | Don't                         |
+| 做到                                   | 避免                          |
 | -------------------------------------- | ----------------------------- |
-| Use semantic colors                    | Hardcode hex values           |
-| Override via app.config                | Modify source theme files     |
-| Use CSS variables for custom colors    | Skip dark mode variants       |
-| Define all 11 shades for custom colors | Use partial shade definitions |
+| 使用语义化颜色                         | 硬编码十六进制值              |
+| 通过 app.config 覆盖                   | 修改源主题文件                |
+| 使用 CSS 变量定义自定义颜色            | 忽略深色模式变体              |
+| 为自定义颜色定义所有 11 种色调         | 使用部分色调定义              |

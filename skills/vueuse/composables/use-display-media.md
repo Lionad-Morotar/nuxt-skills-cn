@@ -1,11 +1,11 @@
 # useDisplayMedia
 
-Reactive streaming.
+响应式流式传输。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -14,12 +14,12 @@ import { useTemplateRef } from 'vue'
 
 const { stream, start } = useDisplayMedia()
 
-// start streaming
+// 开始流式传输
 start()
 
 const videoRef = useTemplateRef('video')
 watchEffect(() => {
-  // preview on a video element
+  // 在视频元素上预览
   videoRef.value.srcObject = stream.value
 })
 </script>
@@ -29,17 +29,17 @@ watchEffect(() => {
 </template>
 ```
 
-## Options
+## 选项
 
-| Option  | Type                                            | Default | Description                           |
-| ------- | ----------------------------------------------- | ------- | ------------------------------------- |
-| enabled | `MaybeRef&lt;boolean&gt;`                       | false   | If the stream is enabled              |
-| video   | `boolean \| MediaTrackConstraints \| undefined` | -       | If the stream video media constraints |
-| audio   | `boolean \| MediaTrackConstraints \| undefined` | -       | If the stream audio media constraints |
+| 选项      | 类型                                            | 默认值  | 描述                             |
+| --------- | ----------------------------------------------- | ------- | -------------------------------- |
+| enabled   | `MaybeRef&lt;boolean&gt;`                       | false   | 流是否启用                       |
+| video     | `boolean \| MediaTrackConstraints \| undefined` | -       | 流视频媒体约束                   |
+| audio     | `boolean \| MediaTrackConstraints \| undefined` | -       | 流音频媒体约束                   |
 
-## Returns
+## 返回值
 
-| Name        | Type                                         |
+| 名称        | 类型                                         |
 | ----------- | -------------------------------------------- |
 | isSupported | `useSupported`                               |
 | stream      | `shallowRef&lt;MediaStream \| undefined&gt;` |
@@ -47,6 +47,6 @@ watchEffect(() => {
 | stop        | `Ref`                                        |
 | enabled     | `shallowRef`                                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDisplayMedia/)
+[VueUse 文档](https://vueuse.org/core/useDisplayMedia/)

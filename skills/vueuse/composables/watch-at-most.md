@@ -1,33 +1,33 @@
 # watchAtMost
 
-with the number of times triggered.
+触发次数限制。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**分类：** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchAtMost } from '@vueuse/core'
 
 watchAtMost(
   source,
-  () => { console.log('trigger!') }, // triggered it at most 3 times
+  () => { console.log('trigger!') }, // 最多触发 3 次
   {
-    count: 3, // the number of times triggered
+    count: 3, // 触发次数
   },
 )
 ```
 
-## Returns
+## 返回值
 
-| Name   | Type  |
+| 名称   | 类型  |
 | ------ | ----- |
 | count  | `Ref` |
 | stop   | `Ref` |
 | resume | `Ref` |
 | pause  | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchAtMost/)
+[VueUse 文档](https://vueuse.org/core/watchAtMost/)

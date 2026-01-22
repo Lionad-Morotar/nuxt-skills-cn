@@ -1,14 +1,14 @@
-# Navigation Menu
+# 导航菜单
 
-Site navigation menu
+站点导航菜单
 
-**Parts:** `NavigationMenuRoot`, `NavigationMenuList`, `NavigationMenuItem`, `NavigationMenuTrigger`, `NavigationMenuContent`, `NavigationMenuLink`, `NavigationMenuIndicator`, `NavigationMenuViewport`, `NavigationMenuSub`
+**组件：** `NavigationMenuRoot`、`NavigationMenuList`、`NavigationMenuItem`、`NavigationMenuTrigger`、`NavigationMenuContent`、`NavigationMenuLink`、`NavigationMenuIndicator`、`NavigationMenuViewport`、`NavigationMenuSub`
 
 ## NavigationMenuRoot
 
-### Props
+### 属性
 
-| Prop                  | Type                         | Default        |
+| 属性                  | 类型                         | 默认值         |
 | --------------------- | ---------------------------- | -------------- |
 | `as`                  | `AsTag \| Component`         | `"nav"`        |
 | `asChild`             | `boolean`                    | -              |
@@ -21,42 +21,42 @@ Site navigation menu
 | `orientation`         | `"vertical" \| "horizontal"` | `"horizontal"` |
 | `skipDelayDuration`   | `number`                     | `300`          |
 
-### Emits
+### 事件
 
-| Event               | Payload           |
+| 事件                | 参数              |
 | ------------------- | ----------------- |
 | `update:modelValue` | `[value: string]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type     |
+| 插槽         | 类型     |
 | ------------ | -------- |
 | `modelValue` | `string` |
 
 ## NavigationMenuList
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"ul"`  |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"ul"` |
+| `asChild` | `boolean`            | -      |
 
 ## NavigationMenuItem
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"li"`  |
-| `asChild` | `boolean`            | -       |
-| `value`   | `string`             | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"li"` |
+| `asChild` | `boolean`            | -      |
+| `value`   | `string`             | -      |
 
 ## NavigationMenuTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -64,18 +64,18 @@ Site navigation menu
 
 ## NavigationMenuContent
 
-### Props
+### 属性
 
-| Prop                          | Type                 | Default |
-| ----------------------------- | -------------------- | ------- |
-| `as`                          | `AsTag \| Component` | `"div"` |
-| `asChild`                     | `boolean`            | -       |
-| `disableOutsidePointerEvents` | `boolean`            | -       |
-| `forceMount`                  | `boolean`            | -       |
+| 属性                            | 类型                 | 默认值 |
+| ------------------------------- | -------------------- | ------ |
+| `as`                            | `AsTag \| Component` | `"div"` |
+| `asChild`                       | `boolean`            | -      |
+| `disableOutsidePointerEvents`   | `boolean`            | -      |
+| `forceMount`                    | `boolean`            | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
 | `focusOutside`       | `[event: FocusOutsideEvent]`                          |
@@ -84,45 +84,45 @@ Site navigation menu
 
 ## NavigationMenuLink
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `active`  | `boolean`            | -       |
-| `as`      | `AsTag \| Component` | `"a"`   |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `active`  | `boolean`            | -      |
+| `as`      | `AsTag \| Component` | `"a"`  |
+| `asChild` | `boolean`            | -      |
 
-### Emits
+### 事件
 
-| Event    | Payload                                             |
-| -------- | --------------------------------------------------- |
+| 事件     | 参数                                                 |
+| -------- | ---------------------------------------------------- |
 | `select` | `[payload: CustomEvent<{ originalEvent: Event; }>]` |
 
 ## NavigationMenuIndicator
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |
 
 ## NavigationMenuViewport
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |
 
 ## NavigationMenuSub
 
-### Props
+### 属性
 
-| Prop           | Type                         | Default        |
+| 属性           | 类型                         | 默认值         |
 | -------------- | ---------------------------- | -------------- |
 | `as`           | `AsTag \| Component`         | `"div"`        |
 | `asChild`      | `boolean`                    | -              |
@@ -130,14 +130,14 @@ Site navigation menu
 | `modelValue`   | `string`                     | -              |
 | `orientation`  | `"vertical" \| "horizontal"` | `"horizontal"` |
 
-### Emits
+### 事件
 
-| Event               | Payload           |
+| 事件                | 参数              |
 | ------------------- | ----------------- |
 | `update:modelValue` | `[value: string]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type     |
+| 插槽         | 类型     |
 | ------------ | -------- |
 | `modelValue` | `string` |

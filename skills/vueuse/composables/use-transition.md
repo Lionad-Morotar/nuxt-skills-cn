@@ -1,11 +1,11 @@
 # useTransition
 
-Transition between values
+值之间的过渡
 
-**Package:** `@vueuse/core`
-**Category:** Animation
+**包：** `@vueuse/core`  
+**类别：** 动画
 
-## Usage
+## 用法
 
 ```ts
 import { TransitionPresets, useTransition } from '@vueuse/core'
@@ -19,15 +19,15 @@ const output = useTransition(source, {
 })
 ```
 
-## Options
+## 选项
 
-| Option     | Type                      | Default | Description                                     |
+| 选项       | 类型                      | 默认值  | 描述                                            |
 | ---------- | ------------------------- | ------- | ----------------------------------------------- |
-| delay      | `MaybeRef&lt;number&gt;`  | -       | Milliseconds to wait before starting transition |
-| disabled   | `MaybeRef&lt;boolean&gt;` | -       | Disables the transition                         |
-| onFinished | `() =&gt; void`           | -       | Callback to execute after transition finishes   |
-| onStarted  | `() =&gt; void`           | -       | Callback to execute after transition starts     |
+| delay      | `MaybeRef<number>`        | -       | 启动过渡前等待的毫秒数                          |
+| disabled   | `MaybeRef<boolean>`       | -       | 禁用过渡                                        |
+| onFinished | `() => void`              | -       | 过渡完成后执行的回调函数                        |
+| onStarted  | `() => void`              | -       | 过渡开始后执行的回调函数                        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTransition/)
+[VueUse 文档](https://vueuse.org/core/useTransition/)

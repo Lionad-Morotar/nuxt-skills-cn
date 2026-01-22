@@ -1,11 +1,11 @@
 # useTimeout
 
-Update value after a given time with controls.
+在指定时间后更新值并提供控制选项。
 
-**Package:** `@vueuse/shared`
-**Category:** Animation
+**包：** `@vueuse/shared`  
+**分类：** 动画
 
-## Usage
+## 用法
 
 ```ts
 import { useTimeout } from '@vueuse/core'
@@ -13,19 +13,19 @@ import { useTimeout } from '@vueuse/core'
 const ready = useTimeout(1000)
 ```
 
-## Options
+## 选项
 
-| Option   | Type       | Default | Description          |
-| -------- | ---------- | ------- | -------------------- |
-| controls | `Controls` | false   | Expose more controls |
-| callback | `Fn`       | -       | Callback on timeout  |
+| 选项     | 类型       | 默认值  | 描述               |
+| -------- | ---------- | ------- | ------------------ |
+| controls | `Controls` | false   | 提供更多控制选项   |
+| callback | `Fn`       | -       | 超时后的回调函数   |
 
-## Returns
+## 返回值
 
-| Name  | Type       |
+| 名称  | 类型       |
 | ----- | ---------- |
 | ready | `computed` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTimeout/)
+[VueUse 文档](https://vueuse.org/core/useTimeout/)

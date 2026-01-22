@@ -1,11 +1,11 @@
 # useArrayFind
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**分类：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayFind } from '@vueuse/core'
@@ -15,6 +15,6 @@ const positive = useArrayFind(list, val => val > 0)
 // positive.value: 1
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayFind/)
+[VueUse 文档](https://vueuse.org/core/useArrayFind/)

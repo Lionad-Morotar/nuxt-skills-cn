@@ -1,10 +1,10 @@
-# Carousel
+# 轮播图
 
-A carousel with motion and swipe built using Embla.
+一个使用 Embla 构建的带动画和滑动功能的轮播组件。
 
-## Key Props
+## 核心属性
 
-- `items`: as an array and render each item using the default slot:
+- `items`：以数组形式传递，并使用默认插槽渲染每一项：
 
 ## ::component-example
 
@@ -13,25 +13,23 @@ class: 'p-8'
 
 ---
 
-::
-
-You can also pass an array of objects with the following properties:
+您也可以传递一个对象数组，包含以下属性：
 
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue }`{lang="ts-type"}
 
-You can control how many items are visible by using the [`basis`](https://tailwindcss.
+您可以通过 [`basis`](https://tailwindcss.
 
-- `orientation`: to change the orientation of the Progress.
-- `arrows`: to display prev and next buttons.
-- `dots`: to display a list of dots to scroll to a specific slide.
-- `autoplay`: as a boolean or an object to configure the [Autoplay plugin](https://www.
-- `fade`: as a boolean or an object to configure the [Fade plugin](https://www.
+- `orientation`：用于更改进度条的方向。
+- `arrows`：用于显示上一页和下一页按钮。
+- `dots`：用于显示一系列圆点，以跳转到特定幻灯片。
+- `autoplay`：作为布尔值或对象来配置 [Autoplay 插件](https://www.
+- `fade`：作为布尔值或对象来配置 [Fade 插件](https://www.
 
-## Usage
+## 使用方法
 
 ```vue
 <UCarousel
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

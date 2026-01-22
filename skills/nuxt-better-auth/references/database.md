@@ -1,6 +1,6 @@
-# Database Integration
+# 数据库集成
 
-## NuxtHub Setup
+## NuxtHub 设置
 
 ```ts
 // nuxt.config.ts
@@ -8,26 +8,26 @@ export default defineNuxtConfig({
   modules: ['@nuxthub/core', '@onmax/nuxt-better-auth'],
   hub: { database: true },
   auth: {
-    secondaryStorage: true,  // Optional: KV for session caching
+    secondaryStorage: true,  // 可选：用于会话缓存的 KV
     schema: {
       usePlural: false,      // user vs users
-      casing: 'camelCase'    // camelCase or snake_case
+      casing: 'camelCase'    // camelCase 或 snake_case
     }
   }
 })
 ```
 
-## Schema Generation
+## 模式生成
 
-The module auto-generates Drizzle schema from Better Auth tables using Better Auth's schema generation API. Schema available via:
+该模块通过 Better Auth 的模式生成 API 从 Better Auth 表中自动生成 Drizzle 模式。可通过以下方式获取模式：
 
 ```ts
 import { user, session, account, verification } from '#auth/database'
 ```
 
-## Creating Custom Tables with Foreign Keys
+## 使用外键创建自定义表
 
-Create app tables that reference auth tables by importing `schema` from `hub:db`. NuxtHub auto-merges custom schemas with Better Auth tables.
+通过从 `hub:db` 导入 `schema` 创建引用认证表的应用程序表。NuxtHub 会自动将自定义模式与 Better Auth 表合并。
 
 ```ts
 // server/db/schema.ts
@@ -44,69 +44,69 @@ export const posts = sqliteTable('posts', {
 })
 ```
 
-**Available Auth Tables:**
+**可用的认证表：**
 
-- `schema.user` - User accounts
-- `schema.session` - Active sessions
-- `schema.account` - OAuth provider accounts
-- `schema.verification` - Email verification tokens
-- Plugin tables: `schema.passkey`, `schema.twoFactor`, etc.
+- `schema.user` - 用户账户
+- `schema.session` - 活跃会话
+- `schema.account` - OAuth 提供程序账户
+- `schema.verification` - 邮箱验证令牌
+- 插件表：`schema.passkey`, `schema.twoFactor` 等
 
-**ID Type Matching:**
+**ID 类型匹配：**
 
-- SQLite/MySQL: Use `text()` or `varchar()`
-- PostgreSQL with UUID: Use `uuid()` when `advanced.database.generateId = 'uuid'`
+- SQLite/MySQL：使用 `text()` 或 `varchar()`
+- PostgreSQL 使用 UUID：当 `advanced.database.generateId = 'uuid'` 时使用 `uuid()`
 
-**Migrations:**
+**迁移：**
 
 ```bash
-npx nuxt db generate  # Generate migrations
-npx nuxt db migrate   # Apply (auto in dev)
+npx nuxt db generate  # 生成迁移文件
+npx nuxt db migrate   # 应用（开发环境下自动执行）
 ```
 
-**Adding columns to auth tables:** Use Better Auth's `additionalFields` instead of custom schemas. See [Better Auth Additional Fields](https://better-auth.com/docs/concepts/database#additional-fields).
+**向认证表添加列：** 使用 Better Auth 的 `additionalFields` 而非自定义模式。参见 [Better Auth Additional Fields](https://better-auth.com/docs/concepts/database#additional-fields)。
 
-## Database Dialect
+## 数据库方言
 
-Supports: `sqlite`, `postgresql`, `mysql`
+支持：`sqlite`、`postgresql`、`mysql`
 
-Schema syntax adapts to dialect:
+模式语法根据方言调整：
 
-- SQLite: `integer('id').primaryKey()`
-- PostgreSQL/MySQL: `uuid('id').primaryKey()` or `text('id').primaryKey()`
+- SQLite：`integer('id').primaryKey()`
+- PostgreSQL/MySQL：`uuid('id').primaryKey()` 或 `text('id').primaryKey()`
 
-## Schema Options
+## 模式选项
 
 ```ts
 auth: {
   schema: {
-    usePlural: true,    // tables: users, sessions, accounts
-    casing: 'snake_case' // columns: created_at, updated_at
+    usePlural: true,    // 表名：users, sessions, accounts
+    casing: 'snake_case' // 列名：created_at, updated_at
   }
 }
 ```
 
-| Option      | Default       | Description              |
-| ----------- | ------------- | ------------------------ |
-| `usePlural` | `false`       | Pluralize table names    |
-| `casing`    | `'camelCase'` | Column naming convention |
+| 选项         | 默认值        | 描述                     |
+| ------------ | ------------- | ------------------------ |
+| `usePlural`  | `false`       | 表名使用复数形式         |
+| `casing`     | `'camelCase'` | 列命名规范               |
 
-## Extending Schema
+## 扩展模式
 
-Add custom columns via NuxtHub's schema hooks:
+通过 NuxtHub 的模式钩子添加自定义列：
 
 ```ts
 // server/plugins/extend-schema.ts
 export default defineNitroPlugin(() => {
   useNitroApp().hooks.hook('hub:db:schema:extend', (schema) => {
-    // Add custom tables or extend existing
+    // 添加自定义表或扩展现有表
   })
 })
 ```
 
-## Secondary Storage (KV)
+## 辅助存储（KV）
 
-Enable session caching with KV:
+启用 KV 以缓存会话：
 
 ```ts
 auth: {
@@ -114,25 +114,25 @@ auth: {
 }
 ```
 
-Requires `hub.kv: true` in config. Improves session lookup performance.
+需要在配置中设置 `hub.kv: true`。提升会话查找性能。
 
-## Server Config with DB
+## 带数据库的服务器配置
 
-Database adapter injected via context:
+数据库适配器通过上下文注入：
 
 ```ts
 // server/auth.config.ts
 import { defineServerAuth } from '#auth/server'
 
 export default defineServerAuth(({ db }) => ({
-  database: db,  // Already configured when hub.database: true
+  database: db,  // 当 hub.database: true 时已配置
   emailAndPassword: { enabled: true }
 }))
 ```
 
-## Manual Database Setup
+## 手动数据库设置
 
-Without NuxtHub, configure manually:
+未使用 NuxtHub 时，手动配置：
 
 ```ts
 // server/auth.config.ts
@@ -146,11 +146,11 @@ export default defineServerAuth(() => ({
 }))
 ```
 
-## Migrations
+## 迁移
 
-Better Auth creates tables automatically on first run. For production, generate migrations:
+Better Auth 在首次运行时自动创建表。生产环境中生成迁移文件：
 
 ```bash
-# Using Better Auth CLI
+# 使用 Better Auth CLI
 npx better-auth generate
 ```

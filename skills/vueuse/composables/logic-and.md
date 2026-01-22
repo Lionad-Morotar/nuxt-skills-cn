@@ -1,11 +1,11 @@
 # logicAnd
 
-condition for refs.
+引用条件。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**类别：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { whenever } from '@vueuse/core'
@@ -19,6 +19,6 @@ whenever(logicAnd(a, b), () => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/logicAnd/)
+[VueUse 文档](https://vueuse.org/core/logicAnd/)

@@ -1,16 +1,16 @@
-# ChangelogVersions
+# 变更日志版本
 
-Display a list of changelog versions in a timeline.
+以时间轴形式显示变更日志版本列表。
 
-## Key Props
+## 关键属性
 
-- `versions`: as an array of objects with the properties of the [ChangelogVersion](/docs/components/changelog-version#props) component.
-- `indicator`: to hide the indicator bar on the left.
+- `versions`：作为包含 [ChangelogVersion](/docs/components/changelog-version#props) 组件属性的对象数组。
+- `indicator`：用于隐藏左侧的指示条。
 
-## Usage
+## 用法
 
 ```vue
 <UChangelogVersions
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

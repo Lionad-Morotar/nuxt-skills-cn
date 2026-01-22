@@ -1,20 +1,20 @@
 # useTitle
 
-Reactive document title.
+响应式文档标题。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useTitle } from '@vueuse/core'
 
 const title = useTitle()
-console.log(title.value) // print current title
-title.value = 'Hello' // change current title
+console.log(title.value) // 打印当前标题
+title.value = 'Hello' // 更改当前标题
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTitle/)
+[VueUse 文档](https://vueuse.org/core/useTitle/)

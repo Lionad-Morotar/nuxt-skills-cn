@@ -1,16 +1,16 @@
-# AvatarGroup
+# 头像组
 
-Stack multiple avatars in a group.
+将多个头像堆叠成一组。
 
-## Key Props
+## 主要属性
 
-- `size`: to change the size of all the avatars.
-- `max`: to limit the number of avatars displayed.
+- `size`：用于更改所有头像的大小。
+- `max`：用于限制显示的头像数量。
 
-## Usage
+## 用法
 
 ```vue
 <UAvatarGroup
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

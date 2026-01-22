@@ -1,11 +1,11 @@
-# PageAside
+# 侧边栏
 
-A sticky aside to display your page navigation.
+用于显示页面导航的固定侧边栏。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageAside
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

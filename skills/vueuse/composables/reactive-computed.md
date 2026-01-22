@@ -1,11 +1,11 @@
 # reactiveComputed
 
-Computed reactive object. Instead of returning a ref that does, returns a reactive object.
+计算后的响应式对象。与返回 ref 的方式不同，它直接返回一个响应式对象。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { reactiveComputed } from '@vueuse/core'
@@ -20,6 +20,6 @@ const state = reactiveComputed(() => {
 state.bar // 'baz'
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/reactiveComputed/)
+[VueUse 文档](https://vueuse.org/core/reactiveComputed/)

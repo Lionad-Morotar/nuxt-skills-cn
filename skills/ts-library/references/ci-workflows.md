@@ -1,6 +1,6 @@
-# CI Workflows
+# CI 工作流
 
-## Basic CI
+## 基础 CI
 
 ```yaml
 # .github/workflows/ci.yml
@@ -48,7 +48,7 @@ jobs:
       - run: pnpm test
 ```
 
-## Matrix Testing
+## 矩阵测试
 
 ```yaml
 jobs:
@@ -75,7 +75,7 @@ jobs:
       - run: pnpm test
 ```
 
-## Skip Docs-Only Changes
+## 跳过仅文档更改
 
 ```yaml
 jobs:
@@ -94,10 +94,10 @@ jobs:
   test:
     needs: changed
     if: needs.changed.outputs.should_skip != 'true'
-    # ... rest of job
+    # ... job 剩余部分
 ```
 
-## Auto-fix Commits
+## 自动修复提交
 
 ```yaml
 - run: pnpm lint:fix
@@ -107,7 +107,7 @@ jobs:
     commit_message: 'chore: lint fix'
 ```
 
-## Release on Tag (Token-based)
+## 基于标签的发布（令牌方式）
 
 ```yaml
 # .github/workflows/release.yml
@@ -134,9 +134,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-## Release on Tag (OIDC - Recommended)
+## 基于标签的发布（OIDC - 推荐）
 
-No NPM_TOKEN needed. Uses GitHub OIDC for tokenless auth with provenance.
+无需 NPM_TOKEN。使用 GitHub OIDC 实现无令牌身份验证并附带来源证明。
 
 ```yaml
 name: Release
@@ -169,7 +169,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 24  # Required: npm 11.5.1+
+          node-version: 24  # 必需：npm 11.5.1+
           cache: pnpm
           registry-url: https://registry.npmjs.org
       - run: pnpm install
@@ -180,32 +180,32 @@ jobs:
       - run: pnpm publish --access public --no-git-checks --provenance
 ```
 
-### OIDC Setup Steps
+### OIDC 设置步骤
 
-1. Open `https://www.npmjs.com/package/<PACKAGE_NAME>/access`
-2. Scroll to "Publishing access" section
-3. Click "Add GitHub Actions" under Trusted Publishers
-4. Fill: Owner, Repository, Workflow file (`release.yml`), Environment (empty)
-5. Click "Add"
+1. 打开 `https://www.npmjs.com/package/<PACKAGE_NAME>/access`
+2. 滚动至 "Publishing access" 部分
+3. 在 Trusted Publishers 下点击 "Add GitHub Actions"
+4. 填写：所有者、仓库、工作流文件（`release.yml`）、环境（留空）
+5. 点击 "Add"
 
-### OIDC Requirements
+### OIDC 要求
 
-1. **Node.js 24+** (npm 11.5.1+ required - Node 22 has npm 10.x which fails)
-2. **Permissions**: `id-token: write`
-3. **Publish flag**: `--provenance`
-4. **package.json**: must have `repository` field
-5. **npm 2FA**: "Require 2FA or granular access token" (allows OIDC)
+1. **Node.js 24+**（npm 11.5.1+ 必需 — Node 22 使用 npm 10.x 会失败）
+2. **权限**：`id-token: write`
+3. **发布标志**：`--provenance`
+4. **package.json**：必须包含 `repository` 字段
+5. **npm 2FA**："Require 2FA or granular access token"（允许 OIDC）
 
-### Troubleshooting
+### 故障排除
 
-| Error                                 | Cause                | Fix                                       |
-| ------------------------------------- | -------------------- | ----------------------------------------- |
-| "Access token expired" E404           | npm too old          | Use Node.js 24                            |
-| ENEEDAUTH                             | Missing registry-url | Add `registry-url` to setup-node          |
-| "repository.url is empty" E422        | Missing field        | Add `repository` to package.json          |
-| "not configured as trusted publisher" | Config mismatch      | Check owner, repo, workflow match exactly |
+| 错误                                   | 原因                 | 修复                                       |
+| -------------------------------------- | -------------------- | ------------------------------------------ |
+| "Access token expired" E404            | npm 版本过旧         | 使用 Node.js 24                            |
+| ENEEDAUTH                              | 缺少 registry-url    | 在 setup-node 中添加 `registry-url`        |
+| "repository.url is empty" E422         | 字段缺失             | 在 package.json 中添加 `repository`        |
+| "not configured as trusted publisher"  | 配置不匹配           | 检查所有者、仓库、工作流是否完全一致       |
 
-## Monorepo Matrix
+## 单体仓库矩阵
 
 ```yaml
 jobs:
@@ -224,9 +224,9 @@ jobs:
       - run: pnpm --filter ${{ matrix.package }} test
 ```
 
-## Concurrency Control
+## 并发控制
 
-Cancel outdated runs:
+取消过期运行：
 
 ```yaml
 concurrency:
@@ -234,7 +234,7 @@ concurrency:
   cancel-in-progress: true
 ```
 
-## pkg-pr-new for PRs
+## PR 中的 pkg-pr-new
 
 ```yaml
 # .github/workflows/pkg-pr-new.yml
@@ -256,7 +256,7 @@ jobs:
       - run: pnpm dlx pkg-pr-new publish --compact --pnpm
 ```
 
-## Package Validation in CI
+## CI 中的包验证
 
 ```yaml
 - run: pnpm build

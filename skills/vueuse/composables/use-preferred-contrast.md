@@ -1,11 +1,11 @@
 # usePreferredContrast
 
-Reactive prefers-contrast media query.
+响应式首选对比度媒体查询。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { usePreferredContrast } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { usePreferredContrast } from '@vueuse/core'
 const preferredContrast = usePreferredContrast()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePreferredContrast/)
+[VueUse 文档](https://vueuse.org/core/usePreferredContrast/)

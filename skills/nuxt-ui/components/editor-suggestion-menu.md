@@ -1,10 +1,10 @@
 # EditorSuggestionMenu
 
-A command menu that displays formatting and action suggestions when typing the / character in the editor.
+当在编辑器中输入 / 字符时，显示格式化和操作建议的命令菜单。
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：由以下属性组成的对象数组：
 
 - [`kind?: "textAlign" | "heading" | "link" | "image" | "blockquote" | "bulletList" | "orderedList" | "codeBlock" | "horizontalRule" | "paragraph" | "clearFormatting" | "duplicate" | "delete" | "moveUp" | "moveDown" | "suggestion" | "mention" | "emoji"`{lang="ts-type"}](/docs/components/editor#handlers)
 - `label?: string`{lang="ts-type"}
@@ -25,15 +25,15 @@ class: 'p-8'
 ::
 
 ::note
-You can also pass an array of arrays to the `items` prop to create separated groups of items.
+您还可以将数组的数组传递给 `items` 属性，以创建分组项目。
 
-- `char`: to change the trigger character.
-- `options`: to customize the positioning behavior using [Floating UI options](https://floating-ui.
+- `char`：用于更改触发字符。
+- `options`：用于使用 [Floating UI 选项](https://floating-ui.com/docs) 自定义定位行为。
 
-## Usage
+## 使用方法
 
 ```vue
 <UEditorSuggestionMenu
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

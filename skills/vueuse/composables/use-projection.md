@@ -1,11 +1,11 @@
 # useProjection
 
-Reactive numeric projection from one domain to another.
+一种从一个域到另一个域的响应式数值投影。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useProjection } from '@vueuse/math'
@@ -17,6 +17,6 @@ input.value = 5 // projected.value === 50
 input.value = 10 // projected.value === 100
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useProjection/)
+[VueUse 文档](https://vueuse.org/core/useProjection/)

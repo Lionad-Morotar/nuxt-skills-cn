@@ -1,22 +1,22 @@
 # PageAnchors
 
-A list of anchors to be displayed in the page.
+页面中显示的锚点列表。
 
-## Key Props
+## 关键属性
 
-- `links`: as an array of objects with the following properties:
+- `links`: 一个对象数组，包含以下属性：
 
 - `label: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue, link?: ClassNameValue, linkLabel?: ClassNameValue, linkLabelExternalIcon?: ClassNameValue, linkLeading?: ClassNameValue, linkLeadingIcon?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/docs/components/link#props) component such as `to`, `target`, etc.
+您可以传递 [Link](/docs/components/link#props) 组件中的任意属性，例如 `to`、`target` 等。
 
-## Usage
+## 用法
 
 ```vue
 <UPageAnchors
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

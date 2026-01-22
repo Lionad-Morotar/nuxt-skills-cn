@@ -1,11 +1,11 @@
 # syncRef
 
-Two-way refs synchronization.
+双向引用同步。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { syncRef } from '@vueuse/core'
@@ -26,6 +26,6 @@ a.value = 'bar'
 console.log(b.value) // bar
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/syncRef/)
+[VueUse 文档](https://vueuse.org/core/syncRef/)

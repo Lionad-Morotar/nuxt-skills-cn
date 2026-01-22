@@ -1,14 +1,14 @@
 # Toast
 
-Temporary notifications
+临时通知
 
-**Parts:** `ToastProvider`, `ToastRoot`, `ToastViewport`, `ToastTitle`, `ToastDescription`, `ToastAction`, `ToastClose`, `ToastPortal`
+**组件：** `ToastProvider`、`ToastRoot`、`ToastViewport`、`ToastTitle`、`ToastDescription`、`ToastAction`、`ToastClose`、`ToastPortal`
 
 ## ToastProvider
 
-### Props
+### 属性
 
-| Prop             | Type                                  | Default          |
+| 属性             | 类型                                  | 默认值           |
 | ---------------- | ------------------------------------- | ---------------- |
 | `duration`       | `number`                              | `5000`           |
 | `label`          | `string`                              | `"Notification"` |
@@ -17,9 +17,9 @@ Temporary notifications
 
 ## ToastRoot
 
-### Props
+### 属性
 
-| Prop          | Type                           | Default        |
+| 属性          | 类型                           | 默认值         |
 | ------------- | ------------------------------ | -------------- |
 | `as`          | `AsTag \| Component`           | `"li"`         |
 | `asChild`     | `boolean`                      | -              |
@@ -29,9 +29,9 @@ Temporary notifications
 | `open`        | `boolean`                      | -              |
 | `type`        | `"foreground" \| "background"` | `"foreground"` |
 
-### Emits
+### 事件
 
-| Event           | Payload                  |
+| 事件            | 参数                     |
 | --------------- | ------------------------ |
 | `escapeKeyDown` | `[event: KeyboardEvent]` |
 | `pause`         | `[]`                     |
@@ -42,9 +42,9 @@ Temporary notifications
 | `swipeStart`    | `[event: SwipeEvent]`    |
 | `update:open`   | `[value: boolean]`       |
 
-### Slots
+### 插槽
 
-| Slot        | Type      |
+| 插槽        | 类型      |
 | ----------- | --------- |
 | `open`      | `boolean` |
 | `remaining` | `number`  |
@@ -52,9 +52,9 @@ Temporary notifications
 
 ## ToastViewport
 
-### Props
+### 属性
 
-| Prop      | Type                                     | Default                      |
+| 属性      | 类型                                     | 默认值                       |
 | --------- | ---------------------------------------- | ---------------------------- |
 | `as`      | `AsTag \| Component`                     | `"ol"`                       |
 | `asChild` | `boolean`                                | -                            |
@@ -63,27 +63,27 @@ Temporary notifications
 
 ## ToastTitle
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ToastDescription
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ToastAction
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
+| 属性        | 类型                 | 默认值  |
 | ----------- | -------------------- | ------- |
 | `altText`\* | `string`             | -       |
 | `as`        | `AsTag \| Component` | `"div"` |
@@ -91,18 +91,18 @@ Temporary notifications
 
 ## ToastClose
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## ToastPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
+| 属性         | 类型                    | 默认值  |
 | ------------ | ----------------------- | ------- |
 | `disabled`   | `boolean`               | -       |
 | `forceMount` | `boolean`               | -       |

@@ -1,75 +1,75 @@
-# Dialog
+# 对话框
 
-Modal dialog
+模态对话框
 
-**Parts:** `DialogRoot`, `DialogTrigger`, `DialogPortal`, `DialogOverlay`, `DialogContent`, `DialogTitle`, `DialogDescription`, `DialogClose`
+**组件：** `DialogRoot`、`DialogTrigger`、`DialogPortal`、`DialogOverlay`、`DialogContent`、`DialogTitle`、`DialogDescription`、`DialogClose`
 
 ## DialogRoot
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
 | `defaultOpen` | `boolean` | `false` |
 | `modal`       | `boolean` | `true`  |
-| `open`        | `boolean` | -       |
+| `open`        | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload            |
+| 事件          | 参数               |
 | ------------- | ------------------ |
 | `update:open` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## DialogTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## DialogPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## DialogOverlay
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |
 
 ## DialogContent
 
-### Props
+### 属性
 
-| Prop                          | Type                 | Default |
-| ----------------------------- | -------------------- | ------- |
+| 属性                          | 类型                 | 默认值 |
+| ----------------------------- | -------------------- | ------ |
 | `as`                          | `AsTag \| Component` | `"div"` |
-| `asChild`                     | `boolean`            | -       |
-| `disableOutsidePointerEvents` | `boolean`            | -       |
-| `forceMount`                  | `boolean`            | -       |
-| `trapFocus`                   | `boolean`            | -       |
+| `asChild`                     | `boolean`            | -      |
+| `disableOutsidePointerEvents` | `boolean`            | -      |
+| `forceMount`                  | `boolean`            | -      |
+| `trapFocus`                   | `boolean`            | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `closeAutoFocus`     | `[event: Event]`                                      |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
@@ -80,27 +80,27 @@ Modal dialog
 
 ## DialogTitle
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"h2"`  |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"h2"` |
+| `asChild` | `boolean`            | -      |
 
 ## DialogDescription
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"p"`   |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"p"`  |
+| `asChild` | `boolean`            | -      |
 
 ## DialogClose
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |

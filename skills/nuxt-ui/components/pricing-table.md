@@ -1,16 +1,16 @@
-# PricingTable
+# 价格表
 
-A responsive pricing table component that displays tiered pricing plans with feature comparisons.
+一个响应式价格表组件，用于显示分层定价计划并进行功能对比。
 
-## Key Props
+## 主要属性
 
-- `tiers`: as an array of objects to define your pricing plans.
-- `sections`: to organize features into logical groups.
+- `tiers`：作为对象数组，用于定义您的定价计划。
+- `sections`：用于将功能组织成逻辑分组。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPricingTable
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

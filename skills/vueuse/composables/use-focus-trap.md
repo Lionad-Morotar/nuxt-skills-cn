@@ -1,11 +1,11 @@
 # useFocusTrap
 
-Reactive wrapper for .
+用于 `@vueuse/integrations` 的响应式包装器。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包：** `@vueuse/integrations`
+**分类：** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -19,28 +19,28 @@ const { hasFocus, activate, deactivate } = useFocusTrap(target)
 <template>
   <div>
     <button @click="activate()">
-      Activate
+      启用
     </button>
     <div ref="target">
-      <span>Has Focus: {{ hasFocus }}</span>
+      <span>拥有焦点：{{ hasFocus }}</span>
       <input type="text">
       <button @click="deactivate()">
-        Deactivate
+        禁用
       </button>
     </div>
   </div>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option    | Type      | Default | Description                   |
-| --------- | --------- | ------- | ----------------------------- |
-| immediate | `boolean` | -       | Immediately activate the trap |
+| 选项      | 类型      | 默认值  | 描述                         |
+| --------- | --------- | ------- | ---------------------------- |
+| immediate | `boolean` | -       | 立即激活焦点陷阱             |
 
-## Returns
+## 返回值
 
-| Name       | Type         |
+| 名称       | 类型         |
 | ---------- | ------------ |
 | hasFocus   | `shallowRef` |
 | isPaused   | `shallowRef` |
@@ -49,6 +49,6 @@ const { hasFocus, activate, deactivate } = useFocusTrap(target)
 | pause      | `Ref`        |
 | unpause    | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFocusTrap/)
+[VueUse 文档](https://vueuse.org/core/useFocusTrap/)

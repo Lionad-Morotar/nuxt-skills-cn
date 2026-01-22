@@ -1,10 +1,10 @@
 # useSessionStorage
 
-Reactive SessionStorage.
+响应式 SessionStorage。
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`
+**类别：** 状态
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSessionStorage/)
+[VueUse 文档](https://vueuse.org/core/useSessionStorage/)

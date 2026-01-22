@@ -1,11 +1,11 @@
 # useFps
 
-Reactive FPS (frames per second).
+响应式 FPS（每秒帧数）。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useFps } from '@vueuse/core'
@@ -13,12 +13,12 @@ import { useFps } from '@vueuse/core'
 const fps = useFps()
 ```
 
-## Options
+## 选项
 
-| Option | Type     | Default | Description                          |
-| ------ | -------- | ------- | ------------------------------------ |
-| every  | `number` | 10      | Calculate the FPS on every x frames. |
+| 选项 | 类型     | 默认值 | 描述                             |
+| ---- | -------- | ------ | -------------------------------- |
+| every  | `number` | 10     | 每隔 x 帧计算一次 FPS。         |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFps/)
+[VueUse 文档](https://vueuse.org/core/useFps/)

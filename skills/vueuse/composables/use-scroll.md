@@ -1,11 +1,11 @@
 # useScroll
 
-Reactive scroll position and state.
+响应式滚动位置与状态。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -21,17 +21,17 @@ const { x, y, isScrolling, arrivedState, directions } = useScroll(el)
 </template>
 ```
 
-## Options
+## 选项
 
-| Option   | Type     | Default | Description                                               |
-| -------- | -------- | ------- | --------------------------------------------------------- |
-| throttle | `number` | 0       | Throttle time for scroll event, it’s disabled by default. |
-| idle     | `number` | 200     | The check time when scrolling ends.                       |
-| offset   | `{`      | -       | Offset arrived states by x pixels                         |
+| 选项     | 类型     | 默认值  | 描述                                                   |
+| -------- | -------- | ------- | ------------------------------------------------------ |
+| throttle | `number` | 0       | 滚动事件的节流时间，默认禁用。                         |
+| idle     | `number` | 200     | 滚动结束时的检测时间。                                 |
+| offset   | `{`      | -       | 按照 x 像素偏移到达状态。                              |
 
-## Returns
+## 返回值
 
-| Name         | Type         |
+| 名称         | 类型         |
 | ------------ | ------------ |
 | x            | `computed`   |
 | y            | `computed`   |
@@ -39,6 +39,6 @@ const { x, y, isScrolling, arrivedState, directions } = useScroll(el)
 | arrivedState | `reactive`   |
 | directions   | `reactive`   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useScroll/)
+[VueUse 文档](https://vueuse.org/core/useScroll/)

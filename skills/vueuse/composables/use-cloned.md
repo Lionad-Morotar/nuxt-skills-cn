@@ -1,11 +1,11 @@
 # useCloned
 
-Reactive clone of a ref. By default, it use to do the clone.
+响应式克隆 ref。默认情况下，用于执行克隆操作。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`  
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useCloned } from '@vueuse/core'
@@ -19,21 +19,21 @@ original.value.key = 'some new value'
 console.log(cloned.value.key) // 'value'
 ```
 
-## Options
+## 选项
 
-| Option | Type                  | Default | Description            |
+| 选项   | 类型                  | 默认值  | 描述                   |
 | ------ | --------------------- | ------- | ---------------------- |
-| clone  | `(source: T) =&gt; T` | -       | Custom clone function. |
-| manual | `boolean`             | false   | Manually sync the ref  |
+| clone  | `(source: T) =&gt; T` | -       | 自定义克隆函数。       |
+| manual | `boolean`             | false   | 手动同步 ref           |
 
-## Returns
+## 返回值
 
-| Name       | Type                        |
+| 名称       | 类型                        |
 | ---------- | --------------------------- |
 | cloned     | `deepRef`                   |
 | isModified | `shallowRef&lt;boolean&gt;` |
 | sync       | `Ref`                       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCloned/)
+[VueUse 文档](https://vueuse.org/core/useCloned/)

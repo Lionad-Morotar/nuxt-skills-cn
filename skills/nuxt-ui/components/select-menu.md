@@ -1,12 +1,12 @@
 # SelectMenu
 
-An advanced searchable select element.
+一个高级的可搜索选择元素。
 
-> Based on [Reka UI SelectMenu](https://reka-ui.com/docs/components/combobox)
+> 基于 [Reka UI SelectMenu](https://reka-ui.com/docs/components/combobox)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of strings, numbers or booleans:
+- `items`：作为字符串、数字或布尔值的数组：
 
 ## ::component-code
 
@@ -28,7 +28,7 @@ ignore:
 
 ::
 
-You can also pass an array of objects with the following properties:
+你也可以传入一个对象数组，包含以下属性：
 
 - `label?: string`{lang="ts-type"}
 - [`type?: "label" | "separator" | "item"`{lang="ts-type"}](#with-items-type)
@@ -45,24 +45,24 @@ You can also pass an array of objects with the following properties:
 ignore:
 
 - modelValue.
-- `multiple`: to allow multiple selections, the selected items will be separated by a comma in the trigger.
-- `placeholder`: to set a placeholder text.
-- `content`: to control how the SelectMenu content is rendered, like its `align` or `side` for example.
-- `arrow`: to display an arrow on the SelectMenu.
-- `color`: to change the ring color when the SelectMenu is focused.
-- `variant`: to change the variant of the SelectMenu.
-- `size`: to change the size of the SelectMenu.
-- `icon`: to show an [Icon](/docs/components/icon) inside the SelectMenu.
-- `avatar`: to display an [Avatar](/docs/components/avatar) inside the SelectMenu.
+- `multiple`：用于允许多选，选中的项目将在触发器中以逗号分隔。
+- `placeholder`：用于设置占位文本。
+- `content`：用于控制 SelectMenu 内容的渲染方式，例如其 `align` 或 `side`。
+- `arrow`：用于在 SelectMenu 上显示箭头。
+- `color`：用于更改 SelectMenu 获得焦点时的边框颜色。
+- `variant`：用于更改 SelectMenu 的变体。
+- `size`：用于更改 SelectMenu 的尺寸。
+- `icon`：用于在 SelectMenu 中显示 [Icon](/docs/components/icon)。
+- `avatar`：用于在 SelectMenu 中显示 [Avatar](/docs/component/avatar)。
 
-## Usage
+## 用法
 
 ```vue
 <USelectMenu
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#leading`

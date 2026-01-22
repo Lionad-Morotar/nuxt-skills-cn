@@ -1,13 +1,13 @@
 # Toast
 
-A succinct message to provide information or feedback to the user.
+简洁的消息，用于向用户提供建议或反馈信息。
 
-> Based on [Reka UI Toast](https://reka-ui.com/docs/components/toast)
+> 基于 [Reka UI Toast](https://reka-ui.com/docs/components/toast)
 
-## Usage
+## 用法
 
 ```vue
 <UToast
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

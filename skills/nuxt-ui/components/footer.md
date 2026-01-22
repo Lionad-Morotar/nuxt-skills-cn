@@ -1,11 +1,11 @@
-# Footer
+# 页脚
 
-A responsive footer component.
+一个响应式的页脚组件。
 
-## Usage
+## 使用方法
 
 ```vue
 <UFooter
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

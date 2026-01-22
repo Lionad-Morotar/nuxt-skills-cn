@@ -1,19 +1,19 @@
-# CI Workflow Templates
+# CI 工作流模板
 
-Copy-paste templates for GitHub Actions.
+用于 GitHub Actions 的复制粘贴模板。
 
-## Contents
+## 目录
 
-- [ci.yml](#ciyml) - Lint, typecheck, test
-- [pkg.yml](#pkgyml) - Preview packages via pkg-pr-new
-- [release.yml](#releaseyml) - npm publish + GitHub release
-- [npm Trusted Publishing Setup](#npm-trusted-publishing-setup)
+- [ci.yml](#ciyml) - 代码检查、类型检查、测试
+- [pkg.yml](#pkgyml) - 通过 pkg-pr-new 预览包
+- [release.yml](#releaseyml) - npm 发布 + GitHub 发布
+- [npm 可信发布设置](#npm-trusted-publishing-setup)
 
 ---
 
 ## ci.yml
 
-Runs lint, typecheck, and tests on every push/PR/tag.
+在每次推送/拉取请求/标签推送时运行代码检查、类型检查和测试。
 
 ```yaml
 name: ci
@@ -45,7 +45,7 @@ jobs:
 
 ## pkg.yml
 
-Publishes preview packages for every PR via pkg-pr-new.
+通过 pkg-pr-new 为每次拉取请求发布预览包。
 
 ```yaml
 name: pkg.new
@@ -75,7 +75,7 @@ jobs:
 
 ## release.yml
 
-Triggered by tag push. Waits for CI, then publishes to npm via OIDC + creates GitHub release.
+由标签推送触发。等待 CI 完成后，通过 OIDC 发布到 npm 并创建 GitHub 发布。
 
 ```yaml
 name: release
@@ -129,23 +129,23 @@ jobs:
         run: npm publish --provenance --access public
 ```
 
-## npm Trusted Publishing Setup (OIDC)
+## npm 可信发布设置（OIDC）
 
-**Preferred method** - No `NPM_TOKEN` secret needed. Uses OIDC for secure, tokenless authentication.
+**首选方式** - 无需 `NPM_TOKEN` 秘密。使用 OIDC 实现安全、无令牌的身份验证。
 
-**See also:** [ts-library/ci-workflows.md](../../ts-library/references/ci-workflows.md) for general TypeScript library CI patterns.
+**另见：** [ts-library/ci-workflows.md](../../ts-library/references/ci-workflows.md) 了解通用 TypeScript 库 CI 模式。
 
-### Requirements
+### 要求
 
-1. **Node.js 24+** (npm 11.5.1+ required for OIDC - Node 22 has npm 10.x which fails)
-2. **Workflow permissions**: `id-token: write`
-3. **Publish command**: must include `--provenance` flag
-4. **package.json**: must have `repository` field for provenance verification
-5. **npm 2FA setting**: "Require 2FA or granular access token" (first option, allows tokens)
+1. **Node.js 24+**（OIDC 需要 npm 11.5.1+ —— Node 22 的 npm 为 10.x，会失败）
+2. **工作流权限**：`id-token: write`
+3. **发布命令**：必须包含 `--provenance` 标志
+4. **package.json**：必须有 `repository` 字段以进行来源验证
+5. **npm 2FA 设置**：设置为“需要 2FA 或细粒度访问令牌”（第一项，允许使用令牌）
 
-### package.json Requirements
+### package.json 要求
 
-Each package must have a `repository` field or provenance verification fails:
+每个包必须有 `repository` 字段，否则来源验证失败：
 
 ```json
 {
@@ -154,35 +154,35 @@ Each package must have a `repository` field or provenance verification fails:
 }
 ```
 
-### Setup Steps
+### 设置步骤
 
-1. **Open package settings**: `https://www.npmjs.com/package/<PACKAGE_NAME>/access`
-2. **Scroll to "Publishing access"** section
-3. **Click "Add GitHub Actions"** under Trusted Publishers
-4. **Fill in the form**:
-   - Owner: `<github-org-or-username>`
-   - Repository: `<repo-name>`
-   - Workflow file: `release.yml`
-   - Environment: _(leave empty)_
-5. **Click "Add"**
+1. **打开包设置**：`https://www.npmjs.com/package/<PACKAGE_NAME>/access`
+2. **滚动至“发布权限”** 部分
+3. **在可信发布者下点击“添加 GitHub Actions”**
+4. **填写表单**：
+   - 所有者：`<github-org-or-username>`
+   - 仓库：`<repo-name>`
+   - 工作流文件：`release.yml`
+   - 环境变量：（留空）
+5. **点击“添加”**
 
-Repeat for each package in your monorepo.
+为单体仓库中的每个包重复此操作。
 
-### Troubleshooting
+### 故障排除
 
-| Error                                         | Cause                    | Fix                                                            |
-| --------------------------------------------- | ------------------------ | -------------------------------------------------------------- |
-| "Access token expired or revoked" E404        | npm version too old      | Use Node.js 24 (npm 11.5.1+)                                   |
-| ENEEDAUTH                                     | Missing registry-url     | Add `registry-url: 'https://registry.npmjs.org'` to setup-node |
-| "repository.url is empty" E422                | Missing repository field | Add `repository` to package.json                               |
-| "npm/xyz not configured as trusted publisher" | Mismatch in config       | Check owner, repo, workflow filename match exactly             |
+| 错误                                         | 原因                    | 解决方案                                                            |
+| --------------------------------------------- | ------------------------ | ------------------------------------------------------------------ |
+| "Access token expired or revoked" E404        | npm 版本过旧              | 使用 Node.js 24（npm 11.5.1+）                                     |
+| ENEEDAUTH                                     | 缺少 registry-url        | 在 setup-node 中添加 `registry-url: 'https://registry.npmjs.org'` |
+| "repository.url is empty" E422                | 缺少 repository 字段       | 在 package.json 中添加 `repository` 字段                           |
+| "npm/xyz not configured as trusted publisher" | 配置不匹配                 | 检查所有者、仓库、工作流文件名是否完全一致                         |
 
-### Verify Setup
+### 验证设置
 
-The workflow uses OIDC when:
+当满足以下条件时，工作流将使用 OIDC：
 
-- `id-token: write` permission is set
-- `--provenance` flag is used
-- No `NODE_AUTH_TOKEN` env var is set
+- 设置了 `id-token: write` 权限
+- 使用了 `--provenance` 标志
+- 未设置 `NODE_AUTH_TOKEN` 环境变量
 
-npm automatically detects GitHub Actions and authenticates via OIDC.
+npm 自动检测 GitHub Actions 并通过 OIDC 进行身份验证。

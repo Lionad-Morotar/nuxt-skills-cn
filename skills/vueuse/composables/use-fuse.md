@@ -1,11 +1,11 @@
 # useFuse
 
-Easily implement fuzzy search using a composable with Fuse.js.
+通过 Fuse.js 轻松实现可组合的模糊搜索。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包：** `@vueuse/integrations`  
+**类别：** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 import { useFuse } from '@vueuse/integrations/useFuse'
@@ -24,7 +24,7 @@ const input = shallowRef('Jhon D')
 const { results } = useFuse(input, data)
 
 /*
- * Results:
+ * 结果：
  *
  * { "item": "John Doe", "index": 1 }
  * { "item": "John Smith", "index": 0 }
@@ -33,13 +33,13 @@ const { results } = useFuse(input, data)
  */
 ```
 
-## Returns
+## 返回值
 
-| Name    | Type      |
+| 名称    | 类型      |
 | ------- | --------- |
 | fuse    | `deepRef` |
 | results | `Ref`     |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFuse/)
+[VueUse 文档](https://vueuse.org/core/useFuse/)

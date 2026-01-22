@@ -1,45 +1,45 @@
-# Menubar
+# 菜单栏
 
-Horizontal menu bar
+水平菜单栏
 
-**Parts:** `MenubarRoot`, `MenubarMenu`, `MenubarTrigger`, `MenubarPortal`, `MenubarContent`, `MenubarItem`, `MenubarCheckboxItem`, `MenubarRadioGroup`, `MenubarRadioItem`, `MenubarItemIndicator`, `MenubarLabel`, `MenubarGroup`, `MenubarSeparator`, `MenubarSub`, `MenubarSubTrigger`, `MenubarSubContent`, `MenubarArrow`
+**组成部分：** `MenubarRoot`、`MenubarMenu`、`MenubarTrigger`、`MenubarPortal`、`MenubarContent`、`MenubarItem`、`MenubarCheckboxItem`、`MenubarRadioGroup`、`MenubarRadioItem`、`MenubarItemIndicator`、`MenubarLabel`、`MenubarGroup`、`MenubarSeparator`、`MenubarSub`、`MenubarSubTrigger`、`MenubarSubContent`、`MenubarArrow`
 
 ## MenubarRoot
 
-### Props
+### 属性
 
-| Prop           | Type             | Default |
-| -------------- | ---------------- | ------- |
-| `defaultValue` | `string`         | -       |
-| `dir`          | `"ltr" \| "rtl"` | -       |
-| `loop`         | `boolean`        | `false` |
-| `modelValue`   | `string`         | -       |
+| 属性           | 类型             | 默认值 |
+| -------------- | ---------------- | ------ |
+| `defaultValue` | `string`         | -      |
+| `dir`          | `"ltr" \| "rtl"` | -      |
+| `loop`         | `boolean`        | `false`|
+| `modelValue`   | `string`         | -      |
 
-### Emits
+### 事件
 
-| Event               | Payload            |
+| 事件                | 参数               |
 | ------------------- | ------------------ |
 | `update:modelValue` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type     |
+| 插槽         | 类型     |
 | ------------ | -------- |
 | `modelValue` | `string` |
 
 ## MenubarMenu
 
-### Props
+### 属性
 
-| Prop    | Type     | Default |
-| ------- | -------- | ------- |
-| `value` | `string` | -       |
+| 属性    | 类型     | 默认值 |
+| ------- | -------- | ------ |
+| `value` | `string` | -      |
 
 ## MenubarTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -47,19 +47,19 @@ Horizontal menu bar
 
 ## MenubarPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## MenubarContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default   |
+| 属性                     | 类型                                                    | 默认值    |
 | ------------------------ | ------------------------------------------------------- | --------- |
 | `align`                  | `"start" \| "center" \| "end"`                          | `"start"` |
 | `alignOffset`            | `number`                                                | -         |
@@ -78,195 +78,195 @@ Horizontal menu bar
 | `sticky`                 | `"partial" \| "always"`                                 | -         |
 | `updatePositionStrategy` | `"always" \| "optimized"`                               | -         |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
-| -------------------- | ----------------------------------------------------- |
-| `closeAutoFocus`     | `[event: Event]`                                      |
-| `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
-| `focusOutside`       | `[event: FocusOutsideEvent]`                          |
+| 事件                 | 参数                                               |
+| -------------------- | -------------------------------------------------- |
+| `closeAutoFocus`     | `[event: Event]`                                   |
+| `escapeKeyDown`      | `[event: KeyboardEvent]`                           |
+| `focusOutside`       | `[event: FocusOutsideEvent]`                       |
 | `interactOutside`    | `[event: PointerDownOutsideEvent \| FocusOutsideE...` |
-| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                    |
+| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                 |
 
 ## MenubarItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
-| `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
+| `as`        | `AsTag \| Component` | `"div"`|
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
 
-### Emits
+### 事件
 
-| Event    | Payload          |
-| -------- | ---------------- |
-| `select` | `[event: Event]` |
+| 事件     | 参数              |
+| -------- | ----------------- |
+| `select` | `[event: Event]`  |
 
 ## MenubarCheckboxItem
 
-### Props
+### 属性
 
-| Prop        | Type                               | Default |
-| ----------- | ---------------------------------- | ------- |
-| `as`        | `AsTag \| Component`               | `"div"` |
-| `asChild`   | `boolean`                          | -       |
-| `checked`   | `false \| true \| "indeterminate"` | -       |
-| `disabled`  | `boolean`                          | -       |
-| `textValue` | `string`                           | -       |
+| 属性        | 类型                               | 默认值 |
+| ----------- | ---------------------------------- | ------ |
+| `as`        | `AsTag \| Component`               | `"div"`|
+| `asChild`   | `boolean`                          | -      |
+| `checked`   | `false \| true \| "indeterminate"` | -      |
+| `disabled`  | `boolean`                          | -      |
+| `textValue` | `string`                           | -      |
 
-### Emits
+### 事件
 
-| Event            | Payload              |
-| ---------------- | -------------------- |
-| `select`         | `[event: Event]`     |
-| `update:checked` | `[payload: boolean]` |
+| 事件             | 参数                |
+| ---------------- | ------------------- |
+| `select`         | `[event: Event]`    |
+| `update:checked` | `[payload: boolean]`|
 
 ## MenubarRadioGroup
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
-| `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `modelValue` | `string`             | -       |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
+| `as`         | `AsTag \| Component` | `"div"`|
+| `asChild`    | `boolean`            | -      |
+| `modelValue` | `string`             | -      |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
-| ------------------- | ------------------- |
-| `update:modelValue` | `[payload: string]` |
+| 事件                | 参数               |
+| ------------------- | ------------------ |
+| `update:modelValue` | `[payload: string]`|
 
 ## MenubarRadioItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
-| `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
-| `value`\*   | `string`             | -       |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
+| `as`        | `AsTag \| Component` | `"div"`|
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
+| `value`\*   | `string`             | -      |
 
-### Emits
+### 事件
 
-| Event    | Payload          |
-| -------- | ---------------- |
-| `select` | `[event: Event]` |
+| 事件     | 参数              |
+| -------- | ----------------- |
+| `select` | `[event: Event]`  |
 
 ## MenubarItemIndicator
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
-| `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
+| `as`         | `AsTag \| Component` | `"div"`|
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |
 
 ## MenubarLabel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"div"`|
+| `asChild` | `boolean`            | -      |
 
 ## MenubarGroup
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"div"`|
+| `asChild` | `boolean`            | -      |
 
 ## MenubarSeparator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"div"`|
+| `asChild` | `boolean`            | -      |
 
 ## MenubarSub
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
-| `defaultOpen` | `boolean` | -       |
-| `open`        | `boolean` | -       |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
+| `defaultOpen` | `boolean` | -      |
+| `open`        | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload              |
-| ------------- | -------------------- |
-| `update:open` | `[payload: boolean]` |
+| 事件           | 参数                |
+| -------------- | ------------------- |
+| `update:open`  | `[payload: boolean]`|
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## MenubarSubTrigger
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
-| `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
+| `as`        | `AsTag \| Component` | `"div"`|
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
 
 ## MenubarSubContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default |
-| ------------------------ | ------------------------------------------------------- | ------- |
-| `alignOffset`            | `number`                                                | -       |
-| `arrowPadding`           | `number`                                                | -       |
-| `as`                     | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                | `boolean`                                               | -       |
-| `avoidCollisions`        | `boolean`                                               | -       |
-| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `forceMount`             | `boolean`                                               | -       |
-| `hideWhenDetached`       | `boolean`                                               | -       |
-| `loop`                   | `boolean`                                               | -       |
-| `prioritizePosition`     | `boolean`                                               | -       |
-| `sideOffset`             | `number`                                                | -       |
-| `sticky`                 | `"partial" \| "always"`                                 | -       |
-| `updatePositionStrategy` | `"always" \| "optimized"`                               | -       |
+| 属性                     | 类型                                                    | 默认值 |
+| ------------------------ | ------------------------------------------------------- | ------ |
+| `alignOffset`            | `number`                                                | -      |
+| `arrowPadding`           | `number`                                                | -      |
+| `as`                     | `AsTag \| Component`                                    | `"div"`|
+| `asChild`                | `boolean`                                               | -      |
+| `avoidCollisions`        | `boolean`                                               | -      |
+| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `forceMount`             | `boolean`                                               | -      |
+| `hideWhenDetached`       | `boolean`                                               | -      |
+| `loop`                   | `boolean`                                               | -      |
+| `prioritizePosition`     | `boolean`                                               | -      |
+| `sideOffset`             | `number`                                                | -      |
+| `sticky`                 | `"partial" \| "always"`                                 | -      |
+| `updatePositionStrategy` | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
-| -------------------- | ----------------------------------------------------- |
-| `closeAutoFocus`     | `[event: Event]`                                      |
-| `entryFocus`         | `[event: Event]`                                      |
-| `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
-| `focusOutside`       | `[event: FocusOutsideEvent]`                          |
-| `interactOutside`    | `[event: PointerDownOutsideEvent \| FocusOutsideE...` |
-| `openAutoFocus`      | `[event: Event]`                                      |
-| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                    |
+| 事件                  | 参数                                               |
+| --------------------- | -------------------------------------------------- |
+| `closeAutoFocus`      | `[event: Event]`                                   |
+| `entryFocus`          | `[event: Event]`                                   |
+| `escapeKeyDown`       | `[event: KeyboardEvent]`                           |
+| `focusOutside`        | `[event: FocusOutsideEvent]`                       |
+| `interactOutside`     | `[event: PointerDownOutsideEvent \| FocusOutsideE...` |
+| `openAutoFocus`       | `[event: Event]`                                   |
+| `pointerDownOutside`  | `[event: PointerDownOutsideEvent]`                 |
 
 ## MenubarArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"svg"` |
-| `asChild` | `boolean`            | -       |
-| `height`  | `number`             | `5`     |
-| `width`   | `number`             | `10`    |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"svg"`|
+| `asChild` | `boolean`            | -      |
+| `height`  | `number`             | `5`    |
+| `width`   | `number`             | `10`   |

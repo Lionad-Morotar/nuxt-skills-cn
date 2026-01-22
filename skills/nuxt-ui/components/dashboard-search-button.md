@@ -1,16 +1,16 @@
 # DashboardSearchButton
 
-A pre-styled Button to open the DashboardSearch modal.
+用于打开 DashboardSearch 模态框的预设样式按钮。
 
-## Key Props
+## 主要属性
 
-- `collapsed`: to hide the button's label and [kbds](#kbds).
-- `kbds`: to display keyboard keys in the button.
+- `collapsed`：用于隐藏按钮标签和 [kbds](#kbds)。
+- `kbds`：用于在按钮中显示键盘按键。
 
-## Usage
+## 用法
 
 ```vue
 <UDashboardSearchButton
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

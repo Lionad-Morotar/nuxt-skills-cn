@@ -1,11 +1,11 @@
 # useCountdown
 
-Wrapper for that provides a countdown timer.
+用于提供倒计时器的封装。
 
-**Package:** `@vueuse/core`
-**Category:** Time
+**包：** `@vueuse/core`
+**类别：** 时间
 
-## Usage
+## 用法
 
 ```ts
 import { useCountdown } from '@vueuse/core'
@@ -21,18 +21,18 @@ const { remaining, start, stop, pause, resume } = useCountdown(countdownSeconds,
 })
 ```
 
-## Options
+## 选项
 
-| Option     | Type                             | Default | Description                                                    |
-| ---------- | -------------------------------- | ------- | -------------------------------------------------------------- |
-| interval   | `MaybeRefOrGetter&lt;number&gt;` | -       | Interval for the countdown in milliseconds. Default is 1000ms. |
-| onComplete | `() =&gt; void`                  | -       | Callback function called when the countdown reaches 0.         |
-| onTick     | `() =&gt; void`                  | -       | Callback function called on each tick of the countdown.        |
-| immediate  | `boolean`                        | false   | Start the countdown immediately                                |
+| 选项       | 类型                             | 默认值  | 描述                                                         |
+| ---------- | -------------------------------- | ------- | ------------------------------------------------------------ |
+| interval   | `MaybeRefOrGetter<number>`       | -       | 倒计时的间隔，单位为毫秒。默认值为 1000 毫秒。               |
+| onComplete | `() => void`                     | -       | 倒计时归零时调用的回调函数。                                 |
+| onTick     | `() => void`                     | -       | 倒计时每次更新时调用的回调函数。                             |
+| immediate  | `boolean`                        | false   | 是否立即启动倒计时。                                         |
 
-## Returns
+## 返回值
 
-| Name      | Type         |
+| 名称      | 类型         |
 | --------- | ------------ |
 | remaining | `shallowRef` |
 | reset     | `Ref`        |
@@ -42,6 +42,6 @@ const { remaining, start, stop, pause, resume } = useCountdown(countdownSeconds,
 | resume    | `Ref`        |
 | isActive  | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCountdown/)
+[VueUse 文档](https://vueuse.org/core/useCountdown/)

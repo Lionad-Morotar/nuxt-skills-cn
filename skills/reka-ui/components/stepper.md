@@ -1,14 +1,14 @@
-# Stepper
+# 步进器
 
-Multi-step progress indicator
+多步骤进度指示器
 
-**Parts:** `StepperRoot`, `StepperItem`, `StepperTrigger`, `StepperTitle`, `StepperDescription`, `StepperIndicator`, `StepperSeparator`
+**组件：** `StepperRoot`、`StepperItem`、`StepperTrigger`、`StepperTitle`、`StepperDescription`、`StepperIndicator`、`StepperSeparator`
 
 ## StepperRoot
 
-### Props
+### 属性
 
-| Prop           | Type                         | Default        |
+| 属性           | 类型                         | 默认值         |
 | -------------- | ---------------------------- | -------------- |
 | `as`           | `AsTag \| Component`         | `"div"`        |
 | `asChild`      | `boolean`                    | -              |
@@ -18,15 +18,15 @@ Multi-step progress indicator
 | `modelValue`   | `number`                     | -              |
 | `orientation`  | `"vertical" \| "horizontal"` | `"horizontal"` |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
+| 事件                | 参数                |
 | ------------------- | ------------------- |
 | `update:modelValue` | `[payload: number]` |
 
-### Slots
+### 插槽
 
-| Slot             | Type                  |
+| 插槽             | 类型                  |
 | ---------------- | --------------------- |
 | `modelValue`     | `number \| undefined` |
 | `totalSteps`     | `number`              |
@@ -40,9 +40,9 @@ Multi-step progress indicator
 
 ## StepperItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
+| 属性        | 类型                 | 默认值  |
 | ----------- | -------------------- | ------- |
 | `as`        | `AsTag \| Component` | `"div"` |
 | `asChild`   | `boolean`            | -       |
@@ -50,53 +50,53 @@ Multi-step progress indicator
 | `disabled`  | `boolean`            | `false` |
 | `step`\*    | `number`             | -       |
 
-### Slots
+### 插槽
 
-| Slot    | Type                                    |
+| 插槽    | 类型                                    |
 | ------- | --------------------------------------- |
 | `state` | `"active" \| "completed" \| "inactive"` |
 
 ## StepperTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## StepperTitle
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"h4"`  |
 | `asChild` | `boolean`            | -       |
 
 ## StepperDescription
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"p"`   |
 | `asChild` | `boolean`            | -       |
 
 ## StepperIndicator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## StepperSeparator
 
-### Props
+### 属性
 
-| Prop          | Type                         | Default |
+| 属性          | 类型                         | 默认值  |
 | ------------- | ---------------------------- | ------- |
 | `as`          | `AsTag \| Component`         | `"div"` |
 | `asChild`     | `boolean`                    | -       |

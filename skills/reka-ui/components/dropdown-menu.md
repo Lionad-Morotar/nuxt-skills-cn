@@ -1,37 +1,37 @@
-# Dropdown Menu
+# 下拉菜单
 
-Dropdown action menu
+下拉操作菜单
 
-**Parts:** `DropdownMenuRoot`, `DropdownMenuTrigger`, `DropdownMenuPortal`, `DropdownMenuContent`, `DropdownMenuItem`, `DropdownMenuCheckboxItem`, `DropdownMenuRadioGroup`, `DropdownMenuRadioItem`, `DropdownMenuItemIndicator`, `DropdownMenuLabel`, `DropdownMenuGroup`, `DropdownMenuSeparator`, `DropdownMenuSub`, `DropdownMenuSubTrigger`, `DropdownMenuSubContent`, `DropdownMenuArrow`
+**组件：** `DropdownMenuRoot`、`DropdownMenuTrigger`、`DropdownMenuPortal`、`DropdownMenuContent`、`DropdownMenuItem`、`DropdownMenuCheckboxItem`、`DropdownMenuRadioGroup`、`DropdownMenuRadioItem`、`DropdownMenuItemIndicator`、`DropdownMenuLabel`、`DropdownMenuGroup`、`DropdownMenuSeparator`、`DropdownMenuSub`、`DropdownMenuSubTrigger`、`DropdownMenuSubContent`、`DropdownMenuArrow`
 
 ## DropdownMenuRoot
 
-### Props
+### 属性
 
-| Prop          | Type             | Default |
-| ------------- | ---------------- | ------- |
-| `defaultOpen` | `boolean`        | -       |
-| `dir`         | `"ltr" \| "rtl"` | -       |
-| `modal`       | `boolean`        | `true`  |
-| `open`        | `boolean`        | -       |
+| 属性          | 类型             | 默认值 |
+| ------------- | ---------------- | ------ |
+| `defaultOpen` | `boolean`        | -      |
+| `dir`         | `"ltr" \| "rtl"` | -      |
+| `modal`       | `boolean`        | `true` |
+| `open`        | `boolean`        | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload              |
+| 事件          | 参数                 |
 | ------------- | -------------------- |
 | `update:open` | `[payload: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## DropdownMenuTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -39,226 +39,226 @@ Dropdown action menu
 
 ## DropdownMenuPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## DropdownMenuContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default |
-| ------------------------ | ------------------------------------------------------- | ------- |
-| `align`                  | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`            | `number`                                                | -       |
-| `arrowPadding`           | `number`                                                | -       |
+| 属性                     | 类型                                                    | 默认值 |
+| ------------------------ | ------------------------------------------------------- | ------ |
+| `align`                  | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`            | `number`                                                | -      |
+| `arrowPadding`           | `number`                                                | -      |
 | `as`                     | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                | `boolean`                                               | -       |
-| `avoidCollisions`        | `boolean`                                               | -       |
-| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `forceMount`             | `boolean`                                               | -       |
-| `hideWhenDetached`       | `boolean`                                               | -       |
-| `loop`                   | `boolean`                                               | -       |
-| `prioritizePosition`     | `boolean`                                               | -       |
-| `side`                   | `"top" \| "right" \| "bottom" \| "left"`                | -       |
-| `sideOffset`             | `number`                                                | -       |
-| `sticky`                 | `"partial" \| "always"`                                 | -       |
-| `updatePositionStrategy` | `"always" \| "optimized"`                               | -       |
+| `asChild`                | `boolean`                                               | -      |
+| `avoidCollisions`        | `boolean`                                               | -      |
+| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `forceMount`             | `boolean`                                               | -      |
+| `hideWhenDetached`       | `boolean`                                               | -      |
+| `loop`                   | `boolean`                                               | -      |
+| `prioritizePosition`     | `boolean`                                               | -      |
+| `side`                   | `"top" \| "right" \| "bottom" \| "left"`                | -      |
+| `sideOffset`             | `number`                                                | -      |
+| `sticky`                 | `"partial" \| "always"`                                 | -      |
+| `updatePositionStrategy` | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
-| -------------------- | ----------------------------------------------------- |
-| `closeAutoFocus`     | `[event: Event]`                                      |
-| `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
-| `focusOutside`       | `[event: FocusOutsideEvent]`                          |
+| 事件                 | 参数                                                   |
+| -------------------- | ------------------------------------------------------ |
+| `closeAutoFocus`     | `[event: Event]`                                       |
+| `escapeKeyDown`      | `[event: KeyboardEvent]`                               |
+| `focusOutside`       | `[event: FocusOutsideEvent]`                           |
 | `interactOutside`    | `[event: PointerDownOutsideEvent \| FocusOutsideE...` |
-| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                    |
+| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                     |
 
 ## DropdownMenuItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
 | `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
 
-### Emits
+### 事件
 
-| Event    | Payload          |
-| -------- | ---------------- |
-| `select` | `[event: Event]` |
+| 事件     | 参数               |
+| -------- | ------------------ |
+| `select` | `[event: Event]`   |
 
 ## DropdownMenuCheckboxItem
 
-### Props
+### 属性
 
-| Prop        | Type                               | Default |
-| ----------- | ---------------------------------- | ------- |
+| 属性        | 类型                               | 默认值 |
+| ----------- | ---------------------------------- | ------ |
 | `as`        | `AsTag \| Component`               | `"div"` |
-| `asChild`   | `boolean`                          | -       |
-| `checked`   | `false \| true \| "indeterminate"` | -       |
-| `disabled`  | `boolean`                          | -       |
-| `textValue` | `string`                           | -       |
+| `asChild`   | `boolean`                          | -      |
+| `checked`   | `false \| true \| "indeterminate"` | -      |
+| `disabled`  | `boolean`                          | -      |
+| `textValue` | `string`                           | -      |
 
-### Emits
+### 事件
 
-| Event            | Payload              |
+| 事件             | 参数                 |
 | ---------------- | -------------------- |
 | `select`         | `[event: Event]`     |
 | `update:checked` | `[payload: boolean]` |
 
 ## DropdownMenuRadioGroup
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `modelValue` | `string`             | -       |
+| `asChild`    | `boolean`            | -      |
+| `modelValue` | `string`             | -      |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
+| 事件                | 参数                |
 | ------------------- | ------------------- |
 | `update:modelValue` | `[payload: string]` |
 
 ## DropdownMenuRadioItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
 | `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
-| `value`\*   | `string`             | -       |
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
+| `value`\*   | `string`             | -      |
 
-### Emits
+### 事件
 
-| Event    | Payload          |
-| -------- | ---------------- |
-| `select` | `[event: Event]` |
+| 事件     | 参数               |
+| -------- | ------------------ |
+| `select` | `[event: Event]`   |
 
 ## DropdownMenuItemIndicator
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |
 
 ## DropdownMenuLabel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## DropdownMenuGroup
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## DropdownMenuSeparator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## DropdownMenuSub
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
-| `defaultOpen` | `boolean` | -       |
-| `open`        | `boolean` | -       |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
+| `defaultOpen` | `boolean` | -      |
+| `open`        | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload              |
+| 事件          | 参数                 |
 | ------------- | -------------------- |
 | `update:open` | `[payload: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## DropdownMenuSubTrigger
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
 | `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
 
 ## DropdownMenuSubContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default |
-| ------------------------ | ------------------------------------------------------- | ------- |
-| `alignOffset`            | `number`                                                | -       |
-| `arrowPadding`           | `number`                                                | -       |
+| 属性                     | 类型                                                    | 默认值 |
+| ------------------------ | ------------------------------------------------------- | ------ |
+| `alignOffset`            | `number`                                                | -      |
+| `arrowPadding`           | `number`                                                | -      |
 | `as`                     | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                | `boolean`                                               | -       |
-| `avoidCollisions`        | `boolean`                                               | -       |
-| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `forceMount`             | `boolean`                                               | -       |
-| `hideWhenDetached`       | `boolean`                                               | -       |
-| `loop`                   | `boolean`                                               | -       |
-| `prioritizePosition`     | `boolean`                                               | -       |
-| `sideOffset`             | `number`                                                | -       |
-| `sticky`                 | `"partial" \| "always"`                                 | -       |
-| `updatePositionStrategy` | `"always" \| "optimized"`                               | -       |
+| `asChild`                | `boolean`                                               | -      |
+| `avoidCollisions`        | `boolean`                                               | -      |
+| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `forceMount`             | `boolean`                                               | -      |
+| `hideWhenDetached`       | `boolean`                                               | -      |
+| `loop`                   | `boolean`                                               | -      |
+| `prioritizePosition`     | `boolean`                                               | -      |
+| `sideOffset`             | `number`                                                | -      |
+| `sticky`                 | `"partial" \| "always"`                                 | -      |
+| `updatePositionStrategy` | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
-| -------------------- | ----------------------------------------------------- |
-| `closeAutoFocus`     | `[event: Event]`                                      |
-| `entryFocus`         | `[event: Event]`                                      |
-| `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
-| `focusOutside`       | `[event: FocusOutsideEvent]`                          |
+| 事件                 | 参数                                                   |
+| -------------------- | ------------------------------------------------------ |
+| `closeAutoFocus`     | `[event: Event]`                                       |
+| `entryFocus`         | `[event: Event]`                                       |
+| `escapeKeyDown`      | `[event: KeyboardEvent]`                               |
+| `focusOutside`       | `[event: FocusOutsideEvent]`                           |
 | `interactOutside`    | `[event: PointerDownOutsideEvent \| FocusOutsideE...` |
-| `openAutoFocus`      | `[event: Event]`                                      |
-| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                    |
+| `openAutoFocus`      | `[event: Event]`                                       |
+| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                     |
 
 ## DropdownMenuArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"svg"` |
-| `asChild` | `boolean`            | -       |
-| `height`  | `number`             | `5`     |
-| `width`   | `number`             | `10`    |
+| `asChild` | `boolean`            | -      |
+| `height`  | `number`             | `5`    |
+| `width`   | `number`             | `10`   |

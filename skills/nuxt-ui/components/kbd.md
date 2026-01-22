@@ -1,19 +1,19 @@
 # Kbd
 
-A kbd element to display a keyboard key.
+用于显示键盘按键的 kbd 元素。
 
-## Key Props
+## 关键属性
 
-- `value`: to set the value of the Kbd.
-- `color`: to change the color of the Kbd.
-- `variant`: to change the variant of the Kbd.
-- `size`: to change the size of the Kbd.
-- `class`: to override the base styles of the Badge.
+- `value`：用于设置 Kbd 的值。
+- `color`：用于更改 Kbd 的颜色。
+- `variant`：用于更改 Kbd 的变体。
+- `size`：用于更改 Kbd 的尺寸。
+- `class`：用于覆盖 Badge 的基础样式。
 
-## Usage
+## 用法
 
 ```vue
 <UKbd
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

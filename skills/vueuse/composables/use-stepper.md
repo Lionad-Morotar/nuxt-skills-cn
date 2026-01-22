@@ -1,11 +1,11 @@
 # useStepper
 
-Provides helpers for building a multi-step wizard interface.
+提供用于构建多步骤向导界面的辅助工具。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`
+**类别：** 工具
 
-## Usage
+## 用法
 
 ```ts
 import { useStepper } from '@vueuse/core'
@@ -34,34 +34,34 @@ const {
   'payment',
 ])
 
-// Access the step through `current`
+// 通过 `current` 访问步骤
 console.log(current.value) // 'billing-address'
 ```
 
-## Returns
+## 返回值
 
-| Name         | Type                    |
-| ------------ | ----------------------- |
-| steps        | `Ref`                   |
-| stepNames    | `computed&lt;any[]&gt;` |
-| index        | `deepRef`               |
-| current      | `computed`              |
-| next         | `computed`              |
-| previous     | `computed`              |
-| isFirst      | `computed`              |
-| isLast       | `computed`              |
-| at           | `Ref`                   |
-| get          | `Ref`                   |
-| goTo         | `Ref`                   |
-| goToNext     | `Ref`                   |
-| goToPrevious | `Ref`                   |
-| goBackTo     | `Ref`                   |
-| isNext       | `Ref`                   |
-| isPrevious   | `Ref`                   |
-| isCurrent    | `Ref`                   |
-| isBefore     | `Ref`                   |
-| isAfter      | `Ref`                   |
+| 名称           | 类型                    |
+| -------------- | ----------------------- |
+| steps          | `Ref`                   |
+| stepNames      | `computed<any[]>`       |
+| index          | `deepRef`               |
+| current        | `computed`              |
+| next           | `computed`              |
+| previous       | `computed`              |
+| isFirst        | `computed`              |
+| isLast         | `computed`              |
+| at             | `Ref`                   |
+| get            | `Ref`                   |
+| goTo           | `Ref`                   |
+| goToNext       | `Ref`                   |
+| goToPrevious   | `Ref`                   |
+| goBackTo       | `Ref`                   |
+| isNext         | `Ref`                   |
+| isPrevious     | `Ref`                   |
+| isCurrent      | `Ref`                   |
+| isBefore       | `Ref`                   |
+| isAfter        | `Ref`                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useStepper/)
+[VueUse 文档](https://vueuse.org/core/useStepper/)

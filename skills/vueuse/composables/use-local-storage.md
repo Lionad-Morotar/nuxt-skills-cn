@@ -1,10 +1,10 @@
 # useLocalStorage
 
-Reactive LocalStorage.
+响应式本地存储。
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`  
+**类别：** 状态
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useLocalStorage/)
+[VueUse 文档](https://vueuse.org/core/useLocalStorage/)

@@ -1,11 +1,11 @@
 # useArrayFindLast
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**类别：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayFindLast } from '@vueuse/core'
@@ -15,6 +15,6 @@ const positive = useArrayFindLast(list, val => val > 0)
 // positive.value: 2
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayFindLast/)
+[VueUse 文档](https://vueuse.org/core/useArrayFindLast/)

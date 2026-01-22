@@ -1,11 +1,11 @@
 # useWindowScroll
 
-Reactive window scroll
+响应式窗口滚动
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -16,17 +16,17 @@ const { x, y } = useWindowScroll()
 
 <template>
   <div>
-    read current x, y scroll: {{ x }}, {{ y }}
+    读取当前 x、y 滚动位置：{{ x }}, {{ y }}
   </div>
   <button @click="x = 100">
-    scroll X to 100
+    将 X 滚动至 100
   </button>
   <button @click="y = 100">
-    scroll Y to 100
+    将 Y 滚动至 100
   </button>
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWindowScroll/)
+[VueUse 文档](https://vueuse.org/core/useWindowScroll/)

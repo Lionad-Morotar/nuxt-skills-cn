@@ -1,11 +1,11 @@
 # watchPausable
 
-Pausable watch
+可暂停的监听器
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**分类：** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchPausable } from '@vueuse/core'
@@ -24,7 +24,7 @@ await nextTick() // Changed to bar!
 pause()
 
 source.value = 'foobar'
-await nextTick() // (nothing happend)
+await nextTick() // (无任何反应)
 
 resume()
 
@@ -32,15 +32,15 @@ source.value = 'hello'
 await nextTick() // Changed to hello!
 ```
 
-## Returns
+## 返回值
 
-| Name     | Type              |
+| 名称     | 类型              |
 | -------- | ----------------- |
 | stop     | `watchWithFilter` |
 | pause    | `Ref`             |
 | resume   | `Ref`             |
 | isActive | `Ref`             |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchPausable/)
+[VueUse 文档](https://vueuse.org/core/watchPausable/)

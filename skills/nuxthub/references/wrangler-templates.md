@@ -1,10 +1,10 @@
-# Wrangler Configuration for NuxtHub v0.10.4
+# NuxtHub v0.10.4 的 Wrangler 配置
 
-**Default (Recommended):** NuxtHub auto-generates `wrangler.json` from your `hub` config in `nuxt.config.ts`. No manual wrangler.jsonc required.
+**默认设置（推荐）：** NuxtHub 会根据您在 `nuxt.config.ts` 中的 `hub` 配置自动生成 `wrangler.json`。无需手动编写 `wrangler.jsonc`。
 
-**Manual wrangler.jsonc:** Use when you need features not auto-generated (observability, migrations config, etc.) or prefer explicit file-based configuration.
+**手动编写 wrangler.jsonc：** 当您需要使用未自动生成的功能（如可观测性、迁移配置等）或偏好显式文件配置时使用。
 
-## Minimal (Database Only)
+## 最小配置（仅数据库）
 
 ```jsonc
 {
@@ -15,7 +15,7 @@
 }
 ```
 
-## Full Stack (DB + KV + Blob + Cache)
+## 全栈配置（数据库 + KV + Blob + 缓存）
 
 ```jsonc
 {
@@ -31,30 +31,30 @@
 }
 ```
 
-## Observability (Recommended for Production)
+## 可观测性（生产环境推荐）
 
-Enable logging to track performance and debug issues:
+启用日志记录以跟踪性能并调试问题：
 
 ```jsonc
 {
   "observability": {
     "logs": {
-      "enabled": true,          // Enable log collection
-      "head_sampling_rate": 1,  // Sample rate 0-1 (1 = 100% of requests)
-      "invocation_logs": true,  // Log function invocations
-      "persist": true           // Persist logs to storage
+      "enabled": true,          // 启用日志收集
+      "head_sampling_rate": 1,  // 采样率 0-1（1 = 100% 的请求）
+      "invocation_logs": true,  // 记录函数调用
+      "persist": true           // 将日志持久化到存储
     }
   }
 }
 ```
 
-**Required permission:** `workers_observability` (edit) in your Cloudflare API token.
+**所需权限：** 在您的 Cloudflare API token 中具有 `workers_observability`（编辑）权限。
 
-See [Cloudflare Observability docs](https://developers.cloudflare.com/workers/observability/logs/).
+参见 [Cloudflare 可观测性文档](https://developers.cloudflare.com/workers/observability/logs/)。
 
-## D1 Migrations Configuration
+## D1 迁移配置
 
-Specify migrations table and directory:
+指定迁移表和目录：
 
 ```jsonc
 {
@@ -67,36 +67,36 @@ Specify migrations table and directory:
 }
 ```
 
-## Required Binding Names
+## 必需的绑定名称
 
-| Feature      | Binding Name | Type         |
-| ------------ | ------------ | ------------ |
-| Database     | `DB`         | D1           |
-| Key-Value    | `KV`         | KV Namespace |
-| Cache        | `CACHE`      | KV Namespace |
-| Blob Storage | `BLOB`       | R2 Bucket    |
+| 功能         | 绑定名称     | 类型           |
+| ------------ | ------------ | -------------- |
+| 数据库       | `DB`         | D1             |
+| 键值存储     | `KV`         | KV 命名空间    |
+| 缓存         | `CACHE`      | KV 命名空间    |
+| Blob 存储    | `BLOB`       | R2 存储桶      |
 
-## Creating Resources via CLI
+## 通过 CLI 创建资源
 
 ```bash
-# D1 Database
+# D1 数据库
 npx wrangler d1 create my-app-db
-# Output: database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+# 输出：database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
-# KV Namespace for storage
+# 用于存储的 KV 命名空间
 npx wrangler kv namespace create KV
-# Output: id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# 输出：id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-# KV Namespace for cache
+# 用于缓存的 KV 命名空间
 npx wrangler kv namespace create CACHE
-# Output: id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# 输出：id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-# R2 Bucket
+# R2 存储桶
 npx wrangler r2 bucket create my-app-bucket
-# Bucket name is used directly, no ID needed
+# 存储桶名称直接使用，无需 ID
 ```
 
-## Multi-Environment Setup
+## 多环境配置
 
 ```jsonc
 {
@@ -112,11 +112,11 @@ npx wrangler r2 bucket create my-app-bucket
 }
 ```
 
-Deploy with: `CLOUDFLARE_ENV=staging nuxt build && npx wrangler deploy`
+部署命令：`CLOUDFLARE_ENV=staging nuxt build && npx wrangler deploy`
 
-## Auto-Generation from nuxt.config (Recommended)
+## 从 nuxt.config 自动生成（推荐）
 
-NuxtHub auto-generates `wrangler.json` at build time from your `hub` config:
+NuxtHub 在构建时根据您的 `hub` 配置自动生成 `wrangler.json`：
 
 ```ts
 // nuxt.config.ts
@@ -143,7 +143,7 @@ export default defineNuxtConfig({
 })
 ```
 
-**Advanced:** Use `nitro.cloudflare.wrangler` for explicit control:
+**高级选项：** 使用 `nitro.cloudflare.wrangler` 获取显式控制：
 
 ```ts
 export default defineNuxtConfig({

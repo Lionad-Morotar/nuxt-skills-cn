@@ -1,10 +1,10 @@
-# Nuxt Configuration
+# Nuxt 配置
 
-## When to Use
+## 使用场景
 
-Configuring `nuxt.config.ts`, modules, auto-imports, runtime config, layers.
+配置 `nuxt.config.ts`、模块、自动导入、运行时配置、层。
 
-## Basic Structure
+## 基本结构
 
 ```ts
 // nuxt.config.ts
@@ -17,11 +17,11 @@ export default defineNuxtConfig({
   ],
 
   runtimeConfig: {
-    // Private (server-only)
+    // 私有（仅服务器）
     apiSecret: process.env.API_SECRET,
 
     public: {
-      // Public (client + server)
+      // 公开（客户端 + 服务器）
       apiBase: process.env.API_BASE || 'http://localhost:3000'
     }
   },
@@ -38,37 +38,37 @@ export default defineNuxtConfig({
 })
 ```
 
-## Runtime Config
+## 运行时配置
 
-Access runtime config in app:
+在应用程序中访问运行时配置：
 
 ```ts
-// Server-side
+// 服务端
 const config = useRuntimeConfig()
-console.log(config.apiSecret) // Available
+console.log(config.apiSecret) // 可用
 
-// Client-side
+// 客户端
 const config = useRuntimeConfig()
-console.log(config.public.apiBase) // Available
-console.log(config.apiSecret) // undefined (private)
+console.log(config.public.apiBase) // 可用
+console.log(config.apiSecret) // undefined（私有）
 ```
 
-### Runtime Config Validation (Recommended)
+### 运行时配置验证（推荐）
 
-Use `nuxt-safe-runtime-config` for type-safe runtime config with build-time validation:
+使用 `nuxt-safe-runtime-config` 实现类型安全的运行时配置，带有构建时验证：
 
 ```bash
 npx nuxi module add nuxt-safe-runtime-config
 ```
 
-**Benefits:**
+**优势：**
 
-- Build-time validation (catches missing env vars early)
-- Optional runtime validation (validates when server starts)
-- Auto-generated types (no manual type definitions needed)
-- No manual env var checks required (schema handles validation)
+- 构建时验证（提前捕获缺失的环境变量）
+- 可选的运行时验证（在服务器启动时验证）
+- 自动生成类型（无需手动定义类型）
+- 无需手动环境变量检查（模式处理验证）
 
-**Example with Valibot:**
+**使用 Valibot 的示例：**
 
 ```ts
 import { number, object, optional, string } from 'valibot'
@@ -96,42 +96,42 @@ export default defineNuxtConfig({
       secretKey: string(),
       port: optional(number()),
     }),
-    validateAtRuntime: true, // Optional: validate when server starts
+    validateAtRuntime: true, // 可选：在服务器启动时验证
   },
 })
 ```
 
-**Usage:**
+**用法：**
 
 ```ts
-// Auto-typed from schema - no generics needed
+// 从模式自动生成类型 —— 无需泛型
 const config = useSafeRuntimeConfig()
-// config.public.apiBase is string
-// config.databaseUrl is string
+// config.public.apiBase 是 string
+// config.databaseUrl 是 string
 ```
 
-**No manual env checks needed:**
+**无需手动环境变量检查：**
 
 ```ts
-// ❌ Don't do this with nuxt-safe-runtime-config
+// ❌ 使用 nuxt-safe-runtime-config 不应如此操作
 if (!config.databaseUrl) throw new Error('Missing DATABASE_URL')
 
-// ✅ Schema validation handles it automatically
-// If env var is missing, build fails with detailed error
+// ✅ 模式验证自动处理
+// 若环境变量缺失，构建将失败并显示详细错误信息
 ```
 
-Works with Zod, ArkType, or any Standard Schema library. See: https://github.com/onmax/nuxt-safe-runtime-config
+支持 Zod、ArkType 或任何标准模式库。参见：https://github.com/onmax/nuxt-safe-runtime-config
 
-## Auto-Imports
+## 自动导入
 
-Nuxt auto-imports from these directories:
+Nuxt 从以下目录自动导入：
 
-- `components/` - Vue components
-- `composables/` - Composition functions
-- `utils/` - Utility functions
-- `server/utils/` - Server utilities (server-only)
+- `components/` — Vue 组件
+- `composables/` — 组合函数
+- `utils/` — 工具函数
+- `server/utils/` — 服务器工具（仅限服务器）
 
-### Custom Auto-Imports
+### 自定义自动导入
 
 ```ts
 export default defineNuxtConfig({
@@ -144,7 +144,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### Disable Auto-Import
+### 禁用自动导入
 
 ```ts
 export default defineNuxtConfig({
@@ -154,7 +154,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Modules
+## 模块
 
 ```ts
 export default defineNuxtConfig({
@@ -171,9 +171,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## App Config
+## 应用配置
 
-For non-sensitive config exposed to client:
+用于暴露给客户端的非敏感配置：
 
 ```ts
 // app.config.ts
@@ -185,7 +185,7 @@ export default defineAppConfig({
 })
 ```
 
-Access in app:
+在应用中访问：
 
 ```ts
 const appConfig = useAppConfig()
@@ -204,7 +204,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Build Configuration
+## 构建配置
 
 ```ts
 export default defineNuxtConfig({
@@ -224,9 +224,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Route Rules
+## 路由规则
 
-Pre-render, cache, or customize routes:
+预渲染、缓存或自定义路由：
 
 ```ts
 export default defineNuxtConfig({
@@ -234,12 +234,12 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/api/**': { cors: true },
     '/admin/**': { ssr: false },
-    '/blog/**': { swr: 3600 } // Cache for 1 hour
+    '/blog/**': { swr: 3600 } // 缓存一小时
   }
 })
 ```
 
-## Experimental Features
+## 实验性功能
 
 ```ts
 export default defineNuxtConfig({
@@ -254,9 +254,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Nitro Config
+## Nitro 配置
 
-Server engine configuration:
+服务器引擎配置：
 
 ```ts
 export default defineNuxtConfig({
@@ -270,9 +270,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Layers
+## 层
 
-Extend or share configuration:
+扩展或共享配置：
 
 ```ts
 export default defineNuxtConfig({
@@ -282,16 +282,16 @@ export default defineNuxtConfig({
 })
 ```
 
-## Environment Variables
+## 环境变量
 
-Use `.env` file:
+使用 `.env` 文件：
 
 ```env
 API_SECRET=secret123
 API_BASE=https://api.example.com
 ```
 
-Access via runtimeConfig:
+通过运行时配置访问：
 
 ```ts
 export default defineNuxtConfig({
@@ -304,29 +304,29 @@ export default defineNuxtConfig({
 })
 ```
 
-## Best Practices
+## 最佳实践
 
-- **Use nuxt-safe-runtime-config** for runtime config with validation
-- **Public vs private** - keep secrets in private runtimeConfig
-- **App config** for non-sensitive client config
-- **Route rules** for performance (prerender, cache, SWR)
-- **Auto-imports** for cleaner code
-- **TypeScript strict mode** for better DX
+- **使用 nuxt-safe-runtime-config** 进行带验证的运行时配置
+- **公开与私有** — 将密钥保留在私有运行时配置中
+- **应用配置** 用于非敏感的客户端配置
+- **路由规则** 提升性能（预渲染、缓存、SWR）
+- **自动导入** 使代码更整洁
+- **TypeScript 严格模式** 提升开发体验
 
-## Common Mistakes
+## 常见错误
 
-| ❌ Wrong                   | ✅ Right                     |
+| ❌ 错误                     | ✅ 正确                      |
 | -------------------------- | ---------------------------- |
-| Hardcoded API URLs         | Use runtimeConfig.public     |
-| Secrets in app.config      | Use runtimeConfig (private)  |
-| Import everything manually | Let Nuxt auto-import         |
-| process.env in client code | Use useRuntimeConfig()       |
-| Manual env var validation  | Use nuxt-safe-runtime-config |
-| if (!config.x) throw error | Schema validation handles it |
+| 硬编码 API URL             | 使用 runtimeConfig.public    |
+| 密钥在 app.config 中       | 使用 runtimeConfig（私有）   |
+| 手动导入所有内容           | 让 Nuxt 自动导入             |
+| 在客户端代码中使用 process.env | 使用 useRuntimeConfig()      |
+| 手动验证环境变量           | 使用 nuxt-safe-runtime-config |
+| if (!config.x) throw error | 模式验证自动处理             |
 
-## Resources
+## 资源
 
-- Nuxt config: https://nuxt.com/docs/api/nuxt-config
-- Runtime config: https://nuxt.com/docs/guide/going-further/runtime-config
-- App config: https://nuxt.com/docs/guide/directory-structure/app-config
-- Modules: https://nuxt.com/modules
+- Nuxt 配置：https://nuxt.com/docs/api/nuxt-config
+- 运行时配置：https://nuxt.com/docs/guide/going-further/runtime-config
+- 应用配置：https://nuxt.com/docs/guide/directory-structure/app-config
+- 模块：https://nuxt.com/modules

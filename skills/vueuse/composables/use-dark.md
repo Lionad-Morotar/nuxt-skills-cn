@@ -1,11 +1,11 @@
 # useDark
 
-Reactive dark mode with auto data persistence.
+带有自动数据持久化的响应式深色模式。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useDark, useToggle } from '@vueuse/core'
@@ -14,14 +14,14 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 ```
 
-## Options
+## 选项
 
-| Option     | Type                                                                                                          | Default   | Description                                            |
+| 选项       | 类型                                                                                                          | 默认值    | 描述                                                   |
 | ---------- | ------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------ |
-| valueDark  | `string`                                                                                                      | dark      | Value applying to the target element when isDark=true  |
-| valueLight | `string`                                                                                                      | -         | Value applying to the target element when isDark=false |
-| onChanged  | `(isDark: boolean, defaultHandler: ((mode: BasicColorSchema) =&gt; void), mode: BasicColorSchema) =&gt; void` | undefined | A custom handler for handle the updates.               |
+| valueDark  | `string`                                                                                                      | dark      | 当 isDark 为 true 时应用于目标元素的值                 |
+| valueLight | `string`                                                                                                      | -         | 当 isDark 为 false 时应用于目标元素的值                |
+| onChanged  | `(isDark: boolean, defaultHandler: ((mode: BasicColorSchema) =&gt; void), mode: BasicColorSchema) =&gt; void` | undefined | 自定义处理更新的处理器                                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDark/)
+[VueUse 文档](https://vueuse.org/core/useDark/)

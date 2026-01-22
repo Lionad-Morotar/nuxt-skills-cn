@@ -1,23 +1,23 @@
-# Calendar
+# 日历
 
-A calendar component for selecting single dates, multiple dates or date ranges.
+用于选择单个日期、多个日期或日期范围的日历组件。
 
-> Based on [Reka UI Calendar](https://reka-ui.com/docs/components/calendar)
+> 基于 [Reka UI 日历](https://reka-ui.com/docs/components/calendar)
 
-## Key Props
+## 主要属性
 
-- `multiple`: to allow multiple selections.
-- `range`: to select a range of dates.
-- `color`: to change the color of the calendar.
-- `variant`: to change the variant of the calendar.
-- `size`: to change the size of the calendar.
-- `disabled`: to disable the calendar.
-- `numberOfMonths`: to change the number of months in the calendar.
+- `multiple`：允许进行多重选择。
+- `range`：用于选择日期范围。
+- `color`：用于更改日历的颜色。
+- `variant`：用于更改日历的变体。
+- `size`：用于更改日历的尺寸。
+- `disabled`：用于禁用日历。
+- `numberOfMonths`：用于更改日历中月份的数量。
 
-## Usage
+## 使用方法
 
 ```vue
 <UCalendar
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

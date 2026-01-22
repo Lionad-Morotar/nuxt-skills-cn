@@ -1,14 +1,14 @@
-# Slider
+# 滑块组件
 
-Range input control
+范围输入控件
 
-**Parts:** `SliderRoot`, `SliderTrack`, `SliderRange`, `SliderThumb`
+**组成部分：** `SliderRoot`、`SliderTrack`、`SliderRange`、`SliderThumb`
 
 ## SliderRoot
 
-### Props
+### 属性
 
-| Prop                    | Type                         | Default        |
+| 属性                    | 类型                         | 默认值         |
 | ----------------------- | ---------------------------- | -------------- |
 | `as`                    | `AsTag \| Component`         | `"div"`        |
 | `asChild`               | `boolean`                    | -              |
@@ -24,42 +24,42 @@ Range input control
 | `orientation`           | `"vertical" \| "horizontal"` | `"horizontal"` |
 | `step`                  | `number`                     | `1`            |
 
-### Emits
+### 事件
 
-| Event               | Payload               |
+| 事件                | 参数                  |
 | ------------------- | --------------------- |
 | `update:modelValue` | `[payload: number[]]` |
 | `valueCommit`       | `[payload: number[]]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type       |
+| 插槽         | 类型       |
 | ------------ | ---------- |
 | `modelValue` | `number[]` |
 
 ## SliderTrack
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## SliderRange
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## SliderThumb
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |

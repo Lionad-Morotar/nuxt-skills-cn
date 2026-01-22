@@ -1,24 +1,24 @@
-# Button
+# 按钮
 
-A button element that can act as a link or trigger an action.
+一个可作为链接或触发操作的按钮元素。
 
-## Key Props
+## 主要属性
 
-- `label`: to set the label of the Button.
-- `color`: to change the color of the Button.
-- `variant`: to change the variant of the Button.
-- `size`: to change the size of the Button.
-- `icon`: to show an [Icon](/docs/components/icon) inside the Button.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the Button.
-- `loading`: to show a loading icon and disable the Button.
-- `disabled`: to disable the Button.
-- `class`: to override the base styles of the Button.
-- `ui`: to override the slots styles of the Button.
+- `label`：用于设置按钮的标签。
+- `color`：用于更改按钮的颜色。
+- `variant`：用于更改按钮的变体。
+- `size`：用于更改按钮的尺寸。
+- `icon`：用于在按钮内显示 [Icon](/docs/components/icon)。
+- `avatar`：用于在按钮内显示 [Avatar](/docs/components/avatar)。
+- `loading`：用于显示加载图标并禁用按钮。
+- `disabled`：用于禁用按钮。
+- `class`：用于覆盖按钮的基础样式。
+- `ui`：用于覆盖按钮的插槽样式。
 
-## Usage
+## 用法
 
 ```vue
 <UButton
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

@@ -1,11 +1,11 @@
 # useOnline
 
-Reactive online state. A wrapper of .
+响应式在线状态。一个包装器。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useOnline } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { useOnline } from '@vueuse/core'
 const online = useOnline()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useOnline/)
+[VueUse 文档](https://vueuse.org/core/useOnline/)

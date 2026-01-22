@@ -1,16 +1,16 @@
 # EditorMentionMenu
 
-A mention menu that displays user suggestions when typing the @ character in the editor.
+当在编辑器中输入 @ 字符时，显示用户建议的提及菜单。
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：由以下属性组成的对象数组：
 
-- `label: string`{lang="ts-type"}
-- `avatar?: AvatarProps`{lang="ts-type"}
-- `icon?: string`{lang="ts-type"}
-- `description?: string`{lang="ts-type"}
-- `disabled?: boolean`{lang="ts-type"}
+  - `label: string`{lang="ts-type"}
+  - `avatar?: AvatarProps`{lang="ts-type"}
+  - `icon?: string`{lang="ts-type"}
+  - `description?: string`{lang="ts-type"}
+  - `disabled?: boolean`{lang="ts-type"}
 
 ## ::component-example
 
@@ -24,15 +24,15 @@ class: 'p-8'
 ::
 
 ::note
-You can also pass an array of arrays to the `items` prop to create separated groups of items.
+你也可以将数组的数组传递给 `items` 属性，以创建分组项。
 
-- `char`: to change the trigger character.
-- `options`: to customize the positioning behavior using [Floating UI options](https://floating-ui.
+- `char`：用于更改触发字符。
+- `options`：用于使用 [Floating UI 选项](https://floating-ui.com/docs) 自定义定位行为。
 
-## Usage
+## 使用方法
 
 ```vue
 <UEditorMentionMenu
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

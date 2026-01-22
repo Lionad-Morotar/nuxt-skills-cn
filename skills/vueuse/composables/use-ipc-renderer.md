@@ -1,33 +1,33 @@
 # useIpcRenderer
 
-Provides ipcRenderer and all of its APIs.
+提供 ipcRenderer 及其所有 API。
 
-**Package:** `@vueuse/electron`
-**Category:** '@Electron'
+**包：** `@vueuse/electron`  
+**分类：** '@Electron'
 
-## Usage
+## 用法
 
 ```ts
 import { useIpcRenderer } from '@vueuse/electron'
 import { computed } from 'vue'
 
-// enable nodeIntegration if you don't provide ipcRenderer explicitly
-// see: https://www.electronjs.org/docs/api/webview-tag#nodeintegration
+// 如果你不显式提供 ipcRenderer，则启用 nodeIntegration
+// 请参见：https://www.electronjs.org/docs/api/webview-tag#nodeintegration
 const ipcRenderer = useIpcRenderer()
 
-// Ref result will return
+// Ref 结果将被返回
 const result = ipcRenderer.invoke<string>('custom-channel', 'some data')
 const msg = computed(() => result.value?.msg)
 
-// remove listener automatically on unmounted
+// 在卸载时自动移除监听器
 ipcRenderer.on('custom-event', (event, ...args) => {
   console.log(args)
 })
 ```
 
-## Returns
+## 返回值
 
-| Name               | Type  |
+| 名称               | 类型  |
 | ------------------ | ----- |
 | on                 | `Ref` |
 | listener           | `Ref` |
@@ -42,6 +42,6 @@ ipcRenderer.on('custom-event', (event, ...args) => {
 | sendTo             | `Ref` |
 | sendToHost         | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useIpcRenderer/)
+[VueUse 文档](https://vueuse.org/core/useIpcRenderer/)

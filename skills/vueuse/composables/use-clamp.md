@@ -1,11 +1,11 @@
 # useClamp
 
-Reactively clamp a value between two other values.
+在两个其他值之间动态限制一个值。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useClamp } from '@vueuse/math'
@@ -15,6 +15,6 @@ const max = shallowRef(10)
 const value = useClamp(0, min, max)
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useClamp/)
+[VueUse 文档](https://vueuse.org/core/useClamp/)

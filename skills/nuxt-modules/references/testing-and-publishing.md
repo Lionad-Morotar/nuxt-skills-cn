@@ -1,8 +1,8 @@
-# Testing & Publishing
+# 测试与发布
 
-E2E testing, best practices, and publishing modules.
+端到端测试、最佳实践及模块发布。
 
-## E2E Testing Setup
+## 端到端测试设置
 
 ```bash
 npm install -D @nuxt/test-utils vitest
@@ -17,9 +17,9 @@ export default defineVitestConfig({
 })
 ```
 
-## Test Fixtures
+## 测试示例
 
-Create a minimal Nuxt app that uses your module:
+创建一个使用你模块的最小 Nuxt 应用：
 
 ```ts
 // test/fixtures/basic/nuxt.config.ts
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 </template>
 ```
 
-## Writing Tests
+## 编写测试
 
 ```ts
 import { fileURLToPath } from 'node:url'
@@ -63,31 +63,31 @@ describe('basic', async () => {
 })
 ```
 
-## Manual Testing
+## 手动测试
 
 ```bash
-# In module directory
+# 在模块目录中
 npm pack
 
-# In test project
+# 在测试项目中
 npm install /path/to/my-module-1.0.0.tgz
 ```
 
 ---
 
-## Best Practices
+## 最佳实践
 
-### Async Setup
+### 异步设置
 
-Keep setup fast. Nuxt warns if setup exceeds 1 second.
+保持设置快速。若设置超过 1 秒，Nuxt 会发出警告。
 
 ```ts
-// Wrong - blocking
+// 错误 - 阻塞式
 async setup(options, nuxt) {
-  const data = await fetchRemoteConfig()  // Slow!
+  const data = await fetchRemoteConfig()  // 慢！
 }
 
-// Right - defer to hooks
+// 正确 - 延迟到钩子中执行
 setup(options, nuxt) {
   nuxt.hook('ready', async () => {
     const data = await fetchRemoteConfig()
@@ -95,20 +95,20 @@ setup(options, nuxt) {
 }
 ```
 
-### Prefix All Exports
+### 所有导出添加前缀
 
-Avoid naming conflicts:
+避免命名冲突：
 
-| Type          | Wrong        | Right             |
+| 类型          | 错误         | 正确              |
 | ------------- | ------------ | ----------------- |
-| Components    | `<Button>`   | `<FooButton>`     |
-| Composables   | `useData()`  | `useFooData()`    |
-| Server routes | `/api/track` | `/api/_foo/track` |
-| Plugins       | `$helper`    | `$fooHelper`      |
+| 组件          | `<Button>`   | `<FooButton>`     |
+| 可组合式函数  | `useData()`  | `useFooData()`    |
+| 服务端路由    | `/api/track` | `/api/_foo/track` |
+| 插件          | `$helper`    | `$fooHelper`      |
 
-### Lifecycle Hooks
+### 生命周期钩子
 
-For one-time setup tasks:
+用于一次性设置任务：
 
 ```ts
 export default defineNuxtModule({
@@ -126,21 +126,21 @@ export default defineNuxtModule({
 })
 ```
 
-### TypeScript + ESM Only
+### 仅支持 TypeScript + ESM
 
 ```ts
-// Always export typed options
-// ESM only - no CommonJS
+// 始终导出带类型的选项
+// 仅支持 ESM，不支持 CommonJS
 import { something } from 'package'
 
 export interface ModuleOptions {
   apiKey: string
   debug?: boolean
-} // Right
-const { something } = require('package') // Wrong
+} // 正确
+const { something } = require('package') // 错误
 ```
 
-### Error Messages
+### 错误信息
 
 ```ts
 setup(options, nuxt) {
@@ -152,11 +152,11 @@ setup(options, nuxt) {
 
 ---
 
-## Releasing
+## 发布
 
-Two-step: local bump → CI publish. CI must pass before tag push.
+两步流程：本地版本升级 → CI 发布。必须在打标签前通过 CI。
 
-### Setup
+### 设置
 
 ```bash
 pnpm add -D bumpp
@@ -170,54 +170,54 @@ pnpm add -D bumpp
 }
 ```
 
-### Flow
+### 流程
 
 ```bash
-pnpm release  # Prompts version, commits, tags, pushes
-# → CI release.yml triggers on v* tag → npm publish + GitHub release
+pnpm release  # 提示版本、提交、打标签并推送
+# → CI release.yml 在 v* 标签触发 → npm 发布 + GitHub 发布
 ```
 
-### Commit Conventions
+### 提交规范
 
-| Prefix                         | Bump  |
-| ------------------------------ | ----- |
-| `feat:`                        | minor |
-| `fix:`, `chore:`, `docs:`      | patch |
-| `feat!:` or `BREAKING CHANGE:` | major |
+| 前缀                         | 版本更新 |
+| ---------------------------- | -------- |
+| `feat:`                      | minor    |
+| `fix:`, `chore:`, `docs:`   | patch    |
+| `feat!:` 或 `BREAKING CHANGE:` | major    |
 
-### CI Workflows
+### CI 工作流
 
-Three workflows for complete CI/CD:
+完整的 CI/CD 包含三个工作流：
 
-| File          | Trigger  | Purpose                         |
-| ------------- | -------- | ------------------------------- |
-| `ci.yml`      | push/PR  | lint, typecheck, test           |
-| `pkg.yml`     | push/PR  | preview packages via pkg-pr-new |
-| `release.yml` | tag `v*` | npm publish + GitHub release    |
+| 文件          | 触发条件   | 目的                          |
+| ------------- | ---------- | ----------------------------- |
+| `ci.yml`      | push/PR    | 代码检查、类型检查、测试       |
+| `pkg.yml`     | push/PR    | 通过 pkg-pr-new 预览包         |
+| `release.yml` | 标签 `v*`  | npm 发布 + GitHub 发布        |
 
-**Copy templates from:** [references/ci-workflows.md](references/ci-workflows.md)
+**模板来源：** [references/ci-workflows.md](references/ci-workflows.md)
 
 ---
 
-## Publishing
+## 发布
 
-### Naming Conventions
+### 命名规范
 
-| Scope      | Example               | Description                          |
-| ---------- | --------------------- | ------------------------------------ |
-| `@nuxtjs/` | `@nuxtjs/tailwindcss` | Community modules (nuxt-modules org) |
-| `nuxt-`    | `nuxt-my-module`      | Third-party modules                  |
-| `@org/`    | `@myorg/nuxt-auth`    | Organization scoped                  |
+| 作用域     | 示例                  | 描述                            |
+| ---------- | --------------------- | ------------------------------- |
+| `@nuxtjs/` | `@nuxtjs/tailwindcss` | 社区模块（nuxt-modules 组织）   |
+| `nuxt-`    | `nuxt-my-module`      | 第三方模块                      |
+| `@org/`    | `@myorg/nuxt-auth`    | 组织作用域                      |
 
-### Documentation Checklist
+### 文档检查清单
 
-- [ ] **Why** - What problem does this solve?
-- [ ] **Installation** - How to install and configure?
-- [ ] **Usage** - Basic examples
-- [ ] **Options** - All config options with types
-- [ ] **Demo** - StackBlitz link
+- [ ] **为什么** - 该模块解决了什么问题？
+- [ ] **安装** - 如何安装与配置？
+- [ ] **用法** - 基本示例
+- [ ] **选项** - 所有配置项及类型
+- [ ] **演示** - StackBlitz 链接
 
-### Version Compatibility
+### 版本兼容性
 
 ```ts
 meta: {
@@ -225,10 +225,10 @@ meta: {
 }
 ```
 
-Use "X for Nuxt" naming, not "X for Nuxt 3" — let `meta.compatibility` handle versions.
+使用 “X for Nuxt” 命名方式，而非 “X for Nuxt 3” —— 版本由 `meta.compatibility` 处理。
 
-## Resources
+## 资源
 
 - [@nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
-- [Publishing Modules](https://nuxt.com/docs/guide/going-further/modules#publishing)
-- [Nuxt Modules Directory](https://nuxt.com/modules)
+- [发布模块](https://nuxt.com/docs/guide/going-further/modules#publishing)
+- [Nuxt 模块目录](https://nuxt.com/modules)

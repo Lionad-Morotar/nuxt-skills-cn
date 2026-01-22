@@ -1,51 +1,51 @@
-# Composables
+# 组合式函数
 
 ## useToast
 
-Show notifications. Requires `<UApp>` wrapper.
+显示通知。需要 `<UApp>` 包装器。
 
 ```ts
 const toast = useToast()
 
-// Add toast
+// 添加通知
 toast.add({
-  title: 'Success',
-  description: 'Item saved',
+  title: '成功',
+  description: '项目已保存',
   color: 'success',
   icon: 'i-heroicons-check-circle',
   timeout: 5000
 })
 
-// Remove specific toast
+// 移除特定通知
 toast.remove('toast-id')
 
-// Clear all toasts
+// 清除所有通知
 toast.clear()
 ```
 
-See overlays.md for full toast options.
+参见 overlays.md 获取完整的通知选项。
 
 ## useOverlay
 
-Programmatically create modals, slidelovers, drawers.
+程序化创建模态框、滑动面板和抽屉。
 
 ```ts
 const overlay = useOverlay()
 
-// Create modal
+// 创建模态框
 const modal = overlay.create(MyModalComponent, {
-  props: { title: 'Confirm' },
-  modal: true // Default: true
+  props: { title: '确认' },
+  modal: true // 默认值：true
 })
 
-// Wait for result
+// 等待结果
 const result = await modal.result
 
-// Close programmatically
+// 程序化关闭
 modal.close(returnValue)
 ```
 
-### Confirm Dialog Pattern
+### 确认对话框模式
 
 ```vue
 <!-- ConfirmDialog.vue -->
@@ -59,20 +59,20 @@ const emit = defineEmits(['confirm', 'cancel'])
     <template #header>{{ title }}</template>
     <p>{{ message }}</p>
     <template #footer>
-      <UButton variant="ghost" @click="emit('cancel')">Cancel</UButton>
-      <UButton color="error" @click="emit('confirm')">Confirm</UButton>
+      <UButton variant="ghost" @click="emit('cancel')">取消</UButton>
+      <UButton color="error" @click="emit('confirm')">确认</UButton>
     </template>
   </UModal>
 </template>
 ```
 
 ```ts
-// Usage
+// 使用方式
 const overlay = useOverlay()
 
 async function confirmDelete() {
   const modal = overlay.create(ConfirmDialog, {
-    props: { title: 'Delete?', message: 'This cannot be undone.' },
+    props: { title: '删除？', message: '此操作无法撤销。' },
     events: {
       confirm: () => modal.close(true),
       cancel: () => modal.close(false)
@@ -80,35 +80,35 @@ async function confirmDelete() {
   })
 
   if (await modal.result) {
-    // Delete item
+    // 删除项目
   }
 }
 ```
 
 ## defineShortcuts
 
-Define keyboard shortcuts.
+定义键盘快捷键。
 
 ```ts
 defineShortcuts({
-  // Single key
+  // 单个按键
   escape: () => closeModal(),
 
-  // Modifier + key (meta = Cmd on Mac, Ctrl on Windows)
+  // 组合键（meta = Mac 上的 Cmd，Windows 上的 Ctrl）
   meta_k: () => openSearch(),
   meta_shift_p: () => openCommandPalette(),
 
-  // Ctrl specific
+  // Ctrl 特定键
   ctrl_s: () => save(),
 
   // Alt/Option
   alt_n: () => newItem(),
 
-  // Arrow keys
+  // 方向键
   arrowup: () => navigateUp(),
   arrowdown: () => navigateDown(),
 
-  // With condition
+  // 带条件
   meta_enter: {
     handler: () => submit(),
     whenever: [isFormValid]
@@ -116,54 +116,54 @@ defineShortcuts({
 })
 ```
 
-### Shortcut Syntax
+### 快捷键语法
 
-| Key     | Meaning                    |
+| 键     | 含义                        |
 | ------- | -------------------------- |
-| `meta`  | Cmd (Mac) / Ctrl (Windows) |
-| `ctrl`  | Ctrl key                   |
-| `alt`   | Alt / Option key           |
-| `shift` | Shift key                  |
-| `_`     | Key separator              |
+| `meta`  | Cmd（Mac）/ Ctrl（Windows） |
+| `ctrl`  | Ctrl 键                   |
+| `alt`   | Alt / Option 键           |
+| `shift` | Shift 键                  |
+| `_`     | 键分隔符                  |
 
-### Extract Shortcuts (for display)
+### 提取快捷键（用于显示）
 
 ```ts
 const shortcuts = extractShortcuts({
   meta_k: () => {},
   escape: () => {}
 })
-// Returns: { meta_k: { key: 'K', metaKey: true }, ... }
+// 返回：{ meta_k: { key: 'K', metaKey: true }, ... }
 ```
 
 ## useKbd
 
-Detect current keyboard state.
+检测当前键盘状态。
 
 ```ts
 const kbd = useKbd()
 
-// Reactive state
-kbd.meta // true if Cmd/Ctrl pressed
-kbd.ctrl // true if Ctrl pressed
-kbd.shift // true if Shift pressed
-kbd.alt // true if Alt/Option pressed
+// 响应式状态
+kbd.meta // 如果按下 Cmd/Ctrl 则为 true
+kbd.ctrl // 如果按下 Ctrl 则为 true
+kbd.shift // 如果按下 Shift 则为 true
+kbd.alt // 如果按下 Alt/Option 则为 true
 ```
 
 ## useScrollspy
 
-Track scroll position for anchor navigation.
+跟踪滚动位置以实现锚点导航。
 
 ```ts
 const { activeId } = useScrollspy({
   ids: ['section-1', 'section-2', 'section-3'],
-  offset: 100 // Pixels from top
+  offset: 100 // 距离顶部的像素数
 })
 
-// activeId.value = 'section-2' (currently visible)
+// activeId.value = 'section-2'（当前可见）
 ```
 
-### With Table of Contents
+### 配合目录使用
 
 ```vue
 <script setup>
@@ -186,7 +186,7 @@ const { activeId } = useScrollspy({ ids: sections })
 
 ## useFileUpload
 
-Handle file uploads.
+处理文件上传。
 
 ```ts
 const { files, open, reset, remove } = useFileUpload({
@@ -196,20 +196,20 @@ const { files, open, reset, remove } = useFileUpload({
   maxSize: 5 * 1024 * 1024 // 5MB
 })
 
-// Open file picker
+// 打开文件选择器
 open()
 
-// Files selected
+// 已选文件
 files.value // FileList
 
-// Reset selection
+// 重置选择
 reset()
 
-// Remove specific file
+// 移除特定文件
 remove(index)
 ```
 
-### With UFileUpload
+### 配合 UFileUpload 使用
 
 ```vue
 <script setup>
@@ -220,7 +220,7 @@ const { files, open, reset } = useFileUpload()
   <UFileUpload v-model="files" accept="image/*" @change="handleFiles">
     <template #default="{ dragover }">
       <div :class="{ 'border-primary': dragover }">
-        Drop files here or <UButton @click="open">Browse</UButton>
+        将文件拖至此处或 <UButton @click="open">浏览</UButton>
       </div>
     </template>
   </UFileUpload>
@@ -229,7 +229,7 @@ const { files, open, reset } = useFileUpload()
 
 ## defineLocale
 
-Define/extend locale for i18n.
+定义/扩展 i18n 语言环境。
 
 ```ts
 // locales/es.ts
@@ -249,7 +249,7 @@ export default defineLocale({
 })
 ```
 
-### Extend Existing Locale
+### 扩展现有语言环境
 
 ```ts
 import en from '@nuxt/ui/locale/en'
@@ -263,7 +263,7 @@ export default extendLocale(en, {
 })
 ```
 
-### Use in App
+### 在应用中使用
 
 ```vue
 <script setup>
@@ -279,18 +279,18 @@ import es from '~/locales/es'
 
 ## useFormField
 
-Access form field context in custom components.
+在自定义组件中访问表单字段上下文。
 
 ```ts
-// Inside custom form component
+// 在自定义表单组件内
 const { name, error, disabled } = useFormField()
 
-// name: field name from UFormField
-// error: validation error message
-// disabled: if field is disabled
+// name: 来自 UFormField 的字段名称
+// error: 验证错误信息
+// disabled: 如果字段被禁用则为 true
 ```
 
-### Custom Input Component
+### 自定义输入组件
 
 ```vue
 <script setup>
@@ -310,17 +310,17 @@ const { error } = useFormField()
 </template>
 ```
 
-## Quick Reference
+## 快速参考
 
-| Composable         | Purpose                         |
+| 组合式函数         | 目的                            |
 | ------------------ | ------------------------------- |
-| `useToast`         | Show notifications              |
-| `useOverlay`       | Programmatic modals/slidelovers |
-| `defineShortcuts`  | Keyboard shortcuts              |
-| `useKbd`           | Keyboard state detection        |
-| `useScrollspy`     | Track scroll for TOC            |
-| `useFileUpload`    | File upload handling            |
-| `defineLocale`     | i18n locale definition          |
-| `extendLocale`     | Extend existing locale          |
-| `useFormField`     | Form field context              |
-| `extractShortcuts` | Parse shortcut definitions      |
+| `useToast`         | 显示通知                        |
+| `useOverlay`       | 程序化模态框/滑动面板           |
+| `defineShortcuts`  | 键盘快捷键                      |
+| `useKbd`           | 键盘状态检测                    |
+| `useScrollspy`     | 跟踪滚动以实现目录导航          |
+| `useFileUpload`    | 文件上传处理                    |
+| `defineLocale`     | i18n 语言环境定义               |
+| `extendLocale`     | 扩展现有语言环境                |
+| `useFormField`     | 表单字段上下文                  |
+| `extractShortcuts` | 解析快捷键定义                  |

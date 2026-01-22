@@ -1,16 +1,16 @@
-# Nuxt Middleware & Plugins
+# Nuxt 中间件与插件
 
-## When to Use
+## 使用时机
 
-Working with `middleware/` or `plugins/` directories, route guards, app extensions.
+处理 `middleware/` 或 `plugins/` 目录、路由守卫、应用扩展。
 
-## Route Middleware
+## 路由中间件
 
-Route middleware runs before navigation. Used for auth checks, redirects, logging.
+路由中间件在导航前运行。用于身份验证检查、重定向、日志记录。
 
-### Global Middleware
+### 全局中间件
 
-Runs on every route change. **REQUIRED: Use `.global.ts` suffix:**
+在每次路由变更时运行。**必须使用 `.global.ts` 后缀：**
 
 ```ts
 // middleware/auth.global.ts
@@ -23,22 +23,22 @@ export default defineNuxtRouteMiddleware((to, from) => {
 })
 ```
 
-**Without `.global.ts` suffix, middleware is named (not global).**
+**不使用 `.global.ts` 后缀时，中间件将被命名（而非全局）**
 
-## Red Flags - Stop and Check Skill
+## 警戒信号——停止并检查技能
 
-If you're thinking any of these, STOP and re-read this skill:
+如果你有以下想法，请停下并重新阅读此技能：
 
-- "Suffix doesn't matter, it's about where I put it"
-- "I'll redirect() instead of return navigateTo()"
-- "I remember Nuxt 3 middleware patterns"
-- "Export default function is simpler"
+- “后缀不重要，关键是放在哪里”
+- “我会使用 `redirect()` 而非 `return navigateTo()`”
+- “我记得 Nuxt 3 的中间件模式”
+- “导出默认函数更简单”
 
-All of these mean: You're using outdated patterns. Use Nuxt 4 patterns instead.
+所有这些都意味着：你正在使用过时的模式。请改用 Nuxt 4 模式。
 
-### Named Middleware
+### 命名中间件
 
-Runs only when explicitly applied. No `.global` suffix:
+仅在显式应用时运行。无 `.global` 后缀：
 
 ```ts
 // middleware/admin.ts
@@ -51,7 +51,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 })
 ```
 
-Apply in page:
+在页面中应用：
 
 ```vue
 <script setup lang="ts">
@@ -61,35 +61,35 @@ definePageMeta({
 </script>
 ```
 
-### Middleware Return Values
+### 中间件返回值
 
 ```ts
 export default defineNuxtRouteMiddleware((to, from) => {
-  // Allow navigation
+  // 允许导航
   return
 
-  // Redirect
+  // 重定向
   return navigateTo('/login')
 
-  // Abort navigation
+  // 终止导航
   return abortNavigation()
 
-  // Abort with error
-  return abortNavigation('Not authorized')
+  // 带错误终止导航
+  return abortNavigation('未授权')
 })
 ```
 
-### Middleware Order
+### 中间件顺序
 
-1. Global middleware (alphabetical by filename)
-2. Layout middleware (if layout defines middleware)
-3. Page middleware (defined in definePageMeta)
+1. 全局中间件（按文件名字母顺序）
+2. 布局中间件（如果布局定义了中间件）
+3. 页面中间件（在 `definePageMeta` 中定义）
 
-## Plugins
+## 插件
 
-Plugins extend Vue app with global functionality. Run during app initialization.
+插件用于扩展 Vue 应用的全局功能。在应用初始化期间运行。
 
-### Basic Plugin
+### 基础插件
 
 ```ts
 // plugins/my-plugin.ts
@@ -102,7 +102,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 ```
 
-Use in components:
+在组件中使用：
 
 ```vue
 <script setup lang="ts">
@@ -111,7 +111,7 @@ console.log($hello('World')) // "Hello World!"
 </script>
 ```
 
-### Plugin with Vue Plugin
+### 带 Vue 插件的插件
 
 ```ts
 import type { PluginOptions } from 'vue-toastification'
@@ -127,7 +127,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 ```
 
-### Plugin with Hooks
+### 带钩子的插件
 
 ```ts
 // plugins/init.ts
@@ -142,26 +142,26 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 ```
 
-### Client-Only or Server-Only
+### 仅客户端或仅服务端
 
-Use file suffix:
+使用文件后缀：
 
-- `.client.ts` - runs only on client
-- `.server.ts` - runs only on server
+- `.client.ts` —— 仅在客户端运行
+- `.server.ts` —— 仅在服务端运行
 
 ```ts
 // plugins/analytics.client.ts
 export default defineNuxtPlugin(() => {
-  // Only runs in browser
+  // 仅在浏览器中运行
   if (window.analytics) {
     window.analytics.init()
   }
 })
 ```
 
-### Plugin Order
+### 插件顺序
 
-Use numeric prefix for execution order:
+使用数字前缀控制执行顺序：
 
 ```
 plugins/
@@ -170,7 +170,7 @@ plugins/
 └── 03.third.ts
 ```
 
-### Async Plugins
+### 异步插件
 
 ```ts
 // plugins/api.ts
@@ -185,60 +185,60 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 })
 ```
 
-## Best Practices
+## 最佳实践
 
-**Middleware:**
+**中间件：**
 
-- **Return navigation or nothing** - don't mutate state heavily
-- **Keep logic minimal** - delegate to composables/stores
-- **Use for guards & redirects** only
-- **Check meta properly** - `to.meta.requiresAuth`
-- **Global = `.global.ts`** suffix required
+- **返回导航或无内容** —— 避免大量状态变更
+- **保持逻辑精简** —— 将处理委托给组合式函数/存储
+- **仅用于守卫与重定向**
+- **正确检查元信息** —— `to.meta.requiresAuth`
+- **全局中间件 = `.global.ts` 后缀必须存在**
 
-**Plugins:**
+**插件：**
 
-- **Use for app-wide functionality** only
-- **Provide via `provide`** for type safety
-- **Consider client/server context** - use `.client`/`.server`
-- **Minimize work** in plugin initialization
-- **Use hooks** for lifecycle events
+- **仅用于全局应用功能**
+- **通过 `provide` 提供以确保类型安全**
+- **考虑客户端/服务端上下文** —— 使用 `.client` 或 `.server`
+- **插件初始化时尽量减少工作量**
+- **使用钩子处理生命周期事件**
 
-## Common Mistakes
+## 常见错误
 
-| ❌ Wrong                             | ✅ Right                                                     |
+| ❌ 错误                             | ✅ 正确                                                     |
 | ------------------------------------ | ------------------------------------------------------------ |
 | `export default function({ route })` | `export default defineNuxtRouteMiddleware((to, from) => {})` |
-| Mutate route object                  | Return navigateTo() or nothing                               |
-| `middleware/auth.ts` (not global)    | `middleware/auth.global.ts` (global)                         |
+| 修改路由对象                  | 返回 `navigateTo()` 或无内容                               |
+| `middleware/auth.ts`（非全局）    | `middleware/auth.global.ts`（全局）                         |
 | `redirect('/login')`                 | `return navigateTo('/login')`                                |
-| Plugin without defineNuxtPlugin      | Wrap in defineNuxtPlugin()                                   |
+| 插件未使用 `defineNuxtPlugin`      | 使用 `defineNuxtPlugin()` 包裹                                 |
 
-## Middleware Example: Auth
+## 中间件示例：身份验证
 
 ```ts
 // middleware/auth.global.ts
 export default defineNuxtRouteMiddleware((to, from) => {
   const auth = useAuthStore()
 
-  // Public routes
+  // 公开路由
   const publicRoutes = ['/', '/login', '/register']
   if (publicRoutes.includes(to.path)) {
     return
   }
 
-  // Check auth
+  // 检查身份验证
   if (!auth.isAuthenticated) {
     return navigateTo('/login')
   }
 
-  // Check role
+  // 检查角色
   if (to.meta.requiresAdmin && !auth.isAdmin) {
-    return abortNavigation('Access denied')
+    return abortNavigation('访问被拒绝')
   }
 })
 ```
 
-## Plugin Example: API Client
+## 插件示例：API 客户端
 
 ```ts
 // plugins/api.ts
@@ -271,8 +271,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 ```
 
-## Resources
+## 资源
 
-- Nuxt middleware: https://nuxt.com/docs/guide/directory-structure/middleware
-- Nuxt plugins: https://nuxt.com/docs/guide/directory-structure/plugins
-- Route middleware: https://nuxt.com/docs/getting-started/routing#route-middleware
+- Nuxt 中间件：https://nuxt.com/docs/guide/directory-structure/middleware
+- Nuxt 插件：https://nuxt.com/docs/guide/directory-structure/plugins
+- 路由中间件：https://nuxt.com/docs/getting-started/routing#route-middleware

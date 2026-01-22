@@ -1,11 +1,11 @@
 # useVModel
 
-Shorthand for v-model binding, props + emit -> ref
+v-model 绑定的简写形式，props + emit -> ref
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { useVModel } from '@vueuse/core'
@@ -18,17 +18,17 @@ const emit = defineEmits(['update:modelValue'])
 const data = useVModel(props, 'modelValue', emit)
 ```
 
-## Options
+## 选项
 
-| Option       | Type                          | Default   | Description                                                                       |
-| ------------ | ----------------------------- | --------- | --------------------------------------------------------------------------------- |
-| passive      | `Passive`                     | false     | When passive is set to `true`, it will use `watch` to sync with props and ref.    |
-| eventName    | `string`                      | undefined | When eventName is set, it's value will be used to overwrite the emit event name.  |
-| deep         | `boolean`                     | false     | Attempting to check for changes of properties in a deeply nested object or array. |
-| defaultValue | `T`                           | undefined | Defining default value for return ref when no value is passed.                    |
-| clone        | `boolean \| CloneFn&lt;T&gt;` | false     | Clone the props.                                                                  |
-| shouldEmit   | `(v: T) =&gt; boolean`        | undefined | The hook before triggering the emit event can be used for form validation.        |
+| 选项         | 类型                          | 默认值    | 描述                                                                             |
+| ------------ | ----------------------------- | --------- | -------------------------------------------------------------------------------- |
+| passive      | `Passive`                     | false     | 当 passive 设置为 `true` 时，将使用 `watch` 来同步 props 和 ref。                |
+| eventName    | `string`                      | undefined | 当设置了 eventName 时，其值将用于覆盖 emit 事件名称。                            |
+| deep         | `boolean`                     | false     | 尝试检测嵌套对象或数组中属性的变化。                                             |
+| defaultValue | `T`                           | undefined | 当未传递值时，为返回的 ref 定义默认值。                                          |
+| clone        | `boolean \| CloneFn&lt;T&gt;` | false     | 克隆 props。                                                                     |
+| shouldEmit   | `(v: T) =&gt; boolean`        | undefined | 在触发 emit 事件之前调用的钩子，可用于表单验证。                                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useVModel/)
+[VueUse 文档](https://vueuse.org/core/useVModel/)

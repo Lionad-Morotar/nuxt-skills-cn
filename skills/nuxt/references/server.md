@@ -1,51 +1,51 @@
-# Nuxt Server Patterns
+# Nuxt 服务端模式
 
-> **Versions:** Nuxt uses h3 v1 and nitropack v2. Patterns from h3 v2 or nitro v3 docs won't work.
+> **版本：** Nuxt 使用 h3 v1 和 nitropack v2。来自 h3 v2 或 nitro v3 文档的模式将无法工作。
 
-## When to Use
+## 使用场景
 
-Working with `server/` directory - API routes, server middleware, server utilities.
+使用 `server/` 目录 —— API 路由、服务端中间件、服务端工具。
 
-## Server Directory Structure
+## 服务端目录结构
 
 ```
 server/
-├── api/                    # API endpoints
+├── api/                    # API 端点
 │   ├── users.get.ts        # GET /api/users
 │   ├── users.post.ts       # POST /api/users
 │   └── users/
 │       └── [id].get.ts     # GET /api/users/:id
-├── routes/                 # Non-API routes
+├── routes/                 # 非 API 路由
 │   └── healthz.get.ts      # GET /healthz
-├── middleware/             # Server middleware
+├── middleware/             # 服务端中间件
 │   └── log.ts
-└── utils/                  # Server utilities (auto-imported)
+└── utils/                  # 服务端工具（自动导入）
     └── db.ts
 ```
 
-## API Routes
+## API 路由
 
-File naming determines HTTP method and route:
+文件命名决定 HTTP 方法和路由：
 
 - `users.get.ts` → GET /api/users
 - `users.post.ts` → POST /api/users
 - `users/[userId].get.ts` → GET /api/users/:userId
 - `users/[userId].delete.ts` → DELETE /api/users/:userId
 
-**REQUIRED: Use descriptive param names:** `[userId].get.ts` NOT `[id].get.ts`
+**必需：使用描述性参数名称：** `[userId].get.ts` 而非 `[id].get.ts`
 
-## Red Flags - Stop and Check Skill
+## 警告信号 —— 停止并检查技能
 
-If you're thinking any of these, STOP and re-read this skill:
+如果你有以下想法，请立刻停止并重新阅读此技能：
 
-- "I'll use event.context.params like before"
-- "Generic [id] is fine for params"
-- "Don't need .get.ts suffix"
-- "I remember how Nuxt 3 API routes worked"
+- “我会像以前一样使用 event.context.params”
+- “通用 [id] 对参数来说没问题”
+- “不需要 .get.ts 后缀”
+- “我记得 Nuxt 3 API 路由的工作方式”
 
-All of these mean: You're using outdated patterns. Use Nuxt 4 patterns instead.
+以上所有都意味着你正在使用过时的模式。请改用 Nuxt 4 模式。
 
-### Basic API Route
+### 基础 API 路由
 
 ```ts
 // server/api/users.get.ts
@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-### Route with Params
+### 带参数的路由
 
 ```ts
 // server/api/users/[userId].get.ts
@@ -82,7 +82,7 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-### Route with Query Params
+### 带查询参数的路由
 
 ```ts
 // server/api/users.get.ts
@@ -96,14 +96,14 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-### Route with Body
+### 带请求体的路由
 
 ```ts
 // server/api/users.post.ts
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
-  // Validate body
+  // 验证请求体
   if (!body.name || !body.email) {
     throw createError({
       statusCode: 400,
@@ -117,9 +117,9 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-### Validation with Zod
+### 使用 Zod 验证
 
-Use `readValidatedBody` and `getValidatedQuery` for schema validation:
+使用 `readValidatedBody` 和 `getValidatedQuery` 进行模式验证：
 
 ```ts
 // server/api/users.post.ts
@@ -132,7 +132,7 @@ const userSchema = z.object({
 
 export default defineEventHandler(async (event) => {
   const body = await readValidatedBody(event, userSchema.parse)
-  // body is typed as { name: string, email: string }
+  // body 被类型化为 { name: string, email: string }
   const user = await createUser(body)
   setResponseStatus(event, 201)
   return user
@@ -154,22 +154,22 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-## Error Handling
+## 错误处理
 
-Use `createError` for HTTP errors:
+使用 `createError` 处理 HTTP 错误：
 
 ```ts
 throw createError({
   statusCode: 400,
   statusMessage: 'Bad Request',
   message: 'Invalid input',
-  data: { field: 'email' } // Optional additional data
+  data: { field: 'email' } // 可选的附加数据
 })
 ```
 
-## Server Middleware
+## 服务端中间件
 
-Runs on every server request:
+在每个服务端请求上运行：
 
 ```ts
 // server/middleware/log.ts
@@ -178,7 +178,7 @@ export default defineEventHandler((event) => {
 })
 ```
 
-Named middleware for specific patterns:
+命名中间件用于特定模式：
 
 ```ts
 // server/middleware/auth.ts
@@ -192,14 +192,14 @@ export default defineEventHandler((event) => {
     })
   }
 
-  // Attach user to event context
+  // 将用户附加到事件上下文中
   event.context.user = await verifyToken(token)
 })
 ```
 
-## Server Utils
+## 服务端工具
 
-Reusable server functions (auto-imported):
+可复用的服务端函数（自动导入）：
 
 ```ts
 // server/utils/db.ts
@@ -214,81 +214,81 @@ export async function fetchUserById(id: string) {
 }
 ```
 
-Auto-imported in all server routes and middleware.
+在所有服务端路由和中间件中自动导入。
 
-## Request Helpers
+## 请求辅助函数
 
 ```ts
-// Get params
+// 获取参数
 const userId = getRouterParam(event, 'userId')
 
-// Get query
+// 获取查询参数
 const query = getQuery(event)
 
-// Get body
+// 获取请求体
 const body = await readBody(event)
 
-// Get headers
+// 获取请求头
 const auth = getRequestHeader(event, 'authorization')
 
-// Get cookies
+// 获取 Cookie
 const token = getCookie(event, 'token')
 
-// Get method
+// 获取请求方法
 const method = getMethod(event)
 
-// Get IP
+// 获取 IP 地址
 const ip = getRequestIP(event)
 ```
 
-## Response Helpers
+## 响应辅助函数
 
 ```ts
-// Set status code
+// 设置状态码
 setResponseStatus(event, 201)
 
-// Set headers
+// 设置响应头
 setResponseHeader(event, 'X-Custom', 'value')
 setResponseHeaders(event, { 'X-Custom': 'value', 'X-Another': 'value' })
 
-// Set cookies
+// 设置 Cookie
 setCookie(event, 'token', 'value', {
   httpOnly: true,
   secure: true,
   sameSite: 'lax',
-  maxAge: 60 * 60 * 24 * 7 // 1 week
+  maxAge: 60 * 60 * 24 * 7 // 1 周
 })
 
-// Redirect
+// 重定向
 return sendRedirect(event, '/login', 302)
 
-// Stream
+// 流式响应
 return sendStream(event, stream)
 
-// No content
+// 无内容响应
 return sendNoContent(event)
 ```
 
-## Best Practices
+## 最佳实践
 
-- **Use descriptive param names** - `[userId]` not `[id]`
-- **Keep routes thin** - delegate to server utils
-- **Validate input** at route level
-- **Use typed errors** with createError
-- **Handle errors gracefully** - don't expose internals
-- **Use server utils** for DB/external APIs
-- **Don't expose sensitive data** in responses
-- **Set proper status codes** - 201 for created, 204 for no content
+- **使用描述性参数名称** —— `[userId]` 而非 `[id]`
+- **保持路由简洁** —— 将逻辑委托给服务端工具
+- **在路由层验证输入**
+- **使用类型化的错误** 并配合 `createError`
+- **优雅地处理错误** —— 不要暴露内部信息
+- **使用服务端工具** 处理数据库或外部 API
+- **不要在响应中暴露敏感数据**
+- **设置正确的状态码** —— 创建时返回 201，无内容时返回 204
 
-## Common Mistakes
+## 常见错误
 
-| ❌ Wrong                  | ✅ Right                      |
-| ------------------------- | ----------------------------- |
-| `event.context.params.id` | `getRouterParam(event, 'id')` |
-| `return res.json(data)`   | `return data`                 |
-| `[id].get.ts`             | `[userId].get.ts`             |
-| `users-id.get.ts`         | `users/[id].get.ts`           |
-| Throw generic errors      | Use createError with status   |
+| ❌ 错误                    | ✅ 正确                        |
+| -------------------------- | ----------------------------- |
+| `event.context.params.id`  | `getRouterParam(event, 'id')` |
+| `return res.json(data)`    | `return data`                 |
+| `[id].get.ts`              | `[userId].get.ts`             |
+| `users-id.get.ts`          | `users/[id].get.ts`           |
+| 抛出通用错误               | 使用带状态码的 `createError`  |
 
 ## WebSocket
 
@@ -300,7 +300,7 @@ export default defineWebSocketHandler({
   },
   message(peer, message) {
     peer.send(`Echo: ${message.text()}`)
-    // Broadcast to all: peer.publish('channel', message)
+    // 广播到所有客户端: peer.publish('channel', message)
   },
   close(peer) {
     console.log('Client disconnected:', peer.id)
@@ -308,7 +308,7 @@ export default defineWebSocketHandler({
 })
 ```
 
-Enable in config:
+在配置中启用：
 
 ```ts
 // nuxt.config.ts
@@ -319,7 +319,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Server-Sent Events (Experimental)
+## 服务端事件（实验性）
 
 ```ts
 // server/api/stream.get.ts
@@ -338,10 +338,10 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-## Resources
+## 资源
 
-- Nuxt server: https://nuxt.com/docs/guide/directory-structure/server
-- h3 (Nitro engine): https://v1.h3.dev/
-- Nitro: https://nitro.build/
+- Nuxt 服务端：https://nuxt.com/docs/guide/directory-structure/server
+- h3（Nitro 引擎）：https://v1.h3.dev/
+- Nitro：https://nitro.build/
 
-> **For database/storage APIs:** see `nuxthub` skill
+> **对于数据库/存储 API：** 请参见 `nuxthub` 技能

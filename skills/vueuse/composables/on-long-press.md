@@ -1,11 +1,11 @@
 # onLongPress
 
-Listen for a long press on an element.
+监听元素上的长按操作。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -34,26 +34,26 @@ onLongPress(
 </script>
 
 <template>
-  <p>Long Pressed: {{ longPressedHook }}</p>
+  <p>长按状态：{{ longPressedHook }}</p>
 
   <button ref="htmlRefHook" class="ml-2 button small">
-    Press long
+    长按
   </button>
 
   <button class="ml-2 button small" @click="resetHook">
-    Reset
+    重置
   </button>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option            | Type                                                                    | Default | Description                                       |
-| ----------------- | ----------------------------------------------------------------------- | ------- | ------------------------------------------------- |
-| delay             | `number \| ((ev: PointerEvent) =&gt; number)`                           | 500     | Time in ms till `longpress` gets called           |
-| distanceThreshold | `number \| false`                                                       | 10      | Allowance of moving distance in pixels,           |
-| onMouseUp         | `(duration: number, distance: number, isLongPress: boolean) =&gt; void` | -       | Function called when the ref element is released. |
+| 选项              | 类型                                                                    | 默认值  | 描述                                             |
+| ----------------- | ----------------------------------------------------------------------- | ------- | ------------------------------------------------ |
+| delay             | `number \| ((ev: PointerEvent) =&gt; number)`                           | 500     | 触发 `longpress` 的延迟时间（毫秒）              |
+| distanceThreshold | `number \| false`                                                       | 10      | 允许移动的距离（像素），超出则不触发长按        |
+| onMouseUp         | `(duration: number, distance: number, isLongPress: boolean) =&gt; void` | -       | 当引用元素被释放时调用的函数。                  |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/onLongPress/)
+[VueUse 文档](https://vueuse.org/core/onLongPress/)

@@ -1,11 +1,11 @@
-# Skeleton
+# 骨架屏
 
-A placeholder to show while content is loading.
+内容加载时显示的占位符。
 
-## Usage
+## 用法
 
 ```vue
 <USkeleton
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

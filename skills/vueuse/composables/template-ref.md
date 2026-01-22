@@ -1,9 +1,9 @@
 # templateRef
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 <script lang="ts">
@@ -13,7 +13,7 @@ export default {
   setup() {
     const target = templateRef('target')
 
-    // no need to return the `target`, it will bind to the ref magically
+    // 无需返回 `target`，它会神奇地绑定到 ref
   },
 }
 </script>
@@ -23,6 +23,6 @@ export default {
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/templateRef/)
+[VueUse 文档](https://vueuse.org/core/templateRef/)

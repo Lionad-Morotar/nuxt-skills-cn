@@ -1,11 +1,11 @@
 # useDocumentVisibility
 
-Reactively track
+响应式追踪
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -15,6 +15,6 @@ const visibility = useDocumentVisibility()
 </script>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDocumentVisibility/)
+[VueUse 文档](https://vueuse.org/core/useDocumentVisibility/)

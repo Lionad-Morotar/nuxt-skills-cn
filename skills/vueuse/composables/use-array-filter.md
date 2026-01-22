@@ -1,11 +1,11 @@
 # useArrayFilter
 
-Reactive
+响应式
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**分类：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayFilter } from '@vueuse/core'
@@ -22,6 +22,6 @@ item2.value = 1
 // result.value: [0, 4, 6, 8]
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayFilter/)
+[VueUse 文档](https://vueuse.org/core/useArrayFilter/)

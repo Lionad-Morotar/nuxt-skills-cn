@@ -1,12 +1,12 @@
-# Testing
+# 测试
 
-## Vitest Setup
+## Vitest 设置
 
 ```bash
 pnpm add -D vitest
 ```
 
-### Basic Config
+### 基础配置
 
 ```typescript
 // vitest.config.ts
@@ -21,7 +21,7 @@ export default defineConfig({
 })
 ```
 
-### With Coverage
+### 包含覆盖率
 
 ```typescript
 export default defineConfig({
@@ -36,9 +36,9 @@ export default defineConfig({
 })
 ```
 
-## Workspace Projects
+## 工作区项目
 
-For monorepos, test packages separately:
+对于单体仓库（monorepos），分别测试各个包：
 
 ```typescript
 export default defineConfig({
@@ -58,9 +58,9 @@ export default defineConfig({
 })
 ```
 
-## Fixture-Based Testing
+## 基于固定文件的测试
 
-Test transforms with file fixtures:
+使用文件夹中的测试用例进行转换测试：
 
 ```typescript
 import { describe, expect, it } from 'vitest'
@@ -79,9 +79,9 @@ describe('transform', () => {
 })
 ```
 
-## Idempotency Testing
+## 幂等性测试
 
-Ensure transforms are stable:
+确保转换是稳定的：
 
 ```typescript
 it('transform is idempotent', async () => {
@@ -89,13 +89,13 @@ it('transform is idempotent', async () => {
   expect(pass1).toMatchSnapshot()
 
   const pass2 = (await transform(pass1))?.code ?? pass1
-  expect(pass2).toBe(pass1)  // Should not change
+  expect(pass2).toBe(pass1)  // 应当不变
 })
 ```
 
-## Type-Level Testing
+## 类型级别测试
 
-Test TypeScript types:
+测试 TypeScript 类型：
 
 ```typescript
 // vitest.config.ts
@@ -118,9 +118,9 @@ describe('types', () => {
 })
 ```
 
-## Multi-TS Version Testing
+## 多 TypeScript 版本测试
 
-Test across TypeScript versions (TanStack pattern):
+在多个 TypeScript 版本中进行测试（TanStack 模式）：
 
 ```yaml
 # .github/workflows/ci.yml
@@ -134,27 +134,27 @@ jobs:
       - run: pnpm typecheck
 ```
 
-## Package Validation
+## 包验证
 
-Validate published package:
+验证已发布的包：
 
 ```bash
-# Check exports are correct
+# 检查导出是否正确
 pnpm dlx publint
 
-# Check types work in different moduleResolutions
+# 检查在不同模块解析下的类型是否工作
 pnpm dlx @arethetypeswrong/cli --pack .
 ```
 
-Add to tsdown config:
+添加到 tsdown 配置中：
 
 ```typescript
 export default defineConfig({
-  attw: { profile: 'esm-only' },  // or 'node16'
+  attw: { profile: 'esm-only' },  // 或 'node16'
 })
 ```
 
-## Test Scripts
+## 测试脚本
 
 ```json
 {
@@ -167,7 +167,7 @@ export default defineConfig({
 }
 ```
 
-## Mocking
+## 模拟
 
 ```typescript
 import { vi } from 'vitest'
@@ -176,14 +176,14 @@ vi.mock('fs', () => ({
   readFileSync: vi.fn(() => 'mocked content'),
 }))
 
-// Spy on method
+// 监控方法调用
 const spy = vi.spyOn(console, 'log')
 expect(spy).toHaveBeenCalledWith('expected')
 ```
 
-## Testing Plugins
+## 插件测试
 
-Dogfood your own plugin in tests:
+在测试中使用你自己的插件：
 
 ```typescript
 // vitest.config.ts

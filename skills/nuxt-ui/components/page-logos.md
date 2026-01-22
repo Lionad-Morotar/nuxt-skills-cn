@@ -1,16 +1,16 @@
 # PageLogos
 
-A list of logos or images to display on your pages.
+页面上显示的标志或图像列表。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title above the logos.
-- `marquee`: to enable a marquee effect for the logos.
+- `title`：用于设置标志上方的标题。
+- `marquee`：用于启用标志的滚动效果。
 
-## Usage
+## 用法
 
 ```vue
 <UPageLogos
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

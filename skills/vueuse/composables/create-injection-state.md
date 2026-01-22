@@ -1,11 +1,11 @@
 # createInjectionState
 
-Create global state that can be injected into components.
+创建可注入组件的全局状态。
 
-**Package:** `@vueuse/shared`
-**Category:** State
+**包：** `@vueuse/shared`  
+**分类：** 状态
 
-## Usage
+## 用法
 
 ```ts
 <!-- RootComponent.vue -->
@@ -25,13 +25,13 @@ useProvideCounterStore(0)
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                   | Default | Description                            |
-| ------------ | -------------------------------------- | ------- | -------------------------------------- |
-| injectionKey | `string \| InjectionKey&lt;Return&gt;` | -       | Custom injectionKey for InjectionState |
-| defaultValue | `Return`                               | -       | Default value for the InjectionState   |
+| 选项         | 类型                                   | 默认值  | 描述                             |
+| ------------ | -------------------------------------- | ------- | -------------------------------- |
+| injectionKey | `string \| InjectionKey<Return>`       | -       | 自定义注入键，用于 InjectionState |
+| defaultValue | `Return`                               | -       | InjectionState 的默认值          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createInjectionState/)
+[VueUse 文档](https://vueuse.org/core/createInjectionState/)

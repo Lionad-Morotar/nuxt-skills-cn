@@ -1,11 +1,11 @@
 # usePrecision
 
-Reactively set the precision of a number.
+反应式地设置数字的精度。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { usePrecision } from '@vueuse/math'
@@ -22,12 +22,12 @@ const floorResult = usePrecision(value, 3, {
 }) // 3.141
 ```
 
-## Options
+## 选项
 
-| Option | Type                           | Default | Description                |
-| ------ | ------------------------------ | ------- | -------------------------- |
-| math   | `'floor' \| 'ceil' \| 'round'` | round   | Method to use for rounding |
+| 选项   | 类型                           | 默认值  | 描述                     |
+| ------ | ------------------------------ | ------- | ------------------------ |
+| math   | `'floor' \| 'ceil' \| 'round'` | round   | 用于四舍五入的方法       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePrecision/)
+[VueUse 文档](https://vueuse.org/core/usePrecision/)

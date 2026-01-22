@@ -1,11 +1,11 @@
 # createTemplatePromise
 
-Template as Promise. Useful for constructing custom Dialogs, Modals, Toasts, etc.
+模板作为 Promise。可用于构建自定义对话框、模态框、Toast 等。
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -15,20 +15,20 @@ const TemplatePromise = createTemplatePromise<ReturnType>()
 
 async function open() {
   const result = await TemplatePromise.start()
-  // button is clicked, result is 'ok'
+  // 点击按钮，result 为 'ok'
 }
 </script>
 
 <template>
   <TemplatePromise v-slot="{ promise, resolve, reject, args }">
-    <!-- your UI -->
+    <!-- 你的 UI -->
     <button @click="resolve('ok')">
-      OK
+      确定
     </button>
   </TemplatePromise>
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createTemplatePromise/)
+[VueUse 文档](https://vueuse.org/core/createTemplatePromise/)

@@ -1,11 +1,11 @@
 # useInfiniteScroll
 
-Infinite scrolling of the element.
+元素的无限滚动。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -18,15 +18,15 @@ const data = ref([1, 2, 3, 4, 5, 6])
 const { reset } = useInfiniteScroll(
   el,
   () => {
-    // load more
+    // 加载更多
     data.value.push(...moreData)
   },
   {
     distance: 10,
     canLoadMore: () => {
-      // inidicate when there is no more content to load so onLoadMore stops triggering
+      // 指示是否还有更多内容可加载，以停止 onLoadMore 触发
       // if (noMoreContent) return false
-      return true // for demo purposes
+      return true // 仅为演示目的
     },
   }
 )
@@ -44,26 +44,26 @@ function resetList() {
     </div>
   </div>
   <button @click="resetList()">
-    Reset
+    重置
   </button>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option      | Type                                     | Default | Description                                                                           |
-| ----------- | ---------------------------------------- | ------- | ------------------------------------------------------------------------------------- |
-| distance    | `number`                                 | 0       | The minimum distance between the bottom of the element and the bottom of the viewport |
-| direction   | `'top' \| 'bottom' \| 'left' \| 'right'` | bottom  | The direction in which to listen the scroll.                                          |
-| interval    | `number`                                 | 100     | The interval time between two load more (to avoid too many invokes).                  |
-| canLoadMore | `(el: T) =&gt; boolean`                  | -       | A function that determines whether more content can be loaded for a specific element. |
+| 选项        | 类型                                     | 默认值  | 描述                                                                          |
+| ----------- | ---------------------------------------- | ------- | ----------------------------------------------------------------------------- |
+| distance    | `number`                                 | 0       | 元素底部与视口底部之间的最小距离                                              |
+| direction   | `'top' \| 'bottom' \| 'left' \| 'right'` | bottom  | 监听滚动的方向                                                                |
+| interval    | `number`                                 | 100     | 两次加载更多之间的间隔时间（避免触发过多）                                    |
+| canLoadMore | `(el: T) =&gt; boolean`                  | -       | 一个函数，用于判断特定元素是否还能加载更多内容                                |
 
-## Returns
+## 返回值
 
-| Name      | Type       |
+| 名称      | 类型       |
 | --------- | ---------- |
 | isLoading | `computed` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useInfiniteScroll/)
+[VueUse 文档](https://vueuse.org/core/useInfiniteScroll/)

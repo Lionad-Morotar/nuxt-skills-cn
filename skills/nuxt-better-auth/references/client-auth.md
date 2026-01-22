@@ -1,28 +1,28 @@
-# Client-Side Authentication
+# 客户端认证
 
 ## useUserSession()
 
-Main composable for auth state and methods.
+用于认证状态和方法的主要组合式函数。
 
 ```ts
 const {
   user,           // Ref<AuthUser | null>
   session,        // Ref<AuthSession | null>
   loggedIn,       // ComputedRef<boolean>
-  ready,          // ComputedRef<boolean> - session fetch complete
-  client,         // Better Auth client (client-side only)
-  signIn,         // Proxy to client.signIn
-  signUp,         // Proxy to client.signUp
-  signOut,        // Sign out and clear session
-  fetchSession,   // Manually refresh session
-  updateUser      // Optimistic local user update
+  ready,          // ComputedRef<boolean> - 会话获取完成
+  client,         // Better Auth 客户端（仅客户端）
+  signIn,         // 调用 client.signIn 的代理
+  signUp,         // 调用 client.signUp 的代理
+  signOut,        // 登出并清除会话
+  fetchSession,   // 手动刷新会话
+  updateUser      // 乐观式本地用户更新
 } = useUserSession()
 ```
 
-## Sign In
+## 登录
 
 ```ts
-// Email/password
+// 邮箱/密码
 await signIn.email({
   email: 'user@example.com',
   password: 'password123'
@@ -34,7 +34,7 @@ await signIn.email({
 await signIn.social({ provider: 'github' })
 ```
 
-## Sign Up
+## 注册
 
 ```ts
 await signUp.email({
@@ -46,15 +46,15 @@ await signUp.email({
 })
 ```
 
-## Sign Out
+## 登出
 
 ```ts
 await signOut()
-// or with redirect
+// 或带重定向
 await signOut({ redirect: '/login' })
 ```
 
-## Check Auth State
+## 检查认证状态
 
 ```vue
 <script setup>
@@ -62,20 +62,20 @@ const { user, loggedIn, ready } = useUserSession()
 </script>
 
 <template>
-  <div v-if="!ready">Loading...</div>
-  <div v-else-if="loggedIn">Welcome, {{ user?.name }}</div>
-  <div v-else>Please log in</div>
+  <div v-if="!ready">加载中...</div>
+  <div v-else-if="loggedIn">欢迎，{{ user?.name }}</div>
+  <div v-else>请登录</div>
 </template>
 ```
 
-## Safe Redirects
+## 安全重定向
 
-Always validate redirect URLs from query params to prevent open redirects:
+始终验证来自查询参数的重定向 URL，以防止开放重定向：
 
 ```ts
 function getSafeRedirect() {
   const redirect = route.query.redirect as string
-  // Must start with / and not // (prevents protocol-relative URLs)
+  // 必须以 / 开头且不为 //（防止协议相关 URL）
   if (!redirect?.startsWith('/') || redirect.startsWith('//')) {
     return '/'
   }
@@ -89,65 +89,65 @@ await signIn.email({
 })
 ```
 
-## Wait for Session
+## 等待会话
 
-Useful when needing session before rendering:
+在渲染前需要会话时非常有用：
 
 ```ts
-await waitForSession() // 5s timeout
+await waitForSession() // 5秒超时
 if (loggedIn.value) {
-  // Session is ready
+  // 会话已准备就绪
 }
 ```
 
-## Manual Session Refresh
+## 手动刷新会话
 
 ```ts
-// Refetch from server
+// 从服务器重新获取
 await fetchSession({ force: true })
 ```
 
-## Session Management
+## 会话管理
 
-Additional session management via Better Auth client:
+通过 Better Auth 客户端进行额外的会话管理：
 
 ```ts
 const { client } = useUserSession()
 
-// List all active sessions for current user
+// 列出当前用户的所有活动会话
 const sessions = await client.listSessions()
 
-// Revoke a specific session
+// 撤销特定会话
 await client.revokeSession({ sessionId: 'xxx' })
 
-// Revoke all sessions except current
+// 撤销除当前会话外的所有会话
 await client.revokeOtherSessions()
 
-// Revoke all sessions (logs out everywhere)
+// 撤销所有会话（在所有地方登出）
 await client.revokeSessions()
 ```
 
-These methods require the user to be authenticated.
+这些方法需要用户已认证。
 
-## BetterAuthState Component
+## BetterAuthState 组件
 
-Renders once session hydration completes (`ready === true`), with loading placeholder support.
+在会话初始化完成（`ready === true`）后渲染一次，支持加载占位符。
 
 ```vue
 <BetterAuthState>
   <template #default="{ loggedIn, user, session, signOut }">
-    <p v-if="loggedIn">Hi {{ user?.name }}</p>
-    <button v-else @click="navigateTo('/login')">Sign in</button>
+    <p v-if="loggedIn">你好 {{ user?.name }}</p>
+    <button v-else @click="navigateTo('/login')">登录</button>
   </template>
   <template #placeholder>
-    <p>Loading…</p>
+    <p>加载中…</p>
   </template>
 </BetterAuthState>
 ```
 
-**Slots:**
+**插槽：**
 
-- `default` - Renders when `ready === true`, provides `{ loggedIn, user, session, signOut }`
-- `placeholder` - Renders while session hydrates
+- `default` - 当 `ready === true` 时渲染，提供 `{ loggedIn, user, session, signOut }`
+- `placeholder` - 在会话初始化期间渲染
 
-Useful in clientOnly mode or for graceful SSR loading states.
+在 clientOnly 模式或优雅的 SSR 加载状态中很有用。

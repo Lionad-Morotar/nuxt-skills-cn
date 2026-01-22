@@ -1,18 +1,18 @@
 # useVModels
 
-Shorthand for props v-model binding. Think it like but changes will also trigger emit.
+props v-model 绑定的简写形式。可视为 `v-model` 的替代方式，但其变更也会触发 emit。
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`  
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { useVModels } from '@vueuse/core'
 
 const props = defineProps({
-  foo: string,
-  bar: number,
+  foo: String,
+  bar: Number,
 })
 
 const emit = defineEmits(['update:foo', 'update:bar'])
@@ -20,6 +20,6 @@ const emit = defineEmits(['update:foo', 'update:bar'])
 const { foo, bar } = useVModels(props, emit)
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useVModels/)
+[VueUse 文档](https://vueuse.org/core/useVModels/)

@@ -1,11 +1,11 @@
 # useUserMedia
 
-Reactive streaming.
+响应式流式传输。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -17,7 +17,7 @@ start()
 
 const videoRef = useTemplateRef('video')
 watchEffect(() => {
-  // preview on a video element
+  // 在视频元素上预览
   videoRef.value.srcObject = stream.value
 })
 </script>
@@ -27,26 +27,26 @@ watchEffect(() => {
 </template>
 ```
 
-## Options
+## 选项
 
-| Option     | Type                      | Default | Description                                           |
-| ---------- | ------------------------- | ------- | ----------------------------------------------------- |
-| enabled    | `MaybeRef&lt;boolean&gt;` | false   | If the stream is enabled                              |
-| autoSwitch | `MaybeRef&lt;boolean&gt;` | true    | Recreate stream when deviceIds or constraints changed |
+| 选项         | 类型                        | 默认值   | 描述                                     |
+| ------------ | --------------------------- | -------- | ---------------------------------------- |
+| enabled      | `MaybeRef<boolean>`         | false    | 若启用流式传输                           |
+| autoSwitch   | `MaybeRef<boolean>`         | true     | 当 deviceIds 或 constraints 更改时重新创建流式传输 |
 
-## Returns
+## 返回值
 
-| Name        | Type           |
-| ----------- | -------------- |
-| isSupported | `useSupported` |
-| stream      | `Ref`          |
-| start       | `Ref`          |
-| stop        | `Ref`          |
-| restart     | `Ref`          |
-| constraints | `deepRef`      |
-| enabled     | `shallowRef`   |
-| autoSwitch  | `shallowRef`   |
+| 名称         | 类型           |
+| ------------ | -------------- |
+| isSupported  | `useSupported` |
+| stream       | `Ref`          |
+| start        | `Ref`          |
+| stop         | `Ref`          |
+| restart      | `Ref`          |
+| constraints  | `deepRef`      |
+| enabled      | `shallowRef`   |
+| autoSwitch   | `shallowRef`   |
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/useUserMedia/)
+[VueUse 文档](https://vueuse.org/core/useUserMedia/)

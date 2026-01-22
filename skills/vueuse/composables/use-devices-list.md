@@ -1,11 +1,11 @@
 # useDevicesList
 
-Reactive enumerateDevices listing available input/output devices.
+响应式 enumerateDevices，用于列出可用的输入/输出设备。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useDevicesList } from '@vueuse/core'
@@ -18,15 +18,15 @@ const {
 } = useDevicesList()
 ```
 
-## Options
+## 选项
 
-| Option             | Type      | Default | Description                                              |
-| ------------------ | --------- | ------- | -------------------------------------------------------- |
-| requestPermissions | `boolean` | false   | Request for permissions immediately if it's not granted, |
+| 选项               | 类型      | 默认值  | 描述                                                   |
+| ------------------ | --------- | ------- | ------------------------------------------------------ |
+| requestPermissions | `boolean` | false   | 如果未授予权限，则立即请求权限。                       |
 
-## Returns
+## 返回值
 
-| Name              | Type           |
+| 名称              | 类型           |
 | ----------------- | -------------- |
 | devices           | `deepRef`      |
 | ensurePermissions | `Ref`          |
@@ -36,6 +36,6 @@ const {
 | audioOutputs      | `computed`     |
 | isSupported       | `useSupported` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDevicesList/)
+[VueUse 文档](https://vueuse.org/core/useDevicesList/)

@@ -1,29 +1,29 @@
 # useBreakpoints
 
-Reactive viewport breakpoints.
+响应式视口断点。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const smAndLarger = breakpoints.greaterOrEqual('sm') // sm and larger
-const largerThanSm = breakpoints.greater('sm') // only larger than sm
-const lgAndSmaller = breakpoints.smallerOrEqual('lg') // lg and smaller
-const smallerThanLg = breakpoints.smaller('lg') // only smaller than lg
+const smAndLarger = breakpoints.greaterOrEqual('sm') // sm 及以上
+const largerThanSm = breakpoints.greater('sm') // 仅大于 sm
+const lgAndSmaller = breakpoints.smallerOrEqual('lg') // lg 及以下
+const smallerThanLg = breakpoints.smaller('lg') // 仅小于 lg
 ```
 
-## Options
+## 选项
 
-| Option   | Type                         | Default   | Description                                                             |
+| 选项     | 类型                         | 默认值    | 描述                                                                    |
 | -------- | ---------------------------- | --------- | ----------------------------------------------------------------------- |
-| strategy | `'min-width' \| 'max-width'` | min-width | The query strategy to use for the generated shortcut methods like `.lg` |
+| strategy | `'min-width' \| 'max-width'` | min-width | 生成的快捷方法（如 `.lg`）所使用的查询策略                              |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useBreakpoints/)
+[VueUse 文档](https://vueuse.org/core/useBreakpoints/)

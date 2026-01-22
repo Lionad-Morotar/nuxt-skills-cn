@@ -1,22 +1,22 @@
-# Switch
+# 切换开关
 
-A control that toggles between two states.
+一种在两种状态之间切换的控件。
 
-> Based on [Reka UI Switch](https://reka-ui.com/docs/components/switch)
+> 基于 [Reka UI Switch](https://reka-ui.com/docs/components/switch)
 
-## Key Props
+## 主要属性
 
-- `label`: to set the label of the Switch.
-- `description`: to set the description of the Switch.
-- `loading`: to show a loading icon on the Switch.
-- `color`: to change the color of the Switch.
-- `size`: to change the size of the Switch.
-- `disabled`: to disable the Switch.
+- `label`：用于设置切换开关的标签。
+- `description`：用于设置切换开关的描述。
+- `loading`：在切换开关上显示加载图标。
+- `color`：用于更改切换开关的颜色。
+- `size`：用于更改切换开关的大小。
+- `disabled`：用于禁用切换开关。
 
-## Usage
+## 用法
 
 ```vue
 <USwitch
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

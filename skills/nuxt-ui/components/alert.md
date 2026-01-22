@@ -1,24 +1,24 @@
-# Alert
+# 警告
 
-A callout to draw user's attention.
+用于吸引用户注意的提示框。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the Alert.
-- `description`: to set the description of the Alert.
-- `icon`: to show an [Icon](/docs/components/icon).
-- `avatar`: to show an [Avatar](/docs/components/avatar).
-- `color`: to change the color of the Alert.
-- `variant`: to change the variant of the Alert.
-- `close`: to display a [Button](/docs/components/button) to dismiss the Alert.
-- `actions`: to add some [Button](/docs/components/button) actions to the Alert.
-- `orientation`: to change the orientation of the Alert.
-- `class`: to override the base styles of the Alert.
+- `title`：设置警告的标题。
+- `description`：设置警告的描述。
+- `icon`：显示一个 [图标](/docs/components/icon)。
+- `avatar`：显示一个 [头像](/docs/components/avatar)。
+- `color`：更改警告的颜色。
+- `variant`：更改警告的变体。
+- `close`：显示一个 [按钮](/docs/components/button) 以关闭警告。
+- `actions`：为警告添加一些 [按钮](/docs/components/button) 操作。
+- `orientation`：更改警告的方向。
+- `class`：覆盖警告的基础样式。
 
-## Usage
+## 使用方法
 
 ```vue
 <UAlert
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

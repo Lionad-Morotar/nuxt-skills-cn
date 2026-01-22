@@ -1,20 +1,20 @@
 # ChatMessage
 
-Display a chat message with icon, avatar, and actions.
+显示带有图标、头像和操作的聊天消息。
 
-## Key Props
+## 主要属性
 
-- `parts`: to display the message content using the AI SDK v5 format.
-- `side`: to display the message on the left or right.
-- `variant`: to change style of the message.
-- `icon`: to display an [Icon](/docs/components/icon) component next to the message.
-- `avatar`: to display an [Avatar](/docs/components/avatar) component next to the message.
-- `actions`: to display actions below the message that will be displayed when hovering over the message.
+- `parts`：使用 AI SDK v5 格式显示消息内容。
+- `side`：将消息显示在左侧或右侧。
+- `variant`：更改消息的样式。
+- `icon`：在消息旁边显示 [Icon](/docs/components/icon) 组件。
+- `avatar`：在消息旁边显示 [Avatar](/docs/components/avatar) 组件。
+- `actions`：在消息下方显示操作项，鼠标悬停时显示。
 
-## Usage
+## 使用方法
 
 ```vue
 <UChatMessage
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

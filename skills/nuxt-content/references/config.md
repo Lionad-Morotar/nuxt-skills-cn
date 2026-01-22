@@ -1,14 +1,14 @@
-# Configuration
+# 配置
 
-## When to Use
+## 使用场景
 
-Setting up database backend, configuring markdown processing, or customizing renderer behavior.
+适用于设置数据库后端、配置 Markdown 处理或自定义渲染器行为。
 
-## Database Configuration
+## 数据库配置
 
-Content uses SQL for queries. Configure in `nuxt.config.ts`:
+内容使用 SQL 进行查询。在 `nuxt.config.ts` 中进行配置：
 
-### SQLite (Default)
+### SQLite（默认）
 
 ```ts
 export default defineNuxtConfig({
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     database: {
       type: 'sqlite',
       filename: '.data/content.db',
-      // Optional: add database indexes for better query performance (v3.10+)
+      // 可选：为提高查询性能添加数据库索引（v3.10+）
       indexes: [
         { fields: ['path'] },
         { fields: ['date', 'draft'] },
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   content: {
     database: {
       type: 'd1',
-      bindingName: 'DB', // Matches wrangler.toml binding
+      bindingName: 'DB', // 与 wrangler.toml 中的绑定名称匹配
     },
   },
 })
@@ -66,7 +66,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### PGlite (In-memory)
+### PGlite（内存中）
 
 ```ts
 export default defineNuxtConfig({
@@ -78,9 +78,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Local Development Database
+## 本地开发数据库
 
-Use different database for dev vs production:
+在开发和生产环境中使用不同的数据库：
 
 ```ts
 export default defineNuxtConfig({
@@ -89,7 +89,7 @@ export default defineNuxtConfig({
       type: 'd1',
       bindingName: 'DB',
     },
-    // Dev-only SQLite
+    // 开发环境专用 SQLite
     _localDatabase: {
       type: 'sqlite',
       filename: '.data/content-dev.db',
@@ -98,29 +98,29 @@ export default defineNuxtConfig({
 })
 ```
 
-## Markdown Configuration
+## Markdown 配置
 
 ```ts
 export default defineNuxtConfig({
   content: {
     build: {
       markdown: {
-        // Table of contents
+        // 目录
         toc: {
-          depth: 3, // Max heading depth
-          searchDepth: 2, // Search depth in tree
+          depth: 3, // 最大标题层级
+          searchDepth: 2, // 树结构中搜索的深度
         },
 
-        // Extract title from first H1
+        // 从第一个 H1 提取标题
         contentHeading: true,
 
-        // Remark plugins (markdown → mdast)
+        // Remark 插件（markdown → mdast）
         remarkPlugins: {
           'remark-emoji': {},
           'remark-gfm': { singleTilde: false },
         },
 
-        // Rehype plugins (mdast → hast)
+        // Rehype 插件（mdast → hast）
         rehypePlugins: {
           'rehype-external-links': {
             target: '_blank',
@@ -128,7 +128,7 @@ export default defineNuxtConfig({
           },
         },
 
-        // Code highlighting
+        // 代码高亮
         highlight: {
           theme: 'github-dark',
           langs: ['js', 'ts', 'vue', 'css', 'html', 'bash', 'yaml', 'json'],
@@ -139,9 +139,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Highlight Themes
+## 高亮主题
 
-Single theme:
+单个主题：
 
 ```ts
 highlight: {
@@ -149,7 +149,7 @@ highlight: {
 }
 ```
 
-Multi-theme (light/dark):
+多主题（浅色/深色）：
 
 ```ts
 highlight: {
@@ -160,22 +160,22 @@ highlight: {
 }
 ```
 
-Available themes: `github-dark`, `github-light`, `dracula`, `nord`, `one-dark-pro`, etc. See [Shiki themes](https://shiki.style/themes).
+可用主题：`github-dark`、`github-light`、`dracula`、`nord`、`one-dark-pro` 等。详见 [Shiki themes](https://shiki.style/themes)。
 
-## Renderer Configuration
+## 渲染器配置
 
 ```ts
 export default defineNuxtConfig({
   content: {
     renderer: {
-      // Component aliases for prose
+      // prose 组件别名
       alias: {
         p: 'MyParagraph',
         h2: 'MyHeading2',
         code: 'MyCodeBlock',
       },
 
-      // Anchor links per heading level
+      // 每个标题层级的锚点链接
       anchorLinks: {
         h1: false,
         h2: true,
@@ -189,7 +189,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## File Type Configuration
+## 文件类型配置
 
 ### YAML
 
@@ -198,9 +198,9 @@ export default defineNuxtConfig({
   content: {
     build: {
       yaml: {
-        // YAML parser options
+        // YAML 解析器选项
       },
-      // Or disable YAML parsing
+      // 或者禁用 YAML 解析
       yaml: false,
     },
   },
@@ -214,34 +214,34 @@ export default defineNuxtConfig({
   content: {
     build: {
       csv: {
-        json: true, // Parse as JSON objects
-        delimiter: ',', // Column delimiter
+        json: true, // 解析为 JSON 对象
+        delimiter: ',', // 列分隔符
       },
     },
   },
 })
 ```
 
-## Experimental Options
+## 实验性选项
 
 ```ts
 export default defineNuxtConfig({
   content: {
     experimental: {
-      // Use Node.js native SQLite (Node.js v22.5.0+, v3.4+)
+      // 使用 Node.js 原生 SQLite（Node.js v22.5.0+，v3.4+）
       nativeSqlite: true,
 
-      // Specify SQLite connector (v3.6+)
-      // 'better-sqlite3' moved to peer dependency in v3.6.0
-      sqliteConnector: 'better-sqlite3', // or 'native' (Node 22+), 'sqlite3'
+      // 指定 SQLite 连接器（v3.6+）
+      // 'better-sqlite3' 在 v3.6.0 中移至 peer dependency
+      sqliteConnector: 'better-sqlite3', // 或 'native'（Node 22+），'sqlite3'
     },
   },
 })
 ```
 
-**Note:** Starting v3.6.0, `better-sqlite3` is a peer dependency. The module will prompt you to install your preferred SQLite connector on first run.
+**注意：** 从 v3.6.0 开始，`better-sqlite3` 是一个 peer dependency。首次运行时模块将提示您安装所需的 SQLite 连接器。
 
-## Full Configuration Example
+## 完整配置示例
 
 ```ts
 export default defineNuxtConfig({
@@ -269,9 +269,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Environment Variables
+## 环境变量
 
-Common env vars for database:
+数据库的常见环境变量：
 
 ```bash
 # PostgreSQL
@@ -281,26 +281,26 @@ DATABASE_URL=postgresql://user:pass@host:5432/db
 TURSO_URL=libsql://your-db.turso.io
 TURSO_AUTH_TOKEN=your-token
 
-# GitHub (for remote sources)
+# GitHub（用于远程源）
 GITHUB_TOKEN=ghp_xxxx
 ```
 
-## Content Hooks
+## 内容钩子
 
-Modify content during build:
+在构建过程中修改内容：
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   hooks: {
     'content:file:beforeParse': function (ctx) {
-      // Modify raw content before parsing
+      // 解析前修改原始内容
       if (ctx.file.id.endsWith('.md')) {
         ctx.file.body = ctx.file.body.replace(/oldTerm/gi, 'newTerm')
       }
     },
     'content:file:afterParse': function (ctx) {
-      // Add computed fields after parsing
+      // 解析后添加计算字段
       const wordCount = ctx.file.body?.split(/\s+/).length || 0
       ctx.content.readingTime = Math.ceil(wordCount / 180)
     },
@@ -308,15 +308,15 @@ export default defineNuxtConfig({
 })
 ```
 
-**Note:** Fields added in `afterParse` must be defined in your collection schema:
+**注意：** 在 `afterParse` 中添加的字段必须在集合模式中定义：
 
 ```ts
 schema: z.object({ readingTime: z.number().optional() })
 ```
 
-## LLMs Integration
+## LLMs 集成
 
-Generate AI-ready content with `nuxt-llms`:
+使用 `nuxt-llms` 生成 AI 就绪内容：
 
 ```ts
 export default defineNuxtConfig({
@@ -335,19 +335,19 @@ export default defineNuxtConfig({
 })
 ```
 
-Auto-generates `/llms.txt` for LLM consumption.
+自动生成 `/llms.txt` 供 LLM 使用。
 
-## Best Practices
+## 最佳实践
 
-| Do                                      | Don't                            |
-| --------------------------------------- | -------------------------------- |
-| Use `_localDatabase` for dev/prod split | Use production DB in development |
-| Specify only needed langs               | Load all Shiki languages         |
-| Use multi-theme for dark mode support   | Hardcode single theme            |
-| Configure TOC depth for your content    | Use defaults without checking    |
+| 做法                                      | 避免做法                            |
+| --------------------------------------- | ---------------------------------- |
+| 使用 `_localDatabase` 分离开发和生产环境 | 在开发中使用生产数据库              |
+| 仅指定所需的编程语言                    | 加载所有 Shiki 编程语言             |
+| 使用多主题支持深色模式                  | 硬编码单个主题                      |
+| 根据内容调整目录深度                    | 不加检查直接使用默认设置            |
 
-## Resources
+## 资源
 
-- Configuration: https://content.nuxt.com/docs/getting-started/configuration
-- Database: https://content.nuxt.com/docs/getting-started/configuration#database
-- Markdown: https://content.nuxt.com/docs/getting-started/configuration#markdown
+- 配置：https://content.nuxt.com/docs/getting-started/configuration
+- 数据库：https://content.nuxt.com/docs/getting-started/configuration#database
+- Markdown：https://content.nuxt.com/docs/getting-started/configuration#markdown

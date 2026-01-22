@@ -1,11 +1,11 @@
 # refThrottled
 
-Throttle changing of a ref value.
+控制 ref 值的变更速率。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { refThrottled } from '@vueuse/core'
@@ -15,6 +15,6 @@ const input = shallowRef('')
 const throttled = refThrottled(input, 1000)
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/refThrottled/)
+[VueUse 文档](https://vueuse.org/core/refThrottled/)

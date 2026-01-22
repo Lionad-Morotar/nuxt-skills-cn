@@ -1,11 +1,11 @@
 # useCycleList
 
-Cycle through a list of items.
+循环遍历项目列表。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`
+**类别：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useCycleList } from '@vueuse/core'
@@ -32,24 +32,24 @@ go(3)
 console.log(state.value) // 'Shark'
 ```
 
-## Options
+## 选项
 
-| Option        | Type                                 | Default | Description                                            |
-| ------------- | ------------------------------------ | ------- | ------------------------------------------------------ |
-| initialValue  | `MaybeRef&lt;T&gt;`                  | -       | The initial value of the state.                        |
-| fallbackIndex | `number`                             | -       | The default index when                                 |
-| getIndexOf    | `(value: T, list: T[]) =&gt; number` | -       | Custom function to get the index of the current value. |
+| 选项          | 类型                                  | 默认值  | 描述                                                   |
+| ------------- | ------------------------------------- | ------- | ------------------------------------------------------ |
+| initialValue  | `MaybeRef<T>`                         | -       | 状态的初始值。                                         |
+| fallbackIndex | `number`                              | -       | 当索引不存在时使用的默认索引。                         |
+| getIndexOf    | `(value: T, list: T[]) => number`     | -       | 自定义函数，用于获取当前值的索引。                     |
 
-## Returns
+## 返回值
 
-| Name  | Type                     |
-| ----- | ------------------------ |
-| state | `shallowRef`             |
-| index | `computed&lt;number&gt;` |
-| next  | `Ref`                    |
-| prev  | `Ref`                    |
-| go    | `Ref`                    |
+| 名称  | 类型                      |
+| ----- | ------------------------- |
+| state | `shallowRef`              |
+| index | `computed<number>`        |
+| next  | `Ref`                     |
+| prev  | `Ref`                     |
+| go    | `Ref`                     |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCycleList/)
+[VueUse 文档](https://vueuse.org/core/useCycleList/)

@@ -1,20 +1,20 @@
-# Build Tooling
+# 构建工具
 
-## Tool Selection
+## 工具选择
 
-| Tool                | Use case                                     |
+| 工具                | 使用场景                                     |
 | ------------------- | -------------------------------------------- |
-| **tsdown**          | Most libraries - fast, simple, modern        |
-| **unbuild**         | Complex builds, Nuxt modules, auto-externals |
-| **rollup/rolldown** | Large projects needing fine control          |
+| **tsdown**          | 大多数库——快速、简单、现代                   |
+| **unbuild**         | 复杂构建、Nuxt 模块、自动外部依赖             |
+| **rollup/rolldown** | 需要精细控制的大项目                         |
 
-## tsdown (Recommended)
+## tsdown（推荐）
 
 ```bash
 pnpm add -D tsdown
 ```
 
-### Basic Config
+### 基础配置
 
 ```typescript
 // tsdown.config.ts
@@ -28,7 +28,7 @@ export default defineConfig({
 })
 ```
 
-### Multiple Entries
+### 多入口配置
 
 ```typescript
 export default defineConfig({
@@ -39,26 +39,26 @@ export default defineConfig({
 })
 ```
 
-### Plugin Pattern (unplugin-\*)
+### 插件模式（unplugin-*）
 
 ```typescript
 export default defineConfig({
-  entry: ['src/*.ts'],          // Glob all entries
+  entry: ['src/*.ts'],          // 全局匹配所有入口
   format: ['esm', 'cjs'],
   dts: true,
-  exports: true,                // Auto-generate package.json exports
-  attw: { profile: 'esm-only' }, // Type checking profile
+  exports: true,                // 自动生成 package.json 的 exports 字段
+  attw: { profile: 'esm-only' }, // 类型检查配置文件
 })
 ```
 
-### Advanced Options
+### 高级选项
 
 ```typescript
 export default defineConfig({
   entry: ['src/index.ts'],
   format: ['esm', 'cjs'],
   dts: {
-    resolve: ['@antfu/utils'],  // Inline specific deps in declarations
+    resolve: ['@antfu/utils'],  // 在声明中内联特定依赖
   },
   external: ['vue'],
   define: {
@@ -66,7 +66,7 @@ export default defineConfig({
   },
   hooks: {
     'build:done': async () => {
-      // Post-build tasks
+      // 构建后任务
     },
   },
 })
@@ -78,7 +78,7 @@ export default defineConfig({
 pnpm add -D unbuild
 ```
 
-### Basic Config
+### 基础配置
 
 ```typescript
 // build.config.ts
@@ -93,7 +93,7 @@ export default defineBuildConfig({
 })
 ```
 
-### With Externals
+### 包含外部依赖
 
 ```typescript
 export default defineBuildConfig({
@@ -108,9 +108,9 @@ export default defineBuildConfig({
 })
 ```
 
-## Output Formats
+## 输出格式
 
-### ESM Only (modern)
+### ESM 仅输出（现代）
 
 ```typescript
 export default defineConfig({
@@ -118,7 +118,7 @@ export default defineConfig({
 })
 ```
 
-### Dual CJS/ESM (recommended)
+### 双 CJS/ESM（推荐）
 
 ```typescript
 export default defineConfig({
@@ -126,7 +126,7 @@ export default defineConfig({
 })
 ```
 
-### With IIFE for CDN
+### 包含 IIFE 用于 CDN
 
 ```typescript
 export default defineConfig([
@@ -135,9 +135,9 @@ export default defineConfig([
 ])
 ```
 
-## Define Flags
+## 定义标志
 
-Common compile-time flags:
+常见的编译时标志：
 
 ```typescript
 export default defineConfig({
@@ -150,7 +150,7 @@ export default defineConfig({
 })
 ```
 
-## Build Scripts
+## 构建脚本
 
 ```json
 {
@@ -162,26 +162,26 @@ export default defineConfig({
 }
 ```
 
-## Troubleshooting
+## 故障排除
 
-### CJS default export issues
+### CJS 默认导出问题
 
-Some bundlers need explicit default:
+某些打包工具需要显式默认导出：
 
 ```typescript
 export default defineConfig({
   hooks: {
     'build:done': async () => {
-      // Patch CJS files if needed
+      // 如需，修补 CJS 文件
     },
   },
 })
 ```
 
-### Missing types in output
+### 输出中缺失类型
 
-Ensure `dts: true` and check `isolatedDeclarations` in tsconfig.
+确保设置 `dts: true` 并检查 tsconfig 中的 `isolatedDeclarations`。
 
-### External not working
+### 外部依赖不生效
 
-Check package is in `peerDependencies` and listed in `external`.
+确认包在 `peerDependencies` 中，并列入 `external` 列表。

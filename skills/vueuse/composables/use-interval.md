@@ -1,34 +1,34 @@
 # useInterval
 
-Reactive counter increases on every interval
+响应式计数器在每个间隔内递增
 
-**Package:** `@vueuse/shared`
-**Category:** Animation
+**包：** `@vueuse/shared`  
+**类别：** 动画
 
-## Usage
+## 用法
 
 ```ts
 import { useInterval } from '@vueuse/core'
 
-// count will increase every 200ms
+// count 将每 200ms 递增一次
 const counter = useInterval(200)
 ```
 
-## Options
+## 选项
 
-| Option    | Type                         | Default | Description                               |
-| --------- | ---------------------------- | ------- | ----------------------------------------- |
-| controls  | `Controls`                   | false   | Expose more controls                      |
-| immediate | `boolean`                    | true    | Execute the update immediately on calling |
-| callback  | `(count: number) =&gt; void` | -       | Callback on every interval                |
+| 选项      | 类型                         | 默认值  | 描述                                  |
+| --------- | ---------------------------- | ------- | ------------------------------------- |
+| controls  | `Controls`                   | false   | 暴露更多控制项                        |
+| immediate | `boolean`                    | true    | 调用时立即执行更新                    |
+| callback  | `(count: number) =&gt; void` | -       | 每个间隔触发的回调函数                |
 
-## Returns
+## 返回值
 
-| Name    | Type         |
+| 名称    | 类型         |
 | ------- | ------------ |
 | counter | `shallowRef` |
 | reset   | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useInterval/)
+[VueUse 文档](https://vueuse.org/core/useInterval/)

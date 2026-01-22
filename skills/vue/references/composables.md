@@ -1,26 +1,26 @@
-# Vue Composables
+# Vue 组合式函数
 
-Reusable functions encapsulating stateful logic using Composition API.
+使用组合式 API 封装有状态逻辑的可重用函数。
 
-## Core Rules
+## 核心规则
 
-1. **VueUse first** - check [vueuse.org](https://vueuse.org) before writing custom
-2. **No async composables** - lose lifecycle context when awaited in other composables
-3. **Top-level only** - never call in event handlers, conditionals, or loops
-4. **readonly() exports** - protect internal state from external mutation
-5. **useState() for SSR** - use Nuxt's `useState()` not global refs
+1. **优先使用 VueUse** - 在编写自定义函数前请先查看 [vueuse.org](https://vueuse.org)
+2. **禁止异步组合式函数** - 在其他组合式函数中等待时会丢失生命周期上下文
+3. **仅在顶层调用** - 永远不要在事件处理程序、条件语句或循环中调用
+4. **导出只读状态** - 防止外部修改内部状态
+5. **SSR 使用 useState()** - 使用 Nuxt 的 `useState()` 而非全局引用
 
-## Quick Reference
+## 快速参考
 
-| Pattern   | Example                                          |
+| 模式      | 示例                                             |
 | --------- | ------------------------------------------------ |
-| Naming    | `useAuth`, `useCounter`, `useDebounce`           |
-| State     | `const count = ref(0)`                           |
-| Computed  | `const double = computed(() => count.value * 2)` |
-| Lifecycle | `onMounted(() => ...)`, `onUnmounted(() => ...)` |
-| Return    | `return { count, increment }`                    |
+| 命名      | `useAuth`, `useCounter`, `useDebounce`           |
+| 状态      | `const count = ref(0)`                           |
+| 计算属性  | `const double = computed(() => count.value * 2)` |
+| 生命周期  | `onMounted(() => ...)`, `onUnmounted(() => ...)` |
+| 返回值    | `return { count, increment }`                    |
 
-## Structure
+## 结构
 
 ```ts
 // composables/useCounter.ts
@@ -34,7 +34,7 @@ export function useCounter(initialValue = 0) {
   function reset() { count.value = initialValue }
 
   return {
-    count: readonly(count), // readonly if shouldn't be mutated
+    count: readonly(count), // 如果不应被修改，则设为只读
     increment,
     decrement,
     reset,
@@ -42,25 +42,25 @@ export function useCounter(initialValue = 0) {
 }
 ```
 
-## Naming
+## 命名
 
-**Always prefix with `use`:** `useAuth`, `useLocalStorage`, `useDebounce`
+**始终以 `use` 开头：** `useAuth`, `useLocalStorage`, `useDebounce`
 
-**File = function:** `useAuth.ts` exports `useAuth`
+**文件名 = 函数名：** `useAuth.ts` 导出 `useAuth`
 
-## Best Practices
+## 最佳实践
 
-**Do:**
+**应做：**
 
-- Return object with named properties (destructuring-friendly)
-- Accept options object for configuration
-- Use `readonly()` for state that shouldn't mutate
-- Handle cleanup (`onUnmounted`, `onScopeDispose`)
-- Add JSDoc for complex functions
+- 返回具有命名属性的对象（便于解构）
+- 接收选项对象用于配置
+- 对不应修改的状态使用 `readonly()`
+- 处理清理逻辑（`onUnmounted`, `onScopeDispose`）
+- 为复杂函数添加 JSDoc 注释
 
-## Lifecycle
+## 生命周期
 
-Hooks execute in component context:
+钩子在组件上下文中执行：
 
 ```ts
 export function useEventListener(target: EventTarget, event: string, handler: Function) {
@@ -69,7 +69,7 @@ export function useEventListener(target: EventTarget, event: string, handler: Fu
 }
 ```
 
-**Watcher cleanup (Vue 3.5+):**
+**监听器清理（Vue 3.5+）：**
 
 ```ts
 import { watch, onWatcherCleanup } from 'vue'
@@ -80,7 +80,7 @@ export function usePolling(url: Ref<string>) {
       fetch(newUrl).then(/* ... */)
     }, 1000)
 
-    // Cleanup when watcher re-runs or stops
+    // 监听器重新运行或停止时清理
     onWatcherCleanup(() => {
       clearInterval(interval)
     })
@@ -88,13 +88,13 @@ export function usePolling(url: Ref<string>) {
 }
 ```
 
-**Benefits of `onWatcherCleanup()`:**
+**使用 `onWatcherCleanup()` 的优势：**
 
-- Cleaner than returning cleanup functions
-- Works with async watchers
-- Can be called multiple times in same watcher
+- 比返回清理函数更简洁
+- 支持异步监听器
+- 可在同一个监听器中多次调用
 
-## Async Pattern
+## 异步模式
 
 ```ts
 export function useAsyncData<T>(fetcher: () => Promise<T>) {
@@ -121,21 +121,21 @@ export function useAsyncData<T>(fetcher: () => Promise<T>) {
 }
 ```
 
-**Data fetching:** Prefer Pinia Colada queries over custom composables.
+**数据获取：** 优先使用 Pinia Colada 查询而非自定义组合式函数。
 
 ## VueUse
 
-> For VueUse composable reference, use the `vueuse` skill.
+> 如需 VueUse 组合式函数参考，请使用 `vueuse` 技能。
 
-Check VueUse before writing custom composables - most patterns already implemented.
+在编写自定义组合式函数前请检查 VueUse - 大多数模式已实现。
 
-> **For Nuxt-specific composables** (useFetch, useRequestURL): see `nuxt` skill nuxt-composables.md
+> **如为 Nuxt 特定组合式函数**（useFetch, useRequestURL）：请查阅 `nuxt` 技能中的 nuxt-composables.md
 
-## Advanced Patterns
+## 高级模式
 
-### Singleton Composable
+### 单例组合式函数
 
-Share state across all components using the same composable:
+通过同一组合式函数在所有组件间共享状态：
 
 ```ts
 import { createSharedComposable } from '@vueuse/core'
@@ -149,7 +149,7 @@ function useMapControlsBase() {
 export const useMapControls = createSharedComposable(useMapControlsBase)
 ```
 
-### Cancellable Fetch with AbortController
+### 带 AbortController 的可取消请求
 
 ```ts
 export function useSearch() {
@@ -173,7 +173,7 @@ export function useSearch() {
 }
 ```
 
-### Step-Based State Machine
+### 基于步骤的状态机
 
 ```ts
 export function useSendFlow() {
@@ -191,7 +191,7 @@ export function useSendFlow() {
 }
 ```
 
-### Client-Only Guards
+### 仅客户端保护
 
 ```ts
 export function useUserLocation() {
@@ -205,16 +205,16 @@ export function useUserLocation() {
 }
 ```
 
-### Custom Element Composables (Vue 3.5+)
+### 自定义元素组合式函数（Vue 3.5+）
 
-For custom element components, use built-in helpers:
+对于自定义元素组件，使用内置辅助函数：
 
 ```ts
 import { useHost, useShadowRoot } from 'vue'
 
 export function useCustomElement() {
-  const host = useHost() // Host element reference
-  const shadowRoot = useShadowRoot() // Shadow DOM root
+  const host = useHost() // 主元素引用
+  const shadowRoot = useShadowRoot() // Shadow DOM 根
 
   onMounted(() => {
     console.log('Host:', host)
@@ -225,12 +225,12 @@ export function useCustomElement() {
 }
 ```
 
-**Available in:**
+**可用场景：**
 
-- Components using `<script setup>` in custom elements
-- Access via `this.$host` in Options API
+- 在自定义元素中使用 `<script setup>` 的组件
+- Options API 中通过 `this.$host` 访问
 
-### Auto-Save with Debounce
+### 带防抖的自动保存
 
 ```ts
 export function useAutoSave(content: Ref<string>) {
@@ -252,7 +252,7 @@ export function useAutoSave(content: Ref<string>) {
 }
 ```
 
-### Tagged Logger
+### 带标签的日志记录器
 
 ```ts
 import { consola } from 'consola'
@@ -266,25 +266,25 @@ export function useSearch() {
 }
 ```
 
-## Common Mistakes
+## 常见错误
 
-**Not using `readonly()` for internal state:**
+**未对内部状态使用 `readonly()`：**
 
 ```ts
-// ❌ Wrong - exposes mutable ref
+// ❌ 错误 - 暴露了可变引用
 return { count }
 
-// ✅ Correct - prevents external mutation
+// ✅ 正确 - 防止外部修改
 return { count: readonly(count) }
 ```
 
-**Missing cleanup:**
+**遗漏清理逻辑：**
 
 ```ts
-// ❌ Wrong - listener never removed
+// ❌ 错误 - 监听器从未移除
 onMounted(() => target.addEventListener('click', handler))
 
-// ✅ Correct - cleanup on unmount
+// ✅ 正确 - 在卸载时清理
 onMounted(() => target.addEventListener('click', handler))
 onUnmounted(() => target.removeEventListener('click', handler))
 ```

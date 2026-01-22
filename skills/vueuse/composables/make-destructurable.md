@@ -1,17 +1,17 @@
 # makeDestructurable
 
-Make isomorphic destructurable for object and array at the same time. See this blog for more details.
+使对象和数组同时具备同构的解构能力。详见此博客获取更多细节。
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包：** `@vueuse/shared`  
+**分类：** 工具函数
 
-## Returns
+## 返回值
 
-| Name | Type  |
-| ---- | ----- |
-| next | `Ref` |
-| done | `Ref` |
+| 名称 | 类型    |
+| ---- | ------- |
+| next | `Ref`   |
+| done | `Ref`   |
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/makeDestructurable/)
+[VueUse 文档](https://vueuse.org/core/makeDestructurable/)

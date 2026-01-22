@@ -1,11 +1,11 @@
 # reactiveOmit
 
-Reactively omit fields from a reactive object.
+响应式地从响应式对象中排除字段。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { reactiveOmit } from '@vueuse/core'
@@ -20,6 +20,6 @@ const obj = reactive({
 const picked = reactiveOmit(obj, 'x', 'elementX') // { y: number, elementY: number }
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/reactiveOmit/)
+[VueUse 文档](https://vueuse.org/core/reactiveOmit/)

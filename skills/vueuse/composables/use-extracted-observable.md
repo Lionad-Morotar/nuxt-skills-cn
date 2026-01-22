@@ -1,10 +1,10 @@
 # useExtractedObservable
 
-Use an RxJS as extracted from one or more composables, return a , and automatically unsubscribe from it when the component is unmounted.
+使用从一个或多个组合式函数中提取的 RxJS，返回一个 observable，并在组件卸载时自动取消订阅。
 
-**Package:** `@vueuse/rxjs`
-**Category:** '@RxJS'
+**包：** `@vueuse/rxjs`  
+**分类：** '@RxJS'
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/useExtractedObservable/)
+[VueUse 文档](https://vueuse.org/core/useExtractedObservable/)

@@ -1,30 +1,30 @@
-# Modal
+# 模态框
 
-A dialog window that can be used to display a message or request user input.
+一种对话窗口，可用于显示消息或请求用户输入。
 
-> Based on [Reka UI Modal](https://reka-ui.com/docs/components/dialog)
+> 基于 [Reka UI 模态框](https://reka-ui.com/docs/components/dialog)
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the Modal's header.
-- `description`: to set the description of the Modal's header.
-- `close`: to customize or hide the close button (with `false` value) displayed in the Modal's header.
-- `transition`: to control whether the Modal is animated or not.
-- `overlay`: to control whether the Modal has an overlay or not.
-- `modal`: to control whether the Modal blocks interaction with outside content.
-- `dismissible`: to control whether the Modal is dismissible when clicking outside of it or pressing escape.
-- `scrollable`: to make the Modal's content scrollable within the overlay.
-- `fullscreen`: to make the Modal fullscreen.
+- `title`：用于设置模态框标题栏的标题。
+- `description`：用于设置模态框标题栏的描述。
+- `close`：用于自定义或隐藏显示在模态框标题栏中的关闭按钮（设置为 `false` 时隐藏）。
+- `transition`：用于控制模态框是否具有动画效果。
+- `overlay`：用于控制模态框是否具有遮罩层。
+- `modal`：用于控制模态框是否阻止外部内容的交互。
+- `dismissible`：用于控制点击模态框外部或按下 Esc 键时是否关闭模态框。
+- `scrollable`：用于使模态框内容在遮罩层内可滚动。
+- `fullscreen`：用于将模态框设置为全屏显示。
 
-## Usage
+## 用法
 
 ```vue
 <UModal
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`
 - `#header`

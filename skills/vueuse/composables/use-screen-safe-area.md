@@ -1,11 +1,11 @@
 # useScreenSafeArea
 
-Reactive
+响应式
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useScreenSafeArea } from '@vueuse/core'
@@ -18,9 +18,9 @@ const {
 } = useScreenSafeArea()
 ```
 
-## Returns
+## 返回值
 
-| Name   | Type         |
+| 名称   | 类型         |
 | ------ | ------------ |
 | top    | `shallowRef` |
 | right  | `shallowRef` |
@@ -28,6 +28,6 @@ const {
 | left   | `shallowRef` |
 | update | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useScreenSafeArea/)
+[VueUse 文档](https://vueuse.org/core/useScreenSafeArea/)

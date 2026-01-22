@@ -1,35 +1,35 @@
 # useIntervalFn
 
-Wrapper for with controls
+带控制功能的封装器
 
-**Package:** `@vueuse/shared`
-**Category:** Animation
+**包：** `@vueuse/shared`  
+**分类：** 动画
 
-## Usage
+## 用法
 
 ```ts
 import { useIntervalFn } from '@vueuse/core'
 
 const { pause, resume, isActive } = useIntervalFn(() => {
-  /* your function */
+  /* 你的函数 */
 }, 1000)
 ```
 
-## Options
+## 配置项
 
-| Option            | Type      | Default | Description                                             |
-| ----------------- | --------- | ------- | ------------------------------------------------------- |
-| immediate         | `boolean` | true    | Start the timer immediately                             |
-| immediateCallback | `boolean` | false   | Execute the callback immediately after calling `resume` |
+| 配置项            | 类型      | 默认值  | 描述                                             |
+| ----------------- | --------- | ------- | ------------------------------------------------ |
+| immediate         | `boolean` | true    | 立即启动计时器                                   |
+| immediateCallback | `boolean` | false   | 在调用 `resume` 后立即执行回调                   |
 
-## Returns
+## 返回值
 
-| Name     | Type         |
+| 名称     | 类型         |
 | -------- | ------------ |
 | isActive | `shallowRef` |
 | pause    | `Ref`        |
 | resume   | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useIntervalFn/)
+[VueUse 文档](https://vueuse.org/core/useIntervalFn/)

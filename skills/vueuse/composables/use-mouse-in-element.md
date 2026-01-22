@@ -1,11 +1,11 @@
 # useMouseInElement
 
-Reactive mouse position related to an element
+与元素相关的响应式鼠标位置
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,9 +24,9 @@ const { x, y, isOutside } = useMouseInElement(target)
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name             | Type         |
+| 名称             | 类型         |
 | ---------------- | ------------ |
 | x                | `Ref`        |
 | y                | `Ref`        |
@@ -40,6 +40,6 @@ const { x, y, isOutside } = useMouseInElement(target)
 | isOutside        | `shallowRef` |
 | stop             | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMouseInElement/)
+[VueUse 文档](https://vueuse.org/core/useMouseInElement/)

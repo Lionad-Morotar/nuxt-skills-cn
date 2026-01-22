@@ -1,20 +1,20 @@
-# FooterColumns
+# 页脚列
 
-A list of links as columns to display in your Footer.
+页脚中显示的链接列表，以列为形式呈现。
 
-## Key Props
+## 主要属性
 
-- `columns`: as an array of objects with the following properties:
+- `columns`: 由对象组成的数组，具有以下属性：
 
 - `label: string`{lang="ts-type"}
 - `children?: FooterColumnLink[]`{lang="ts-type"}
 
-Each column contains a `children` array of objects that define the links.
+每个列包含一个 `children` 数组，其中的对象定义了链接。
 
-## Usage
+## 用法
 
 ```vue
 <UFooterColumns
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

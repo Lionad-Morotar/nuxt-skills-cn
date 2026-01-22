@@ -1,14 +1,14 @@
-# Config Provider
+# 配置提供者
 
-Global config context
+全局配置上下文
 
-**Parts:** `ConfigProvider`
+**组件：** `ConfigProvider`
 
 ## ConfigProvider
 
-### Props
+### 属性
 
-| Prop         | Type                          | Default |
+| 属性         | 类型                          | 默认值  |
 | ------------ | ----------------------------- | ------- |
 | `dir`        | `"ltr" \| "rtl"`              | `"ltr"` |
 | `nonce`      | `string`                      | -       |

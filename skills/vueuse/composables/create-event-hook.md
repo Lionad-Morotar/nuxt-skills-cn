@@ -1,11 +1,11 @@
 # createEventHook
 
-Utility for creating event hooks
+用于创建事件钩子的工具函数
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包:** `@vueuse/shared`  
+**分类:** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { createEventHook } from '@vueuse/core'
@@ -25,15 +25,15 @@ export function useMyFetch(url) {
 }
 ```
 
-## Returns
+## 返回值
 
-| Name    | Type  |
+| 名称    | 类型  |
 | ------- | ----- |
 | on      | `Ref` |
 | off     | `Ref` |
 | trigger | `Ref` |
 | clear   | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createEventHook/)
+[VueUse 文档](https://vueuse.org/core/createEventHook/)

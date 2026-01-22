@@ -1,11 +1,11 @@
 # useEventListener
 
-Use EventListener with ease. Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
+轻松使用 EventListener。在组件挂载时通过 addEventListener 注册，并在组件卸载时自动调用 removeEventListener。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useEventListener } from '@vueuse/core'
@@ -15,6 +15,6 @@ useEventListener(document, 'visibilitychange', (evt) => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useEventListener/)
+[VueUse 文档](https://vueuse.org/core/useEventListener/)

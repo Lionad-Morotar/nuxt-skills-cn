@@ -1,20 +1,20 @@
-# Table
+# 表格
 
-A responsive table element to display data in rows and columns.
+一种响应式表格元素，用于以行和列的形式显示数据。
 
-## Key Props
+## 主要属性
 
-- `data`: as an array of objects, the columns will be generated based on the keys of the objects.
-- `columns`: as an array of [ColumnDef](https://tanstack.
-- `meta`: as an object ([TableMeta](https://tanstack.
-- `loading`: to display a loading state, the `loading-color` prop to change its color and the `loading-animation` prop to change its animation.
-- `sticky`: to make the header or footer sticky.
-- `virtualize`: to enable virtualization for large datasets as a boolean or an object with options like `{ estimateSize: 65, overscan: 12 }`.
+- `data`：作为对象数组，列将根据对象的键自动生成。
+- `columns`：作为 [ColumnDef](https://tanstack. 的数组。
+- `meta`：作为对象（[TableMeta](https://tanstack.）
+- `loading`：用于显示加载状态，使用 `loading-color` 属性更改颜色，使用 `loading-animation` 属性更改动画。
+- `sticky`：用于使表头或表尾固定。
+- `virtualize`：用于为大型数据集启用虚拟化，可作为布尔值或包含选项的对象（如 `{ estimateSize: 65, overscan: 12 }`）。
 
-## Usage
+## 使用方法
 
 ```vue
 <UTable
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

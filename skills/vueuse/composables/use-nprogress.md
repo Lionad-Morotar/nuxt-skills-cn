@@ -1,13 +1,13 @@
 # useNProgress
 
-Reactive wrapper for .
+用于 nprogress 的响应式封装。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包：** `@vueuse/integrations`  
+**类别：** '@Integrations'
 
-## Returns
+## 返回值
 
-| Name      | Type       |
+| 名称      | 类型       |
 | --------- | ---------- |
 | isLoading | `computed` |
 | progress  | `toRef`    |
@@ -15,6 +15,6 @@ Reactive wrapper for .
 | done      | `Ref`      |
 | remove    | `Ref`      |
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/useNProgress/)
+[VueUse 文档](https://vueuse.org/core/useNProgress/)

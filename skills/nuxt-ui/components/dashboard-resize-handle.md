@@ -1,11 +1,11 @@
 # DashboardResizeHandle
 
-A handle to resize a sidebar or panel.
+用于调整侧边栏或面板大小的控件。
 
-## Usage
+## 用法
 
 ```vue
 <UDashboardResizeHandle
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

@@ -1,11 +1,11 @@
 # createRef
 
-Returns a or depending on the param.
+根据参数返回 `ref` 或 `shallowRef`。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { createRef } from '@vueuse/core'
@@ -20,6 +20,6 @@ isShallow(shallowData) // true
 isShallow(deepData) // false
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createRef/)
+[VueUse 文档](https://vueuse.org/core/createRef/)

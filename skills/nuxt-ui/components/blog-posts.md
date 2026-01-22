@@ -1,16 +1,16 @@
-# BlogPosts
+# 博客文章
 
-Display a list of blog posts in a responsive grid layout.
+以响应式网格布局显示博客文章列表。
 
-## Key Props
+## 主要属性
 
-- `posts`: as an array of objects with the properties of the [BlogPost](/docs/components/blog-post#props) component.
-- `orientation`: to change the orientation of the BlogPosts.
+- `posts`：由 [BlogPost](/docs/components/blog-post#props) 组件属性组成的对象数组。
+- `orientation`：用于更改 BlogPosts 的方向。
 
-## Usage
+## 用法
 
 ```vue
 <UBlogPosts
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

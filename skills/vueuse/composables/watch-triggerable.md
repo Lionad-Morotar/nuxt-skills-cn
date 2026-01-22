@@ -1,11 +1,11 @@
 # watchTriggerable
 
-Watch that can be triggered manually
+可手动触发的监听器
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**类别：** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchTriggerable } from '@vueuse/core'
@@ -19,18 +19,18 @@ const { trigger, ignoreUpdates } = watchTriggerable(
 )
 
 source.value = 'bar'
-await nextTick() // logs: Changed to bar!
+await nextTick() // 输出：Changed to bar!
 
-// Execution of WatchCallback via `trigger` does not require waiting
-trigger() // logs: Changed to bar!
+// 通过 `trigger` 执行 WatchCallback 无需等待
+trigger() // 输出：Changed to bar!
 ```
 
-## Returns
+## 返回值
 
-| Name    | Type  |
-| ------- | ----- |
-| trigger | `Ref` |
+| 名称      | 类型    |
+| --------- | ------- |
+| trigger   | `Ref`   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchTriggerable/)
+[VueUse 文档](https://vueuse.org/core/watchTriggerable/)

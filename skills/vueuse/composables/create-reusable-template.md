@@ -1,30 +1,30 @@
 # createReusableTemplate
 
-Define and reuse template inside the component scope.
+在组件作用域内定义并重用模板。
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`  
+**类别：** 组件
 
-## Usage
+## 用法
 
 ```ts
 <template>
   <dialog v-if="showInDialog">
-    <!-- something complex -->
+    <!-- 某些复杂内容 -->
   </dialog>
   <div v-else>
-    <!-- something complex -->
+    <!-- 某些复杂内容 -->
   </div>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                       | Default | Description                           |
-| ------------ | ------------------------------------------ | ------- | ------------------------------------- |
-| inheritAttrs | `boolean`                                  | true    | Inherit attrs from reuse component.   |
-| props        | `ComponentObjectPropsOptions&lt;Props&gt;` | -       | Props definition for reuse component. |
+| 选项           | 类型                                       | 默认值  | 描述                             |
+| -------------- | ------------------------------------------ | ------- | -------------------------------- |
+| inheritAttrs   | `boolean`                                  | true    | 从重用组件继承属性。             |
+| props          | `ComponentObjectPropsOptions<Prop> `       | -       | 重用组件的属性定义。             |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createReusableTemplate/)
+[VueUse 文档](https://vueuse.org/core/createReusableTemplate/)

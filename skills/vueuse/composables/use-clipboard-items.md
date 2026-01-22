@@ -1,11 +1,11 @@
 # useClipboardItems
 
-Reactive Clipboard API. Provides the ability to respond to clipboard commands (cut, copy, and paste) as well as to asynchronously read from and write to the system clipboard. Access to the contents of the clipboard is gated behind the Permissions API. Without user permission, reading or altering the clipboard contents is not permitted.
+响应式剪贴板 API。提供对剪贴板命令（剪切、复制和粘贴）的响应能力，以及异步读取和写入系统剪贴板的功能。访问剪贴板内容需通过权限 API 控制。未经用户授权，不得读取或更改剪贴板内容。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,38 +24,38 @@ const { content, copy, copied, isSupported } = useClipboardItems({ source })
 <template>
   <div v-if="isSupported">
     <button @click="copy(source)">
-      <!-- by default, `copied` will be reset in 1.5s -->
+      <!-- 默认情况下，`copied` 将在 1.5 秒后重置 -->
       <span v-if="!copied">Copy</span>
       <span v-else>Copied!</span>
     </button>
     <p>
-      Current copied: <code>{{ content || 'none' }}</code>
+      当前已复制：<code>{{ content || 'none' }}</code>
     </p>
   </div>
   <p v-else>
-    Your browser does not support Clipboard API
+    您的浏览器不支持剪贴板 API
   </p>
 </template>
 ```
 
-## Options
+## 配置项
 
-| Option       | Type      | Default | Description                                 |
-| ------------ | --------- | ------- | ------------------------------------------- |
-| read         | `boolean` | false   | Enabled reading for clipboard               |
-| source       | `Source`  | -       | Copy source                                 |
-| copiedDuring | `number`  | 1500    | Milliseconds to reset state of `copied` ref |
+| 配置项       | 类型      | 默认值  | 描述                                     |
+| ------------ | --------- | ------- | ---------------------------------------- |
+| read         | `boolean` | false   | 启用剪贴板读取功能                       |
+| source       | `Source`  | -       | 复制源                                   |
+| copiedDuring | `number`  | 1500    | 重置 `copied` 引用状态的毫秒数           |
 
-## Returns
+## 返回值
 
-| Name        | Type                            |
+| 名称        | 类型                            |
 | ----------- | ------------------------------- |
 | isSupported | `useSupported`                  |
-| content     | `deepRef&lt;ClipboardItems&gt;` |
+| content     | `deepRef<ClipboardItems>`       |
 | copied      | `shallowRef`                    |
 | copy        | `Ref`                           |
 | read        | `Ref`                           |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useClipboardItems/)
+[VueUse 文档](https://vueuse.org/core/useClipboardItems/)

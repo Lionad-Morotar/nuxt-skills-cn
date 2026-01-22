@@ -1,23 +1,23 @@
 ---
 name: nuxthub
-description: Use when building NuxtHub v0.10.4 applications - provides database (Drizzle ORM with sqlite/postgresql/mysql), KV storage, blob storage, and cache APIs. Covers configuration, schema definition, migrations, multi-cloud deployment (Cloudflare, Vercel), and the new hub:db, hub:kv, hub:blob virtual module imports.
+description: 用于构建 NuxtHub v0.10.4 应用程序——提供数据库（Drizzle ORM 与 sqlite/postgresql/mysql）、KV 存储、blob 存储和缓存 API。涵盖配置、模式定义、迁移、多云部署（Cloudflare、Vercel）、以及新的 hub:db、hub:kv、hub:blob 虚拟模块导入。
 license: MIT
 ---
 
 # NuxtHub v0.10.4
 
-Full-stack Nuxt framework with database, KV, blob, and cache. Multi-cloud support (Cloudflare, Vercel, Deno, Netlify).
+具备数据库、KV、blob 和缓存功能的全栈 Nuxt 框架。支持多云部署（Cloudflare、Vercel、Deno、Netlify）。
 
-**For Nuxt server patterns:** use `nuxt` skill (server.md)
-**For content with database:** use `nuxt-content` skill
+**对于 Nuxt 服务器模式：** 使用 `nuxt` 技能（server.md）  
+**对于含数据库的内容：** 使用 `nuxt-content` 技能
 
-## Installation
+## 安装
 
 ```bash
 npx nuxi module add hub
 ```
 
-## Configuration
+## 配置
 
 ```ts
 // nuxt.config.ts
@@ -28,36 +28,36 @@ export default defineNuxtConfig({
     kv: true,
     blob: true,
     cache: true,
-    dir: '.data', // local storage directory
-    remote: false // use production bindings in dev (v0.10.4+)
+    dir: '.data', // 本地存储目录
+    remote: false // 在开发中使用生产绑定（v0.10.4+）
   }
 })
 ```
 
-### Advanced Config
+### 高级配置
 
 ```ts
 hub: {
   db: {
     dialect: 'postgresql',
-    driver: 'postgres-js', // Optional: auto-detected
+    driver: 'postgres-js', // 可选：自动检测
     casing: 'snake_case',  // camelCase JS -> snake_case DB
     migrationsDirs: ['server/db/custom-migrations/'],
-    applyMigrationsDuringBuild: true // default
+    applyMigrationsDuringBuild: true // 默认值
   },
-  remote: true // Use production Cloudflare bindings in dev (v0.10.4+)
+  remote: true // 在开发中使用生产 Cloudflare 绑定（v0.10.4+）
 }
 ```
 
-**remote mode:** When enabled, connects to production D1/KV/R2 during local development instead of local emulation. Useful for testing with production data.
+**远程模式：** 启用后，在本地开发期间连接到生产 D1/KV/R2，而不是本地模拟。对于使用生产数据进行测试非常有用。
 
-## Database
+## 数据库
 
-Type-safe SQL via Drizzle ORM. `db` and `schema` are auto-imported on server-side.
+通过 Drizzle ORM 实现类型安全的 SQL。`db` 和 `schema` 在服务器端自动导入。
 
-### Schema Definition
+### 模式定义
 
-Place in `server/db/schema.ts` or `server/db/schema/*.ts`:
+放置于 `server/db/schema.ts` 或 `server/db/schema/*.ts`：
 
 ```ts
 // server/db/schema.ts (SQLite)
@@ -71,7 +71,7 @@ export const users = sqliteTable('users', {
 })
 ```
 
-PostgreSQL variant:
+PostgreSQL 变体：
 
 ```ts
 import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
@@ -84,57 +84,57 @@ export const users = pgTable('users', {
 })
 ```
 
-### Database API
+### 数据库 API
 
 ```ts
-// db and schema are auto-imported on server-side
+// db 和 schema 在服务器端自动导入
 import { db, schema } from 'hub:db'
 
-// Select
+// 选择
 const users = await db.select().from(schema.users)
 const user = await db.query.users.findFirst({ where: eq(schema.users.id, 1) })
 
-// Insert
+// 插入
 const [newUser] = await db.insert(schema.users).values({ name: 'John', email: 'john@example.com' }).returning()
 
-// Update
+// 更新
 await db.update(schema.users).set({ name: 'Jane' }).where(eq(schema.users.id, 1))
 
-// Delete
+// 删除
 await db.delete(schema.users).where(eq(schema.users.id, 1))
 ```
 
-### Migrations
+### 迁移
 
 ```bash
-npx nuxt db generate                  # Generate migrations from schema
-npx nuxt db migrate                   # Apply pending migrations
-npx nuxt db sql "SELECT * FROM users" # Execute raw SQL
-npx nuxt db drop <TABLE>              # Drop a specific table
-npx nuxt db drop-all                  # Drop all tables (v0.10.4+)
-npx nuxt db squash                    # Squash migrations into one (v0.10.4+)
-npx nuxt db mark-as-migrated [NAME]   # Mark as migrated without running
+npx nuxt db generate                  # 从模式生成迁移文件
+npx nuxt db migrate                   # 应用待处理的迁移
+npx nuxt db sql "SELECT * FROM users" # 执行原始 SQL
+npx nuxt db drop <TABLE>              # 删除特定表
+npx nuxt db drop-all                  # 删除所有表（v0.10.4+）
+npx nuxt db squash                    # 将迁移压缩为一个（v0.10.4+）
+npx nuxt db mark-as-migrated [NAME]   # 标记为已迁移但不运行
 ```
 
-Migrations auto-apply during `npx nuxi dev` and `npx nuxi build`. Tracked in `_hub_migrations` table.
+迁移在 `npx nuxi dev` 和 `npx nuxi build` 期间自动应用。在 `_hub_migrations` 表中追踪。
 
-### Database Providers
+### 数据库提供者
 
-| Dialect    | Local                | Production                                                        |
+| Dialect    | 本地                | 生产环境                                                        |
 | ---------- | -------------------- | ----------------------------------------------------------------- |
 | sqlite     | `.data/db/sqlite.db` | D1 (Cloudflare), Turso (`TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`) |
 | postgresql | PGlite               | postgres-js (`DATABASE_URL`), neon-http (`DATABASE_URL`)          |
 | mysql      | -                    | mysql2 (`DATABASE_URL`, `MYSQL_URL`)                              |
 
-## KV Storage
+## KV 存储
 
-Key-value storage. `kv` is auto-imported on server-side.
+键值存储。`kv` 在服务器端自动导入。
 
 ```ts
 import { kv } from 'hub:kv'
 
 await kv.set('key', { data: 'value' })
-await kv.set('key', value, { ttl: 60 }) // TTL in seconds
+await kv.set('key', value, { ttl: 60 }) // TTL 以秒计
 const value = await kv.get('key')
 const exists = await kv.has('key')
 await kv.del('key')
@@ -142,57 +142,57 @@ const keys = await kv.keys('prefix:')
 await kv.clear('prefix:')
 ```
 
-Constraints: max value 25 MiB, max key 512 bytes.
+约束：最大值 25 MiB，最大键 512 字节。
 
-### KV Providers
+### KV 提供者
 
-| Provider      | Package          | Env Vars                                             |
+| Provider      | 包          | 环境变量                                             |
 | ------------- | ---------------- | ---------------------------------------------------- |
 | Upstash       | `@upstash/redis` | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` |
 | Redis         | `ioredis`        | `REDIS_URL`                                          |
-| Cloudflare KV | -                | `KV` binding in wrangler.jsonc                       |
-| Deno KV       | -                | Auto on Deno Deploy                                  |
+| Cloudflare KV | -                | `KV` 绑定在 wrangler.jsonc 中                        |
+| Deno KV       | -                | 在 Deno Deploy 上自动配置                            |
 | Vercel        | -                | `KV_REST_API_URL`, `KV_REST_API_TOKEN`               |
 
-## Blob Storage
+## Blob 存储
 
-File storage. `blob` is auto-imported on server-side.
+文件存储。`blob` 在服务器端自动导入。
 
 ### Blob API
 
 ```ts
 import { blob } from 'hub:blob'
 
-// Upload
+// 上传
 const result = await blob.put('path/file.txt', body, {
   contentType: 'text/plain',
   access: 'public', // 'public' | 'private' (v0.10.4+)
   addRandomSuffix: true,
   prefix: 'uploads'
 })
-// Returns: { pathname, contentType, size, httpEtag, uploadedAt }
+// 返回：{ pathname, contentType, size, httpEtag, uploadedAt }
 
-// Download
-const file = await blob.get('path/file.txt') // Returns Blob or null
+// 下载
+const file = await blob.get('path/file.txt') // 返回 Blob 或 null
 
-// List
+// 列出
 const { blobs, cursor, hasMore, folders } = await blob.list({ prefix: 'uploads/', limit: 10, folded: true })
 
-// Serve (with proper headers)
+// 提供（带有适当头信息）
 return blob.serve(event, 'path/file.txt')
 
-// Delete
+// 删除
 await blob.del('path/file.txt')
-await blob.del(['file1.txt', 'file2.txt']) // Multiple
+await blob.del(['file1.txt', 'file2.txt']) // 多个
 
-// Metadata only
+// 仅元数据
 const meta = await blob.head('path/file.txt')
 ```
 
-### Upload Helpers
+### 上传助手
 
 ```ts
-// Server: Validate + upload handler
+// 服务器：验证 + 上传处理程序
 export default eventHandler(async (event) => {
   return blob.handleUpload(event, {
     formKey: 'files',
@@ -202,51 +202,51 @@ export default eventHandler(async (event) => {
   })
 })
 
-// Validate before manual upload
+// 在手动上传前验证
 ensureBlob(file, { maxSize: '10MB', types: ['image'] })
 
-// Multipart upload for large files (>10MB)
+// 大文件的多部分上传（>10MB）
 export default eventHandler(async (event) => {
-  return blob.handleMultipartUpload(event) // Route: /api/files/multipart/[action]/[...pathname]
+  return blob.handleMultipartUpload(event) // 路由：/api/files/multipart/[action]/[...pathname]
 })
 ```
 
-### Vue Composables
+### Vue 组合式函数
 
 ```ts
-// Simple upload
+// 简单上传
 const upload = useUpload('/api/upload')
 const result = await upload(inputElement)
 
-// Multipart with progress
+// 多部分上传并显示进度
 const mpu = useMultipartUpload('/api/files/multipart')
 const { completed, progress, abort } = mpu(file)
 ```
 
-### Blob Providers
+### Blob 提供者
 
-| Provider      | Package        | Config                                                               |
+| Provider      | 包        | 配置                                                               |
 | ------------- | -------------- | -------------------------------------------------------------------- |
-| Cloudflare R2 | -              | `BLOB` binding in wrangler.jsonc                                     |
+| Cloudflare R2 | -              | `BLOB` 绑定在 wrangler.jsonc 中                                     |
 | Vercel Blob   | `@vercel/blob` | `BLOB_READ_WRITE_TOKEN`                                              |
 | S3            | `aws4fetch`    | `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_REGION` |
 
-## Cache
+## 缓存
 
-Response and function caching.
+响应和函数缓存。
 
-### Route Handler Caching
+### 路由处理器缓存
 
 ```ts
 export default cachedEventHandler((event) => {
   return { data: 'cached', date: new Date().toISOString() }
 }, {
-  maxAge: 60 * 60, // 1 hour
+  maxAge: 60 * 60, // 1 小时
   getKey: event => event.path
 })
 ```
 
-### Function Caching
+### 函数缓存
 
 ```ts
 export const getStars = defineCachedFunction(
@@ -258,23 +258,23 @@ export const getStars = defineCachedFunction(
 )
 ```
 
-### Cache Invalidation
+### 缓存失效
 
 ```ts
-// Remove specific
+// 删除特定项
 await useStorage('cache').removeItem('nitro:functions:getStars:repo-name.json')
 
-// Clear by prefix
+// 按前缀清除
 await useStorage('cache').clear('nitro:handlers')
 ```
 
-Cache key pattern: `${group}:${name}:${getKey(...args)}.json` (defaults: group='nitro', name='handlers'|'functions'|'routes')
+缓存键模式：`${group}:${name}:${getKey(...args)}.json`（默认值：group='nitro'，name='handlers'|'functions'|'routes'）
 
-## Deployment
+## 部署
 
 ### Cloudflare
 
-NuxtHub auto-generates `wrangler.json` from your hub config - no manual wrangler.jsonc required:
+NuxtHub 会从你的 hub 配置自动生成 `wrangler.json`，无需手动编写 `wrangler.jsonc`：
 
 ```ts
 // nuxt.config.ts
@@ -301,10 +301,10 @@ export default defineNuxtConfig({
 })
 ```
 
-**Observability (recommended):** Enable logging for production deployments:
+**可观察性（推荐）：** 为生产部署启用日志记录：
 
 ```jsonc
-// wrangler.jsonc (optional)
+// wrangler.jsonc (可选)
 {
   "observability": {
     "logs": {
@@ -317,33 +317,33 @@ export default defineNuxtConfig({
 }
 ```
 
-Create resources via Cloudflare dashboard or CLI:
+通过 Cloudflare 控制台或 CLI 创建资源：
 
 ```bash
-npx wrangler d1 create my-db              # Get database-id
-npx wrangler kv namespace create KV       # Get kv-namespace-id
-npx wrangler kv namespace create CACHE    # Get cache-namespace-id
-npx wrangler r2 bucket create my-bucket   # Get bucket-name
+npx wrangler d1 create my-db              # 获取 database-id
+npx wrangler kv namespace create KV       # 获取 kv-namespace-id
+npx wrangler kv namespace create CACHE    # 获取 cache-namespace-id
+npx wrangler r2 bucket create my-bucket   # 获取 bucket-name
 ```
 
-Deploy: Create [Cloudflare Workers project](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create), link Git repo. Bindings auto-configured at build time.
+部署：创建 [Cloudflare Workers 项目](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create)，链接 Git 仓库。绑定在构建时自动配置。
 
-**Environments:** Use `CLOUDFLARE_ENV=preview` for preview deployments.
+**环境：** 使用 `CLOUDFLARE_ENV=preview` 进行预览部署。
 
-See [references/wrangler-templates.md](references/wrangler-templates.md) for manual wrangler.jsonc patterns and [references/providers.md](references/providers.md) for all provider configurations.
+查看 [references/wrangler-templates.md](references/wrangler-templates.md) 获取手动 wrangler.jsonc 模式，或 [references/providers.md](references/providers.md) 获取所有提供者配置。
 
-### Other Providers
+### 其他提供商
 
-See [references/providers.md](references/providers.md) for detailed deployment patterns for:
+查看 [references/providers.md](references/providers.md) 获取各提供商的详细部署模式：
 
-- **Vercel:** Postgres, Turso, Vercel Blob, Vercel KV
-- **Netlify:** External databases, S3, Upstash Redis
-- **Deno Deploy:** Deno KV
-- **AWS/Self-hosted:** S3, RDS, custom configs
+- **Vercel：** Postgres、Turso、Vercel Blob、Vercel KV
+- **Netlify：** 外部数据库、S3、Upstash Redis
+- **Deno Deploy：** Deno KV
+- **AWS/自托管：** S3、RDS、自定义配置
 
-### D1 over HTTP
+### D1 通过 HTTP 查询
 
-Query D1 from non-Cloudflare hosts:
+从非 Cloudflare 主机查询 D1：
 
 ```ts
 hub: {
@@ -351,28 +351,28 @@ hub: {
 }
 ```
 
-Requires: `NUXT_HUB_CLOUDFLARE_ACCOUNT_ID`, `NUXT_HUB_CLOUDFLARE_API_TOKEN`, `NUXT_HUB_CLOUDFLARE_DATABASE_ID`
+需要设置：`NUXT_HUB_CLOUDFLARE_ACCOUNT_ID`、`NUXT_HUB_CLOUDFLARE_API_TOKEN`、`NUXT_HUB_CLOUDFLARE_DATABASE_ID`
 
-## Build-time Hooks
+## 构建时钩子
 
 ```ts
-// Extend schema
+// 扩展模式
 nuxt.hook('hub:db:schema:extend', async ({ dialect, paths }) => {
   paths.push(await resolvePath(`./schema/custom.${dialect}`))
 })
 
-// Add migration directories
+// 添加迁移目录
 nuxt.hook('hub:db:migrations:dirs', (dirs) => {
   dirs.push(resolve('./db-migrations'))
 })
 
-// Post-migration queries (idempotent)
+// 迁移后的查询（幂等）
 nuxt.hook('hub:db:queries:paths', (paths, dialect) => {
   paths.push(resolve(`./seed.${dialect}.sql`))
 })
 ```
 
-## Type Sharing
+## 类型共享
 
 ```ts
 // shared/types/db.ts
@@ -382,9 +382,9 @@ export type User = typeof users.$inferSelect
 export type NewUser = typeof users.$inferInsert
 ```
 
-## WebSocket / Realtime
+## WebSocket / 实时
 
-Enable experimental WebSocket:
+启用实验性 WebSocket：
 
 ```ts
 // nuxt.config.ts
@@ -407,32 +407,32 @@ export default defineWebSocketHandler({
 })
 ```
 
-## Deprecated (v0.10)
+## 已弃用（v0.10）
 
-Removed Cloudflare-specific features:
+移除 Cloudflare 特定功能：
 
-- `hubAI()` -> Use AI SDK with Workers AI Provider
+- `hubAI()` -> 使用 AI SDK 与 Workers AI 提供者
 - `hubBrowser()` -> Puppeteer
 - `hubVectorize()` -> Vectorize
-- NuxtHub Admin -> Sunset Dec 31, 2025
-- `npx nuxthub deploy` -> Use wrangler deploy
+- NuxtHub Admin -> 2025 年 12 月 31 日停用
+- `npx nuxthub deploy` -> 使用 wrangler deploy
 
-## Quick Reference
+## 快速参考
 
-| Feature  | Import                                | Access                             |
+| 功能  | 导入                                | 访问                             |
 | -------- | ------------------------------------- | ---------------------------------- |
-| Database | `import { db, schema } from 'hub:db'` | `db.select()`, `db.insert()`, etc. |
-| KV       | `import { kv } from 'hub:kv'`         | `kv.get()`, `kv.set()`, etc.       |
-| Blob     | `import { blob } from 'hub:blob'`     | `blob.put()`, `blob.get()`, etc.   |
+| 数据库 | `import { db, schema } from 'hub:db'` | `db.select()`、`db.insert()` 等   |
+| KV       | `import { kv } from 'hub:kv'`         | `kv.get()`、`kv.set()` 等       |
+| Blob     | `import { blob } from 'hub:blob'`     | `blob.put()`、`blob.get()` 等   |
 
-All are auto-imported on server-side.
+所有在服务器端自动导入。
 
-## Resources
+## 资源
 
-- [Installation](https://hub.nuxt.com/docs/getting-started/installation)
-- [Migration from v0.9](https://hub.nuxt.com/docs/getting-started/migration)
-- [Database](https://hub.nuxt.com/docs/database)
+- [安装](https://hub.nuxt.com/docs/getting-started/installation)
+- [从 v0.9 迁移](https://hub.nuxt.com/docs/getting-started/migration)
+- [数据库](https://hub.nuxt.com/docs/database)
 - [Blob](https://hub.nuxt.com/docs/blob)
 - [KV](https://hub.nuxt.com/docs/kv)
-- [Cache](https://hub.nuxt.com/docs/cache)
-- [Deploy](https://hub.nuxt.com/docs/getting-started/deploy)
+- [缓存](https://hub.nuxt.com/docs/cache)
+- [部署](https://hub.nuxt.com/docs/getting-started/deploy)

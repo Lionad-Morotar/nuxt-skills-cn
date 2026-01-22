@@ -1,20 +1,20 @@
 # PageCard
 
-A pre-styled card component that displays a title, description and optional link.
+一种预设样式的卡片组件，用于显示标题、描述和可选链接。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the card.
-- `description`: to set the description of the card.
-- `icon`: to set the icon of the card.
-- `variant`: to change the style of the card.
-- `orientation`: to change the orientation with the default slot.
-- `reverse`: to reverse the orientation of the default slot.
+- `title`：用于设置卡片的标题。
+- `description`：用于设置卡片的描述。
+- `icon`：用于设置卡片的图标。
+- `variant`：用于更改卡片的样式。
+- `orientation`：用于更改默认插槽的方向。
+- `reverse`：用于反转默认插槽的方向。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageCard
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

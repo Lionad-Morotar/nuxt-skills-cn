@@ -1,58 +1,58 @@
-# Pagination
+# 分页
 
-Page navigation
+页面导航
 
-**Parts:** `PaginationRoot`, `PaginationList`, `PaginationListItem`, `PaginationFirst`, `PaginationPrev`, `PaginationNext`, `PaginationLast`, `PaginationEllipsis`
+**组件：** `PaginationRoot`、`PaginationList`、`PaginationListItem`、`PaginationFirst`、`PaginationPrev`、`PaginationNext`、`PaginationLast`、`PaginationEllipsis`
 
 ## PaginationRoot
 
-### Props
+### 属性
 
-| Prop           | Type                 | Default |
-| -------------- | -------------------- | ------- |
-| `as`           | `AsTag \| Component` | `"nav"` |
-| `asChild`      | `boolean`            | -       |
-| `defaultPage`  | `number`             | `1`     |
-| `disabled`     | `boolean`            | -       |
-| `itemsPerPage` | `number`             | `10`    |
-| `page`         | `number`             | -       |
-| `showEdges`    | `boolean`            | `false` |
-| `siblingCount` | `number`             | `2`     |
-| `total`        | `number`             | `0`     |
+| 属性           | 类型                 | 默认值   |
+| -------------- | -------------------- | -------- |
+| `as`           | `AsTag \| Component` | `"nav"`  |
+| `asChild`      | `boolean`            | -        |
+| `defaultPage`  | `number`             | `1`      |
+| `disabled`     | `boolean`            | -        |
+| `itemsPerPage` | `number`             | `10`     |
+| `page`         | `number`             | -        |
+| `showEdges`    | `boolean`            | `false`  |
+| `siblingCount` | `number`             | `2`      |
+| `total`        | `number`             | `0`      |
 
-### Emits
+### 事件
 
-| Event         | Payload           |
+| 事件          | 参数              |
 | ------------- | ----------------- |
 | `update:page` | `[value: number]` |
 
-### Slots
+### 插槽
 
-| Slot        | Type     |
+| 插槽        | 类型     |
 | ----------- | -------- |
 | `page`      | `number` |
 | `pageCount` | `number` |
 
 ## PaginationList
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值   |
+| --------- | -------------------- | -------- |
+| `as`      | `AsTag \| Component` | `"div"`  |
+| `asChild` | `boolean`            | -        |
 
-### Slots
+### 插槽
 
-| Slot    | Type                                                  |
+| 插槽    | 类型                                                  |
 | ------- | ----------------------------------------------------- |
 | `items` | `{ type: "ellipsis"; } \| { type: "page"; value: ...` |
 
 ## PaginationListItem
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
@@ -60,45 +60,45 @@ Page navigation
 
 ## PaginationFirst
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## PaginationPrev
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## PaginationNext
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## PaginationLast
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## PaginationEllipsis
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值   |
+| --------- | -------------------- | -------- |
+| `as`      | `AsTag \| Component` | `"div"`  |
+| `asChild` | `boolean`            | -        |

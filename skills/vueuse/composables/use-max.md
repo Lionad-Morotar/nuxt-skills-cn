@@ -1,11 +1,11 @@
 # useMax
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包名：** `@vueuse/math`
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useMax } from '@vueuse/math'
@@ -14,6 +14,6 @@ const array = ref([1, 2, 3, 4])
 const max = useMax(array) // Ref<4>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMax/)
+[VueUse 文档](https://vueuse.org/core/useMax/)

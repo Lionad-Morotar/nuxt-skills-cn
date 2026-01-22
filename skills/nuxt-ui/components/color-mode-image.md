@@ -1,11 +1,11 @@
 # ColorModeImage
 
-An image element with a different source for light and dark mode.
+一种图像元素，在浅色模式和深色模式下使用不同的源。
 
-## Usage
+## 用法
 
 ```vue
 <UColorModeImage
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

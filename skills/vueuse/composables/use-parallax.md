@@ -1,11 +1,11 @@
 # useParallax
 
-Create parallax effect easily. It uses and fallback to if orientation is not supported.
+轻松创建视差效果。当不支持方向传感器时，会使用备用方案。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包名：** `@vueuse/core`  
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -20,14 +20,14 @@ const { tilt, roll, source } = useParallax(container)
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name   | Type       |
+| 名称   | 类型       |
 | ------ | ---------- |
 | roll   | `computed` |
 | tilt   | `computed` |
 | source | `computed` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useParallax/)
+[VueUse 文档](https://vueuse.org/core/useParallax/)

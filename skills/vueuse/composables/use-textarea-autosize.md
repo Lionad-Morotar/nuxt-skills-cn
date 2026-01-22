@@ -1,11 +1,11 @@
 # useTextareaAutosize
 
-Automatically update the height of a textarea depending on the content.
+根据内容自动更新文本区域的高度。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,9 +24,9 @@ const { textarea, input } = useTextareaAutosize()
 </template>
 ```
 
-## Options
+## 选项
 
-| Option      | Type                                                       | Default | Description |
+| 选项        | 类型                                                       | 默认值  | 描述 |
 | ----------- | ---------------------------------------------------------- | ------- | ----------- |
 | element     | `MaybeRef&lt;HTMLTextAreaElement \| undefined \| null&gt;` | -       |             |
 | input       | `MaybeRef&lt;string&gt;`                                   | -       |             |
@@ -35,14 +35,14 @@ const { textarea, input } = useTextareaAutosize()
 | styleTarget | `MaybeRef&lt;HTMLElement \| undefined&gt;`                 | -       |             |
 | styleProp   | `'height' \| 'minHeight'`                                  | -       |             |
 
-## Returns
+## 返回值
 
-| Name          | Type    |
+| 名称          | 类型    |
 | ------------- | ------- |
 | textarea      | `toRef` |
 | input         | `toRef` |
 | triggerResize | `Ref`   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTextareaAutosize/)
+[VueUse 文档](https://vueuse.org/core/useTextareaAutosize/)

@@ -1,11 +1,11 @@
 # tryOnScopeDispose
 
-Safe . Call if it's inside an effect scope lifecycle, if not, do nothing
+若位于效应作用域生命周期内则安全调用，否则不执行任何操作
 
-**Package:** `@vueuse/shared`
-**Category:** Component
+**包名：** `@vueuse/shared`  
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { tryOnScopeDispose } from '@vueuse/core'
@@ -15,6 +15,6 @@ tryOnScopeDispose(() => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/tryOnScopeDispose/)
+[VueUse 文档](https://vueuse.org/core/tryOnScopeDispose/)

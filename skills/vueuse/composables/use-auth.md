@@ -1,11 +1,11 @@
 # useAuth
 
-Reactive Firebase Auth binding. It provides a reactive and so you can easily react to changes in the users' authentication status.
+响应式 Firebase 认证绑定。它提供了一种响应式方式，因此您可以轻松对用户的认证状态变化做出反应。
 
-**Package:** `@vueuse/firebase`
-**Category:** '@Firebase'
+**包：** `@vueuse/firebase`  
+**类别：** '@Firebase'
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,19 +24,19 @@ const signIn = () => signInWithPopup(auth, new GoogleAuthProvider())
   <pre v-if="isAuthenticated">{{ user }}</pre>
   <div v-else>
     <button @click="signIn">
-      Sign In with Google
+      使用 Google 登录
     </button>
   </div>
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name            | Type                          |
+| 名称            | 类型                          |
 | --------------- | ----------------------------- |
 | isAuthenticated | `computed`                    |
-| user            | `deepRef&lt;User \| null&gt;` |
+| user            | `deepRef<User \| null>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAuth/)
+[VueUse 文档](https://vueuse.org/core/useAuth/)

@@ -1,11 +1,10 @@
 # useJwt
 
-Wrapper for .
+`@vueuse/integrations` 的封装库。
+**包:** `@vueuse/integrations`
+**类别:** '@Integrations'
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
-
-## Usage
+## 用法
 
 ```ts
 import { useJwt } from '@vueuse/integrations/useJwt'
@@ -15,20 +14,20 @@ const encodedJwt = ref('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY
 const { header, payload } = useJwt(encodedJwt)
 ```
 
-## Options
+## 选项
 
-| Option        | Type                          | Default | Description                                     |
+| 选项          | 类型                          | 默认值  | 描述                                            |
 | ------------- | ----------------------------- | ------- | ----------------------------------------------- |
-| fallbackValue | `Fallback`                    | null    | Value returned when encounter error on decoding |
-| onError       | `(error: unknown) =&gt; void` | -       | Error callback for decoding                     |
+| fallbackValue | `Fallback`                    | null    | 解码时遇到错误返回的值                          |
+| onError       | `(error: unknown) =&gt; void` | -       | 解码错误时的回调函数                            |
 
-## Returns
+## 返回值
 
-| Name    | Type       |
+| 名称    | 类型       |
 | ------- | ---------- |
 | header  | `computed` |
 | payload | `computed` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useJwt/)
+[VueUse 文档](https://vueuse.org/core/useJwt/)

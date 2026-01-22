@@ -1,11 +1,11 @@
 # watchThrottled
 
-Throttled watch.
+限流监听。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**类别：** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchThrottled } from '@vueuse/core'
@@ -17,6 +17,6 @@ watchThrottled(
 )
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchThrottled/)
+[VueUse 文档](https://vueuse.org/core/watchThrottled/)

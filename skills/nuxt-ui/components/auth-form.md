@@ -1,27 +1,27 @@
 # AuthForm
 
-A customizable Form to create login, register or password reset forms.
+一个可自定义的表单，用于创建登录、注册或密码重置表单。
 
-## Key Props
+## 主要属性
 
-- `fields`: as an array of objects with the following properties:
+- `fields`：作为对象数组，包含以下属性：
 
-- `name: string`{lang="ts-type"}
-- `type: 'checkbox' | 'select' | 'otp' | 'InputHTMLAttributes['type']'`{lang="ts-type"}
+  - `name: string`{lang="ts-type"}
+  - `type: 'checkbox' | 'select' | 'otp' | 'InputHTMLAttributes['type']'`{lang="ts-type"}
 
-Each field must include a `type` property, which determines the input component and any additional props applied: `checkbox` fields use [Checkbox](/docs/components/checkbox#props) props, `select` fields use [SelectMenu](/docs/components/select-menu#props) props, `otp` fields use [PinInput](/docs/components/pin-input#props) props, and all other types use [Input](/docs/components/input#props) props.
+  每个字段必须包含一个 `type` 属性，该属性决定输入组件及应用的附加属性：`checkbox` 字段使用 [Checkbox](/docs/components/checkbox#props) 的属性，`select` 字段使用 [SelectMenu](/docs/components/select-menu#props) 的属性，`otp` 字段使用 [PinInput](/docs/components/pin-input#props) 的属性，其余类型则使用 [Input](/docs/components/input#props) 的属性。
 
-- `title`: to set the title of the Form.
-- `description`: to set the description of the Form.
-- `icon`: to set the icon of the Form.
-- `providers`: to add providers to the form.
-- `separator`: to customize the [Separator](/docs/components/separator) between the providers and the fields.
-- `submit`: to change the submit button of the Form.
+- `title`：用于设置表单的标题。
+- `description`：用于设置表单的描述。
+- `icon`：用于设置表单的图标。
+- `providers`：用于向表单添加提供商。
+- `separator`：用于自定义 [Separator](/docs/components/separator) 组件，以分隔提供商与字段。
+- `submit`：用于更改表单的提交按钮。
 
-## Usage
+## 使用方法
 
 ```vue
 <UAuthForm
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

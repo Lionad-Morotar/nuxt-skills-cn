@@ -1,11 +1,11 @@
 # useTimeAgoIntl
 
-Reactive time ago with i18n supported. Automatically update the time ago string when the time changes. Powered by .
+支持国际化（i18n）的响应式时间戳显示组件。当时间发生变化时，自动更新时间戳字符串。基于 [VueUse](https://vueuse.org/core/useTimeAgoIntl/) 构建。
 
-**Package:** `@vueuse/core`
-**Category:** Time
+**包名：** `@vueuse/core`  
+**分类：** 时间处理
 
-## Usage
+## 用法
 
 ```ts
 import { useTimeAgoIntl } from '@vueuse/core'
@@ -13,20 +13,20 @@ import { useTimeAgoIntl } from '@vueuse/core'
 const timeAgoIntl = useTimeAgoIntl(new Date(2021, 0, 1))
 ```
 
-## Options
+## 配置项
 
-| Option         | Type       | Default | Description                                                   |
-| -------------- | ---------- | ------- | ------------------------------------------------------------- |
-| controls       | `Controls` | false   | Expose more controls and the raw `parts` result.              |
-| updateInterval | `number`   | 30_000  | Update interval in milliseconds, set 0 to disable auto update |
+| 配置项         | 类型       | 默认值  | 描述                                                         |
+| -------------- | ---------- | ------- | ------------------------------------------------------------ |
+| controls       | `Controls` | false   | 提供更多控制选项及原始 `parts` 结果。                        |
+| updateInterval | `number`   | 30_000  | 更新间隔（毫秒），设为 0 可禁用自动更新                      |
 
-## Returns
+## 返回值
 
-| Name           | Type       |
+| 名称           | 类型       |
 | -------------- | ---------- |
 | resolvedLocale | `Ref`      |
 | parts          | `computed` |
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/useTimeAgoIntl/)
+[VueUse 文档](https://vueuse.org/core/useTimeAgoIntl/)

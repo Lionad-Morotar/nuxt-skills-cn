@@ -1,20 +1,20 @@
-# FormField
+# 表单字段
 
-A wrapper for form elements that provides validation and error handling.
+用于表单元素的包装器，提供验证和错误处理功能。
 
-## Key Props
+## 主要属性
 
-- `label`: to set the label for the form control.
-- `description`: to provide additional information below the label.
-- `hint`: to display a hint message next to the label.
-- `help`: to display a help message below the form control.
-- `error`: to display an error message below the form control.
-- `size`: to change the size of the FormField, the `size` is proxied to the form control.
+- `label`：用于设置表单控件的标签。
+- `description`：用于在标签下方提供附加信息。
+- `hint`：用于在标签旁显示提示消息。
+- `help`：用于在表单控件下方显示帮助消息。
+- `error`：用于在表单控件下方显示错误消息。
+- `size`：用于更改 FormField 的大小，`size` 属性会传递给表单控件。
 
-## Usage
+## 用法
 
 ```vue
 <UFormField
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

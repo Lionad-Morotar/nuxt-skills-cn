@@ -1,11 +1,11 @@
 # useBattery
 
-Reactive Battery Status API, more often referred to as the Battery API, provides information about the system's battery charge level and lets you be notified by events that are sent when the battery level or charging status change. This can be used to adjust your app's resource usage to reduce battery drain when the battery is low, or to save changes before the battery runs out in order to prevent data loss.
+响应式电池状态 API，通常称为电池 API，提供有关系统电池充电水平的信息，并允许您通过事件通知了解电池电量或充电状态发生变化。这可用于在电池电量较低时调整应用程序的资源使用以减少电池耗电，或在电池耗尽前保存更改以防止数据丢失。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useBattery } from '@vueuse/core'
@@ -13,9 +13,9 @@ import { useBattery } from '@vueuse/core'
 const { charging, chargingTime, dischargingTime, level } = useBattery()
 ```
 
-## Returns
+## 返回值
 
-| Name            | Type           |
+| 名称            | 类型           |
 | --------------- | -------------- |
 | isSupported     | `useSupported` |
 | charging        | `shallowRef`   |
@@ -23,6 +23,6 @@ const { charging, chargingTime, dischargingTime, level } = useBattery()
 | dischargingTime | `shallowRef`   |
 | level           | `shallowRef`   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useBattery/)
+[VueUse 文档](https://vueuse.org/core/useBattery/)

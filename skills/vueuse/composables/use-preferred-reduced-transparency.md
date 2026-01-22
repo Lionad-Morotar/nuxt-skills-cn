@@ -1,11 +1,11 @@
 # usePreferredReducedTransparency
 
-Reactive prefers-reduced-transparency media query.
+响应式 prefers-reduced-transparency 媒体查询。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { usePreferredReducedTransparency } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { usePreferredReducedTransparency } from '@vueuse/core'
 const preferredTransparency = usePreferredReducedTransparency()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePreferredReducedTransparency/)
+[VueUse 文档](https://vueuse.org/core/usePreferredReducedTransparency/)

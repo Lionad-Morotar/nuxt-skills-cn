@@ -1,25 +1,25 @@
 # PinInput
 
-An input element to enter a pin.
+用于输入 PIN 码的输入组件。
 
-> Based on [Reka UI PinInput](https://reka-ui.com/docs/components/pin-input)
+> 基于 [Reka UI PinInput](https://reka-ui.com/docs/components/pin-input)
 
-## Key Props
+## 核心属性
 
-- `type`: to change the input type.
-- `mask`: to treat the input like a password.
-- `otp`: to enable One-Time Password functionality.
-- `length`: to change the amount of inputs.
-- `placeholder`: to set a placeholder text.
-- `color`: to change the ring color when the PinInput is focused.
-- `variant`: to change the variant of the PinInput.
-- `size`: to change the size of the PinInput.
-- `disabled`: to disable the PinInput.
+- `type`：用于更改输入类型。
+- `mask`：用于将输入视为密码。
+- `otp`：用于启用一次性密码功能。
+- `length`：用于更改输入项的数量。
+- `placeholder`：用于设置占位符文本。
+- `color`：用于在 PinInput 获得焦点时更改边框颜色。
+- `variant`：用于更改 PinInput 的变体样式。
+- `size`：用于更改 PinInput 的尺寸。
+- `disabled`：用于禁用 PinInput。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPinInput
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

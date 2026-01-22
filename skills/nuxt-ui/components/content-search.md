@@ -1,15 +1,15 @@
-# ContentSearch
+# 内容搜索
 
-A ready to use CommandPalette to add to your documentation.
+一个即开即用的命令调色板，可用于您的文档中。
 
-## Key Props
+## 主要属性
 
-- `shortcut`: to change the shortcut used in [defineShortcuts](/docs/composables/define-shortcuts) to open the ContentSearch component.
+- `shortcut`：用于更改在 [defineShortcuts](/docs/composables/define-shortcuts) 中使用的快捷键，以打开内容搜索组件。
 
-## Usage
+## 使用方法
 
 ```vue
 <UContentSearch
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

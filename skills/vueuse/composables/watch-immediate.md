@@ -1,25 +1,25 @@
 # watchImmediate
 
-Shorthand for watching value with
+`watchImmediate` 的简写形式，用于监听值的变化。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包名：** `@vueuse/shared`  
+**分类：** 监听器（Watch）
 
-## Usage
+## 用法
 
 ```ts
 import { watchImmediate } from '@vueuse/core'
 
 const obj = ref('vue-use')
 
-// changing the value from some external store/composables
+// 从外部存储/组合式函数中更改值
 obj.value = 'VueUse'
 
 watchImmediate(obj, (updated) => {
-  console.log(updated) // Console.log will be logged twice
+  console.log(updated) // 控制台将输出两次
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchImmediate/)
+[VueUse 文档](https://vueuse.org/core/watchImmediate/)

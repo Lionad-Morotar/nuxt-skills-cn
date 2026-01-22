@@ -1,14 +1,14 @@
-# Separator
+# 分隔符
 
-Visual divider
+视觉分隔线
 
-**Parts:** `Separator`
+**组成部分：** `Separator`
 
-## Separator
+## 分隔符
 
-### Props
+### 属性
 
-| Prop          | Type                         | Default        |
+| 属性          | 类型                         | 默认值         |
 | ------------- | ---------------------------- | -------------- |
 | `as`          | `AsTag \| Component`         | `"div"`        |
 | `asChild`     | `boolean`                    | -              |

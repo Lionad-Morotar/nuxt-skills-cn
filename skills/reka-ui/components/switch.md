@@ -1,14 +1,14 @@
-# Switch
+# 切换开关
 
-Toggle between two states
+在两种状态之间切换
 
-**Parts:** `SwitchRoot`, `SwitchThumb`
+**组件：** `SwitchRoot`、`SwitchThumb`
 
 ## SwitchRoot
 
-### Props
+### 属性
 
-| Prop             | Type                 | Default    |
+| 属性             | 类型                 | 默认值     |
 | ---------------- | -------------------- | ---------- |
 | `as`             | `AsTag \| Component` | `"button"` |
 | `asChild`        | `boolean`            | -          |
@@ -20,23 +20,23 @@ Toggle between two states
 | `required`       | `boolean`            | -          |
 | `value`          | `string`             | `"on"`     |
 
-### Emits
+### 事件
 
-| Event            | Payload              |
+| 事件             | 参数                 |
 | ---------------- | -------------------- |
 | `update:checked` | `[payload: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot      | Type      |
+| 插槽      | 类型      |
 | --------- | --------- |
 | `checked` | `boolean` |
 
 ## SwitchThumb
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |

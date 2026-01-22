@@ -1,11 +1,11 @@
 # useWebSocket
 
-Reactive WebSocket client.
+响应式 WebSocket 客户端。
 
-**Package:** `@vueuse/core`
-**Category:** Network
+**包：** `@vueuse/core`
+**类别：** 网络
 
-## Usage
+## 用法
 
 ```ts
 import { useWebSocket } from '@vueuse/core'
@@ -13,27 +13,27 @@ import { useWebSocket } from '@vueuse/core'
 const { status, data, send, open, close } = useWebSocket('ws://websocketurl')
 ```
 
-## Options
+## 选项
 
-| Option          | Type                                                | Default | Description                                                               |
+| 选项            | 类型                                                | 默认值  | 描述                                                                      |
 | --------------- | --------------------------------------------------- | ------- | ------------------------------------------------------------------------- |
-| heartbeat       | `boolean \| {`                                      | false   | Send heartbeat for every x milliseconds passed                            |
-| message         | `MaybeRefOrGetter&lt;WebSocketHeartbeatMessage&gt;` | ping    | Message for the heartbeat                                                 |
-| responseMessage | `MaybeRefOrGetter&lt;WebSocketHeartbeatMessage&gt;` | -       | Response message for the heartbeat, if undefined the message will be used |
-| interval        | `number`                                            | 1000    | Interval, in milliseconds                                                 |
-| pongTimeout     | `number`                                            | 1000    | Heartbeat response timeout, in milliseconds                               |
+| heartbeat       | `boolean \| {`                                      | false   | 每隔 x 毫秒发送一次心跳                                                   |
+| message         | `MaybeRefOrGetter<WebSocketHeartbeatMessage>`       | ping    | 心跳消息                                                                  |
+| responseMessage | `MaybeRefOrGetter<WebSocketHeartbeatMessage>`       | -       | 心跳响应消息，若未定义则使用消息本身                                      |
+| interval        | `number`                                            | 1000    | 心跳间隔，单位为毫秒                                                      |
+| pongTimeout     | `number`                                            | 1000    | 心跳响应超时时间，单位为毫秒                                              |
 
-## Returns
+## 返回值
 
-| Name   | Type                                |
+| 名称   | 类型                                |
 | ------ | ----------------------------------- |
 | data   | `Ref`                               |
-| status | `shallowRef&lt;WebSocketStatus&gt;` |
+| status | `shallowRef<WebSocketStatus>`       |
 | close  | `Ref`                               |
 | send   | `Ref`                               |
 | open   | `Ref`                               |
 | ws     | `Ref`                               |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWebSocket/)
+[VueUse 文档](https://vueuse.org/core/useWebSocket/)

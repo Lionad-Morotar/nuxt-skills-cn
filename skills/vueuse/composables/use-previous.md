@@ -1,11 +1,11 @@
 # usePrevious
 
-Holds the previous value of a ref.
+保存 ref 的前一个值。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`  
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { usePrevious } from '@vueuse/core'
@@ -21,6 +21,6 @@ counter.value = 'World'
 console.log(previous.value) // Hello
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePrevious/)
+[VueUse 文档](https://vueuse.org/core/usePrevious/)

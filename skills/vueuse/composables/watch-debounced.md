@@ -1,11 +1,11 @@
 # watchDebounced
 
-Debounced watch
+防抖监听
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包:** `@vueuse/shared`  
+**类别:** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchDebounced } from '@vueuse/core'
@@ -17,6 +17,6 @@ watchDebounced(
 )
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchDebounced/)
+[VueUse 文档](https://vueuse.org/core/watchDebounced/)

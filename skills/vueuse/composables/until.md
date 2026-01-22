@@ -1,11 +1,11 @@
 # until
 
-Promised one-time watch for changes
+承诺的一次性监听变化
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`
+**类别：** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { until, useAsyncState } from '@vueuse/core'
@@ -18,10 +18,10 @@ const { state, isReady } = useAsyncState(
 ;(async () => {
   await until(isReady).toBe(true)
 
-  console.log(state) // state is now ready!
+  console.log(state) // 状态现已就绪！
 })()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/until/)
+[VueUse 文档](https://vueuse.org/core/until/)

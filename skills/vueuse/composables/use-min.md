@@ -1,11 +1,11 @@
 # useMin
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包名：** `@vueuse/math`
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useMin } from '@vueuse/math'
@@ -14,6 +14,6 @@ const array = ref([1, 2, 3, 4])
 const min = useMin(array) // Ref<1>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMin/)
+[VueUse 文档](https://vueuse.org/core/useMin/)

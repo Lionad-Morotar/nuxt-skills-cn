@@ -1,18 +1,18 @@
 # ColorPicker
 
-A component to select a color.
+一个用于选择颜色的组件。
 
-## Key Props
+## 主要属性
 
-- `format`: to set `rgb` value of the ColorPicker.
-- `throttle`: to set the throttle value of the ColorPicker.
-- `size`: to set the size of the ColorPicker.
-- `disabled`: to disable the ColorPicker.
+- `format`：用于设置 ColorPicker 的 `rgb` 值。
+- `throttle`：用于设置 ColorPicker 的节流值。
+- `size`：用于设置 ColorPicker 的大小。
+- `disabled`：用于禁用 ColorPicker。
 
-## Usage
+## 用法
 
 ```vue
 <UColorPicker
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

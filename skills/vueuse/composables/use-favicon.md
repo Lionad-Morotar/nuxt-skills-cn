@@ -1,11 +1,11 @@
 # useFavicon
 
-Reactive favicon
+响应式网站图标
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useFavicon } from '@vueuse/core'
@@ -16,6 +16,6 @@ const icon = useFavicon(source)
 console.log(icon === source) // true
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFavicon/)
+[VueUse 文档](https://vueuse.org/core/useFavicon/)

@@ -1,11 +1,11 @@
 # useObjectUrl
 
-Reactive URL representing an object.
+表示对象的响应式 URL。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -23,10 +23,10 @@ function onFileChange(event) {
 <template>
   <input type="file" @change="onFileChange">
 
-  <a :href="url">Open file</a>
+  <a :href="url">打开文件</a>
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useObjectUrl/)
+[VueUse 文档](https://vueuse.org/core/useObjectUrl/)

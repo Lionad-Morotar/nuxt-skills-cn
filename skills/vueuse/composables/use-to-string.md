@@ -1,11 +1,11 @@
 # useToString
 
-Reactively convert a ref to string.
+将引用转换为字符串的响应式方法。
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包:** `@vueuse/shared`  
+**类别:** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useToString } from '@vueuse/core'
@@ -17,6 +17,6 @@ const str = useToString(number)
 str.value // '3.14'
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useToString/)
+[VueUse 文档](https://vueuse.org/core/useToString/)

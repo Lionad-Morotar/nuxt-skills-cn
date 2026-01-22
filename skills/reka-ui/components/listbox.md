@@ -1,14 +1,14 @@
 # Listbox
 
-Accessible list selection
+可访问的列表选择组件
 
-**Parts:** `ListboxRoot`, `ListboxContent`, `ListboxFilter`, `ListboxItem`, `ListboxItemIndicator`, `ListboxGroup`, `ListboxGroupLabel`, `ListboxVirtualizer`
+**组件结构：** `ListboxRoot`、`ListboxContent`、`ListboxFilter`、`ListboxItem`、`ListboxItemIndicator`、`ListboxGroup`、`ListboxGroupLabel`、`ListboxVirtualizer`
 
 ## ListboxRoot
 
-### Props
+### 属性
 
-| Prop                | Type                                                  | Default      |
+| 属性                | 类型                                                  | 默认值       |
 | ------------------- | ----------------------------------------------------- | ------------ |
 | `as`                | `AsTag \| Component`                                  | `"div"`      |
 | `asChild`           | `boolean`                                             | -            |
@@ -23,93 +23,93 @@ Accessible list selection
 | `orientation`       | `"vertical" \| "horizontal"`                          | `"vertical"` |
 | `selectionBehavior` | `"toggle" \| "replace"`                               | `"toggle"`   |
 
-### Emits
+### 事件
 
-| Event               | Payload                                              |
+| 事件                | 参数                                                 |
 | ------------------- | ---------------------------------------------------- |
 | `entryFocus`        | `[event: CustomEvent<any>]`                          |
 | `highlight`         | `[payload: { ref: HTMLElement; value: Acceptable...` |
 | `leave`             | `[event: Event]`                                     |
 | `update:modelValue` | `[value: AcceptableValue]`                           |
 
-### Slots
+### 插槽
 
-| Slot         | Type                                                |
+| 插槽         | 类型                                                |
 | ------------ | --------------------------------------------------- |
 | `modelValue` | `AcceptableValue \| AcceptableValue[] \| undefined` |
 
 ## ListboxContent
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ListboxFilter
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default   |
+| 属性         | 类型                 | 默认值    |
 | ------------ | -------------------- | --------- |
 | `as`         | `AsTag \| Component` | `"input"` |
 | `asChild`    | `boolean`            | -         |
 | `autoFocus`  | `boolean`            | -         |
 | `modelValue` | `string`             | -         |
 
-### Emits
+### 事件
 
-| Event               | Payload    |
+| 事件                | 参数       |
 | ------------------- | ---------- |
 | `update:modelValue` | `[string]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                  |
+| 插槽         | 类型                  |
 | ------------ | --------------------- |
 | `modelValue` | `string \| undefined` |
 
 ## ListboxItem
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default |
+| 属性       | 类型                 | 默认值  |
 | ---------- | -------------------- | ------- |
 | `as`       | `AsTag \| Component` | `"div"` |
 | `asChild`  | `boolean`            | -       |
 | `disabled` | `boolean`            | -       |
 | `value`\*  | `AcceptableValue`    | -       |
 
-### Emits
+### 事件
 
-| Event    | Payload                                 |
+| 事件     | 参数                                    |
 | -------- | --------------------------------------- |
 | `select` | `[event: SelectEvent<AcceptableValue>]` |
 
 ## ListboxItemIndicator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## ListboxGroup
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ListboxGroupLabel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
@@ -117,17 +117,17 @@ Accessible list selection
 
 ## ListboxVirtualizer
 
-### Props
+### 属性
 
-| Prop           | Type                                    | Default |
-| -------------- | --------------------------------------- | ------- |
-| `estimateSize` | `number`                                | -       |
-| `options`\*    | `AcceptableValue[]`                     | -       |
-| `textContent`  | `((option: AcceptableValue) => string)` | -       |
+| 属性             | 类型                                    | 默认值  |
+| ---------------- | --------------------------------------- | ------- |
+| `estimateSize`   | `number`                                | -       |
+| `options`\*      | `AcceptableValue[]`                     | -       |
+| `textContent`    | `((option: AcceptableValue) => string)` | -       |
 
-### Slots
+### 插槽
 
-| Slot          | Type                                                     |
+| 插槽          | 类型                                                     |
 | ------------- | -------------------------------------------------------- |
 | `option`      | `string \| number \| false \| true \| Record<string,...` |
 | `virtualizer` | `Virtualizer<Element \| Window, Element>`                |

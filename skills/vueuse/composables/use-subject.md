@@ -1,10 +1,10 @@
 # useSubject
 
-Bind an RxJS to a and propagate value changes both ways.
+将 RxJS 与 VueUse 结合使用，实现双向传播值变更。
 
-**Package:** `@vueuse/rxjs`
-**Category:** '@RxJS'
+**包:** `@vueuse/rxjs`
+**分类:** '@RxJS'
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSubject/)
+[VueUse 文档](https://vueuse.org/core/useSubject/)

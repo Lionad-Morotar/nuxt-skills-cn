@@ -1,11 +1,11 @@
 # useSpeechRecognition
 
-Reactive SpeechRecognition.
+响应式语音识别。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useSpeechRecognition } from '@vueuse/core'
@@ -20,18 +20,18 @@ const {
 } = useSpeechRecognition()
 ```
 
-## Options
+## 选项
 
-| Option          | Type                             | Default | Description                                                                                                                   |
+| 选项            | 类型                             | 默认值  | 描述                                                                                                                          |
 | --------------- | -------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| continuous      | `boolean`                        | true    | Controls whether continuous results are returned for each recognition, or only a single result.                               |
-| interimResults  | `boolean`                        | true    | Controls whether interim results should be returned (true) or not (false.) Interim results are results that are not yet final |
-| lang            | `MaybeRefOrGetter&lt;string&gt;` | en-US   | Language for SpeechRecognition                                                                                                |
-| maxAlternatives | `number`                         | 1       | A number representing the maximum returned alternatives for each result.                                                      |
+| continuous      | `boolean`                        | true    | 控制每次识别是否返回连续结果，或仅返回单个结果。                                                                              |
+| interimResults  | `boolean`                        | true    | 控制是否应返回中间结果（true）或不返回（false）。中间结果是尚未最终确定的结果。                                               |
+| lang            | `MaybeRefOrGetter&lt;string&gt;` | en-US   | 语音识别的语言                                                                                                                |
+| maxAlternatives | `number`                         | 1       | 表示每个结果返回的最大备选数量。                                                                                              |
 
-## Returns
+## 返回值
 
-| Name        | Type                                                                  |
+| 名称        | 类型                                                                  |
 | ----------- | --------------------------------------------------------------------- |
 | isSupported | `useSupported`                                                        |
 | isListening | `shallowRef`                                                          |
@@ -43,6 +43,6 @@ const {
 | start       | `Ref`                                                                 |
 | stop        | `Ref`                                                                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSpeechRecognition/)
+[VueUse 文档](https://vueuse.org/core/useSpeechRecognition/)

@@ -1,36 +1,36 @@
 # useVibrate
 
-Reactive Vibration API
+响应式振动 API
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useVibrate } from '@vueuse/core'
 
-// This vibrates the device for 300 ms
-// then pauses for 100 ms before vibrating the device again for another 300 ms:
+// 此操作会使设备振动 300 毫秒，
+// 然后暂停 100 毫秒，再使设备振动 300 毫秒：
 const { vibrate, stop, isSupported } = useVibrate({ pattern: [300, 100, 300] })
 
-// Start the vibration, it will automatically stop when the pattern is complete:
+// 启动振动，当模式完成后会自动停止：
 vibrate()
 
-// But if you want to stop it, you can:
+// 如果你希望手动停止，可以：
 stop()
 ```
 
-## Options
+## 选项
 
-| Option   | Type                                         | Default | Description                                   |
-| -------- | -------------------------------------------- | ------- | --------------------------------------------- |
-| pattern  | `MaybeRefOrGetter&lt;number[] \| number&gt;` | []      | \* Vibration Pattern                          |
-| interval | `number`                                     | 0       | Interval to run a persistent vibration, in ms |
+| 选项     | 类型                                         | 默认值  | 描述                         |
+| -------- | -------------------------------------------- | ------- | ---------------------------- |
+| pattern  | `MaybeRefOrGetter<number[] \| number>`       | []      | * 振动模式                   |
+| interval | `number`                                     | 0       | 持续振动的间隔，单位为毫秒   |
 
-## Returns
+## 返回值
 
-| Name             | Type           |
+| 名称             | 类型           |
 | ---------------- | -------------- |
 | isSupported      | `useSupported` |
 | pattern          | `Ref`          |
@@ -38,6 +38,6 @@ stop()
 | vibrate          | `Ref`          |
 | stop             | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useVibrate/)
+[VueUse 文档](https://vueuse.org/core/useVibrate/)

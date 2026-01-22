@@ -1,11 +1,11 @@
 # useAsyncState
 
-Reactive async state. Will not block your setup function and will trigger changes once the promise is ready. The state is a by default.
+响应式异步状态。不会阻塞您的设置函数，并在承诺准备就绪时触发变更。状态默认为只读。
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`  
+**类别：** 状态
 
-## Usage
+## 用法
 
 ```ts
 import { useAsyncState } from '@vueuse/core'
@@ -19,14 +19,14 @@ const { state, isReady, isLoading } = useAsyncState(
 )
 ```
 
-## Options
+## 选项
 
-| Option    | Type                      | Default | Description                                                                             |
-| --------- | ------------------------- | ------- | --------------------------------------------------------------------------------------- |
-| delay     | `number`                  | 0       | Delay for the first execution of the promise when "immediate" is true. In milliseconds. |
-| immediate | `boolean`                 | true    | Execute the promise right after the function is invoked.                                |
-| onError   | `(e: unknown) =&gt; void` | -       | Callback when error is caught.                                                          |
+| 选项      | 类型                      | 默认值  | 描述                                                                                     |
+| --------- | ------------------------- | ------- | ---------------------------------------------------------------------------------------- |
+| delay     | `number`                  | 0       | 当 "immediate" 为 true 时，承诺首次执行的延迟时间。以毫秒为单位。                       |
+| immediate | `boolean`                 | true    | 函数调用后立即执行承诺。                                                                 |
+| onError   | `(e: unknown) =&gt; void` | -       | 捕获错误时的回调函数。                                                                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAsyncState/)
+[VueUse 文档](https://vueuse.org/core/useAsyncState/)

@@ -1,14 +1,14 @@
-# Tabs
+# 标签页
 
-Tabbed content panels
+选项卡内容面板
 
-**Parts:** `TabsRoot`, `TabsList`, `TabsTrigger`, `TabsContent`, `TabsIndicator`
+**组件：** `TabsRoot`、`TabsList`、`TabsTrigger`、`TabsContent`、`TabsIndicator`
 
 ## TabsRoot
 
-### Props
+### 属性
 
-| Prop             | Type                         | Default        |
+| 属性             | 类型                         | 默认值         |
 | ---------------- | ---------------------------- | -------------- |
 | `activationMode` | `"automatic" \| "manual"`    | `"automatic"`  |
 | `as`             | `AsTag \| Component`         | `"div"`        |
@@ -18,23 +18,23 @@ Tabbed content panels
 | `modelValue`     | `string \| number`           | -              |
 | `orientation`    | `"vertical" \| "horizontal"` | `"horizontal"` |
 
-### Emits
+### 事件
 
-| Event               | Payload                     |
-| ------------------- | --------------------------- |
+| 事件                | 参数                      |
+| ------------------- | ------------------------- |
 | `update:modelValue` | `[payload: StringOrNumber]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type               |
+| 插槽         | 类型               |
 | ------------ | ------------------ |
 | `modelValue` | `string \| number` |
 
 ## TabsList
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
@@ -42,9 +42,9 @@ Tabbed content panels
 
 ## TabsTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -53,9 +53,9 @@ Tabbed content panels
 
 ## TabsContent
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
+| 属性         | 类型                 | 默认值  |
 | ------------ | -------------------- | ------- |
 | `as`         | `AsTag \| Component` | `"div"` |
 | `asChild`    | `boolean`            | -       |
@@ -64,9 +64,9 @@ Tabbed content panels
 
 ## TabsIndicator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |

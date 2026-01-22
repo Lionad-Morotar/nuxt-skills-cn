@@ -1,11 +1,11 @@
 # useAbs
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useAbs } from '@vueuse/math'
@@ -14,6 +14,6 @@ const value = ref(-23)
 const absValue = useAbs(value) // Ref<23>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAbs/)
+[VueUse 文档](https://vueuse.org/core/useAbs/)

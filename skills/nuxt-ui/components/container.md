@@ -1,11 +1,11 @@
-# Container
+# 容器
 
-A container lets you center and constrain the width of your content.
+容器允许您将内容居中并限制其宽度。
 
-## Usage
+## 用法
 
 ```vue
 <UContainer
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

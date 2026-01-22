@@ -1,14 +1,14 @@
-# Checkbox
+# 复选框
 
-Selection control with indeterminate state
+具有不确定状态的选择控件
 
-**Parts:** `CheckboxGroupRoot`, `CheckboxRoot`, `CheckboxIndicator`
+**组件部分：** `CheckboxGroupRoot`、`CheckboxRoot`、`CheckboxIndicator`
 
 ## CheckboxRoot
 
-### Props
+### 属性
 
-| Prop             | Type                         | Default    |
+| 属性             | 类型                         | 默认值     |
 | ---------------- | ---------------------------- | ---------- |
 | `as`             | `AsTag \| Component`         | `"button"` |
 | `asChild`        | `boolean`                    | -          |
@@ -20,23 +20,23 @@ Selection control with indeterminate state
 | `required`       | `boolean`                    | -          |
 | `value`          | `string`                     | `"on"`     |
 
-### Emits
+### 事件
 
-| Event            | Payload            |
+| 事件             | 参数               |
 | ---------------- | ------------------ |
 | `update:checked` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot      | Type                               |
+| 插槽      | 类型                               |
 | --------- | ---------------------------------- |
 | `checked` | `false \| true \| "indeterminate"` |
 
 ## CheckboxIndicator
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default  |
+| 属性         | 类型                 | 默认值   |
 | ------------ | -------------------- | -------- |
 | `as`         | `AsTag \| Component` | `"span"` |
 | `asChild`    | `boolean`            | -        |

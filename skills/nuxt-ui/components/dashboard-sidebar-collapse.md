@@ -1,11 +1,11 @@
 # DashboardSidebarCollapse
 
-A Button to collapse the sidebar on desktop.
+用于在桌面端收起侧边栏的按钮。
 
-## Usage
+## 用法
 
 ```vue
 <UDashboardSidebarCollapse
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

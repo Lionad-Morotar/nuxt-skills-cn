@@ -1,19 +1,19 @@
 # DashboardSidebar
 
-A resizable and collapsible sidebar to display in a dashboard.
+一个可调整大小且可折叠的侧边栏，用于仪表板中显示。
 
-## Key Props
+## 主要属性
 
-- `resizable`: to make the sidebar resizable.
-- `collapsible`: to make the sidebar collapsible when dragging near the edge of the screen.
-- `side`: to change the side of the sidebar.
-- `mode`: to change the mode of the sidebar menu.
-- `toggle`: to customize the [DashboardSidebarToggle](/docs/components/dashboard-sidebar-toggle) component displayed on mobile.
+- `resizable`：用于使侧边栏可调整大小。
+- `collapsible`：用于在靠近屏幕边缘拖拽时使侧边栏可折叠。
+- `side`：用于更改侧边栏的位置。
+- `mode`：用于更改侧边栏菜单的模式。
+- `toggle`：用于自定义在移动设备上显示的 [DashboardSidebarToggle](/docs/components/dashboard-sidebar-toggle) 组件。
 
-## Usage
+## 使用方法
 
 ```vue
 <UDashboardSidebar
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

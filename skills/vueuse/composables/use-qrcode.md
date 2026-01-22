@@ -1,19 +1,19 @@
 # useQRCode
 
-Wrapper for .
+`. ` 的封装。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包：** `@vueuse/integrations`
+**分类：** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 import { useQRCode } from '@vueuse/integrations/useQRCode'
 
-// `qrcode` will be a ref of data URL
+// `qrcode` 将是数据 URL 的引用
 const qrcode = useQRCode('text-to-encode')
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useQRCode/)
+[VueUse 文档](https://vueuse.org/core/useQRCode/)

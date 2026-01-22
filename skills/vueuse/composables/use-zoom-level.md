@@ -1,23 +1,23 @@
 # useZoomLevel
 
-Reactive WebFrame zoom level.
+响应式 WebFrame 缩放级别。
 
-**Package:** `@vueuse/electron`
-**Category:** '@Electron'
+**包：** `@vueuse/electron`
+**类别：** '@Electron'
 
-## Usage
+## 用法
 
 ```ts
 import { useZoomLevel } from '@vueuse/electron'
 
-// enable nodeIntegration if you don't provide webFrame explicitly
-// see: https://www.electronjs.org/docs/api/webview-tag#nodeintegration
-// Ref result will return
+// 如果未显式提供 webFrame，则启用 nodeIntegration
+// 请参阅：https://www.electronjs.org/docs/api/webview-tag#nodeintegration
+// Ref 结果将返回
 const level = useZoomLevel()
-console.log(level.value) // print current zoom level
-level.value = 2 // change current zoom level
+console.log(level.value) // 输出当前缩放级别
+level.value = 2 // 更改当前缩放级别
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useZoomLevel/)
+[VueUse 文档](https://vueuse.org/core/useZoomLevel/)

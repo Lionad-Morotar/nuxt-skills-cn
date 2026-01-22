@@ -1,15 +1,15 @@
-# ChatPrompt
+# 聊天提示词
 
-An enhanced Textarea for submitting prompts in AI chat interfaces.
+用于在人工智能聊天界面中提交提示词的增强型文本区域。
 
-## Key Props
+## 核心属性
 
-- `variant`: to change the style of the prompt.
+- `variant`：用于更改提示词的样式。
 
-## Usage
+## 使用方法
 
 ```vue
 <UChatPrompt
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

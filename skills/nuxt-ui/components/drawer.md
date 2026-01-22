@@ -1,27 +1,27 @@
-# Drawer
+# 抽屉
 
-A drawer that smoothly slides in & out of the screen.
+一个可流畅滑入和滑出屏幕的抽屉组件。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the Drawer's header.
-- `description`: to set the description of the Drawer's header.
-- `direction`: to control the direction of the Drawer.
-- `inset`: to inset the Drawer from the edges.
-- `handle`: to control whether the Drawer has a handle or not.
-- `overlay`: to control whether the Drawer has an overlay or not.
-- `modal`: to control whether the Drawer blocks interaction with outside content.
-- `dismissible`: to control whether the Drawer is dismissible when clicking outside of it or pressing escape.
+- `title`：用于设置抽屉头部的标题。
+- `description`：用于设置抽屉头部的描述。
+- `direction`：用于控制抽屉的滑出方向。
+- `inset`：用于将抽屉从边缘向内偏移。
+- `handle`：用于控制抽屉是否显示手柄。
+- `overlay`：用于控制抽屉是否显示遮罩层。
+- `modal`：用于控制抽屉是否阻止外部内容的交互。
+- `dismissible`：用于控制点击抽屉外部或按下 Esc 键是否可关闭抽屉。
 
-## Usage
+## 使用方式
 
 ```vue
 <UDrawer
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`
 - `#header`

@@ -1,40 +1,40 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+本文档为在本仓库中使用代码时提供给 Claude Code（claude.ai/code）的指导。
 
-## Purpose
+## 目的
 
-Claude Code skills for Vue 3, Nuxt 4+, NuxtHub v0.10, and Nuxt module development. Pure documentation repo - no build/test commands.
+适用于 Vue 3、Nuxt 4+、NuxtHub v0.10 和 Nuxt 模块开发的 Claude Code 技能。纯文档仓库——无构建/测试命令。
 
-## Structure
+## 结构
 
-Follows [agentskills](https://github.com/agentskills/agentskills) standard format.
+遵循 [agentskills](https://github.com/agentskills/agentskills) 标准格式。
 
-- `skills/<name>/SKILL.md` - Entry point (frontmatter with name/description/license)
-- `skills/<name>/references/*.md` - Sub-files loaded on-demand
-- `.claude-plugin/marketplace.json` - Claude Code marketplace manifest
+- `skills/<name>/SKILL.md` - 入口点（包含名称/描述/许可证的 frontmatter）
+- `skills/<name>/references/*.md` - 按需加载的子文件
+- `.claude-plugin/marketplace.json` - Claude Code 商店清单
 
-## MANDATORY: Before Starting Work
+## 必须：开始工作前
 
-**Always run `git pull`** before making any changes. CI auto-commits lint fixes, so your local branch may be behind.
+**在进行任何更改之前，始终运行 `git pull`**。CI 自动提交格式修复，因此您的本地分支可能已过时。
 
-**After making changes, sync to `~/.claude/skills/`** by running `./sync-skills.sh` so Claude Code uses latest versions.
+**更改后，通过运行 `./sync-skills.sh` 将其同步至 `~/.claude/skills/`**，以便 Claude Code 使用最新版本。
 
-## MANDATORY: When Working on Skills
+## 必须：处理技能时
 
-**Always use the `example-skills:skill-creator` skill** when creating or editing any skill content. This ensures skills follow best practices.
+**创建或编辑任何技能内容时，始终使用 `example-skills:skill-creator` 技能**。这可确保技能遵循最佳实践。
 
-### Checklist When Changing Skills
+### 更改技能时的检查清单
 
-When adding/editing/removing a skill, update ALL of these:
+添加/编辑/删除技能时，请更新以下所有内容：
 
-1. `skills/<name>/SKILL.md` - Main skill entry point
-2. `skills/<name>/references/*.md` - Sub-files if applicable
-3. `.claude-plugin/marketplace.json` - Add/update plugin entry
-4. `README.md` - Update skills table and installation commands
+1. `skills/<name>/SKILL.md` - 主技能入口点
+2. `skills/<name>/references/*.md` - 如适用，包含子文件
+3. `.claude-plugin/marketplace.json` - 添加/更新插件条目
+4. `README.md` - 更新技能表格和安装命令
 
-**Do not skip any of these.** All must stay in sync.
+**请勿跳过任何一项。** 所有内容都必须保持同步。
 
-## Skill Design Pattern
+## 技能设计模式
 
-Skills use progressive loading - main SKILL.md is small (~300 tokens), references sub-files that users load based on context. Keeps context usage minimal.
+技能使用渐进式加载——主 SKILL.md 文件较小（约 300 个 token），参考子文件由用户根据上下文加载。这可将上下文使用量保持在最低水平。

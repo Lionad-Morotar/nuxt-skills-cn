@@ -1,11 +1,11 @@
 # onClickOutside
 
-Listen for clicks outside of an element. Useful for modal or dropdown.
+监听元素外部的点击事件。适用于模态框或下拉菜单。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -25,22 +25,22 @@ onClickOutside(target, event => console.log(event))
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                                    | Default | Description                                         |
-| ------------ | ------------------------------------------------------- | ------- | --------------------------------------------------- |
-| ignore       | `MaybeRefOrGetter&lt;(MaybeElementRef \| string)[]&gt;` | -       | List of elements that should not trigger the event, |
-| capture      | `boolean`                                               | true    | Use capturing phase for internal event listener.    |
-| detectIframe | `boolean`                                               | false   | Run handler function if focus moves to an iframe.   |
-| controls     | `Controls`                                              | false   | Use controls to cancel/trigger listener.            |
+| 选项         | 类型                                                    | 默认值  | 描述                                               |
+| ------------ | ------------------------------------------------------- | ------- | -------------------------------------------------- |
+| ignore       | `MaybeRefOrGetter<(MaybeElementRef \| string)[]>`       | -       | 不应触发事件的元素列表。                           |
+| capture      | `boolean`                                               | true    | 对内部事件监听器使用捕获阶段。                     |
+| detectIframe | `boolean`                                               | false   | 如果焦点移动到 iframe 中则运行处理函数。           |
+| controls     | `Controls`                                              | false   | 使用 controls 来取消/触发监听器。                  |
 
-## Returns
+## 返回值
 
-| Name   | Type  |
+| 名称   | 类型  |
 | ------ | ----- |
 | stop   | `Ref` |
 | cancel | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/onClickOutside/)
+[VueUse 文档](https://vueuse.org/core/onClickOutside/)

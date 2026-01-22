@@ -1,12 +1,12 @@
 # NavigationMenu
 
-A list of links that can be displayed horizontally or vertically.
+一个可水平或垂直显示的链接列表。
 
-> Based on [Reka UI NavigationMenu](https://reka-ui.com/docs/components/navigation-menu)
+> 基于 [Reka UI NavigationMenu](https://reka-ui.com/docs/components/navigation-menu)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`: 一个对象数组，具有以下属性：
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -25,24 +25,24 @@ A list of links that can be displayed horizontally or vertically.
 - `class?: any`{lang="ts-type"}
 - `ui?: { linkLeadingAvatarSize?: ClassNameValue, linkLeadingAvatar?: ClassNameValue, linkLeadingIcon?: ClassNameValue, linkLabel?: ClassNameValue, linkLabelExternalIcon?: ClassNameValue, linkTrailing?: ClassNameValue, linkTrailingBadgeSize?: ClassNameValue, linkTrailingBadge?: ClassNameValue, linkTrailingIcon?: ClassNameValue, label?: ClassNameValue, link?: ClassNameValue, content?: ClassNameValue, childList?: ClassNameValue, childLabel?: ClassNameValue, childItem?: ClassNameValue, childLink?: ClassNameValue, childLinkIcon?: ClassNameValue, childLinkWrapper?: ClassNameValue, childLinkLabel?: ClassNameValue, childLinkLabelExternalIcon?: ClassNameValue, childLinkDescription?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/docs/components/link#props) component such as `to`, `target`, etc.
+你可以传递 [Link](/docs/components/link#props) 组件的任意属性，例如 `to`、`target` 等。
 
-- `orientation`: to change the orientation of the NavigationMenu.
-- `highlight`: to display a highlighted border for the active item.
-- `color`: to change the color of the NavigationMenu.
-- `variant`: to change the variant of the NavigationMenu.
-- `arrow`: to display an arrow on the NavigationMenu content when items have children.
+- `orientation`: 用于更改 NavigationMenu 的方向。
+- `highlight`: 用于为活动项显示高亮边框。
+- `color`: 用于更改 NavigationMenu 的颜色。
+- `variant`: 用于更改 NavigationMenu 的变体。
+- `arrow`: 当项目具有子项时，用于在 NavigationMenu 内容中显示箭头。
 - `slot`:
 
-## Usage
+## 使用方法
 
 ```vue
 <UNavigationMenu
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`
 - `#item`

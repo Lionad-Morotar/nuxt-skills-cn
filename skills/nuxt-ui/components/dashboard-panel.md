@@ -1,15 +1,15 @@
 # DashboardPanel
 
-A resizable panel to display in a dashboard.
+一个可用于仪表板显示的可调整大小的面板。
 
-## Key Props
+## 主要属性
 
-- `resizable`: to make the panel resizable.
+- `resizable`：用于使面板可调整大小。
 
-## Usage
+## 使用方法
 
 ```vue
 <UDashboardPanel
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

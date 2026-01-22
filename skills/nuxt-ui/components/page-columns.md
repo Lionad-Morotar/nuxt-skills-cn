@@ -1,11 +1,11 @@
 # PageColumns
 
-A responsive multi-column layout system for organizing content side-by-side.
+一种响应式的多列布局系统，用于并排组织内容。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageColumns
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

@@ -1,12 +1,12 @@
-# CommandPalette
+# 命令调色板
 
-A command palette with full-text search powered by Fuse.js for efficient fuzzy matching.
+一个命令调色板，内置 Fuse.js 全文搜索功能，用于高效模糊匹配。
 
-> Based on [Reka UI CommandPalette](https://reka-ui.com/docs/components/listbox)
+> 基于 [Reka UI CommandPalette](https://reka-ui.com/docs/components/listbox)
 
-## Key Props
+## 核心属性
 
-- `groups`: as an array of objects with the following properties:
+- `groups`: 一个对象数组，包含以下属性：
 
 - `id: string`{lang="ts-type"}
 - `label?: string`{lang="ts-type"}
@@ -17,27 +17,27 @@ A command palette with full-text search powered by Fuse.js for efficient fuzzy m
 - `highlightedIcon?: string`{lang="ts-type"}
 
 ::caution
-You must provide an `id` for each group otherwise the group will be ignored.
+你必须为每个组提供一个 `id`，否则该组将被忽略。
 
-- `multiple`: to allow multiple selections.
-- `placeholder`: to change the placeholder text.
-- `icon`: to customize the input [Icon](/docs/components/icon).
-- `loading`: to show a loading icon on the CommandPalette.
-- `close`: to display a [Button](/docs/components/button) to dismiss the CommandPalette.
-- `back`: to customize or hide the back button (with `false` value) displayed when navigating into a submenu.
-- `disabled`: to disable the CommandPalette.
-- `virtualize`: to enable virtualization for large lists as a boolean or an object with options like `{ estimateSize: 32, overscan: 12 }`.
+- `multiple`: 允许多选。
+- `placeholder`: 更改占位符文本。
+- `icon`: 自定义输入 [Icon](/docs/components/icon)。
+- `loading`: 在命令调色板中显示加载图标。
+- `close`: 显示一个 [Button](/docs/components/button) 来关闭命令调色板。
+- `back`: 自定义或隐藏在进入子菜单时显示的返回按钮（使用 `false` 值）。
+- `disabled`: 禁用命令调色板。
+- `virtualize`: 启用虚拟化以处理大型列表，可传入布尔值或带有选项的对象，如 `{ estimateSize: 32, overscan: 12 }`。
 - `slot`:
 
-## Usage
+## 使用方式
 
 ```vue
 <UCommandPalette
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#footer`
 - `#item`

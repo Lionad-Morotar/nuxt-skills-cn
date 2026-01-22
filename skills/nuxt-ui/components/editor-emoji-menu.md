@@ -1,17 +1,17 @@
 # EditorEmojiMenu
 
-An emoji picker menu that displays emoji suggestions when typing the : character in the editor.
+一个表情符号选择菜单，在编辑器中输入冒号（:）时显示表情符号建议。
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：由以下属性组成的对象数组：
 
-- `name: string`{lang="ts-type"}
-- `emoji: string`{lang="ts-type"}
-- `shortcodes?: string[]`{lang="ts-type"}
-- `tags?: string[]`{lang="ts-type"}
-- `group?: string`{lang="ts-type"}
-- `fallbackImage?: string`{lang="ts-type"}
+  - `name: string`{lang="ts-type"}
+  - `emoji: string`{lang="ts-type"}
+  - `shortcodes?: string[]`{lang="ts-type"}
+  - `tags?: string[]`{lang="ts-type"}
+  - `group?: string`{lang="ts-type"}
+  - `fallbackImage?: string`{lang="ts-type"}
 
 ## ::component-example
 
@@ -25,15 +25,15 @@ class: 'p-8'
 ::
 
 ::note
-You can also pass an array of arrays to the `items` prop to create separated groups of items.
+你也可以将数组的数组传递给 `items` 属性，以创建分组项。
 
-- `char`: to change the trigger character.
-- `options`: to customize the positioning behavior using [Floating UI options](https://floating-ui.
+- `char`：用于更改触发字符。
+- `options`：用于使用 [Floating UI 选项](https://floating-ui.com/docs/options) 自定义定位行为。
 
-## Usage
+## 使用方法
 
 ```vue
 <UEditorEmojiMenu
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

@@ -1,10 +1,10 @@
-# Client-Only Mode (External Auth Backend)
+# 客户端模式（外部认证后端）
 
-When Better Auth runs on a separate backend (microservices, standalone server), use `clientOnly` mode.
+当 Better Auth 运行在独立的后端（微服务、独立服务器）上时，使用 `clientOnly` 模式。
 
-## Configuration
+## 配置
 
-### 1. Enable in nuxt.config.ts
+### 1. 在 nuxt.config.ts 中启用
 
 ```ts
 export default defineNuxtConfig({
@@ -15,50 +15,50 @@ export default defineNuxtConfig({
 })
 ```
 
-### 2. Point client to external server
+### 2. 将客户端指向外部服务器
 
 ```ts [app/auth.config.ts]
 import { createAuthClient } from 'better-auth/vue'
 
 export function createAppAuthClient(_baseURL: string) {
   return createAuthClient({
-    baseURL: 'https://auth.example.com', // External auth server
+    baseURL: 'https://auth.example.com', // 外部认证服务器
   })
 }
 ```
 
-### 3. Set frontend URL
+### 3. 设置前端 URL
 
 ```ini [.env]
 NUXT_PUBLIC_SITE_URL="https://your-frontend.com"
 ```
 
-## What Changes
+## 变更说明
 
-| Feature                                                                       | Full Mode       | Client-Only       |
-| ----------------------------------------------------------------------------- | --------------- | ----------------- |
-| `server/auth.config.ts`                                                       | Required        | Not needed        |
-| `/api/auth/**` handlers                                                       | Auto-registered | Skipped           |
-| `NUXT_BETTER_AUTH_SECRET`                                                     | Required        | Not needed        |
-| Server utilities (`serverAuth()`, `getUserSession()`, `requireUserSession()`) | Available       | **Not available** |
-| SSR session hydration                                                         | Server-side     | Client-side only  |
-| `useUserSession()`, route protection, `<BetterAuthState>`                     | Works           | Works             |
+| 功能                                                                          | 完整模式        | 客户端模式         |
+| ----------------------------------------------------------------------------- | --------------- | ------------------ |
+| `server/auth.config.ts`                                                       | 必需            | 无需             |
+| `/api/auth/**` 处理程序                                                       | 自动注册        | 跳过               |
+| `NUXT_BETTER_AUTH_SECRET`                                                     | 必需            | 无需             |
+| 服务器工具（`serverAuth()`、`getUserSession()`、`requireUserSession()`）     | 可用            | **不可用**         |
+| SSR 会话初始化                                                                | 服务端          | 仅客户端           |
+| `useUserSession()`、路由保护、`<BetterAuthState>`                             | 正常工作        | 正常工作           |
 
-## CORS Requirements
+## CORS 要求
 
-Ensure external auth server:
+确保外部认证服务器：
 
-- Allows requests from frontend (CORS with `credentials: true`)
-- Uses `SameSite=None; Secure` cookies (HTTPS required)
-- Includes frontend URL in `trustedOrigins`
+- 允许来自前端的请求（CORS 配置 `credentials: true`）
+- 使用 `SameSite=None; Secure` 的 Cookie（需 HTTPS）
+- 将前端 URL 包含在 `trustedOrigins` 中
 
-## SSR Considerations
+## SSR 注意事项
 
-Session fetched client-side only:
+会话仅从客户端获取：
 
-- Server-rendered pages render as "unauthenticated" initially
-- Hydrates with session data on client
-- Use `<BetterAuthState>` for loading states
+- 服务端渲染的页面初始显示为“未认证”
+- 客户端加载时用会话数据初始化
+- 使用 `<BetterAuthState>` 处理加载状态
 
 ```vue
 <BetterAuthState v-slot="{ isLoading, user }">
@@ -68,13 +68,13 @@ Session fetched client-side only:
 </BetterAuthState>
 ```
 
-## Use Cases
+## 使用场景
 
-- **Microservices**: Auth service is separate deployment
-- **Shared auth**: Multiple frontends share one auth backend
-- **Existing backend**: Already have Better Auth server running elsewhere
+- **微服务架构**：认证服务为独立部署
+- **共享认证**：多个前端共享一个认证后端
+- **已有后端**：已在别处运行 Better Auth 服务器
 
-## Architecture Example
+## 架构示例
 
 ```
 ┌─────────────────┐     ┌─────────────────┐

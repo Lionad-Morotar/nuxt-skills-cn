@@ -1,10 +1,10 @@
-# Overlays
+# 覆盖层
 
-**Prerequisite**: All overlays require `<UApp>` wrapper in app root.
+**先决条件**：所有覆盖层都需要在应用根目录中使用 `<UApp>` 包装器。
 
-## Toast (Notifications)
+## Toast（通知）
 
-### Basic Usage
+### 基本用法
 
 ```vue
 <script setup>
@@ -12,8 +12,8 @@ const toast = useToast()
 
 function showToast() {
   toast.add({
-    title: 'Success!',
-    description: 'Your changes have been saved.',
+    title: '成功！',
+    description: '您的更改已保存。',
     color: 'success',
     icon: 'i-heroicons-check-circle'
   })
@@ -21,54 +21,54 @@ function showToast() {
 </script>
 
 <template>
-  <UButton @click="showToast">Show Toast</UButton>
+  <UButton @click="showToast">显示 Toast</UButton>
 </template>
 ```
 
-### Toast Options
+### Toast 选项
 
 ```ts
 toast.add({
-  id: 'unique-id', // Custom ID (auto-generated if omitted)
-  title: 'Title', // Toast title
-  description: 'Details', // Toast body
+  id: 'unique-id', // 自定义 ID（省略时自动生成）
+  title: '标题', // Toast 标题
+  description: '详情', // Toast 内容
   color: 'success', // primary, success, error, warning, info
-  icon: 'i-heroicons-check', // Left icon
-  avatar: { src: '...' }, // Avatar instead of icon
-  timeout: 5000, // Auto-dismiss (0 = never)
-  actions: [{ // Action buttons
-    label: 'Undo',
+  icon: 'i-heroicons-check', // 左侧图标
+  avatar: { src: '...' }, // 使用头像代替图标
+  timeout: 5000, // 自动关闭（0 = 不关闭）
+  actions: [{ // 操作按钮
+    label: '撤销',
     click: () => {}
   }],
-  callback: () => {} // Called on dismiss
+  callback: () => {} // 在关闭时调用
 })
 ```
 
-### Toast Types
+### Toast 类型
 
 ```ts
-// Success
-toast.add({ title: 'Saved', color: 'success', icon: 'i-heroicons-check-circle' })
+// 成功
+toast.add({ title: '已保存', color: 'success', icon: 'i-heroicons-check-circle' })
 
-// Error
-toast.add({ title: 'Error', color: 'error', icon: 'i-heroicons-x-circle' })
+// 错误
+toast.add({ title: '错误', color: 'error', icon: 'i-heroicons-x-circle' })
 
-// Warning
-toast.add({ title: 'Warning', color: 'warning', icon: 'i-heroicons-exclamation-triangle' })
+// 警告
+toast.add({ title: '警告', color: 'warning', icon: 'i-heroicons-exclamation-triangle' })
 
-// Info
-toast.add({ title: 'Info', color: 'info', icon: 'i-heroicons-information-circle' })
+// 信息
+toast.add({ title: '信息', color: 'info', icon: 'i-heroicons-information-circle' })
 
-// Remove toast
+// 移除 toast
 toast.remove('toast-id')
 
-// Clear all
+// 清空所有
 toast.clear()
 ```
 
-## Modal
+## 模态框
 
-### Basic Modal
+### 基本模态框
 
 ```vue
 <script setup>
@@ -76,40 +76,40 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <UButton @click="isOpen = true">Open Modal</UButton>
+  <UButton @click="isOpen = true">打开模态框</UButton>
 
   <UModal v-model:open="isOpen">
     <template #header>
-      <h3>Modal Title</h3>
+      <h3>模态框标题</h3>
     </template>
 
-    <p>Modal content goes here...</p>
+    <p>模态框内容...</p>
 
     <template #footer>
-      <UButton variant="ghost" @click="isOpen = false">Cancel</UButton>
-      <UButton @click="save">Save</UButton>
+      <UButton variant="ghost" @click="isOpen = false">取消</UButton>
+      <UButton @click="save">保存</UButton>
     </template>
   </UModal>
 </template>
 ```
 
-### Modal Props
+### 模态框属性
 
 ```vue
 <UModal
   v-model:open="isOpen"
-  title="Modal Title"          <!-- Alternative to #header slot -->
-  description="Subtitle"       <!-- Below title -->
-  :close="true"                <!-- Show close button -->
+  title="模态框标题"          <!-- 替代 #header 插槽 -->
+  description="副标题"       <!-- 标题下方 -->
+  :close="true"                <!-- 显示关闭按钮 -->
   :close-icon="'i-heroicons-x-mark'"
-  :overlay="true"              <!-- Show backdrop -->
-  :transition="true"           <!-- Enable animation -->
-  :prevent-close="false"       <!-- Prevent close on overlay click -->
-  fullscreen                   <!-- Full screen mode -->
+  :overlay="true"              <!-- 显示背景 -->
+  :transition="true"           <!-- 启用动画 -->
+  :prevent-close="false"       <!-- 阻止点击背景关闭 -->
+  fullscreen                   <!-- 全屏模式 -->
 >
 ```
 
-### Programmatic Modal (useOverlay)
+### 编程式模态框（useOverlay）
 
 ```vue
 <script setup>
@@ -117,7 +117,7 @@ const overlay = useOverlay()
 
 async function openConfirm() {
   const modal = overlay.create(ConfirmModal, {
-    props: { title: 'Confirm action?' },
+    props: { title: '确认操作？' },
     events: {
       confirm: () => modal.close(true),
       cancel: () => modal.close(false)
@@ -126,15 +126,15 @@ async function openConfirm() {
 
   const result = await modal.result
   if (result) {
-    // User confirmed
+    // 用户确认
   }
 }
 </script>
 ```
 
-## Slideover
+## 滑动面板
 
-Side panel overlay (from edge of screen).
+从屏幕边缘出现的侧边覆盖层。
 
 ```vue
 <script setup>
@@ -142,23 +142,23 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <UButton @click="isOpen = true">Open Slideover</UButton>
+  <UButton @click="isOpen = true">打开滑动面板</UButton>
 
-  <USlideover v-model:open="isOpen" title="Settings" side="right">
+  <USlideover v-model:open="isOpen" title="设置" side="right">
     <div class="p-4">
-      Settings content...
+      设置内容...
     </div>
   </USlideover>
 </template>
 ```
 
-### Slideover Props
+### 滑动面板属性
 
 ```vue
 <USlideover
   v-model:open="isOpen"
-  title="Title"
-  description="Subtitle"
+  title="标题"
+  description="副标题"
   side="right"              <!-- left, right, top, bottom -->
   :overlay="true"
   :transition="true"
@@ -166,9 +166,9 @@ const isOpen = ref(false)
 >
 ```
 
-## Drawer
+## 抽屉
 
-Bottom sheet overlay (vaul-vue).
+底部抽屉覆盖层（vaul-vue）。
 
 ```vue
 <script setup>
@@ -176,44 +176,44 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <UButton @click="isOpen = true">Open Drawer</UButton>
+  <UButton @click="isOpen = true">打开抽屉</UButton>
 
   <UDrawer v-model:open="isOpen">
     <div class="p-4">
-      Drawer content...
+      抽屉内容...
     </div>
   </UDrawer>
 </template>
 ```
 
-### Drawer Props
+### 抽屉属性
 
 ```vue
 <UDrawer
   v-model:open="isOpen"
-  title="Drawer Title"
-  description="Subtitle"
-  handle                     <!-- Show drag handle -->
+  title="抽屉标题"
+  description="副标题"
+  handle                     <!-- 显示拖拽手柄 -->
   :should-scale-background="true"
-  :close-threshold="0.25"    <!-- Swipe threshold to close -->
+  :close-threshold="0.25"    <!-- 滑动关闭阈值 -->
 >
 ```
 
-## Popover
+## 浮动面板
 
 ```vue
 <UPopover>
-  <UButton>Open Popover</UButton>
+  <UButton>打开浮动面板</UButton>
 
   <template #content>
     <div class="p-4">
-      Popover content
+      浮动面板内容
     </div>
   </template>
 </UPopover>
 ```
 
-### Popover Props
+### 浮动面板属性
 
 ```vue
 <UPopover
@@ -225,31 +225,31 @@ const isOpen = ref(false)
 >
 ```
 
-## Tooltip
+## 工具提示
 
 ```vue
-<UTooltip text="Helpful tip">
+<UTooltip text="有用的提示">
   <UButton icon="i-heroicons-question-mark-circle" />
 </UTooltip>
 
-<!-- With slot content -->
+<!-- 带插槽内容 -->
 <UTooltip>
-  <UButton>Hover me</UButton>
+  <UButton>悬停我</UButton>
   <template #content>
-    <p>Rich tooltip content</p>
+    <p>丰富的工具提示内容</p>
   </template>
 </UTooltip>
 ```
 
-## DropdownMenu
+## 下拉菜单
 
 ```vue
 <script setup>
 const items = [
-  { label: 'Edit', icon: 'i-heroicons-pencil', click: () => {} },
-  { label: 'Duplicate', icon: 'i-heroicons-document-duplicate' },
+  { label: '编辑', icon: 'i-heroicons-pencil', click: () => {} },
+  { label: '复制', icon: 'i-heroicons-document-duplicate' },
   { type: 'separator' },
-  { label: 'Delete', icon: 'i-heroicons-trash', color: 'error' }
+  { label: '删除', icon: 'i-heroicons-trash', color: 'error' }
 ]
 </script>
 
@@ -260,35 +260,35 @@ const items = [
 </template>
 ```
 
-### Nested Items
+### 嵌套项
 
 ```vue
 <script setup>
 const items = [
-  { label: 'New', children: [
-    { label: 'File', click: () => {} },
-    { label: 'Folder', click: () => {} }
+  { label: '新建', children: [
+    { label: '文件', click: () => {} },
+    { label: '文件夹', click: () => {} }
   ]},
-  { label: 'Delete' }
+  { label: '删除' }
 ]
 </script>
 ```
 
-## ContextMenu
+## 上下文菜单
 
-Right-click menu.
+右键菜单。
 
 ```vue
 <UContextMenu :items="items">
   <div class="h-40 border rounded flex items-center justify-center">
-    Right-click here
+    在此处右键单击
   </div>
 </UContextMenu>
 ```
 
-## CommandPalette
+## 命令面板
 
-Search-driven command menu (Fuse.js powered).
+基于搜索的命令菜单（由 Fuse.js 提供支持）。
 
 ```vue
 <script setup>
@@ -296,27 +296,27 @@ const isOpen = ref(false)
 
 const groups = [{
   key: 'actions',
-  label: 'Actions',
+  label: '操作',
   items: [
-    { label: 'New file', icon: 'i-heroicons-document-plus', click: () => {} },
-    { label: 'New folder', icon: 'i-heroicons-folder-plus', click: () => {} }
+    { label: '新建文件', icon: 'i-heroicons-document-plus', click: () => {} },
+    { label: '新建文件夹', icon: 'i-heroicons-folder-plus', click: () => {} }
   ]
 }, {
   key: 'navigation',
-  label: 'Navigation',
+  label: '导航',
   items: [
-    { label: 'Home', to: '/' },
-    { label: 'Settings', to: '/settings' }
+    { label: '首页', to: '/' },
+    { label: '设置', to: '/settings' }
   ]
 }]
 </script>
 
 <template>
-  <UCommandPalette v-model:open="isOpen" :groups="groups" placeholder="Search..." />
+  <UCommandPalette v-model:open="isOpen" :groups="groups" placeholder="搜索..." />
 </template>
 ```
 
-### Keyboard Shortcut
+### 键盘快捷键
 
 ```vue
 <script setup>
@@ -326,13 +326,13 @@ defineShortcuts({
 </script>
 ```
 
-## Best Practices
+## 最佳实践
 
-| Do                                     | Don't                       |
-| -------------------------------------- | --------------------------- |
-| Use useToast for notifications         | Build custom toast systems  |
-| Use UModal for dialogs                 | Use alerts for complex UI   |
-| Use Slideover for panels               | Use modals for side content |
-| Use Drawer for mobile sheets           | Use slideover on mobile     |
-| Use CommandPalette for search          | Build custom search UI      |
-| Use programmatic overlays for confirms | Create confirm components   |
+| 应该使用                            | 不应使用                         |
+| ----------------------------------- | -------------------------------- |
+| 使用 useToast 显示通知              | 自建自定义 Toast 系统            |
+| 使用 UModal 显示对话框              | 用警告弹窗处理复杂界面           |
+| 使用 Slideover 显示面板             | 在侧边内容中使用模态框           |
+| 使用 Drawer 适配移动端抽屉          | 在移动端使用滑动面板             |
+| 使用 CommandPalette 实现搜索        | 自建自定义搜索界面               |
+| 使用程序化覆盖层处理确认操作      | 创建确认组件                     |

@@ -1,16 +1,16 @@
 # EditorDragHandle
 
-A draggable handle for reordering and selecting blocks in the editor.
+编辑器中用于重新排序和选择模块的可拖拽句柄。
 
-## Key Props
+## 主要属性
 
-- `icon`: to customize the drag handle icon.
-- `options`: to customize the positioning behavior using [Floating UI options](https://floating-ui.
+- `icon`：用于自定义拖拽句柄图标。
+- `options`：用于通过 [Floating UI 选项](https://floating-ui.com/docs/overview) 自定义定位行为。
 
-## Usage
+## 使用方法
 
 ```vue
 <UEditorDragHandle
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

@@ -1,24 +1,24 @@
-# Checkbox
+# 复选框
 
-An input element to toggle between checked and unchecked states.
+一种输入元素，用于在选中和未选中状态之间切换。
 
-> Based on [Reka UI Checkbox](https://reka-ui.com/docs/components/checkbox)
+> 基于 [Reka UI 复选框](https://reka-ui.com/docs/components/checkbox)
 
-## Key Props
+## 主要属性
 
-- `label`: to set the label of the Checkbox.
-- `description`: to set the description of the Checkbox.
-- `icon`: to set the icon of the Checkbox when it is checked.
-- `color`: to change the color of the Checkbox.
-- `variant`: to change the variant of the Checkbox.
-- `size`: to change the size of the Checkbox.
-- `indicator`: to change the position or hide the indicator.
-- `disabled`: to disable the Checkbox.
+- `label`：用于设置复选框的标签。
+- `description`：用于设置复选框的描述。
+- `icon`：用于设置复选框选中时的图标。
+- `color`：用于更改复选框的颜色。
+- `variant`：用于更改复选框的变体。
+- `size`：用于更改复选框的尺寸。
+- `indicator`：用于更改指示器的位置或隐藏指示器。
+- `disabled`：用于禁用复选框。
 
-## Usage
+## 用法
 
 ```vue
 <UCheckbox
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

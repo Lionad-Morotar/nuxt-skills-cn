@@ -1,11 +1,11 @@
 # syncRefs
 
-Keep target refs in sync with a source ref
+保持目标引用与源引用同步
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { syncRefs } from '@vueuse/core'
@@ -23,13 +23,13 @@ source.value = 'foo'
 console.log(target.value) // foo
 ```
 
-## Options
+## 选项
 
-| Option    | Type      | Default | Description             |
-| --------- | --------- | ------- | ----------------------- |
-| deep      | `boolean` | false   | Watch deeply            |
-| immediate | `boolean` | true    | Sync values immediately |
+| 选项      | 类型      | 默认值  | 描述                   |
+| --------- | --------- | ------- | ---------------------- |
+| deep      | `boolean` | false   | 深度监听               |
+| immediate | `boolean` | true    | 立即同步值             |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/syncRefs/)
+[VueUse 文档](https://vueuse.org/core/syncRefs/)

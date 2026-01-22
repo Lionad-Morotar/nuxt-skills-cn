@@ -1,11 +1,11 @@
 # useMounted
 
-Mounted state in ref.
+引用中的挂载状态。
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { useMounted } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { useMounted } from '@vueuse/core'
 const isMounted = useMounted()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMounted/)
+[VueUse 文档](https://vueuse.org/core/useMounted/)

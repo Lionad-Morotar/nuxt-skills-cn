@@ -1,18 +1,18 @@
 # ChatMessages
 
-Display a list of chat messages, designed to work seamlessly with Vercel AI SDK.
+显示一组聊天消息，专为与 Vercel AI SDK 无缝协作而设计。
 
-## Key Props
+## 主要属性
 
-- `messages`: to display a list of chat messages.
-- `status`: to display a visual indicator when the assistant is processing.
-- `user`: to change the [ChatMessage](/docs/components/chat-message) props for `user` messages.
-- `assistant`: to change the [ChatMessage](/docs/components/chat-message) props for `assistant` messages.
+- `messages`：用于显示一组聊天消息。
+- `status`：当助手正在处理时，用于显示视觉指示器。
+- `user`：用于更改 [ChatMessage](/docs/components/chat-message) 的 `user` 消息属性。
+- `assistant`：用于更改 [ChatMessage](/docs/components/chat-message) 的 `assistant` 消息属性。
 
-## Usage
+## 使用方法
 
 ```vue
 <UChatMessages
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

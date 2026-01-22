@@ -1,11 +1,11 @@
 # useWindowSize
 
-Reactive window size
+响应式窗口大小
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -22,21 +22,21 @@ const { width, height } = useWindowSize()
 </template>
 ```
 
-## Options
+## 选项
 
-| Option            | Type                             | Default | Description                                                               |
+| 选项              | 类型                             | 默认值  | 描述                                                                      |
 | ----------------- | -------------------------------- | ------- | ------------------------------------------------------------------------- |
-| listenOrientation | `boolean`                        | true    | Listen to window `orientationchange` event                                |
-| includeScrollbar  | `boolean`                        | true    | Whether the scrollbar should be included in the width and height          |
-| type              | `'inner' \| 'outer' \| 'visual'` | inner   | Use `window.innerWidth` or `window.outerWidth` or `window.visualViewport` |
+| listenOrientation | `boolean`                        | true    | 监听窗口 `orientationchange` 事件                                         |
+| includeScrollbar  | `boolean`                        | true    | 是否将滚动条包含在宽度和高度中                                            |
+| type              | `'inner' \| 'outer' \| 'visual'` | inner   | 使用 `window.innerWidth` 或 `window.outerWidth` 或 `window.visualViewport` |
 
-## Returns
+## 返回值
 
-| Name   | Type         |
+| 名称   | 类型         |
 | ------ | ------------ |
 | width  | `shallowRef` |
 | height | `shallowRef` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWindowSize/)
+[VueUse 文档](https://vueuse.org/core/useWindowSize/)

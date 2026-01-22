@@ -1,14 +1,14 @@
-# Multi-Cloud Deployment Patterns
+# 多云部署模式
 
-NuxtHub supports Cloudflare, Vercel, Netlify, and other cloud providers with auto-detection based on environment.
+NuxtHub 支持 Cloudflare、Vercel、Netlify 以及其他云提供商，基于环境自动检测。
 
 ## Cloudflare
 
-**Primary deployment target** - full feature support (D1, KV, R2, Cache).
+**主要部署目标** - 完整功能支持（D1、KV、R2、缓存）。
 
-### Auto-Configuration
+### 自动配置
 
-NuxtHub generates wrangler.json from hub config:
+NuxtHub 从 hub 配置生成 wrangler.json：
 
 ```ts
 // nuxt.config.ts
@@ -35,9 +35,9 @@ export default defineNuxtConfig({
 })
 ```
 
-### Observability (Recommended)
+### 可观测性（推荐）
 
-Enable logging for production:
+启用生产日志：
 
 ```jsonc
 // wrangler.jsonc
@@ -53,7 +53,7 @@ Enable logging for production:
 }
 ```
 
-### Create Resources
+### 创建资源
 
 ```bash
 npx wrangler d1 create my-db
@@ -62,17 +62,17 @@ npx wrangler kv namespace create CACHE
 npx wrangler r2 bucket create my-bucket
 ```
 
-### Environments
+### 环境
 
 ```bash
-# Production
+# 生产环境
 npx nuxi build
 
-# Preview/Staging
+# 预览/预发环境
 CLOUDFLARE_ENV=preview npx nuxi build
 ```
 
-Configure in wrangler.jsonc:
+在 wrangler.jsonc 中配置：
 
 ```jsonc
 {
@@ -87,15 +87,15 @@ Configure in wrangler.jsonc:
 
 ## Vercel
 
-Deploy NuxtHub apps on Vercel with marketplace integrations.
+通过市场集成在 Vercel 上部署 NuxtHub 应用。
 
-### Database
+### 数据库
 
-**Option 1: Vercel Postgres**
+**选项 1：Vercel Postgres**
 
 ```bash
-# Via Vercel dashboard: Storage > Create Database > Postgres
-# Get DATABASE_URL from environment variables
+# 通过 Vercel 控制台：Storage > Create Database > Postgres
+# 从环境变量获取 DATABASE_URL
 ```
 
 ```ts
@@ -105,17 +105,17 @@ export default defineNuxtConfig({
     db: {
       dialect: 'postgresql',
       driver: 'postgres-js'
-      // DATABASE_URL env var auto-detected
+      // 自动检测 DATABASE_URL 环境变量
     }
   }
 })
 ```
 
-**Option 2: Turso (SQLite)**
+**选项 2：Turso（SQLite）**
 
 ```bash
-# Install via Vercel Marketplace
-# Get TURSO_DATABASE_URL and TURSO_AUTH_TOKEN
+# 通过 Vercel 市场安装
+# 获取 TURSO_DATABASE_URL 和 TURSO_AUTH_TOKEN
 ```
 
 ```ts
@@ -123,76 +123,76 @@ hub: {
   db: {
     dialect: 'sqlite',
     driver: 'libsql'
-    // TURSO_* env vars auto-detected
+    // 自动检测 TURSO_* 环境变量
   }
 }
 ```
 
-### KV Storage
+### KV 存储
 
-**Vercel KV (Upstash Redis)**
+**Vercel KV（Upstash Redis）**
 
 ```bash
-# Via Vercel dashboard: Storage > Create > KV
-# Get KV_REST_API_URL and KV_REST_API_TOKEN
+# 通过 Vercel 控制台：Storage > Create > KV
+# 获取 KV_REST_API_URL 和 KV_REST_API_TOKEN
 ```
 
 ```ts
 hub: {
   kv: true
-  // Auto-detects Vercel KV via env vars
+  // 通过环境变量自动检测 Vercel KV
 }
 ```
 
-**Alternative: Upstash Redis**
+**替代方案：Upstash Redis**
 
 ```ts
 hub: {
   kv: {
     driver: 'redis',
-    // UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
+    // UPSTASH_REDIS_REST_URL 和 UPSTASH_REDIS_REST_TOKEN
   }
 }
 ```
 
-### Blob Storage
+### Blob 存储
 
 **Vercel Blob**
 
 ```bash
-# Via Vercel dashboard: Storage > Create > Blob
-# Get BLOB_READ_WRITE_TOKEN
+# 通过 Vercel 控制台：Storage > Create > Blob
+# 获取 BLOB_READ_WRITE_TOKEN
 ```
 
 ```ts
 hub: {
   blob: true
-  // Auto-detects Vercel Blob via env var
+  // 通过环境变量自动检测 Vercel Blob
 }
 ```
 
-### Cache
+### 缓存
 
-Uses Vercel Runtime Cache (built-in):
+使用 Vercel 运行时缓存（内置）：
 
 ```ts
 hub: {
   cache: true
-  // Auto-uses Vercel runtime cache in production
+  // 在生产环境中自动使用 Vercel 运行时缓存
 }
 ```
 
 ## Netlify
 
-Compatible with NuxtHub via external database providers.
+通过外部数据库提供商兼容 NuxtHub。
 
-### Database
+### 数据库
 
-Use external providers via env vars:
+通过环境变量使用外部提供商：
 
-- **Turso:** `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`
-- **Neon:** `DATABASE_URL` (PostgreSQL)
-- **PlanetScale:** `DATABASE_URL` (MySQL)
+- **Turso：** `TURSO_DATABASE_URL`、`TURSO_AUTH_TOKEN`
+- **Neon：** `DATABASE_URL`（PostgreSQL）
+- **PlanetScale：** `DATABASE_URL`（MySQL）
 
 ```ts
 // nuxt.config.ts
@@ -200,29 +200,29 @@ export default defineNuxtConfig({
   hub: {
     db: {
       dialect: 'sqlite',
-      driver: 'libsql' // or postgres-js, mysql2
+      driver: 'libsql' // 或 postgres-js、mysql2
     }
   }
 })
 ```
 
-### KV Storage
+### KV 存储
 
-- **Upstash Redis:** `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`
-- **AWS S3 (as KV):** `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_REGION`
+- **Upstash Redis：** `UPSTASH_REDIS_REST_URL`、`UPSTASH_REDIS_REST_TOKEN`
+- **AWS S3（作为 KV）：** `S3_ACCESS_KEY_ID`、`S3_SECRET_ACCESS_KEY`、`S3_BUCKET`、`S3_REGION`
 
 ```ts
 hub: {
-  kv: true // Auto-detects provider
+  kv: true // 自动检测提供商
 }
 ```
 
-### Blob Storage
+### Blob 存储
 
 **AWS S3**
 
 ```bash
-# Set env vars in Netlify dashboard
+# 在 Netlify 控制台设置环境变量
 S3_ACCESS_KEY_ID=<key>
 S3_SECRET_ACCESS_KEY=<secret>
 S3_BUCKET=<bucket-name>
@@ -231,82 +231,82 @@ S3_REGION=<region>
 
 ```ts
 hub: {
-  blob: true // Auto-detects S3 config
+  blob: true // 自动检测 S3 配置
 }
 ```
 
-## Other Providers (Generic)
+## 其他提供商（通用）
 
 ### Deno Deploy
 
-**Deno KV** (auto-detected):
+**Deno KV**（自动检测）：
 
 ```ts
 hub: {
-  kv: true // Uses Deno.openKv()
+  kv: true // 使用 Deno.openKv()
 }
 ```
 
-### AWS / Self-Hosted
+### AWS / 自托管
 
-**Database:**
+**数据库：**
 
-- PostgreSQL: `DATABASE_URL`
-- MySQL: `DATABASE_URL` or `MYSQL_URL`
-- SQLite: Local filesystem
+- PostgreSQL：`DATABASE_URL`
+- MySQL：`DATABASE_URL` 或 `MYSQL_URL`
+- SQLite：本地文件系统
 
-**Blob (S3):**
+**Blob（S3）：**
 
 ```ts
 hub: {
   blob: {
     driver: 's3',
-    // S3_* env vars
+    // S3_* 环境变量
   }
 }
 ```
 
-**KV (S3 or Redis):**
+**KV（S3 或 Redis）：**
 
 ```ts
 hub: {
   kv: {
     driver: 'redis',
-    // REDIS_URL or S3 config
+    // REDIS_URL 或 S3 配置
   }
 }
 ```
 
-## Provider Detection
+## 提供商检测
 
-NuxtHub auto-detects hosting environment via:
+NuxtHub 通过以下方式自动检测托管环境：
 
-1. `NITRO_PRESET` env var
-2. Platform-specific env vars (Vercel, Netlify, Cloudflare)
-3. Explicit driver configuration in hub config
+1. `NITRO_PRESET` 环境变量
+2. 平台特定的环境变量（Vercel、Netlify、Cloudflare）
+3. hub 配置中的显式驱动器配置
 
-**Manual override:**
+**手动覆盖：**
 
 ```ts
 nitro: {
-  preset: 'cloudflare-pages' // or 'vercel', 'netlify', etc.
+  preset: 'cloudflare-pages' // 或 'vercel'、'netlify' 等
 }
 ```
 
-## Environment Variables Summary
+## 环境变量摘要
 
-| Provider   | Database                    | KV                                     | Blob                    |
+| 提供商     | 数据库                      | KV                                     | Blob                    |
 | ---------- | --------------------------- | -------------------------------------- | ----------------------- |
-| Cloudflare | Config (database_id)        | Config (namespace_id)                  | Config (bucket_name)    |
-| Vercel     | `DATABASE_URL`              | `KV_REST_API_URL`, `KV_REST_API_TOKEN` | `BLOB_READ_WRITE_TOKEN` |
-| Netlify    | `DATABASE_URL`, `TURSO_*`   | `UPSTASH_*`, `S3_*`                    | `S3_*`                  |
-| Generic    | `DATABASE_URL`, `MYSQL_URL` | `REDIS_URL`, `UPSTASH_*`, `S3_*`       | `S3_*`                  |
-| Deno       | `DATABASE_URL` or Turso     | Auto (Deno.openKv)                     | `S3_*`                  |
+| Cloudflare | 配置（database_id）         | 配置（namespace_id）                   | 配置（bucket_name）     |
+| Vercel     | `DATABASE_URL`              | `KV_REST_API_URL`、`KV_REST_API_TOKEN` | `BLOB_READ_WRITE_TOKEN` |
+| Netlify    | `DATABASE_URL`、`TURSO_*`   | `UPSTASH_*`、`S3_*`                    | `S3_*`                  |
+| 通用       | `DATABASE_URL`、`MYSQL_URL` | `REDIS_URL`、`UPSTASH_*`、`S3_*`       | `S3_*`                  |
+| Deno       | `DATABASE_URL` 或 Turso     | 自动（Deno.openKv）                    | `S3_*`                  |
 
-## Best Practices
+## 最佳实践
 
-1. **Cloudflare:** Use hub config in nuxt.config, add observability in wrangler.jsonc
-2. **Vercel:** Leverage Vercel Marketplace for managed services
-3. **Other providers:** Use env vars for credentials, avoid hardcoding in config
-4. **Development:** Use `hub.remote: true` to test with production bindings locally
-5. **Secrets:** Store in platform secret managers, not in git
+1. **Cloudflare：** 在 nuxt.config 中使用 hub 配置，在 wrangler.jsonc 中添加可观测性
+2. **Vercel：** 利用 Vercel 市场获取托管服务
+3. **其他提供商：** 使用环境变量存储凭证，避免在配置中硬编码
+4. **开发：** 使用 `hub.remote: true` 在本地测试生产绑定
+5. **密钥：** 存储在平台的密钥管理器中，而非 Git 中

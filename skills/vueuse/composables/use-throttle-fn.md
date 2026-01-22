@@ -1,22 +1,22 @@
 # useThrottleFn
 
-Throttle execution of a function. Especially useful for rate limiting execution of handlers on events like resize and scroll.
+限制函数的执行频率。特别适用于对如 resize 和 scroll 等事件的处理程序进行速率限制。
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包:** `@vueuse/shared`  
+**类别:** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useThrottleFn } from '@vueuse/core'
 
 const throttledFn = useThrottleFn(() => {
-  // do something, it will be called at most 1 time per second
+  // 执行某些操作，每秒最多调用一次
 }, 1000)
 
 useEventListener(window, 'resize', throttledFn)
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useThrottleFn/)
+[VueUse 文档](https://vueuse.org/core/useThrottleFn/)

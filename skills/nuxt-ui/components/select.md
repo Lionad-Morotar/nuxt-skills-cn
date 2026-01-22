@@ -1,12 +1,12 @@
-# Select
+# 选择
 
-A select element to choose from a list of options.
+一个用于从选项列表中进行选择的元素。
 
-> Based on [Reka UI Select](https://reka-ui.com/docs/components/select)
+> 基于 [Reka UI Select](https://reka-ui.com/docs/components/select)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of strings, numbers or booleans:
+- `items`：作为字符串、数字或布尔值的数组：
 
 ## ::component-code
 
@@ -28,7 +28,7 @@ ignore:
 
 ::
 
-You can also pass an array of objects with the following properties:
+你也可以传入一个对象数组，具有以下属性：
 
 - `label?: string`{lang="ts-type"}
 - [`value?: string`{lang="ts-type"}](#value-key)
@@ -66,26 +66,26 @@ ignore:
 ::
 
 ::caution
-When using objects, you need to reference the `value` property of the object in the `v-model` directive or the `default-value` prop.
+使用对象时，你需要在 `v-model` 指令或 `default-value` 属性中引用对象的 `value` 属性。
 
-- `multiple`: to allow multiple selections, the selected items will be separated by a comma in the trigger.
-- `placeholder`: to set a placeholder text.
-- `content`: to control how the Select content is rendered, like its `align` or `side` for example.
-- `arrow`: to display an arrow on the Select.
-- `color`: to change the ring color when the Select is focused.
-- `variant`: to change the variant of the Select.
-- `size`: to change the size of the Select.
-- `icon`: to show an [Icon](/docs/components/icon) inside the Select.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the Select.
+- `multiple`：允许进行多项选择，选中的项将在触发器中以逗号分隔。
+- `placeholder`：设置占位符文本。
+- `content`：控制选择器内容的渲染方式，例如其 `align` 或 `side` 等。
+- `arrow`：在选择器上显示箭头。
+- `color`：更改选择器获得焦点时的环形颜色。
+- `variant`：更改选择器的变体。
+- `size`：更改选择器的尺寸。
+- `icon`：在选择器中显示 [Icon](/docs/components/icon)。
+- `avatar`：在选择器中显示 [Avatar](/docs/components/avatar)。
 
-## Usage
+## 使用方法
 
 ```vue
 <USelect
-  <!-- props here -->
+  <!-- 这里填写属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#leading`

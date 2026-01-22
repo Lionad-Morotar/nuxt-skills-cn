@@ -1,11 +1,11 @@
 # PageGrid
 
-A responsive grid system for displaying content in a flexible layout.
+一种响应式网格系统，用于在灵活布局中显示内容。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageGrid
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

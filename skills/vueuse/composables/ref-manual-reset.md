@@ -1,11 +1,11 @@
 # refManualReset
 
-Create a ref with manual reset functionality.
+创建一个具有手动重置功能的引用。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { refManualReset } from '@vueuse/core'
@@ -19,6 +19,6 @@ message.reset()
 console.log(message.value) // 'default message'
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/refManualReset/)
+[VueUse 文档](https://vueuse.org/core/refManualReset/)

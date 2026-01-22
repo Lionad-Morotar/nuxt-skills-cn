@@ -1,76 +1,76 @@
-# Hover Card
+# 悬停卡片
 
-Card shown on hover
+悬停时显示的卡片
 
-**Parts:** `HoverCardRoot`, `HoverCardTrigger`, `HoverCardPortal`, `HoverCardContent`, `HoverCardArrow`
+**组件：** `HoverCardRoot`、`HoverCardTrigger`、`HoverCardPortal`、`HoverCardContent`、`HoverCardArrow`
 
 ## HoverCardRoot
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
-| `closeDelay`  | `number`  | `300`   |
-| `defaultOpen` | `false`   | `false` |
-| `open`        | `boolean` | -       |
-| `openDelay`   | `number`  | `700`   |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
+| `closeDelay`  | `number`  | `300`  |
+| `defaultOpen` | `false`   | `false`|
+| `open`        | `boolean` | -      |
+| `openDelay`   | `number`  | `700`  |
 
-### Emits
+### 事件
 
-| Event         | Payload            |
+| 事件          | 参数               |
 | ------------- | ------------------ |
 | `update:open` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## HoverCardTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"a"`   |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"a"`  |
+| `asChild` | `boolean`            | -      |
 
 ## HoverCardPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## HoverCardContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default |
-| ------------------------ | ------------------------------------------------------- | ------- |
-| `align`                  | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`            | `number`                                                | -       |
-| `arrowPadding`           | `number`                                                | -       |
-| `as`                     | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                | `boolean`                                               | -       |
-| `avoidCollisions`        | `boolean`                                               | -       |
-| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `forceMount`             | `boolean`                                               | -       |
-| `hideWhenDetached`       | `boolean`                                               | -       |
-| `prioritizePosition`     | `boolean`                                               | -       |
-| `side`                   | `"top" \| "right" \| "bottom" \| "left"`                | -       |
-| `sideOffset`             | `number`                                                | -       |
-| `sticky`                 | `"partial" \| "always"`                                 | -       |
-| `updatePositionStrategy` | `"always" \| "optimized"`                               | -       |
+| 属性                     | 类型                                                    | 默认值 |
+| ------------------------ | ------------------------------------------------------- | ------ |
+| `align`                  | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`            | `number`                                                | -      |
+| `arrowPadding`           | `number`                                                | -      |
+| `as`                     | `AsTag \| Component`                                    | `"div"`|
+| `asChild`                | `boolean`                                               | -      |
+| `avoidCollisions`        | `boolean`                                               | -      |
+| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `forceMount`             | `boolean`                                               | -      |
+| `hideWhenDetached`       | `boolean`                                               | -      |
+| `prioritizePosition`     | `boolean`                                               | -      |
+| `side`                   | `"top" \| "right" \| "bottom" \| "left"`                | -      |
+| `sideOffset`             | `number`                                                | -      |
+| `sticky`                 | `"partial" \| "always"`                                 | -      |
+| `updatePositionStrategy` | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
 | `focusOutside`       | `[event: FocusOutsideEvent]`                          |
@@ -79,11 +79,11 @@ Card shown on hover
 
 ## HoverCardArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"svg"` |
-| `asChild` | `boolean`            | -       |
-| `height`  | `number`             | `5`     |
-| `width`   | `number`             | `10`    |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"svg"`|
+| `asChild` | `boolean`            | -      |
+| `height`  | `number`             | `5`    |
+| `width`   | `number`             | `10`   |

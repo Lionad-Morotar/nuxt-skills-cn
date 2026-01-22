@@ -1,11 +1,11 @@
 # useNavigatorLanguage
 
-Reactive navigator.language.
+响应式 navigator.language。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useNavigatorLanguage } from '@vueuse/core'
@@ -13,17 +13,17 @@ import { useNavigatorLanguage } from '@vueuse/core'
 const { language } = useNavigatorLanguage()
 
 watch(language, () => {
-  // Listen to the value changing
+  // 监听值的变化
 })
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type                                    |
+| 名称        | 类型                                    |
 | ----------- | --------------------------------------- |
 | isSupported | `useSupported`                          |
-| language    | `shallowRef&lt;string \| undefined&gt;` |
+| language    | `shallowRef<string \| undefined>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useNavigatorLanguage/)
+[VueUse 文档](https://vueuse.org/core/useNavigatorLanguage/)

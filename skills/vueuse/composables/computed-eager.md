@@ -1,11 +1,11 @@
 # computedEager
 
-Eager computed without lazy evaluation.
+无需惰性求值的即时计算属性。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { computedEager } from '@vueuse/core'
@@ -18,6 +18,6 @@ toTodos.value.push({ title: 'Learn Vue' })
 console.log(hasOpenTodos.value) // true
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/computedEager/)
+[VueUse 文档](https://vueuse.org/core/computedEager/)

@@ -1,6 +1,6 @@
-# Package Exports
+# 包导出
 
-## Basic Single Entry
+## 基础单入口
 
 ```json
 {
@@ -22,7 +22,7 @@
 }
 ```
 
-## Multiple Entry Points
+## 多入口点
 
 ```json
 {
@@ -42,7 +42,7 @@
 }
 ```
 
-## Plugin Entry Pattern (unplugin-\*)
+## 插件入口模式（unplugin-*）
 
 ```json
 {
@@ -71,7 +71,7 @@
 }
 ```
 
-## Environment-Aware Exports
+## 环境感知导出
 
 ```json
 {
@@ -89,9 +89,9 @@
 }
 ```
 
-## typesVersions Fallback
+## typesVersions 回退
 
-For older TypeScript versions without exports support:
+用于不支持 exports 的旧版 TypeScript：
 
 ```json
 {
@@ -103,34 +103,34 @@ For older TypeScript versions without exports support:
 }
 ```
 
-## Field Reference
+## 字段参考
 
-| Field         | Purpose                          |
+| 字段          | 目的                             |
 | ------------- | -------------------------------- |
-| `exports`     | Modern entry points (Node 12.7+) |
-| `main`        | CJS fallback for older bundlers  |
-| `module`      | ESM fallback for bundlers        |
-| `types`       | TypeScript fallback              |
-| `sideEffects` | `false` enables tree-shaking     |
-| `files`       | What gets published to npm       |
+| `exports`     | 现代入口点（Node 12.7+）         |
+| `main`        | CJS 回退，适用于旧 bundler       |
+| `module`      | ESM 回退，适用于 bundler         |
+| `types`       | TypeScript 回退                  |
+| `sideEffects` | `false` 启用 tree-shaking        |
+| `files`       | 发布到 npm 的内容                |
 
-## Condition Order
+## 条件顺序
 
-Order matters! Put most specific first:
+顺序很重要！将最具体的条件放在前面：
 
 ```json
 {
   ".": {
-    "types": "...",      // Always first
+    "types": "...",      // 总是放在最前
     "import": "...",     // ESM
-    "require": "..."     // CJS fallback
+    "require": "..."     // CJS 回退
   }
 }
 ```
 
-## Peer Dependencies
+## 同级依赖
 
-External deps that consumers must provide:
+外部依赖，消费者必须提供：
 
 ```json
 {
@@ -143,12 +143,12 @@ External deps that consumers must provide:
 }
 ```
 
-## Package Validation
+## 包验证
 
 ```bash
-# Check exports are correct
+# 检查导出是否正确
 pnpm dlx publint
 pnpm dlx @arethetypeswrong/cli
 ```
 
-Add to CI for continuous validation.
+添加到 CI 中以实现持续验证。

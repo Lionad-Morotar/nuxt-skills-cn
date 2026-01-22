@@ -1,12 +1,12 @@
-# Tree
+# 树形组件
 
-A tree view component to display and interact with hierarchical data structures.
+用于显示和交互分层数据结构的树形视图组件。
 
-> Based on [Reka UI Tree](https://reka-ui.com/docs/components/tree)
+> 基于 [Reka UI Tree](https://reka-ui.com/docs/components/tree)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：作为对象数组，每个对象具有以下属性：
 
 - `icon?: string`{lang="ts-type"}
 - `label?: string`{lang="ts-type"}
@@ -18,23 +18,23 @@ A tree view component to display and interact with hierarchical data structures.
 - `onToggle?: (e: TreeItemToggleEvent<TreeItem>) => void`{lang="ts-type"}
 - `onSelect?: (e: TreeItemSelectEvent<TreeItem>) => void`{lang="ts-type"}
 - `class?: any`{lang="ts-type"}
-- `ui?: { item?: ClassNameValue, itemWithChildren?: ClassNameValue, link?: ClassNameValue, linkLeadingIcon?: ClassNameValue, linkLabel?: ClassNameValue, linkTrailing?: ClassNameValue, linkTrailingIcon?: ClassNameValue, listWithChildren?: ClassNameValue }`{lang="ts-type"}
+- `ui?: { item?: ClassNameValue, itemWithChildren?: ClassNameValue, link?: ClassNameValue, linkIcon?: ClassNameValue, linkLabel?: ClassNameValue, linkTrailing?: ClassNameValue, linkTrailingIcon?: ClassNameValue, listWithChildren?: ClassNameValue }`{lang="ts-type"}
 
 ::note
-A unique identifier is required for each item.
+每个项目都需要一个唯一标识符。
 
-- `multiple`: to allow multiple item selections.
-- `nested`: to control whether the Tree is rendered with nested structure or as a flat list.
-- `color`: to change the color of the Tree.
-- `size`: to change the size of the Tree.
-- `disabled`: to prevent any user interaction with the Tree.
-- `virtualize`: to enable virtualization for large lists as a boolean or an object with options like `{ estimateSize: 32, overscan: 12 }`.
+- `multiple`：允许选择多个项目。
+- `nested`：控制树形组件是以嵌套结构还是平面列表形式渲染。
+- `color`：更改树形组件的颜色。
+- `size`：更改树形组件的尺寸。
+- `disabled`：禁止用户与树形组件进行任何交互。
+- `virtualize`：为大型列表启用虚拟化，可传入布尔值或包含选项的对象（如 `{ estimateSize: 32, overscan: 12 }`）。
 - `slot`:
 
-## Usage
+## 使用方法
 
 ```vue
 <UTree
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

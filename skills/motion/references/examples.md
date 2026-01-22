@@ -1,54 +1,54 @@
-# Animation Examples & Resources
+# 动画示例与资源
 
-Links to external animation libraries, component collections, and inspiration.
+外部动画库、组件集合及灵感来源的链接。
 
-## Official Motion Resources
+## 官方动效资源
 
-- **[motion.dev/examples](https://motion.dev/examples)** - Official Motion examples gallery
-- **[github.com/motiondivision/motion-vue](https://github.com/motiondivision/motion-vue)** - Motion Vue source code
+- **[motion.dev/examples](https://motion.dev/examples)** - 官方 Motion 示例画廊
+- **[github.com/motiondivision/motion-vue](https://github.com/motiondivision/motion-vue)** - Motion Vue 源代码
 
-## Vue Animation Libraries
+## Vue 动画库
 
-- **[Vue Bits](https://github.com/DavidHDev/vue-bits)** - 110+ animated Vue components (text reveals, backgrounds, UI effects)
-- **[Inspira UI](https://inspira-ui.com/)** - Beautiful UI components built with Vue, Nuxt, and Tailwind CSS
+- **[Vue Bits](https://github.com/DavidHDev/vue-bits)** - 110+ 个动画 Vue 组件（文字揭示、背景、UI 效果）
+- **[Inspira UI](https://inspira-ui.com/)** - 使用 Vue、Nuxt 和 Tailwind CSS 构建的精美 UI 组件
 
-## Animation Pattern References
+## 动画模式参考
 
-These React/CSS libraries provide patterns easily ported to Motion Vue:
+这些 React/CSS 库提供易于移植到 Motion Vue 的模式：
 
-- **[React Bits](https://github.com/DavidHDev/react-bits)** - Same author as Vue Bits, patterns translate directly
-- **[Magic UI](https://github.com/magicuidesign/magicui)** - 150+ landing page effects, shadcn companion
-- **[Animata](https://github.com/codse/animata)** - 80+ Tailwind copy-paste animations
-- **[Aceternity UI](https://ui.aceternity.com)** - Premium animations (lamp, globe, 3D cards)
-- **[Motion Primitives](https://motion-primitives.com)** - Animated UI component kit
-- **[Cult UI](https://www.cult-ui.com/)** - Curated animated components
+- **[React Bits](https://github.com/DavidHDev/react-bits)** - 与 Vue Bits 同一作者，模式可直接转换
+- **[Magic UI](https://github.com/magicuidesign/magicui)** - 150+ 页面效果，shadcn 配套组件
+- **[Animata](https://github.com/codse/animata)** - 80+ Tailwind 可复制粘贴动画
+- **[Aceternity UI](https://ui.aceternity.com)** - 高级动画（灯、地球仪、3D 卡片）
+- **[Motion Primitives](https://motion-primitives.com)** - 动画 UI 组件包
+- **[Cult UI](https://www.cult-ui.com/)** - 精选动画组件
 
-## Patterns by Category
+## 按类别划分的模式
 
-### Scroll Animations
+### 滚动动画
 
 ```vue
-<!-- Parallax -->
+<!-- 视差 -->
 <script setup>
 const { scrollYProgress } = useScroll()
 const y = useTransform(scrollYProgress, [0, 1], [0, -200])
 </script>
 
-<Motion.div :style="{ y }">Parallax content</Motion.div>
+<Motion.div :style="{ y }">视差内容</Motion.div>
 ```
 
 ```vue
-<!-- Progress bar -->
+<!-- 进度条 -->
 <Motion.div
   class="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left"
   :style="{ scaleX: scrollYProgress }"
 />
 ```
 
-### Layout Animations
+### 布局动画
 
 ```vue
-<!-- Expanding card -->
+<!-- 展开卡片 -->
 <Motion.div
   :layoutId="`card-${id}`"
   @click="expanded = !expanded"
@@ -57,7 +57,7 @@ const y = useTransform(scrollYProgress, [0, 1], [0, -200])
 ```
 
 ```vue
-<!-- Reordering list -->
+<!-- 列表重新排序 -->
 <Motion.li
   v-for="item in items"
   :key="item.id"
@@ -68,10 +68,10 @@ const y = useTransform(scrollYProgress, [0, 1], [0, -200])
 />
 ```
 
-### Gesture Interactions
+### 手势交互
 
 ```vue
-<!-- Magnetic button -->
+<!-- 磁性按钮 -->
 <script setup>
 const x = useMotionValue(0)
 const y = useMotionValue(0)
@@ -97,7 +97,7 @@ function reset() {
 ```
 
 ```vue
-<!-- Swipe to dismiss -->
+<!-- 滑动关闭 -->
 <Motion.div
   drag="x"
   :dragConstraints="{ left: 0, right: 0 }"
@@ -106,10 +106,10 @@ function reset() {
 />
 ```
 
-### Text Animations
+### 文本动画
 
 ```vue
-<!-- Staggered text reveal -->
+<!-- 交错文字揭示 -->
 <script setup>
 const words = text.split(' ')
 </script>
@@ -129,7 +129,7 @@ const words = text.split(' ')
 ```
 
 ```vue
-<!-- Character animation -->
+<!-- 字符动画 -->
 <Motion.span
   v-for="(char, i) in text.split('')"
   :key="i"
@@ -141,10 +141,10 @@ const words = text.split(' ')
 </Motion.span>
 ```
 
-### SVG Animations
+### SVG 动画
 
 ```vue
-<!-- Path drawing -->
+<!-- 路径绘制 -->
 <Motion.path
   d="M0 0 L100 100"
   :initial="{ pathLength: 0 }"
@@ -154,17 +154,17 @@ const words = text.split(' ')
 ```
 
 ```vue
-<!-- Morphing shapes -->
+<!-- 形状变形 -->
 <Motion.path
   :animate="{ d: isCircle ? circlePath : squarePath }"
   :transition="{ duration: 0.5 }"
 />
 ```
 
-### Background Effects
+### 背景效果
 
 ```vue
-<!-- Gradient follow cursor -->
+<!-- 渐变跟随光标 -->
 <script setup>
 const x = useMotionValue(0)
 const y = useMotionValue(0)
@@ -183,10 +183,10 @@ function handleMouse(e: MouseEvent) {
 />
 ```
 
-### Page Transitions
+### 页面过渡
 
 ```vue
-<!-- Slide transition -->
+<!-- 滑动过渡 -->
 <AnimatePresence mode="wait">
   <Motion.div
     :key="route.path"
@@ -198,10 +198,10 @@ function handleMouse(e: MouseEvent) {
 </AnimatePresence>
 ```
 
-## Performance Tips
+## 性能提示
 
-1. **Use motion values** for frequent updates (mouse position, scroll)
-2. **Prefer transform properties** (x, y, scale, rotate) over layout properties (width, height, top, left)
-3. **Use `layout` sparingly** - it measures DOM which can be expensive
-4. **Set `once: true`** on viewport animations when possible
-5. **Use `will-change`** for complex animations (Motion adds this automatically)
+1. **对频繁更新使用动量值**（鼠标位置、滚动）
+2. **优先使用变换属性**（x, y, scale, rotate）而非布局属性（width, height, top, left）
+3. **谨慎使用 `layout`** —— 它会测量 DOM，可能消耗资源
+4. **在视口动画中尽可能设置 `once: true`**
+5. **对于复杂动画使用 `will-change`**（Motion 会自动添加）

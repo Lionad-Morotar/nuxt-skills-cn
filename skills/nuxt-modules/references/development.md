@@ -1,6 +1,6 @@
-# Module Development
+# 模块开发
 
-Module anatomy, Kit utilities, and common patterns.
+模块结构、Kit 工具与通用模式。
 
 ## defineNuxtModule
 
@@ -28,7 +28,7 @@ export default defineNuxtModule<ModuleOptions>({
   moduleDependencies: {
     '@nuxtjs/tailwindcss': { version: '>=6.0.0', optional: true }
   },
-  // Or as async function (Nuxt 4.3+)
+  // 或作为异步函数（Nuxt 4.3+）
   async moduleDependencies(nuxt) {
     const needsSupport = nuxt.options.runtimeConfig.public?.feature
     return {
@@ -42,7 +42,7 @@ export default defineNuxtModule<ModuleOptions>({
 })
 ```
 
-User configures via `configKey`:
+用户通过 `configKey` 配置：
 
 ```ts
 // nuxt.config.ts
@@ -52,22 +52,22 @@ export default defineNuxtConfig({
 })
 ```
 
-## Critical: #imports in Published Modules
+## 关键：已发布模块中的 #imports
 
-Auto-imports don't work in `node_modules`. Runtime files must explicitly import:
+自动导入在 `node_modules` 中不生效。运行时文件必须显式导入：
 
 ```ts
 // src/runtime/composables/useMyFeature.ts
 
-// Wrong - won't work in published module
-// Right - explicit import
+// 错误 —— 在已发布的模块中不会生效
+// 正确 —— 显式导入
 import { useRoute } from '#imports'
 
 const route = useRoute()
 const route = useRoute()
 ```
 
-## Adding Plugins
+## 添加插件
 
 ```ts
 import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
@@ -91,21 +91,21 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 ```
 
-**Async plugins (Nuxt 4.3+):** Lazy-load build plugins:
+**异步插件（Nuxt 4.3+）：** 延迟加载构建插件：
 
 ```ts
 import { addVitePlugin, addWebpackPlugin } from '@nuxt/kit'
 
 export default defineNuxtModule({
   async setup() {
-    // Lazy-load only the bundler plugin needed
+    // 只延迟加载需要的打包插件
     addVitePlugin(() => import('my-plugin/vite').then(r => r.default()))
     addWebpackPlugin(() => import('my-plugin/webpack').then(r => r.default()))
   }
 })
 ```
 
-## Adding Components
+## 添加组件
 
 ```ts
 import { addComponent, addComponentsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
@@ -114,13 +114,13 @@ export default defineNuxtModule({
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    // Single component
+    // 单个组件
     addComponent({
       name: 'MyButton',
       filePath: resolve('./runtime/components/MyButton.vue')
     })
 
-    // Or entire directory with prefix
+    // 或整个目录并加前缀
     addComponentsDir({
       path: resolve('./runtime/components'),
       prefix: 'My' // <MyButton>, <MyCard>
@@ -129,7 +129,7 @@ export default defineNuxtModule({
 })
 ```
 
-## Adding Composables
+## 添加组合函数
 
 ```ts
 import { addImports, addImportsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
@@ -138,19 +138,19 @@ export default defineNuxtModule({
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    // Single or multiple
+    // 单个或多个
     addImports([
       { name: 'useAuth', from: resolve('./runtime/composables/useAuth') },
       { name: 'useUser', from: resolve('./runtime/composables/useUser') }
     ])
 
-    // Or entire directory
+    // 或整个目录
     addImportsDir(resolve('./runtime/composables'))
   }
 })
 ```
 
-## Adding Server Routes
+## 添加服务端路由
 
 ```ts
 import { addServerHandler, createResolver, defineNuxtModule } from '@nuxt/kit'
@@ -167,30 +167,30 @@ export default defineNuxtModule({
 })
 ```
 
-**Always prefix routes:** `/api/_my-module/` avoids conflicts.
+**始终为路由加前缀：** `/api/_my-module/` 避免冲突。
 
-**Server imports (Nuxt 4.3+):** Use `#server` alias in server files:
+**服务端导入（Nuxt 4.3+）：** 在服务端文件中使用 `#server` 别名：
 
 ```ts
 // runtime/server/api/users.ts
-import { helper } from '#server/utils/helper'  // Clean imports
+import { helper } from '#server/utils/helper'  // 清晰导入
 ```
 
-## Runtime Config
+## 运行时配置
 
 ```ts
 export default defineNuxtModule({
   setup(options, nuxt) {
-    // Public (client + server)
+    // 公开（客户端 + 服务端）
     nuxt.options.runtimeConfig.public.myModule = { apiUrl: options.apiUrl }
 
-    // Private (server only)
+    // 私有（仅服务端）
     nuxt.options.runtimeConfig.myModule = { apiKey: options.apiKey }
   }
 })
 ```
 
-## Lifecycle Hooks
+## 生命周期钩子
 
 ```ts
 export default defineNuxtModule({
@@ -206,7 +206,7 @@ export default defineNuxtModule({
       nitroConfig.prerender.routes.push('/my-route')
     })
 
-    // Cleanup on close
+    // 关闭时清理
     nuxt.hook('close', async () => {
       await cleanup()
     })
@@ -214,15 +214,15 @@ export default defineNuxtModule({
 })
 ```
 
-| Hook           | When               |
+| 钩子           | 时间               |
 | -------------- | ------------------ |
-| `ready`        | Nuxt initialized   |
-| `modules:done` | All modules loaded |
-| `pages:extend` | Modify pages array |
-| `nitro:config` | Configure Nitro    |
-| `close`        | Nuxt shutting down |
+| `ready`        | Nuxt 初始化完成    |
+| `modules:done` | 所有模块加载完成   |
+| `pages:extend` | 修改页面数组       |
+| `nitro:config` | 配置 Nitro         |
+| `close`        | Nuxt 关闭时        |
 
-## Custom Hooks
+## 自定义钩子
 
 ```ts
 export interface ModuleHooks {
@@ -242,7 +242,7 @@ export default defineNuxtModule({
 })
 ```
 
-## Virtual Files (Templates)
+## 虚拟文件（模板）
 
 ```ts
 import { addTemplate, defineNuxtModule } from '@nuxt/kit'
@@ -257,9 +257,9 @@ export default defineNuxtModule({
 })
 ```
 
-Import: `import { config } from '#build/my-module/config.mjs'`
+导入：`import { config } from '#build/my-module/config.mjs'`
 
-## Type Declarations
+## 类型声明
 
 ```ts
 import { addTypeTemplate, defineNuxtModule } from '@nuxt/kit'
@@ -279,9 +279,9 @@ export default defineNuxtModule({
 })
 ```
 
-## Logging & Errors
+## 日志与错误
 
-Use `consola.withTag` for consistent module logging:
+使用 `consola.withTag` 实现一致的模块日志：
 
 ```ts
 import { consola } from 'consola'
@@ -290,30 +290,30 @@ const logger = consola.withTag('my-module')
 
 export default defineNuxtModule({
   setup(options, nuxt) {
-    logger.info('Initializing...')
-    logger.warn('Deprecated option used')
+    logger.info('初始化中...')
+    logger.warn('使用了已弃用的选项')
 
-    // Errors must include tag manually - consola doesn't add it
+    // 错误必须手动包含标签 —— consola 不会自动添加
     if (!options.apiKey) {
-      throw new Error('[my-module] `apiKey` option is required')
+      throw new Error('[my-module] `apiKey` 选项是必需的')
     }
   }
 })
 ```
 
-## Disabling Modules
+## 禁用模块
 
-**Set to `false` to disable (Nuxt 4.3+):**
+**设置为 `false` 可禁用（Nuxt 4.3+）：**
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
-  tailwindcss: false  // Disable the module
+  tailwindcss: false  // 禁用模块
 })
 ```
 
-**Disable inherited layer modules:**
+**禁用继承的层模块：**
 
 ```ts
 // nuxt.config.ts
@@ -323,11 +323,11 @@ export default defineNuxtConfig({
 })
 ```
 
-Only works for modules from layers, not root project modules.
+仅对来自层的模块有效，不适用于根项目模块。
 
-## Local Modules
+## 本地模块
 
-For project-specific modules:
+用于项目特定模块：
 
 ```ts
 // modules/my-local-module/index.ts
@@ -336,7 +336,7 @@ import { defineNuxtModule } from '@nuxt/kit'
 export default defineNuxtModule({
   meta: { name: 'my-local-module' },
   setup(options, nuxt) {
-    // Module logic
+    // 模块逻辑
   }
 })
 ```
@@ -348,20 +348,20 @@ export default defineNuxtConfig({
 })
 ```
 
-## Quick Reference
+## 快速参考
 
-| Task             | Kit Function                            |
-| ---------------- | --------------------------------------- |
-| Add plugin       | `addPlugin()`                           |
-| Add component    | `addComponent()` / `addComponentsDir()` |
-| Add composable   | `addImports()` / `addImportsDir()`      |
-| Add server route | `addServerHandler()`                    |
-| Add server utils | `addServerImports()`                    |
-| Virtual file     | `addTemplate()` / `addServerTemplate()` |
-| Add types        | `addTypeTemplate()`                     |
-| Add CSS          | `nuxt.options.css.push()`               |
+| 任务             | Kit 函数                            |
+| ---------------- | ----------------------------------- |
+| 添加插件         | `addPlugin()`                       |
+| 添加组件         | `addComponent()` / `addComponentsDir()` |
+| 添加组合函数     | `addImports()` / `addImportsDir()`  |
+| 添加服务端路由   | `addServerHandler()`                |
+| 添加服务端工具   | `addServerImports()`                |
+| 虚拟文件         | `addTemplate()` / `addServerTemplate()` |
+| 添加类型         | `addTypeTemplate()`                 |
+| 添加 CSS         | `nuxt.options.css.push()`           |
 
-## Resources
+## 资源
 
 - [Nuxt Kit](https://nuxt.com/docs/api/kit)
-- [Hooks](https://nuxt.com/docs/api/advanced/hooks)
+- [钩子](https://nuxt.com/docs/api/advanced/hooks)

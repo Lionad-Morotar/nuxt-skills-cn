@@ -1,11 +1,11 @@
 # useToggle
 
-A boolean switcher with utility functions.
+一个带有实用函数的布尔切换器。
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包：** `@vueuse/shared`  
+**分类：** 实用工具
 
-## Usage
+## 用法
 
 ```ts
 import { useToggle } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { useToggle } from '@vueuse/core'
 const [value, toggle] = useToggle()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useToggle/)
+[VueUse 文档](https://vueuse.org/core/useToggle/)

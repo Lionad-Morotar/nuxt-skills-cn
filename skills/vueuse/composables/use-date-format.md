@@ -1,11 +1,11 @@
 # useDateFormat
 
-Get the formatted date according to the string of tokens passed in, inspired by dayjs.
+根据传入的标记字符串获取格式化的日期，灵感来源于 dayjs。
 
-**Package:** `@vueuse/shared`
-**Category:** Time
+**包：** `@vueuse/shared`  
+**类别：** 时间
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -19,13 +19,13 @@ const formatted = useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss')
 </template>
 ```
 
-## Options
+## 选项
 
-| Option         | Type                                                                                        | Default | Description                                                |
+| 选项           | 类型                                                                                        | 默认值  | 描述                                                       |
 | -------------- | ------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------- |
-| locales        | `MaybeRefOrGetter&lt;Intl.LocalesArgument&gt;`                                              | -       | The locale(s) to used for dd/ddd/dddd/MMM/MMMM format      |
-| customMeridiem | `(hours: number, minutes: number, isLowercase?: boolean, hasPeriod?: boolean) =&gt; string` | -       | A custom function to re-modify the way to display meridiem |
+| locales        | `MaybeRefOrGetter&lt;Intl.LocalesArgument&gt;`                                              | -       | 用于 dd/ddd/dddd/MMM/MMMM 格式的区域设置                   |
+| customMeridiem | `(hours: number, minutes: number, isLowercase?: boolean, hasPeriod?: boolean) =&gt; string` | -       | 自定义函数，用于重新修改显示 meridiem 的方式               |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDateFormat/)
+[VueUse 文档](https://vueuse.org/core/useDateFormat/)

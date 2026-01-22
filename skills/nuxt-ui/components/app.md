@@ -1,11 +1,11 @@
-# App
+# 应用
 
-Wraps your app to provide global configurations and more.
+包装您的应用程序以提供全局配置等。
 
-## Usage
+## 用法
 
 ```vue
 <UApp
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

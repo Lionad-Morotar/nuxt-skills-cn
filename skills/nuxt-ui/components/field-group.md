@@ -1,16 +1,16 @@
 # FieldGroup
 
-Group multiple button-like elements together.
+将多个按钮式元素分组。
 
-## Key Props
+## 主要属性
 
-- `size`: to change the size of all the buttons.
-- `orientation`: to change the orientation of the buttons.
+- `size`：用于更改所有按钮的大小。
+- `orientation`：用于更改按钮的方向。
 
-## Usage
+## 用法
 
 ```vue
 <UFieldGroup
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

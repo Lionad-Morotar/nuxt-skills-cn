@@ -1,11 +1,11 @@
-# Page
+# 页面
 
-A grid layout for your pages with left and right columns.
+用于页面的网格布局，包含左、右两列。
 
-## Usage
+## 用法
 
 ```vue
 <UPage
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

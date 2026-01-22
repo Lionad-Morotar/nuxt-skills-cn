@@ -1,14 +1,14 @@
-# Editable
+# 可编辑
 
-Inline text editing with preview/edit modes
+带预览/编辑模式的内联文本编辑
 
-**Parts:** `EditableRoot`, `EditableArea`, `EditableInput`, `EditablePreview`, `EditableSubmitTrigger`, `EditableCancelTrigger`, `EditableEditTrigger`
+**组件部分：** `EditableRoot`、`EditableArea`、`EditableInput`、`EditablePreview`、`EditableSubmitTrigger`、`EditableCancelTrigger`、`EditableEditTrigger`
 
 ## EditableRoot
 
-### Props
+### 属性
 
-| Prop                | Type                                           | Default           |
+| 属性                | 类型                                           | 默认值            |
 | ------------------- | ---------------------------------------------- | ----------------- |
 | `activationMode`    | `"dblclick" \| "focus" \| "none"`              | `"focus"`         |
 | `as`                | `AsTag \| Component`                           | `"div"`           |
@@ -28,17 +28,17 @@ Inline text editing with preview/edit modes
 | `startWithEditMode` | `boolean`                                      | -                 |
 | `submitMode`        | `"blur" \| "none" \| "enter" \| "both"`        | `"blur"`          |
 
-### Emits
+### 事件
 
-| Event               | Payload                                   |
-| ------------------- | ----------------------------------------- |
-| `submit`            | `[value: string]`                         |
-| `update:modelValue` | `[value: string]`                         |
+| 事件                | 参数                                   |
+| ------------------- | -------------------------------------- |
+| `submit`            | `[value: string]`                      |
+| `update:modelValue` | `[value: string]`                      |
 | `update:state`      | `[state: "cancel" \| "submit" \| "edit"]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                  |
+| 插槽         | 类型                  |
 | ------------ | --------------------- |
 | `isEditing`  | `boolean`             |
 | `modelValue` | `string \| undefined` |
@@ -49,54 +49,54 @@ Inline text editing with preview/edit modes
 
 ## EditableArea
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## EditableInput
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"input"` |
 | `asChild` | `boolean`            | -         |
 
 ## EditablePreview
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## EditableSubmitTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## EditableCancelTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## EditableEditTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |

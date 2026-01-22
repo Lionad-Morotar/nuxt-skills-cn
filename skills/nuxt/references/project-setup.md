@@ -1,8 +1,8 @@
-# Project Setup
+# 项目设置
 
-Standard patterns for new Nuxt projects: CI, ESLint, package scripts.
+新建 Nuxt 项目的标准模式：CI、ESLint、包脚本。
 
-## CI Workflow
+## CI 工作流
 
 ```yaml
 # .github/workflows/ci.yml
@@ -21,10 +21,10 @@ jobs:
       - run: pnpm prepare
       - run: pnpm lint
       - run: pnpm typecheck
-      - run: pnpm test # if tests exist
+      - run: pnpm test # 如果存在测试
 ```
 
-**With env vars:**
+**带环境变量：**
 
 ```yaml
 env:
@@ -32,7 +32,7 @@ env:
   API_KEY: test
 ```
 
-## ESLint Config
+## ESLint 配置
 
 ```js
 // eslint.config.mjs
@@ -49,13 +49,13 @@ export default withNuxt(
 )
 ```
 
-**For monorepos, add:**
+**对于单仓库（monorepo），添加：**
 
 ```js
 ignores: ['apps/web/.nuxt/**', 'packages/**/dist/**']
 ```
 
-## Package Scripts
+## 包脚本
 
 ```json
 {
@@ -71,18 +71,18 @@ ignores: ['apps/web/.nuxt/**', 'packages/**/dist/**']
 }
 ```
 
-## Key Conventions
+## 核心规范
 
-| Convention      | Standard                                              |
+| 规范            | 标准                                                  |
 | --------------- | ----------------------------------------------------- |
-| Package manager | pnpm with `--frozen-lockfile` in CI                   |
-| Node version    | 22-24                                                 |
-| ESLint base     | @antfu/eslint-config                                  |
-| Formatter       | Via ESLint (`formatters: true`), no separate Prettier |
-| Cache           | `--cache` flag on lint scripts                        |
-| Prepare step    | Required before lint/typecheck in CI                  |
+| 包管理器        | pnpm，并在 CI 中使用 `--frozen-lockfile`              |
+| Node 版本       | 22-24                                                 |
+| ESLint 基础     | @antfu/eslint-config                                  |
+| 格式化工具      | 通过 ESLint（`formatters: true`），无需单独的 Prettier |
+| 缓存            | 在 lint 脚本中使用 `--cache` 标志                      |
+| Prepare 步骤    | 在 CI 中 lint/typecheck 之前必须执行                  |
 
-## NuxtHub Deployment
+## NuxtHub 部署
 
 ```yaml
 # .github/workflows/nuxthub.yml
@@ -104,4 +104,4 @@ jobs:
           project-key: your-project-key
 ```
 
-> **For pnpm catalogs, release workflows, tsconfig patterns:** see `personal-ts-setup` skill
+> **对于 pnpm 目录、发布工作流、tsconfig 模式：** 请参见 `personal-ts-setup` 技能

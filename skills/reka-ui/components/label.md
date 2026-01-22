@@ -1,14 +1,14 @@
-# Label
+# 标签
 
-Accessible form label
+可访问的表单标签
 
-**Parts:** `Label`
+**组成部分：** `Label`
 
-## Label
+## 标签
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"label"` |
 | `asChild` | `boolean`            | -         |

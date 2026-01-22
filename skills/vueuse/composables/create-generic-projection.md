@@ -1,10 +1,10 @@
 # createGenericProjection
 
-Generic version of . Accepts a custom projector function to map arbitrary type of domains.
+`. 的通用版本。接受一个自定义投影函数，用于将任意类型的领域映射到目标类型。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`
+**类别：** '@Math'
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createGenericProjection/)
+[VueUse 文档](https://vueuse.org/core/createGenericProjection/)

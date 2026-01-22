@@ -1,56 +1,56 @@
 ---
 name: reka-ui
-description: Use when building with Reka UI (headless Vue components) - provides component API, accessibility patterns, composition (asChild), controlled/uncontrolled state, virtualization, and styling integration. Formerly Radix Vue.
+description: 用于构建 Reka UI（无头 Vue 组件）时使用——提供组件 API、可访问性模式、组合（asChild）、受控/非受控状态、虚拟化和样式集成。原名 Radix Vue。
 license: MIT
 ---
 
 # Reka UI
 
-Unstyled, accessible Vue 3 component primitives. WAI-ARIA compliant. Previously Radix Vue.
+无样式的、可访问的 Vue 3 组件原语。符合 WAI-ARIA 标准。此前称为 Radix Vue。
 
-**Current version:** v2.7.0 (December 2025)
+**当前版本：** v2.7.0（2025 年 12 月）
 
-## When to Use
+## 使用场景
 
-- Building headless/unstyled components from scratch
-- Need WAI-ARIA compliant components
-- Using Nuxt UI, shadcn-vue, or other Reka-based libraries
-- Implementing accessible forms, dialogs, menus, popovers
+- 从头开始构建无头/无样式的组件
+- 需要符合 WAI-ARIA 标准的组件
+- 使用 Nuxt UI、shadcn-vue 或其他基于 Reka 的库
+- 实现可访问的表单、对话框、菜单和弹出窗口
 
-**For Vue patterns:** use `vue` skill
+**对于 Vue 模式：** 使用 `vue` 技能
 
-## Available Guidance
+## 可用指南
 
-| File                                                     | Topics                                                              |
+| 文件                                                     | 主题                                                                |
 | -------------------------------------------------------- | ------------------------------------------------------------------- |
-| **[references/components.md](references/components.md)** | Component index by category (Form, Date, Overlay, Menu, Data, etc.) |
-| **components/\*.md**                                     | Per-component details (dialog.md, select.md, etc.)                  |
+| **[references/components.md](references/components.md)** | 按类别分组的组件索引（表单、日期、覆盖层、菜单、数据等）             |
+| **components/\*.md**                                     | 各组件详情（dialog.md、select.md 等）                                |
 
-**New guides** (see [reka-ui.com](https://reka-ui.com)): Controlled State, Inject Context, Virtualization, Migration
+**新增指南**（见 [reka-ui.com](https://reka-ui.com)）：受控状态、注入上下文、虚拟化、迁移
 
-## Usage Pattern
+## 使用模式
 
-**Load based on context:**
+**基于上下文加载：**
 
-- Component index → [references/components.md](references/components.md)
-- Specific component → [components/dialog.md](components/dialog.md), [components/select.md](components/select.md), etc.
-- For styled Nuxt components built on Reka UI → use **nuxt-ui** skill
+- 组件索引 → [references/components.md](references/components.md)
+- 具体组件 → [components/dialog.md](components/dialog.md)、[components/select.md](components/select.md) 等
+- 对于基于 Reka UI 构建的带样式的 Nuxt 组件 → 使用 **nuxt-ui** 技能
 
-## Key Concepts
+## 核心概念
 
-| Concept                 | Description                                                           |
-| ----------------------- | --------------------------------------------------------------------- |
-| `asChild`               | Render as child element instead of wrapper, merging props/behavior    |
-| Controlled/Uncontrolled | Use `v-model` for controlled, `default*` props for uncontrolled       |
-| Parts                   | Components split into Root, Trigger, Content, Portal, etc.            |
-| `forceMount`            | Keep element in DOM for animation libraries                           |
-| Virtualization          | Optimize large lists (Combobox, Listbox, Tree) with virtual scrolling |
-| Context Injection       | Access component context from child components                        |
+| 概念                    | 描述                                                                 |
+| ----------------------- | -------------------------------------------------------------------- |
+| `asChild`               | 作为子元素而非包装器渲染，合并属性和行为                             |
+| 受控/非受控             | 使用 `v-model` 实现受控，使用 `default*` 属性实现非受控              |
+| 部分                    | 组件拆分为 Root、Trigger、Content、Portal 等部分                     |
+| `forceMount`            | 保留元素在 DOM 中以便动画库使用                                      |
+| 虚拟化                  | 使用虚拟滚动优化大型列表（组合框、列表框、树）                       |
+| 上下文注入              | 从子组件中访问组件上下文                                             |
 
-## Installation
+## 安装
 
 ```ts
-// nuxt.config.ts (auto-imports all components)
+// nuxt.config.ts（自动导入所有组件）
 export default defineNuxtConfig({
   modules: ['reka-ui/nuxt']
 })
@@ -58,7 +58,7 @@ export default defineNuxtConfig({
 
 ```ts
 import { RekaResolver } from 'reka-ui/resolver'
-// vite.config.ts (with auto-import resolver)
+// vite.config.ts（配合自动导入解析器）
 import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
@@ -69,10 +69,10 @@ export default defineConfig({
 })
 ```
 
-## Basic Patterns
+## 基本模式
 
 ```vue
-<!-- Dialog with controlled state -->
+<!-- 使用受控状态的对话框 -->
 <script setup>
 import { DialogRoot, DialogTrigger, DialogPortal, DialogOverlay, DialogContent, DialogTitle, DialogDescription, DialogClose } from 'reka-ui'
 const open = ref(false)
@@ -80,13 +80,13 @@ const open = ref(false)
 
 <template>
   <DialogRoot v-model:open="open">
-    <DialogTrigger>Open</DialogTrigger>
+    <DialogTrigger>打开</DialogTrigger>
     <DialogPortal>
       <DialogOverlay class="fixed inset-0 bg-black/50" />
       <DialogContent class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded">
-        <DialogTitle>Title</DialogTitle>
-        <DialogDescription>Description</DialogDescription>
-        <DialogClose>Close</DialogClose>
+        <DialogTitle>标题</DialogTitle>
+        <DialogDescription>描述</DialogDescription>
+        <DialogClose>关闭</DialogClose>
       </DialogContent>
     </DialogPortal>
   </DialogRoot>
@@ -94,16 +94,16 @@ const open = ref(false)
 ```
 
 ```vue
-<!-- Select with uncontrolled default -->
+<!-- 使用非受控默认值的选择器 -->
 <SelectRoot default-value="apple">
   <SelectTrigger>
-    <SelectValue placeholder="Pick fruit" />
+    <SelectValue placeholder="选择水果" />
   </SelectTrigger>
   <SelectPortal>
     <SelectContent>
       <SelectViewport>
-        <SelectItem value="apple"><SelectItemText>Apple</SelectItemText></SelectItem>
-        <SelectItem value="banana"><SelectItemText>Banana</SelectItemText></SelectItem>
+        <SelectItem value="apple"><SelectItemText>苹果</SelectItemText></SelectItem>
+        <SelectItem value="banana"><SelectItemText>香蕉</SelectItemText></SelectItem>
       </SelectViewport>
     </SelectContent>
   </SelectPortal>
@@ -111,28 +111,28 @@ const open = ref(false)
 ```
 
 ```vue
-<!-- asChild for custom trigger element -->
+<!-- asChild 用于自定义触发元素 -->
 <DialogTrigger as-child>
-  <button class="my-custom-button">Open</button>
+  <button class="my-custom-button">打开</button>
 </DialogTrigger>
 ```
 
-## Recent Updates (v2.5.0-v2.7.0)
+## 最近更新（v2.5.0-v2.7.0）
 
-- **New composables exposed**: `useLocale`, `useDirection` (v2.6.0)
-- **Select**: Added `disableOutsidePointerEvents` prop to Content
-- **Toast**: Added `disableSwipe` prop for swipe control
-- **DatePicker**: Added `closeOnSelect` property
-- **ContextMenu**: Added `pressOpenDelay` for long-press configuration
-- **Virtualization**: `estimateSize` now accepts function for Listbox/Tree (v2.7.0); supported in Combobox, Listbox, Tree
+- **新增组合式函数暴露**：`useLocale`、`useDirection`（v2.6.0）
+- **Select**：为 Content 添加 `disableOutsidePointerEvents` 属性
+- **Toast**：添加 `disableSwipe` 属性以控制滑动
+- **DatePicker**：添加 `closeOnSelect` 属性
+- **ContextMenu**：添加 `pressOpenDelay` 用于长按配置
+- **虚拟化**：`estimateSize` 现在支持函数形式用于 Listbox/Tree（v2.7.0）；支持 Combobox、Listbox 和 Tree
 
-## Resources
+## 资源
 
-- [Reka UI Docs](https://reka-ui.com)
+- [Reka UI 文档](https://reka-ui.com)
 - [GitHub](https://github.com/unovue/reka-ui)
-- [Nuxt UI](https://ui.nuxt.com) (styled Reka components)
-- [shadcn-vue](https://www.shadcn-vue.com) (styled Reka components)
+- [Nuxt UI](https://ui.nuxt.com)（带样式的 Reka 组件）
+- [shadcn-vue](https://www.shadcn-vue.com)（带样式的 Reka 组件）
 
 ---
 
-_Token efficiency: ~350 tokens base, components.md index ~100 tokens, per-component ~50-150 tokens_
+_令牌效率：约 350 个基础令牌，components.md 索引约 100 个令牌，每个组件详情约 50–150 个令牌_

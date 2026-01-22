@@ -1,14 +1,14 @@
-# Date Range Picker
+# 日期范围选择器
 
-Date range picker (alpha)
+日期范围选择器（alpha）
 
-**Parts:** `DateRangePickerRoot`, `DateRangePickerField`, `DateRangePickerInput`, `DateRangePickerTrigger`, `DateRangePickerContent`, `DateRangePickerCalendar`, `DateRangePickerHeader`, `DateRangePickerHeading`, `DateRangePickerGrid`, `DateRangePickerCell`, `DateRangePickerCellTrigger`, `DateRangePickerNext`, `DateRangePickerPrev`
+**组件：** `DateRangePickerRoot`、`DateRangePickerField`、`DateRangePickerInput`、`DateRangePickerTrigger`、`DateRangePickerContent`、`DateRangePickerCalendar`、`DateRangePickerHeader`、`DateRangePickerHeading`、`DateRangePickerGrid`、`DateRangePickerCell`、`DateRangePickerCellTrigger`、`DateRangePickerNext`、`DateRangePickerPrev`
 
 ## DateRangePickerRoot
 
-### Props
+### 属性
 
-| Prop                 | Type                                      | Default                                |
+| 属性                 | 类型                                      | 默认值                                 |
 | -------------------- | ----------------------------------------- | -------------------------------------- |
 | `as`                 | `AsTag \| Component`                      | `"div"`                                |
 | `asChild`            | `boolean`                                 | -                                      |
@@ -40,9 +40,9 @@ Date range picker (alpha)
 | `weekdayFormat`      | `"narrow" \| "short" \| "long"`           | `"narrow"`                             |
 | `weekStartsOn`       | `0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`         | `0`                                    |
 
-### Emits
+### 触发事件
 
-| Event                | Payload             |
+| 事件                 | 参数                |
 | -------------------- | ------------------- |
 | `update:modelValue`  | `[date: DateRange]` |
 | `update:open`        | `[value: boolean]`  |
@@ -51,73 +51,73 @@ Date range picker (alpha)
 
 ## DateRangePickerField
 
-### Slots
+### 插槽
 
-| Slot         | Type                                                 |
-| ------------ | ---------------------------------------------------- |
-| `segments`   | `{ start: { part: SegmentPart; value: string; }[...` |
-| `modelValue` | `DateRange`                                          |
+| 插槽         | 类型                                                   |
+| ------------ | ------------------------------------------------------ |
+| `segments`   | `{ start: { part: SegmentPart; value: string; }[...`   |
+| `modelValue` | `DateRange`                                            |
 
 ## DateRangePickerInput
 
-### Props
+### 属性
 
-| Prop      | Type                                                      | Default |
-| --------- | --------------------------------------------------------- | ------- |
+| 属性      | 类型                                                      | 默认值 |
+| --------- | --------------------------------------------------------- | ------ |
 | `as`      | `AsTag \| Component`                                      | `"div"` |
-| `asChild` | `boolean`                                                 | -       |
-| `part`\*  | `"day" \| "month" \| "year" \| "hour" \| "minute" \| ...` | -       |
-| `type`\*  | `"start" \| "end"`                                        | -       |
+| `asChild` | `boolean`                                                 | -      |
+| `part`\*  | `"day" \| "month" \| "year" \| "hour" \| "minute" \| ...` | -      |
+| `type`\*  | `"start" \| "end"`                                        | -      |
 
 ## DateRangePickerTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## DateRangePickerContent
 
-### Props
+### 属性
 
-| Prop                          | Type                                                    | Default |
-| ----------------------------- | ------------------------------------------------------- | ------- |
-| `align`                       | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`                 | `number`                                                | -       |
-| `arrowPadding`                | `number`                                                | -       |
+| 属性                          | 类型                                                    | 默认值 |
+| ----------------------------- | ------------------------------------------------------- | ------ |
+| `align`                       | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`                 | `number`                                                | -      |
+| `arrowPadding`                | `number`                                                | -      |
 | `as`                          | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                     | `boolean`                                               | -       |
-| `avoidCollisions`             | `boolean`                                               | -       |
-| `collisionBoundary`           | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`            | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `disableOutsidePointerEvents` | `boolean`                                               | -       |
-| `forceMount`                  | `boolean`                                               | -       |
-| `hideWhenDetached`            | `boolean`                                               | -       |
-| `prioritizePosition`          | `boolean`                                               | -       |
-| `side`                        | `"top" \| "right" \| "bottom" \| "left"`                | -       |
-| `sideOffset`                  | `number`                                                | -       |
-| `sticky`                      | `"partial" \| "always"`                                 | -       |
-| `trapFocus`                   | `boolean`                                               | -       |
-| `updatePositionStrategy`      | `"always" \| "optimized"`                               | -       |
+| `asChild`                     | `boolean`                                               | -      |
+| `avoidCollisions`             | `boolean`                                               | -      |
+| `collisionBoundary`           | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`            | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `disableOutsidePointerEvents` | `boolean`                                               | -      |
+| `forceMount`                  | `boolean`                                               | -      |
+| `hideWhenDetached`            | `boolean`                                               | -      |
+| `prioritizePosition`          | `boolean`                                               | -      |
+| `side`                        | `"top" \| "right" \| "bottom" \| "left"`                | -      |
+| `sideOffset`                  | `number`                                                | -      |
+| `sticky`                      | `"partial" \| "always"`                                 | -      |
+| `trapFocus`                   | `boolean`                                               | -      |
+| `updatePositionStrategy`      | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 触发事件
 
-| Event                | Payload                                               |
-| -------------------- | ----------------------------------------------------- |
-| `closeAutoFocus`     | `[event: Event]`                                      |
-| `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
-| `focusOutside`       | `[event: FocusOutsideEvent]`                          |
+| 事件                 | 参数                                                   |
+| -------------------- | ------------------------------------------------------ |
+| `closeAutoFocus`     | `[event: Event]`                                       |
+| `escapeKeyDown`      | `[event: KeyboardEvent]`                               |
+| `focusOutside`       | `[event: FocusOutsideEvent]`                           |
 | `interactOutside`    | `[event: PointerDownOutsideEvent \| FocusOutsideE...` |
-| `openAutoFocus`      | `[event: Event]`                                      |
-| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                    |
+| `openAutoFocus`      | `[event: Event]`                                       |
+| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`                     |
 
 ## DateRangePickerCalendar
 
-### Slots
+### 插槽
 
-| Slot           | Type                              |
+| 插槽           | 类型                              |
 | -------------- | --------------------------------- |
 | `date`         | `DateValue`                       |
 | `grid`         | `Grid<DateValue>[]`               |
@@ -128,76 +128,76 @@ Date range picker (alpha)
 
 ## DateRangePickerHeader
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## DateRangePickerHeading
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
-### Slots
+### 插槽
 
-| Slot           | Type     |
+| 插槽           | 类型     |
 | -------------- | -------- |
 | `headingValue` | `string` |
 
 ## DateRangePickerGrid
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## DateRangePickerCell
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `date`\*  | `DateValue`          | -       |
+| `asChild` | `boolean`            | -      |
+| `date`\*  | `DateValue`          | -      |
 
 ## DateRangePickerCellTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `day`\*   | `DateValue`          | -       |
-| `month`\* | `DateValue`          | -       |
+| `asChild` | `boolean`            | -      |
+| `day`\*   | `DateValue`          | -      |
+| `month`\* | `DateValue`          | -      |
 
 ## DateRangePickerNext
 
-### Props
+### 属性
 
-| Prop       | Type                                      | Default |
-| ---------- | ----------------------------------------- | ------- |
+| 属性       | 类型                                      | 默认值 |
+| ---------- | ----------------------------------------- | ------ |
 | `as`       | `AsTag \| Component`                      | `"div"` |
-| `asChild`  | `boolean`                                 | -       |
-| `nextPage` | `((placeholder: DateValue) => DateValue)` | -       |
-| `step`     | `"month" \| "year"`                       | -       |
+| `asChild`  | `boolean`                                 | -      |
+| `nextPage` | `((placeholder: DateValue) => DateValue)` | -      |
+| `step`     | `"month" \| "year"`                       | -      |
 
 ## DateRangePickerPrev
 
-### Props
+### 属性
 
-| Prop       | Type                                      | Default |
-| ---------- | ----------------------------------------- | ------- |
+| 属性       | 类型                                      | 默认值 |
+| ---------- | ----------------------------------------- | ------ |
 | `as`       | `AsTag \| Component`                      | `"div"` |
-| `asChild`  | `boolean`                                 | -       |
-| `prevPage` | `((placeholder: DateValue) => DateValue)` | -       |
-| `step`     | `"month" \| "year"`                       | -       |
+| `asChild`  | `boolean`                                 | -      |
+| `prevPage` | `((placeholder: DateValue) => DateValue)` | -      |
+| `step`     | `"month" \| "year"`                       | -      |

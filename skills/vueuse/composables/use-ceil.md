@@ -1,11 +1,11 @@
 # useCeil
 
-Reactive
+响应式
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useCeil } from '@vueuse/math'
@@ -14,6 +14,6 @@ const value = ref(0.95)
 const result = useCeil(value) // 1
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCeil/)
+[VueUse 文档](https://vueuse.org/core/useCeil/)

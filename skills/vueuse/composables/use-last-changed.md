@@ -1,11 +1,11 @@
 # useLastChanged
 
-Records the timestamp of the last change
+记录最后一次更改的时间戳
 
-**Package:** `@vueuse/shared`
-**Category:** State
+**包：** `@vueuse/shared`  
+**分类：** 状态
 
-## Usage
+## 用法
 
 ```ts
 import { useLastChanged } from '@vueuse/core'
@@ -21,6 +21,6 @@ await nextTick()
 console.log(lastChanged.value) // 1704709379457
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useLastChanged/)
+[VueUse 文档](https://vueuse.org/core/useLastChanged/)

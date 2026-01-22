@@ -1,11 +1,11 @@
 # useBrowserLocation
 
-Reactive browser location
+响应式浏览器位置
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useBrowserLocation } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { useBrowserLocation } from '@vueuse/core'
 const location = useBrowserLocation()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useBrowserLocation/)
+[VueUse 文档](https://vueuse.org/core/useBrowserLocation/)

@@ -1,11 +1,11 @@
 # watchArray
 
-Watch for an array with additions and removals.
+监听一个数组的新增与删除操作。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**分类：** 监听器
 
-## Usage
+## 用法
 
 ```ts
 import { watchArray } from '@vueuse/core'
@@ -24,6 +24,6 @@ onMounted(() => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchArray/)
+[VueUse 文档](https://vueuse.org/core/watchArray/)

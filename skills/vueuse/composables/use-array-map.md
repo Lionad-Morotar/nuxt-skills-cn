@@ -1,11 +1,11 @@
 # useArrayMap
 
-Reactive
+响应式
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**类别：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayMap } from '@vueuse/core'
@@ -22,6 +22,6 @@ item1.value = 1
 // result.value: [2, 4, 8, 12, 16]
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayMap/)
+[VueUse 文档](https://vueuse.org/core/useArrayMap/)

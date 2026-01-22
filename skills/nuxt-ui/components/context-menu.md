@@ -1,12 +1,12 @@
-# ContextMenu
+# 上下文菜单
 
-A menu to display actions when right-clicking on an element.
+右键单击元素时显示操作的菜单。
 
-> Based on [Reka UI ContextMenu](https://reka-ui.com/docs/components/context-menu)
+> 基于 [Reka UI 上下文菜单](https://reka-ui.com/docs/components/context-menu)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：作为包含以下属性的对象数组：
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -23,21 +23,21 @@ A menu to display actions when right-clicking on an element.
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue, label?: ClassNameValue, separator?: ClassNameValue, itemLeadingIcon?: ClassNameValue, itemLeadingAvatarSize?: ClassNameValue, itemLeadingAvatar?: ClassNameValue, itemLabel?: ClassNameValue, itemLabelExternalIcon?: ClassNameValue, itemTrailing?: ClassNameValue, itemTrailingIcon?: ClassNameValue, itemTrailingKbds?: ClassNameValue, itemTrailingKbdsSize?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/docs/components/link#props) component such as `to`, `target`, etc.
+您可以传递 [Link](/docs/components/link#props) 组件的任何属性，例如 `to`、`target` 等。
 
-- `size`: to change the size of the ContextMenu.
-- `modal`: to control whether the ContextMenu blocks interaction with outside content.
-- `disabled`: to disable the ContextMenu.
-- `slot`:
+- `size`：用于更改上下文菜单的大小。
+- `modal`：用于控制上下文菜单是否阻止与外部内容的交互。
+- `disabled`：用于禁用上下文菜单。
+- `slot`：
 
-## Usage
+## 使用方法
 
 ```vue
 <UContextMenu
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#item`

@@ -1,11 +1,11 @@
 # useKeyModifier
 
-Reactive Modifier State. Tracks state of any of the supported modifiers - see Browser Compatibility notes.
+响应式修饰键状态。跟踪任何支持的修饰键的状态——参见浏览器兼容性说明。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useKeyModifier } from '@vueuse/core'
@@ -15,6 +15,6 @@ const capsLockState = useKeyModifier('CapsLock')
 console.log(capsLockState.value)
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useKeyModifier/)
+[VueUse 文档](https://vueuse.org/core/useKeyModifier/)

@@ -1,11 +1,11 @@
 # computedAsync
 
-Computed for async functions
+为异步函数计算值
 
-**Package:** `@vueuse/core`
-**Category:** Reactivity
+**包：** `@vueuse/core`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { computedAsync } from '@vueuse/core'
@@ -17,10 +17,10 @@ const userInfo = computedAsync(
   async () => {
     return await mockLookUp(name.value)
   },
-  null, /* initial state */
+  null, /* 初始状态 */
 )
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/computedAsync/)
+[VueUse 文档](https://vueuse.org/core/computedAsync/)

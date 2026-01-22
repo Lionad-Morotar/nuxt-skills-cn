@@ -1,68 +1,68 @@
-# Alert Dialog
+# 警告对话框
 
-Modal dialog requiring action
+需要采取操作的模态对话框
 
-**Parts:** `AlertDialogRoot`, `AlertDialogTrigger`, `AlertDialogPortal`, `AlertDialogOverlay`, `AlertDialogContent`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogCancel`, `AlertDialogAction`
+**组件：** `AlertDialogRoot`、`AlertDialogTrigger`、`AlertDialogPortal`、`AlertDialogOverlay`、`AlertDialogContent`、`AlertDialogTitle`、`AlertDialogDescription`、`AlertDialogCancel`、`AlertDialogAction`
 
 ## AlertDialogRoot
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
-| `defaultOpen` | `boolean` | -       |
-| `open`        | `boolean` | -       |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
+| `defaultOpen` | `boolean` | -      |
+| `open`        | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload            |
+| 事件          | 参数               |
 | ------------- | ------------------ |
 | `update:open` | `[value: boolean]` |
 
 ## AlertDialogTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## AlertDialogPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## AlertDialogOverlay
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
-| ------------ | -------------------- | ------- |
+| 属性         | 类型                 | 默认值 |
+| ------------ | -------------------- | ------ |
 | `as`         | `AsTag \| Component` | `"div"` |
-| `asChild`    | `boolean`            | -       |
-| `forceMount` | `boolean`            | -       |
+| `asChild`    | `boolean`            | -      |
+| `forceMount` | `boolean`            | -      |
 
 ## AlertDialogContent
 
-### Props
+### 属性
 
-| Prop                          | Type                 | Default |
-| ----------------------------- | -------------------- | ------- |
+| 属性                          | 类型                 | 默认值 |
+| ----------------------------- | -------------------- | ------ |
 | `as`                          | `AsTag \| Component` | `"div"` |
-| `asChild`                     | `boolean`            | -       |
-| `disableOutsidePointerEvents` | `boolean`            | -       |
-| `forceMount`                  | `boolean`            | -       |
-| `trapFocus`                   | `boolean`            | -       |
+| `asChild`                     | `boolean`            | -      |
+| `disableOutsidePointerEvents` | `boolean`            | -      |
+| `forceMount`                  | `boolean`            | -      |
+| `trapFocus`                   | `boolean`            | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `closeAutoFocus`     | `[event: Event]`                                      |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
@@ -73,36 +73,36 @@ Modal dialog requiring action
 
 ## AlertDialogTitle
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"h2"`  |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"h2"` |
+| `asChild` | `boolean`            | -      |
 
 ## AlertDialogDescription
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
-| `as`      | `AsTag \| Component` | `"p"`   |
-| `asChild` | `boolean`            | -       |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
+| `as`      | `AsTag \| Component` | `"p"`  |
+| `asChild` | `boolean`            | -      |
 
 ## AlertDialogCancel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## AlertDialogAction
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |

@@ -1,11 +1,11 @@
 # useScreenOrientation
 
-Reactive Screen Orientation API. It provides web developers with information about the user's current screen orientation.
+响应式屏幕方向 API。它为 Web 开发者提供有关用户当前屏幕方向的信息。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useScreenOrientation } from '@vueuse/core'
@@ -19,16 +19,16 @@ const {
 } = useScreenOrientation()
 ```
 
-## Returns
+## 返回值
 
-| Name              | Type                                          |
+| 名称              | 类型                                          |
 | ----------------- | --------------------------------------------- |
 | isSupported       | `useSupported`                                |
-| orientation       | `deepRef&lt;OrientationType \| undefined&gt;` |
+| orientation       | `deepRef<OrientationType \| undefined>`       |
 | angle             | `shallowRef`                                  |
 | lockOrientation   | `Ref`                                         |
 | unlockOrientation | `Ref`                                         |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useScreenOrientation/)
+[VueUse 文档](https://vueuse.org/core/useScreenOrientation/)

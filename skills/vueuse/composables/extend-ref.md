@@ -1,11 +1,11 @@
 # extendRef
 
-Add extra attributes to Ref.
+为 Ref 添加额外属性。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { extendRef } from '@vueuse/core'
@@ -19,13 +19,13 @@ extended.value === 'content'
 extended.foo === 'extra data'
 ```
 
-## Options
+## 选项
 
-| Option     | Type      | Default | Description                          |
-| ---------- | --------- | ------- | ------------------------------------ |
-| enumerable | `boolean` | false   | Is the extends properties enumerable |
-| unwrap     | `Unwrap`  | true    | Unwrap for Ref properties            |
+| 选项       | 类型      | 默认值  | 描述                               |
+| ---------- | --------- | ------- | ---------------------------------- |
+| enumerable | `boolean` | false   | 扩展属性是否可枚举                 |
+| unwrap     | `Unwrap`  | true    | Ref 属性的解包方式                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/extendRef/)
+[VueUse 文档](https://vueuse.org/core/extendRef/)

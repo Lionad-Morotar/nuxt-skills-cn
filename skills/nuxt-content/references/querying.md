@@ -1,10 +1,10 @@
-# Querying Content
+# 查询内容
 
-## When to Use
+## 使用时机
 
-Using `queryCollection()`, building navigation, implementing search, or getting prev/next items.
+使用 `queryCollection()`、构建导航、实现搜索或获取上一项/下一项内容时。
 
-## Query Builder
+## 查询构建器
 
 ```ts
 const posts = await queryCollection('blog')
@@ -13,34 +13,34 @@ const posts = await queryCollection('blog')
   .limit(10)
   .all()
 
-// Single item
+// 单个项目
 const post = await queryCollection('blog')
   .where('path', '=', '/blog/my-post')
   .first()
 
-// Count
+// 计数
 const total = await queryCollection('blog')
   .where('category', '=', 'tech')
   .count()
 ```
 
-## Operators
+## 操作符
 
-| Operator             | Example                                  | Description        |
+| 操作符               | 示例                                     | 描述               |
 | -------------------- | ---------------------------------------- | ------------------ |
-| `=`                  | `where('status', '=', 'published')`      | Exact match        |
-| `<>`                 | `where('status', '<>', 'draft')`         | Not equal          |
-| `>`, `<`, `>=`, `<=` | `where('order', '>', 5)`                 | Comparison         |
-| `IN`                 | `where('tag', 'IN', ['vue', 'nuxt'])`    | Match any in array |
-| `BETWEEN`            | `where('date', 'BETWEEN', [start, end])` | Range inclusive    |
-| `LIKE`               | `where('title', 'LIKE', '%vue%')`        | Pattern match      |
-| `IS NULL`            | `where('image', 'IS NULL', true)`        | Null check         |
-| `IS NOT NULL`        | `where('image', 'IS NOT NULL', true)`    | Not null           |
+| `=`                  | `where('status', '=', 'published')`      | 精确匹配           |
+| `<>`                 | `where('status', '<>', 'draft')`         | 不等于             |
+| `>`, `<`, `>=`, `<=` | `where('order', '>', 5)`                 | 比较               |
+| `IN`                 | `where('tag', 'IN', ['vue', 'nuxt'])`    | 匹配数组中任意项   |
+| `BETWEEN`            | `where('date', 'BETWEEN', [start, end])` | 范围包含           |
+| `LIKE`               | `where('title', 'LIKE', '%vue%')`        | 模式匹配           |
+| `IS NULL`            | `where('image', 'IS NULL', true)`        | 空值检查           |
+| `IS NOT NULL`        | `where('image', 'IS NOT NULL', true)`    | 非空检查           |
 
-## Complex Queries
+## 复杂查询
 
 ```ts
-// AND conditions
+// AND 条件
 const posts = await queryCollection('blog')
   .where('draft', '=', false)
   .andWhere(group => group
@@ -49,68 +49,68 @@ const posts = await queryCollection('blog')
   )
   .all()
 
-// OR conditions
+// OR 条件
 const posts = await queryCollection('blog')
   .where('author', '=', 'john')
   .orWhere('author', '=', 'jane')
   .all()
 ```
 
-## Select Fields
+## 选择字段
 
 ```ts
-// Select specific fields (reduces payload)
+// 选择特定字段（减少负载）
 const titles = await queryCollection('blog')
   .select('title', 'path', 'date')
   .all()
 ```
 
-## Navigation
+## 导航
 
-Generate hierarchical navigation trees:
+生成分层导航树：
 
 ```ts
-// In pages/[...slug].vue or composables
+// 在 pages/[...slug].vue 或 composables 中
 const navigation = await queryCollectionNavigation('docs')
 
-// With custom fields
+// 使用自定义字段
 const navigation = await queryCollectionNavigation('docs', ['title', 'icon', 'description'])
 ```
 
-Returns nested structure:
+返回嵌套结构：
 
 ```ts
 [
   {
-    title: 'Getting Started',
+    title: '入门指南',
     path: '/docs/getting-started',
     children: [
-      { title: 'Installation', path: '/docs/getting-started/installation' },
-      { title: 'Configuration', path: '/docs/getting-started/configuration' },
+      { title: '安装', path: '/docs/getting-started/installation' },
+      { title: '配置', path: '/docs/getting-started/configuration' },
     ]
   }
 ]
 ```
 
-**Navigation control** via frontmatter:
+**通过 frontmatter 控制导航：**
 
 ```yaml
 ---
-navigation: false # Exclude from nav
+navigation: false # 从导航中排除
 ---
 ```
 
-Or with custom title:
+或使用自定义标题：
 
 ```yaml
 ---
 navigation:
-  title: Short Title
+  title: 简短标题
   icon: heroicons:home
 ---
 ```
 
-## Surroundings (Prev/Next)
+## 周边内容（上一项/下一项）
 
 ```ts
 const { prev, next } = await queryCollectionItemSurroundings(
@@ -119,7 +119,7 @@ const { prev, next } = await queryCollectionItemSurroundings(
   { before: 1, after: 1 }
 )
 
-// With specific fields
+// 指定字段
 const { prev, next } = await queryCollectionItemSurroundings(
   'docs',
   currentPath,
@@ -127,28 +127,28 @@ const { prev, next } = await queryCollectionItemSurroundings(
 )
 ```
 
-## Search Sections
+## 搜索段落
 
-Split pages into searchable sections:
+将页面拆分为可搜索段落：
 
 ```ts
 const sections = await queryCollectionSearchSections('docs', {
-  minHeading: 2,  // Minimum heading level to index (v3.10+)
-  maxHeading: 4,  // Maximum heading level to index (v3.10+)
+  minHeading: 2,  // 索引的最小标题级别（v3.10+）
+  maxHeading: 4,  // 索引的最大标题级别（v3.10+）
 })
 
-// Returns
+// 返回
   [
     {
       id: 'docs:getting-started#installation',
-      title: 'Installation',
-      titles: ['Getting Started', 'Installation'],
-      content: 'Section text content...',
+      title: '安装',
+      titles: ['入门指南', '安装'],
+      content: '段落文本内容...',
       path: '/docs/getting-started',
     }
   ]
 
-// Include extra fields (v3.4+)
+// 包含额外字段（v3.4+）
 const sections = await queryCollectionSearchSections('docs', {
   minHeading: 2,
   maxHeading: 3,
@@ -156,9 +156,9 @@ const sections = await queryCollectionSearchSections('docs', {
 })
 ```
 
-## Server-Side Queries
+## 服务端查询
 
-In server routes, pass the event:
+在服务路由中传递事件：
 
 ```ts
 // server/api/posts.get.ts
@@ -169,9 +169,9 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-## Common Patterns
+## 常见模式
 
-**Latest posts:**
+**最新文章：**
 
 ```ts
 const latest = await queryCollection('blog')
@@ -181,7 +181,7 @@ const latest = await queryCollection('blog')
   .all()
 ```
 
-**Posts by tag:**
+**按标签筛选文章：**
 
 ```ts
 const tagged = await queryCollection('blog')
@@ -189,7 +189,7 @@ const tagged = await queryCollection('blog')
   .all()
 ```
 
-**Paginated list:**
+**分页列表：**
 
 ```ts
 const page = 1
@@ -201,7 +201,7 @@ const posts = await queryCollection('blog')
   .all()
 ```
 
-**Featured + recent:**
+**精选 + 最新：**
 
 ```ts
 const [featured, recent] = await Promise.all([
@@ -210,36 +210,36 @@ const [featured, recent] = await Promise.all([
 ])
 ```
 
-## Best Practices
+## 最佳实践
 
-| Do                                | Don't                               |
-| --------------------------------- | ----------------------------------- |
-| Use `.select()` to reduce payload | Fetch all fields when only need few |
-| Cache navigation queries          | Rebuild navigation on every page    |
-| Use `.first()` for single items   | Use `.all()[0]`                     |
-| Pass event in server routes       | Omit event on server side           |
+| 应该                              | 不应                               |
+| --------------------------------- | ---------------------------------- |
+| 使用 `.select()` 以减少负载       | 当仅需少数字段时仍获取所有字段     |
+| 缓存导航查询                      | 每页都重建导航                     |
+| 使用 `.first()` 获取单个项目      | 使用 `.all()[0]`                   |
+| 在服务端路由中传递事件            | 服务端忽略事件                     |
 
-## Utility Functions (v3.6+)
+## 工具函数（v3.6+）
 
-Helper functions for common navigation patterns:
+用于常见导航模式的辅助函数：
 
 ```ts
-// Find page headline (first H1)
+// 查找页面标题（第一个 H1）
 const headline = findPageHeadline(page)
 
-// Get breadcrumb trail
+// 获取面包屑路径
 const breadcrumb = findPageBreadcrumb(navigation, '/docs/collections/schema')
-// Returns: [{ title: 'Docs', path: '/docs' }, { title: 'Collections', path: '/docs/collections' }, ...]
+// 返回：[{ title: '文档', path: '/docs' }, { title: '集合', path: '/docs/collections' }, ...]
 
-// Get immediate children of a page
+// 获取页面的直接子项
 const children = findPageChildren(navigation, '/docs/collections')
 
-// Get siblings (prev/next at same level)
+// 获取同级页面（同一层级的前后项）
 const siblings = findPageSiblings(navigation, '/docs/collections/schema')
 ```
 
-## Resources
+## 资源
 
-- Query API: https://content.nuxt.com/docs/querying/query-collection
-- Navigation: https://content.nuxt.com/docs/querying/query-collection-navigation
-- Search: https://content.nuxt.com/docs/querying/query-collection-search-sections
+- 查询 API：https://content.nuxt.com/docs/querying/query-collection
+- 导航：https://content.nuxt.com/docs/querying/query-collection-navigation
+- 搜索：https://content.nuxt.com/docs/querying/query-collection-search-sections

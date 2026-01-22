@@ -1,18 +1,18 @@
 # PageFeature
 
-A component to showcase key features of your application.
+一个用于展示应用程序核心功能的组件。
 
-## Key Props
+## 关键属性
 
-- `title`: to set the title of the feature.
-- `description`: to set the description of the feature.
-- `icon`: to set the icon of the feature.
-- `orientation`: to change the orientation of the feature.
+- `title`：用于设置功能的标题。
+- `description`：用于设置功能的描述。
+- `icon`：用于设置功能的图标。
+- `orientation`：用于更改功能的方向。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageFeature
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

@@ -1,11 +1,11 @@
 # useAsyncQueue
 
-Executes each asynchronous task sequentially and passes the current task result to the next task
+按顺序执行每个异步任务，并将当前任务的结果传递给下一个任务
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useAsyncQueue } from '@vueuse/core'
@@ -28,27 +28,27 @@ function p2(result: number) {
 
 const { activeIndex, result } = useAsyncQueue([p1, p2])
 
-console.log(activeIndex.value) // current pending task index
+console.log(activeIndex.value) // 当前待处理任务的索引
 
-console.log(result) // the tasks result
+console.log(result) // 任务的结果
 ```
 
-## Options
+## 选项
 
-| Option     | Type            | Default | Description                                       |
-| ---------- | --------------- | ------- | ------------------------------------------------- |
-| interrupt  | `boolean`       | true    | Interrupt tasks when current task fails.          |
-| onError    | `() =&gt; void` | -       | Trigger it when the tasks fails.                  |
-| onFinished | `() =&gt; void` | -       | Trigger it when the tasks ends.                   |
-| signal     | `AbortSignal`   | -       | A AbortSignal that can be used to abort the task. |
+| 选项       | 类型            | 默认值  | 描述                                         |
+| ---------- | --------------- | ------- | -------------------------------------------- |
+| interrupt  | `boolean`       | true    | 当前任务失败时中断后续任务。                 |
+| onError    | `() => void`    | -       | 任务失败时触发。                             |
+| onFinished | `() => void`    | -       | 任务结束时触发。                             |
+| signal     | `AbortSignal`   | -       | 可用于中止任务的 AbortSignal。               |
 
-## Returns
+## 返回值
 
-| Name        | Type                       |
+| 名称        | 类型                       |
 | ----------- | -------------------------- |
-| activeIndex | `shallowRef&lt;number&gt;` |
+| activeIndex | `shallowRef<number>`       |
 | result      | `reactive`                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAsyncQueue/)
+[VueUse 文档](https://vueuse.org/core/useAsyncQueue/)

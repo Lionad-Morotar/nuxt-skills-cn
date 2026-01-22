@@ -1,11 +1,11 @@
 # useFileSystemAccess
 
-Create and read and write local files with FileSystemAccessAPI
+使用 FileSystemAccessAPI 创建、读取和写入本地文件
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useFileSystemAccess } from '@vueuse/core'
@@ -26,9 +26,9 @@ const {
 } = useFileSystemAccess()
 ```
 
-## Returns
+## 返回值
 
-| Name             | Type                                              |
+| 名称             | 类型                                              |
 | ---------------- | ------------------------------------------------- |
 | isSupported      | `useSupported`                                    |
 | data             | `shallowRef&lt;string \| ArrayBuffer \| Blob&gt;` |
@@ -43,6 +43,6 @@ const {
 | saveAs           | `Ref`                                             |
 | updateData       | `Ref`                                             |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFileSystemAccess/)
+[VueUse 文档](https://vueuse.org/core/useFileSystemAccess/)

@@ -1,11 +1,11 @@
 # useRefHistory
 
-Track the change history of a ref, also provides undo and redo functionality
+追踪 ref 的变更历史，同时提供撤销与重做功能
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`
+**分类：** 状态
 
-## Usage
+## 用法
 
 ```ts
 // @include: usage
@@ -20,20 +20,20 @@ console.log(history.value)
 ] */
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                                        | Default | Description                                                                         |
-| ------------ | ----------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------- |
-| deep         | `boolean`                                                   | false   | Watch for deep changes, default to false                                            |
-| capacity     | `number`                                                    | -       | Maximum number of history to be kept. Default to unlimited.                         |
-| clone        | `boolean \| CloneFn&lt;Raw&gt;`                             | false   | Clone when taking a snapshot, shortcut for dump: JSON.parse(JSON.stringify(value)). |
-| dump         | `(v: Raw) =&gt; Serialized`                                 | -       | Serialize data into the history                                                     |
-| parse        | `(v: Serialized) =&gt; Raw`                                 | -       | Deserialize data from the history                                                   |
-| shouldCommit | `(oldValue: Raw \| undefined, newValue: Raw) =&gt; boolean` | -       | Function to determine if the commit should proceed                                  |
+| 选项         | 类型                                                        | 默认值  | 描述                                                                               |
+| ------------ | ----------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------- |
+| deep         | `boolean`                                                   | false   | 监听深层变化，默认为 false                                                         |
+| capacity     | `number`                                                    | -       | 要保留的历史最大数量。默认为无限制。                                               |
+| clone        | `boolean \| CloneFn<Raw>`                                   | false   | 拍摄快照时进行克隆，简写为 dump：JSON.parse(JSON.stringify(value))。               |
+| dump         | `(v: Raw) => Serialized`                                    | -       | 将数据序列化到历史记录中                                                           |
+| parse        | `(v: Serialized) => Raw`                                    | -       | 从历史记录中反序列化数据                                                           |
+| shouldCommit | `(oldValue: Raw \| undefined, newValue: Raw) => boolean`    | -       | 判断是否应继续提交的函数                                                           |
 
-## Returns
+## 返回值
 
-| Name       | Type  |
+| 名称       | 类型  |
 | ---------- | ----- |
 | isTracking | `Ref` |
 | pause      | `Ref` |
@@ -42,6 +42,6 @@ console.log(history.value)
 | batch      | `Ref` |
 | dispose    | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useRefHistory/)
+[VueUse 文档](https://vueuse.org/core/useRefHistory/)

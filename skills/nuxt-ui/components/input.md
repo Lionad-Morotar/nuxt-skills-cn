@@ -1,28 +1,28 @@
-# Input
+# 输入
 
-An input element to enter text.
+用于输入文本的输入元素。
 
-## Key Props
+## 主要属性
 
-- `type`: to change the input type.
-- `placeholder`: to set a placeholder text.
-- `color`: to change the ring color when the Input is focused.
-- `variant`: to change the variant of the Input.
-- `size`: to change the size of the Input.
-- `icon`: to show an [Icon](/docs/components/icon) inside the Input.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the Input.
-- `loading`: to show a loading icon on the Input.
-- `disabled`: to disable the Input.
+- `type`：用于更改输入类型。
+- `placeholder`：用于设置占位符文本。
+- `color`：用于更改输入框获得焦点时的环形颜色。
+- `variant`：用于更改输入框的变体。
+- `size`：用于更改输入框的尺寸。
+- `icon`：用于在输入框内显示 [Icon](/docs/components/icon)。
+- `avatar`：用于在输入框内显示 [Avatar](/docs/components/avatar)。
+- `loading`：用于在输入框内显示加载图标。
+- `disabled`：用于禁用输入框。
 
-## Usage
+## 用法
 
 ```vue
 <UInput
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#trailing`
 - `#default`

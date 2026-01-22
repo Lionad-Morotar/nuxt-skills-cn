@@ -1,32 +1,32 @@
 # BlogPost
 
-A customizable article to display in a blog page.
+一个可自定义的文章组件，用于在博客页面中显示。
 
-## Key Props
+## 主要属性
 
-- `title`: to display the title of the BlogPost.
-- `description`: to display the description of the BlogPost.
-- `date`: to display the date of the BlogPost.
-- `badge`: to display a [Badge](/docs/components/badge) in the BlogPost.
-- `image`: to display an image in the BlogPost.
-- `authors`: to display a list of [User](/docs/components/user) in the BlogPost as an array of objects with the following properties:
+- `title`：用于显示 BlogPost 的标题。
+- `description`：用于显示 BlogPost 的描述。
+- `date`：用于显示 BlogPost 的日期。
+- `badge`：用于在 BlogPost 中显示一个 [Badge](/docs/components/badge)。
+- `image`：用于在 BlogPost 中显示图片。
+- `authors`：用于以对象数组的形式显示 [User](/docs/components/user) 列表，对象具有以下属性：
 
-- `name?: string`{lang="ts-type"}
-- `description?: string`{lang="ts-type"}
-- `avatar?: Omit<AvatarProps, 'size'>`{lang="ts-type"}
-- `chip?: boolean | Omit<ChipProps, 'size' | 'inset'>`{lang="ts-type"}
-- `size?: UserProps['size']`{lang="ts-type"}
-- `orientation?: UserProps['orientation']`{lang="ts-type"}
+  - `name?: string`{lang="ts-type"}
+  - `description?: string`{lang="ts-type"}
+  - `avatar?: Omit<AvatarProps, 'size'>`{lang="ts-type"}
+  - `chip?: boolean | Omit<ChipProps, 'size' | 'inset'>`{lang="ts-type"}
+  - `size?: UserProps['size']`{lang="ts-type"}
+  - `orientation?: UserProps['orientation']`{lang="ts-type"}
 
-You can pass any property from the [Link](/docs/components/link#props) component such as `to`, `target`, etc.
+你可以传递 [Link](/docs/components/link#props) 组件的任意属性，例如 `to`、`target` 等。
 
-- `variant`: to change the style of the BlogPost.
-- `orientation`: to change the BlogPost orientation.
+- `variant`：用于更改 BlogPost 的样式。
+- `orientation`：用于更改 BlogPost 的显示方向。
 
-## Usage
+## 使用方法
 
 ```vue
 <UBlogPost
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

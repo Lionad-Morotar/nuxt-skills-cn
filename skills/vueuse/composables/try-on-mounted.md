@@ -1,11 +1,11 @@
 # tryOnMounted
 
-Safe . Call if it's inside a component lifecycle, if not, just call the function
+安全调用。若位于组件生命周期内则调用，否则直接执行函数
 
-**Package:** `@vueuse/shared`
-**Category:** Component
+**包:** `@vueuse/shared`  
+**分类:** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { tryOnMounted } from '@vueuse/core'
@@ -15,6 +15,6 @@ tryOnMounted(() => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/tryOnMounted/)
+[VueUse 文档](https://vueuse.org/core/tryOnMounted/)

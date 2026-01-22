@@ -1,11 +1,11 @@
 # useSpeechSynthesis
 
-Reactive SpeechSynthesis.
+响应式 SpeechSynthesis。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useSpeechSynthesis } from '@vueuse/core'
@@ -23,30 +23,30 @@ const {
 } = useSpeechSynthesis()
 ```
 
-## Options
+## 选项
 
-| Option     | Type                                                         | Default | Description                                                            |
+| 选项       | 类型                                                         | 默认值  | 描述                                                                   |
 | ---------- | ------------------------------------------------------------ | ------- | ---------------------------------------------------------------------- |
-| lang       | `MaybeRefOrGetter&lt;string&gt;`                             | en-US   | Language for SpeechSynthesis                                           |
-| pitch      | `MaybeRefOrGetter&lt;SpeechSynthesisUtterance['pitch']&gt;`  | 1       | Gets and sets the pitch at which the utterance will be spoken at.      |
-| rate       | `MaybeRefOrGetter&lt;SpeechSynthesisUtterance['rate']&gt;`   | 1       | Gets and sets the speed at which the utterance will be spoken at.      |
-| voice      | `MaybeRef&lt;SpeechSynthesisVoice&gt;`                       | -       | Gets and sets the voice that will be used to speak the utterance.      |
-| volume     | `MaybeRefOrGetter&lt;SpeechSynthesisUtterance['volume']&gt;` | 1       | Gets and sets the volume that the utterance will be spoken at.         |
-| onBoundary | `(event: SpeechSynthesisEvent) =&gt; void`                   | -       | Callback function that is called when the boundary event is triggered. |
+| lang       | `MaybeRefOrGetter<string>`                                   | en-US   | SpeechSynthesis 的语言                                                 |
+| pitch      | `MaybeRefOrGetter<SpeechSynthesisUtterance['pitch']>`        | 1       | 获取并设置语音将被说出的音高。                                         |
+| rate       | `MaybeRefOrGetter<SpeechSynthesisUtterance['rate']>`         | 1       | 获取并设置语音将被说出的速度。                                         |
+| voice      | `MaybeRef<SpeechSynthesisVoice>`                             | -       | 获取并设置将用于朗读语音的语音。                                       |
+| volume     | `MaybeRefOrGetter<SpeechSynthesisUtterance['volume']>`       | 1       | 获取并设置语音将被说出的音量。                                         |
+| onBoundary | `(event: SpeechSynthesisEvent) => void`                      | -       | 当边界事件被触发时调用的回调函数。                                     |
 
-## Returns
+## 返回值
 
-| Name        | Type                                                       |
+| 名称        | 类型                                                       |
 | ----------- | ---------------------------------------------------------- |
 | isSupported | `useSupported`                                             |
 | isPlaying   | `shallowRef`                                               |
-| status      | `shallowRef&lt;UseSpeechSynthesisStatus&gt;`               |
+| status      | `shallowRef<UseSpeechSynthesisStatus>`                     |
 | utterance   | `computed`                                                 |
-| error       | `shallowRef&lt;SpeechSynthesisErrorEvent \| undefined&gt;` |
+| error       | `shallowRef<SpeechSynthesisErrorEvent | undefined>`       |
 | stop        | `Ref`                                                      |
 | toggle      | `Ref`                                                      |
 | speak       | `Ref`                                                      |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSpeechSynthesis/)
+[VueUse 文档](https://vueuse.org/core/useSpeechSynthesis/)

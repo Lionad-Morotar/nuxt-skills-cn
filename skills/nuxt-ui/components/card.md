@@ -1,15 +1,15 @@
-# Card
+# 卡片
 
-Display content in a card with a header, body and footer.
+以头部、正文和页脚的形式显示内容的卡片。
 
-## Key Props
+## 主要属性
 
-- `variant`: to change the variant of the Card.
+- `variant`：用于更改卡片的变体。
 
-## Usage
+## 用法
 
 ```vue
 <UCard
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

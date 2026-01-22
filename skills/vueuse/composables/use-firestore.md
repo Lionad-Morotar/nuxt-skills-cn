@@ -1,11 +1,11 @@
 # useFirestore
 
-Reactive Firestore binding. Making it straightforward to **always keep your local data in sync** with remotes databases.
+响应式 Firestore 绑定。使本地数据与远程数据库始终保持同步变得简单明了。
 
-**Package:** `@vueuse/firebase`
-**Category:** '@Firebase'
+**包：** `@vueuse/firebase`  
+**分类：** '@Firebase'
 
-## Usage
+## 用法
 
 ```ts
 import { useFirestore } from '@vueuse/firebase/useFirestore'
@@ -14,6 +14,6 @@ import { collection } from 'firebase/firestore'
 const todos = useFirestore(collection(db, 'todos'), undefined, { autoDispose: false })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFirestore/)
+[VueUse 文档](https://vueuse.org/core/useFirestore/)

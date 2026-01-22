@@ -1,31 +1,31 @@
 # useIdle
 
-Tracks whether the user is being inactive.
+追踪用户是否处于非活动状态。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useIdle } from '@vueuse/core'
 
-const { idle, lastActive } = useIdle(5 * 60 * 1000) // 5 min
+const { idle, lastActive } = useIdle(5 * 60 * 1000) // 5 分钟
 
-console.log(idle.value) // true or false
+console.log(idle.value) // true 或 false
 ```
 
-## Options
+## 选项
 
-| Option                    | Type                | Default | Description                                           |
-| ------------------------- | ------------------- | ------- | ----------------------------------------------------- |
-| events                    | `WindowEventName[]` | [       | Event names that listen to for detected user activity |
-| listenForVisibilityChange | `boolean`           | true    | Listen for document visibility change                 |
-| initialState              | `boolean`           | false   | Initial state of the ref idle                         |
+| 选项                      | 类型                | 默认值  | 描述                                             |
+| ------------------------- | ------------------- | ------- | ------------------------------------------------ |
+| events                    | `WindowEventName[]` | [       | 用于检测用户活动的事件名称                       |
+| listenForVisibilityChange | `boolean`           | true    | 监听文档可见性变化                               |
+| initialState              | `boolean`           | false   | ref idle 的初始状态                              |
 
-## Returns
+## 返回值
 
-| Name       | Type         |
+| 名称       | 类型         |
 | ---------- | ------------ |
 | idle       | `shallowRef` |
 | lastActive | `shallowRef` |
@@ -34,6 +34,6 @@ console.log(idle.value) // true or false
 | start      | `Ref`        |
 | isPending  | `shallowRef` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useIdle/)
+[VueUse 文档](https://vueuse.org/core/useIdle/)

@@ -1,11 +1,11 @@
 # useMath
 
-Reactive methods.
+响应式方法。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useMath } from '@vueuse/math'
@@ -21,6 +21,6 @@ num.value = 4
 console.log(root.value) // 2
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMath/)
+[VueUse 文档](https://vueuse.org/core/useMath/)

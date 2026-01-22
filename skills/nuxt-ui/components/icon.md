@@ -1,10 +1,10 @@
-# Icon
+# 图标
 
-A component to display any icon from Iconify or another component.
+一个用于显示 Iconify 中任意图标或其他组件图标的组件。
 
-## Key Props
+## 关键属性
 
-- `name`: to display an icon:
+- `name`：用于显示图标：
 
 ## ::component-code
 
@@ -19,12 +19,12 @@ class: 'size-5'
 ::framework-only
 #nuxt
 :::caution{to="/docs/getting-started/integrations/icons/nuxt#collections"}
-It's highly recommended to install the icons collections you need, read more about this.
+强烈建议安装所需的图标库，可阅读相关内容了解更多。
 
-## Usage
+## 用法
 
 ```vue
 <UIcon
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

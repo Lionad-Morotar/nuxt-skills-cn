@@ -1,14 +1,14 @@
-# Toggle
+# 切换开关
 
-Single state button toggle
+单状态按钮切换器
 
-**Parts:** `Toggle`
+**组件：** `Toggle`
 
-## Toggle
+## 切换开关
 
-### Props
+### 属性
 
-| Prop           | Type                 | Default    |
+| 属性           | 类型                 | 默认值     |
 | -------------- | -------------------- | ---------- |
 | `as`           | `AsTag \| Component` | `"button"` |
 | `asChild`      | `boolean`            | -          |
@@ -16,14 +16,14 @@ Single state button toggle
 | `disabled`     | `boolean`            | `false`    |
 | `pressed`      | `boolean`            | -          |
 
-### Emits
+### 事件
 
-| Event            | Payload            |
+| 事件             | 参数               |
 | ---------------- | ------------------ |
 | `update:pressed` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot      | Type      |
+| 插槽      | 类型      |
 | --------- | --------- |
 | `pressed` | `boolean` |

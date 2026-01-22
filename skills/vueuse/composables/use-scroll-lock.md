@@ -1,11 +1,11 @@
 # useScrollLock
 
-Lock scrolling of the element.
+锁定元素的滚动。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -15,8 +15,8 @@ import { useTemplateRef } from 'vue'
 const el = useTemplateRef('el')
 const isLocked = useScrollLock(el)
 
-isLocked.value = true // lock
-isLocked.value = false // unlock
+isLocked.value = true // 锁定
+isLocked.value = false // 解锁
 </script>
 
 <template>
@@ -24,6 +24,6 @@ isLocked.value = false // unlock
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useScrollLock/)
+[VueUse 文档](https://vueuse.org/core/useScrollLock/)

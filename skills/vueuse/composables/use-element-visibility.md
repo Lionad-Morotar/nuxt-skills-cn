@@ -1,11 +1,11 @@
 # useElementVisibility
 
-Tracks the visibility of an element within the viewport.
+跟踪元素在视口内的可见性。
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`  
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -23,14 +23,14 @@ const targetIsVisible = useElementVisibility(target)
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                     | Default | Description                                                                     |
-| ------------ | ---------------------------------------- | ------- | ------------------------------------------------------------------------------- |
-| initialValue | `boolean`                                | false   | Initial value.                                                                  |
-| scrollTarget | `UseIntersectionObserverOptions['root']` | -       | The element that is used as the viewport for checking visibility of the target. |
-| once         | `boolean`                                | false   | Stop tracking when element visibility changes for the first time                |
+| 选项         | 类型                                     | 默认值  | 描述                                                                           |
+| ------------ | ---------------------------------------- | ------- | ------------------------------------------------------------------------------ |
+| initialValue | `boolean`                                | false   | 初始值。                                                                       |
+| scrollTarget | `UseIntersectionObserverOptions['root']` | -       | 用于检查目标可见性的视口元素。                                                 |
+| once         | `boolean`                                | false   | 元素可见性首次改变时停止跟踪                                                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useElementVisibility/)
+[VueUse 文档](https://vueuse.org/core/useElementVisibility/)

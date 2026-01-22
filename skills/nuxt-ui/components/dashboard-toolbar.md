@@ -1,11 +1,11 @@
 # DashboardToolbar
 
-A toolbar to display under the navbar in a dashboard.
+用于仪表板中导航栏下方显示的工具栏。
 
-## Usage
+## 使用方法
 
 ```vue
 <UDashboardToolbar
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

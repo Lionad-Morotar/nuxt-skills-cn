@@ -1,11 +1,11 @@
 # useWebNotification
 
-Reactive Notification
+响应式通知
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useWebNotification } from '@vueuse/core'
@@ -21,7 +21,7 @@ const {
   onError,
   onClose,
 } = useWebNotification({
-  title: 'Hello, VueUse world!',
+  title: '你好，VueUse 世界！',
   dir: 'auto',
   lang: 'en',
   renotify: true,
@@ -32,15 +32,15 @@ if (isSupported.value && permissionGranted.value)
   show()
 ```
 
-## Options
+## 选项
 
-| Option             | Type      | Default | Description                                            |
+| 选项               | 类型      | 默认值  | 描述                                                   |
 | ------------------ | --------- | ------- | ------------------------------------------------------ |
-| requestPermissions | `boolean` | true    | Request for permissions onMounted if it's not granted. |
+| requestPermissions | `boolean` | true    | 如果未授予权限，则在 mounted 时请求权限。              |
 
-## Returns
+## 返回值
 
-| Name              | Type           |
+| 名称              | 类型           |
 | ----------------- | -------------- |
 | isSupported       | `useSupported` |
 | notification      | `Ref`          |
@@ -53,6 +53,6 @@ if (isSupported.value && permissionGranted.value)
 | onError           | `Ref`          |
 | onClose           | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWebNotification/)
+[VueUse 文档](https://vueuse.org/core/useWebNotification/)

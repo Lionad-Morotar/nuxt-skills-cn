@@ -1,14 +1,14 @@
 # Pin Input
 
-Multi-character code entry (OTP)
+多字符代码输入（OTP）
 
-**Parts:** `PinInputRoot`, `PinInputInput`
+**组件部分：** `PinInputRoot`、`PinInputInput`
 
 ## PinInputRoot
 
-### Props
+### 属性
 
-| Prop           | Type                 | Default  |
+| 属性           | 类型                 | 默认值   |
 | -------------- | -------------------- | -------- |
 | `as`           | `AsTag \| Component` | `"div"`  |
 | `asChild`      | `boolean`            | -        |
@@ -24,24 +24,24 @@ Multi-character code entry (OTP)
 | `required`     | `boolean`            | -        |
 | `type`         | `"number" \| "text"` | `"text"` |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
+| 事件                | 参数                |
 | ------------------- | ------------------- |
 | `complete`          | `[value: string[]]` |
 | `update:modelValue` | `[value: string[]]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type       |
+| 插槽         | 类型       |
 | ------------ | ---------- |
 | `modelValue` | `string[]` |
 
 ## PinInputInput
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default   |
+| 属性       | 类型                 | 默认值    |
 | ---------- | -------------------- | --------- |
 | `as`       | `AsTag \| Component` | `"input"` |
 | `asChild`  | `boolean`            | -         |

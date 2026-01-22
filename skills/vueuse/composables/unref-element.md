@@ -1,23 +1,23 @@
 # unrefElement
 
-Retrieves the underlying DOM element from a Vue ref or component instance
+从 Vue ref 或组件实例中获取底层 DOM 元素
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`
+**类别：** 组件
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
 import { unrefElement } from '@vueuse/core'
 import { onMounted, useTemplateRef } from 'vue'
 
-const div = useTemplateRef('div') // will be bound to the <div> element
-const hello = useTemplateRef('hello') // will be bound to the HelloWorld Component
+const div = useTemplateRef('div') // 将绑定到 <div> 元素
+const hello = useTemplateRef('hello') // 将绑定到 HelloWorld 组件
 
 onMounted(() => {
-  console.log(unrefElement(div)) // the <div> element
-  console.log(unrefElement(hello)) // the root element of the HelloWorld Component
+  console.log(unrefElement(div)) // <div> 元素
+  console.log(unrefElement(hello)) // HelloWorld 组件的根元素
 })
 </script>
 
@@ -27,6 +27,6 @@ onMounted(() => {
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/unrefElement/)
+[VueUse 文档](https://vueuse.org/core/unrefElement/)

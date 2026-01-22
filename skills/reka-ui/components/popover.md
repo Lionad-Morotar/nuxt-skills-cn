@@ -1,77 +1,77 @@
-# Popover
+# 弹出框
 
-Floating content panel
+浮动内容面板
 
-**Parts:** `PopoverRoot`, `PopoverTrigger`, `PopoverPortal`, `PopoverContent`, `PopoverArrow`, `PopoverClose`, `PopoverAnchor`
+**组件：** `PopoverRoot`、`PopoverTrigger`、`PopoverPortal`、`PopoverContent`、`PopoverArrow`、`PopoverClose`、`PopoverAnchor`
 
 ## PopoverRoot
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
 | `defaultOpen` | `boolean` | `false` |
 | `modal`       | `boolean` | `false` |
-| `open`        | `boolean` | -       |
+| `open`        | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload            |
+| 事件          | 参数               |
 | ------------- | ------------------ |
 | `update:open` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## PopoverTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## PopoverPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## PopoverContent
 
-### Props
+### 属性
 
-| Prop                          | Type                                                    | Default |
-| ----------------------------- | ------------------------------------------------------- | ------- |
-| `align`                       | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`                 | `number`                                                | -       |
-| `arrowPadding`                | `number`                                                | -       |
+| 属性                          | 类型                                                    | 默认值 |
+| ----------------------------- | ------------------------------------------------------- | ------ |
+| `align`                       | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`                 | `number`                                                | -      |
+| `arrowPadding`                | `number`                                                | -      |
 | `as`                          | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                     | `boolean`                                               | -       |
-| `avoidCollisions`             | `boolean`                                               | -       |
-| `collisionBoundary`           | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`            | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `disableOutsidePointerEvents` | `boolean`                                               | -       |
-| `forceMount`                  | `boolean`                                               | -       |
-| `hideWhenDetached`            | `boolean`                                               | -       |
-| `prioritizePosition`          | `boolean`                                               | -       |
-| `side`                        | `"top" \| "right" \| "bottom" \| "left"`                | -       |
-| `sideOffset`                  | `number`                                                | -       |
-| `sticky`                      | `"partial" \| "always"`                                 | -       |
-| `trapFocus`                   | `boolean`                                               | -       |
-| `updatePositionStrategy`      | `"always" \| "optimized"`                               | -       |
+| `asChild`                     | `boolean`                                               | -      |
+| `avoidCollisions`             | `boolean`                                               | -      |
+| `collisionBoundary`           | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`            | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `disableOutsidePointerEvents` | `boolean`                                               | -      |
+| `forceMount`                  | `boolean`                                               | -      |
+| `hideWhenDetached`            | `boolean`                                               | -      |
+| `prioritizePosition`          | `boolean`                                               | -      |
+| `side`                        | `"top" \| "right" \| "bottom" \| "left"`                | -      |
+| `sideOffset`                  | `number`                                                | -      |
+| `sticky`                      | `"partial" \| "always"`                                 | -      |
+| `trapFocus`                   | `boolean`                                               | -      |
+| `updatePositionStrategy`      | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `closeAutoFocus`     | `[event: Event]`                                      |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
@@ -82,30 +82,30 @@ Floating content panel
 
 ## PopoverArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"svg"` |
-| `asChild` | `boolean`            | -       |
-| `height`  | `number`             | `5`     |
-| `width`   | `number`             | `10`    |
+| `asChild` | `boolean`            | -      |
+| `height`  | `number`             | `5`    |
+| `width`   | `number`             | `10`   |
 
 ## PopoverClose
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## PopoverAnchor
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `element` | `Measurable`         | -       |
+| `asChild` | `boolean`            | -      |
+| `element` | `Measurable`         | -      |

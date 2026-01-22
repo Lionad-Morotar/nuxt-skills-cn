@@ -1,11 +1,11 @@
 # useFloor
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`
+**分类：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useFloor } from '@vueuse/math'
@@ -14,6 +14,6 @@ const value = ref(45.95)
 const result = useFloor(value) // 45
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFloor/)
+[VueUse 文档](https://vueuse.org/core/useFloor/)

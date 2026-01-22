@@ -1,15 +1,15 @@
-# Collections
+# 合集
 
-## When to Use
+## 使用时机
 
-Setting up `content.config.ts`, defining collection schemas, or configuring content sources.
+设置 `content.config.ts`、定义合集模式或配置内容源。
 
-## Defining Collections
+## 定义合集
 
 ```ts
 // content.config.ts
 import { defineCollection, defineContentConfig } from '@nuxt/content'
-import { z } from 'zod'  // Import z from 'zod' directly (not from @nuxt/content)
+import { z } from 'zod'  // 直接从 'zod' 导入 z（而非从 @nuxt/content）
 
 export default defineContentConfig({
   collections: {
@@ -35,44 +35,44 @@ export default defineContentConfig({
 })
 ```
 
-**Note:** In v3.7.0+, the `z` re-export from `@nuxt/content` was deprecated. Always import from `zod` directly.
+**注意：** 在 v3.7.0 及更高版本中，`@nuxt/content` 中的 `z` 重新导出已被弃用。请始终直接从 `zod` 导入。
 
-## Collection Types
+## 合集类型
 
-| Type   | Use Case             | Includes                                                    |
+| 类型   | 用例                 | 包含内容                                                    |
 | ------ | -------------------- | ----------------------------------------------------------- |
-| `page` | Content with routes  | `path`, `title`, `description`, `seo`, `body`, `navigation` |
-| `data` | Structured data only | `id`, `stem`, `extension`, `meta`                           |
+| `page` | 具有路由的内容       | `path`、`title`、`description`、`seo`、`body`、`navigation` |
+| `data` | 仅结构化数据         | `id`、`stem`、`extension`、`meta`                           |
 
-**Page collections** auto-generate: `path` from file location, `title` from first H1, `description` from first paragraph.
+**页面合集** 自动生成：`path` 来自文件位置，`title` 来自第一个 H1，`description` 来自第一段。
 
-**Data collections** for non-routable content like authors, settings, translations.
+**数据合集** 用于非路由内容，如作者、设置、翻译等。
 
-## Schema Definition
+## 模式定义
 
-Use Zod (or other validators like Valibot since v3.7+) for type-safe schemas:
+使用 Zod（或 v3.7+ 中的其他验证器如 Valibot）实现类型安全的模式：
 
 ```ts
-// Using Zod
+// 使用 Zod
 import { z } from 'zod'
 
 schema: z.object({
-  // Required fields
+  // 必填字段
   title: z.string(),
 
-  // Optional with defaults
+  // 可选字段并设置默认值
   draft: z.boolean().default(false),
 
-  // Arrays
+  // 数组
   tags: z.array(z.string()).optional(),
 
-  // Dates (parsed from frontmatter)
+  // 日期（从 frontmatter 解析）
   publishedAt: z.date(),
 
-  // Enums
+  // 枚举
   status: z.enum(['draft', 'published', 'archived']),
 
-  // Nested objects
+  // 嵌套对象
   author: z.object({
     name: z.string(),
     email: z.string().email(),
@@ -80,30 +80,30 @@ schema: z.object({
 })
 ```
 
-**Multi-validator support (v3.7+):** Nuxt Content supports multiple schema validators including Zod v4 and Valibot via the standard schema spec. Import your preferred validator directly.
+**多验证器支持（v3.7+）：** Nuxt Content 支持多种模式验证器，包括 Zod v4 和 Valibot，可通过标准模式规范使用。请直接导入您首选的验证器。
 
-## Source Patterns
+## 源模式
 
 ```ts
-// Single directory
+// 单一目录
 source: 'blog/**/*.md'
 
-// Multiple patterns
+// 多种模式
 source: ['posts/**/*.md', 'articles/**/*.md']
 
-// Exclude patterns
+// 排除模式
 source: {
   include: 'docs/**/*.md',
   exclude: ['docs/internal/**', 'docs/**/_*.md'],
 }
 
-// Single CSV file (v3.10+)
+// 单个 CSV 文件（v3.10+）
 source: 'data/products.csv'
 ```
 
-## Remote Sources (GitHub)
+## 远程源（GitHub）
 
-Pull content from external repositories:
+从外部仓库提取内容：
 
 ```ts
 export default defineContentConfig({
@@ -114,7 +114,7 @@ export default defineContentConfig({
         repository: 'https://github.com/nuxt/content',
         include: 'docs/content/**',
         prefix: '/docs',
-        // Optional: shallow clone for faster fetching (v3.10+)
+        // 可选：浅克隆以加快获取速度（v3.10+）
         shallow: true,
       },
     }),
@@ -122,7 +122,7 @@ export default defineContentConfig({
 })
 ```
 
-**Private repositories:**
+**私有仓库：**
 
 ```ts
 source: {
@@ -132,7 +132,7 @@ source: {
 }
 ```
 
-**Bitbucket with basic auth:**
+**Bitbucket 基本认证：**
 
 ```ts
 source: {
@@ -142,9 +142,9 @@ source: {
 }
 ```
 
-## Custom API Sources
+## 自定义 API 源
 
-Fetch content from any API using `defineCollectionSource`:
+使用 `defineCollectionSource` 从任何 API 获取内容：
 
 ```ts
 import { defineCollection, defineCollectionSource, defineContentConfig } from '@nuxt/content'
@@ -175,9 +175,9 @@ export default defineContentConfig({
 })
 ```
 
-## Path Extraction
+## 路径提取
 
-File paths become content properties:
+文件路径成为内容属性：
 
 ```
 content/blog/2024/my-post.md
@@ -186,7 +186,7 @@ content/blog/2024/my-post.md
               path: "/blog/2024/my-post"
 ```
 
-Override path in frontmatter:
+在 frontmatter 中覆盖路径：
 
 ```yaml
 ---
@@ -194,38 +194,38 @@ path: /custom-url
 ---
 ```
 
-## Navigation Metadata
+## 导航元数据
 
-Control navigation behavior per-file:
+控制每文件的导航行为：
 
 ```yaml
 ---
 navigation:
-  title: Short Nav Title
+  title: 短导航标题
   icon: heroicons:home
 ---
 ```
 
-Or per-directory with `.navigation.yml`:
+或在目录中使用 `.navigation.yml`：
 
 ```yaml
 # content/blog/.navigation.yml
-title: Blog Posts
+title: 博客文章
 icon: heroicons:newspaper
 ```
 
-## Best Practices
+## 最佳实践
 
-| Do                                   | Don't                                      |
-| ------------------------------------ | ------------------------------------------ |
-| Use `page` for routable content      | Use `page` for config/data files           |
-| Define explicit schemas              | Rely on implicit types                     |
-| Use Zod defaults for optional fields | Leave required fields without validation   |
-| Colocate related content             | Scatter files across unrelated directories |
+| 做法                                   | 不应做的做法                                 |
+| -------------------------------------- | -------------------------------------------- |
+| 使用 `page` 作为路由内容               | 将 `page` 用于配置/数据文件                  |
+| 明确定义模式                           | 依赖隐式类型                                 |
+| 使用 Zod 默认值处理可选字段            | 忽略必须字段的验证                           |
+| 将相关内容共置                         | 将文件分散在无关目录中                       |
 
-## Common Patterns
+## 常见模式
 
-**Blog with categories:**
+**带分类的博客：**
 
 ```ts
 blog: defineCollection({
@@ -239,7 +239,7 @@ blog: defineCollection({
 })
 ```
 
-**Documentation with ordering:**
+**带排序的文档：**
 
 ```ts
 docs: defineCollection({
@@ -252,16 +252,16 @@ docs: defineCollection({
 })
 ```
 
-**Schema extension and inheritance (v3.8+):**
+**模式扩展与继承（v3.8+）：**
 
 ```ts
-// Base schema with common fields
+// 带通用字段的基础模式
 const baseSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
 })
 
-// Extended schema with additional properties
+// 扩展模式，包含额外属性
 const blogSchema = baseSchema.extend({
   author: z.string(),
   date: z.date(),
@@ -275,24 +275,24 @@ blog: defineCollection({
 })
 ```
 
-**Raw content access:**
+**原始内容访问：**
 
 ```ts
-// Magic field - include rawbody to access original content
+// 魔法字段 —— 包含 rawbody 以访问原始内容
 docs: defineCollection({
   type: 'page',
   source: '**/*.md',
   schema: z.object({
-    rawbody: z.string(), // Auto-filled with raw markdown
+    rawbody: z.string(), // 自动填充原始 markdown
   }),
 })
-// Exclude per-file: add `rawbody: ''` in frontmatter
+// 每个文件排除：在 frontmatter 中添加 `rawbody: ''`
 ```
 
-**i18n with per-locale collections:**
+**i18n 与每语言合集：**
 
 ```ts
-// content.config.ts - separate collection per language
+// content.config.ts —— 每种语言一个独立合集
 import { defineCollection, defineContentConfig } from '@nuxt/content'
 import { z } from 'zod'
 
@@ -310,7 +310,7 @@ const collection = (`content_${locale.value}`) as keyof Collections
 const page = await queryCollection(collection).path(slug).first()
 ```
 
-**Inherit component prop types (v3.7+):**
+**继承组件属性类型（v3.7+）：**
 
 ```ts
 import { defineCollection, defineContentConfig, property } from '@nuxt/content'
@@ -320,17 +320,17 @@ defineCollection({
   type: 'page',
   source: 'blog/**/*.md',
   schema: z.object({
-    // Use property().inherit() to inherit Vue component props
+    // 使用 property().inherit() 继承 Vue 组件属性类型
     hero: property(z.object({})).inherit('app/components/HeroComponent.vue'),
     title: z.string(),
   }),
 })
 ```
 
-This allows schema fields to automatically match Vue component prop types.
+这使模式字段能够自动匹配 Vue 组件的属性类型。
 
-## Resources
+## 资源
 
-- Collections: https://content.nuxt.com/docs/collections/collections
-- Schema: https://content.nuxt.com/docs/collections/schema
-- Sources: https://content.nuxt.com/docs/collections/sources
+- 合集：https://content.nuxt.com/docs/collections/collections
+- 模式：https://content.nuxt.com/docs/collections/schema
+- 源：https://content.nuxt.com/docs/collections/sources

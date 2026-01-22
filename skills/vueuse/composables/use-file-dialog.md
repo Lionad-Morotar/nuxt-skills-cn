@@ -1,52 +1,52 @@
 # useFileDialog
 
-Open file dialog with ease.
+轻松打开文件对话框。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
 import { useFileDialog } from '@vueuse/core'
 
 const { files, open, reset, onCancel, onChange } = useFileDialog({
-  accept: 'image/*', // Set to accept only image files
-  directory: true, // Select directories instead of files if set true
+  accept: 'image/*', // 仅接受图像文件
+  directory: true, // 如果设置为 true，则选择目录而非文件
 })
 
 onChange((files) => {
-  /** do something with files */
+  /** 对文件执行某些操作 */
 })
 
 onCancel(() => {
-  /** do something on cancel */
+  /** 取消时执行某些操作 */
 })
 </script>
 
 <template>
   <button type="button" @click="open">
-    Choose file
+    选择文件
   </button>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                      | Default                 | Description                                   |
-| ------------ | ----------------------------------------- | ----------------------- | --------------------------------------------- |
-| multiple     | `MaybeRef&lt;boolean&gt;`                 | true                    | @default true                                 |
-| accept       | `MaybeRef&lt;string&gt;`                  | -                       | @default '\*'                                 |
-| capture      | `MaybeRef&lt;string&gt;`                  | -                       | Select the input source for the capture file. |
-| reset        | `MaybeRef&lt;boolean&gt;`                 | false                   | Reset when open file dialog.                  |
-| directory    | `MaybeRef&lt;boolean&gt;`                 | false                   | Select directories instead of files.          |
-| initialFiles | `Array&lt;File&gt; \| FileList`           | null                    | Initial files to set.                         |
-| input        | `MaybeElementRef&lt;HTMLInputElement&gt;` | document.createElement( | The input element to use for file dialog.     |
+| 选项         | 类型                                      | 默认值                  | 描述                                         |
+| ------------ | ----------------------------------------- | ----------------------- | -------------------------------------------- |
+| multiple     | `MaybeRef&lt;boolean&gt;`                 | true                    | @default true                                |
+| accept       | `MaybeRef&lt;string&gt;`                  | -                       | @default '\*'                                |
+| capture      | `MaybeRef&lt;string&gt;`                  | -                       | 选择用于捕获文件的输入源。                   |
+| reset        | `MaybeRef&lt;boolean&gt;`                 | false                   | 打开文件对话框时重置。                       |
+| directory    | `MaybeRef&lt;boolean&gt;`                 | false                   | 选择目录而非文件。                           |
+| initialFiles | `Array&lt;File&gt; \| FileList`           | null                    | 要设置的初始文件。                           |
+| input        | `MaybeElementRef&lt;HTMLInputElement&gt;` | document.createElement( | 用于文件对话框的输入元素。                   |
 
-## Returns
+## 返回值
 
-| Name     | Type                              |
+| 名称     | 类型                              |
 | -------- | --------------------------------- |
 | files    | `deepRef&lt;FileList \| null&gt;` |
 | open     | `Ref`                             |
@@ -54,6 +54,6 @@ onCancel(() => {
 | onCancel | `Ref`                             |
 | onChange | `Ref`                             |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFileDialog/)
+[VueUse 文档](https://vueuse.org/core/useFileDialog/)

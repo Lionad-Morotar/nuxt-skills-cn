@@ -1,18 +1,18 @@
-# PageHeader
+# 页面头部
 
-A responsive header for your pages.
+适用于您页面的响应式头部。
 
-## Key Props
+## 主要属性
 
-- `title`: to display a title in the header.
-- `description`: to display a description in the header.
-- `headline`: to display a headline in the header.
-- `links`: to display a list of [Button](/docs/components/button) in the header.
+- `title`：在头部显示标题。
+- `description`：在头部显示描述。
+- `headline`：在头部显示主标题。
+- `links`：在头部显示 [Button](/docs/components/button) 列表。
 
-## Usage
+## 用法
 
 ```vue
 <UPageHeader
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

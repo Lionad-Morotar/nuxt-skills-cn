@@ -1,21 +1,21 @@
-# Badge
+# 徽章
 
-A short text to represent a status or a category.
+一段简短的文字，用于表示状态或类别。
 
-## Key Props
+## 主要属性
 
-- `label`: to set the label of the Badge.
-- `color`: to change the color of the Badge.
-- `variant`:
-- `size`: to change the size of the Badge.
-- `icon`: to show an [Icon](/docs/components/icon) inside the Badge.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the Badge.
-- `class`: to override the base styles of the Badge.
+- `label`：用于设置徽章的标签。
+- `color`：用于更改徽章的颜色。
+- `variant`：
+- `size`：用于更改徽章的尺寸。
+- `icon`：用于在徽章内显示 [Icon](/docs/components/icon)。
+- `avatar`：用于在徽章内显示 [Avatar](/docs/components/avatar)。
+- `class`：用于覆盖徽章的基础样式。
 
-## Usage
+## 用法
 
 ```vue
 <UBadge
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

@@ -1,11 +1,11 @@
 # usePermission
 
-Reactive Permissions API. The Permissions API provides the tools to allow developers to implement a better user experience as far as permissions are concerned.
+响应式权限 API。权限 API 提供了工具，使开发者能够实现更佳的用户体验，特别是在权限管理方面。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { usePermission } from '@vueuse/core'
@@ -13,20 +13,20 @@ import { usePermission } from '@vueuse/core'
 const microphoneAccess = usePermission('microphone')
 ```
 
-## Options
+## 选项
 
-| Option   | Type       | Default | Description          |
-| -------- | ---------- | ------- | -------------------- |
-| controls | `Controls` | false   | Expose more controls |
+| 选项     | 类型       | 默认值  | 描述               |
+| -------- | ---------- | ------- | ------------------ |
+| controls | `Controls` | false   | 更多地暴露控制选项 |
 
-## Returns
+## 返回值
 
-| Name        | Type                                             |
+| 名称        | 类型                                             |
 | ----------- | ------------------------------------------------ |
-| state       | `shallowRef&lt;PermissionState \| undefined&gt;` |
+| state       | `shallowRef<PermissionState \| undefined>`       |
 | isSupported | `useSupported`                                   |
 | query       | `createSingletonPromise`                         |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePermission/)
+[VueUse 文档](https://vueuse.org/core/usePermission/)

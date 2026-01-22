@@ -1,44 +1,44 @@
-# Select
+# 选择
 
-Dropdown selection with grouping
+带有分组功能的下拉选择组件
 
-**Parts:** `SelectRoot`, `SelectTrigger`, `SelectPortal`, `SelectContent`, `SelectViewport`, `SelectItem`, `SelectItemText`, `SelectItemIndicator`, `SelectGroup`, `SelectLabel`, `SelectSeparator`, `SelectArrow`, `SelectScrollUpButton`, `SelectScrollDownButton`, `SelectValue`, `SelectIcon`
+**组件部分：** `SelectRoot`、`SelectTrigger`、`SelectPortal`、`SelectContent`、`SelectViewport`、`SelectItem`、`SelectItemText`、`SelectItemIndicator`、`SelectGroup`、`SelectLabel`、`SelectSeparator`、`SelectArrow`、`SelectScrollUpButton`、`SelectScrollDownButton`、`SelectValue`、`SelectIcon`
 
 ## SelectRoot
 
-### Props
+### 属性
 
-| Prop           | Type             | Default |
-| -------------- | ---------------- | ------- |
-| `autocomplete` | `string`         | -       |
-| `defaultOpen`  | `boolean`        | -       |
-| `defaultValue` | `string`         | `""`    |
-| `dir`          | `"ltr" \| "rtl"` | -       |
-| `disabled`     | `boolean`        | -       |
-| `modelValue`   | `string`         | -       |
-| `name`         | `string`         | -       |
-| `open`         | `boolean`        | -       |
-| `required`     | `boolean`        | -       |
+| 属性           | 类型             | 默认值 |
+| -------------- | ---------------- | ------ |
+| `autocomplete` | `string`         | -      |
+| `defaultOpen`  | `boolean`        | -      |
+| `defaultValue` | `string`         | `""`   |
+| `dir`          | `"ltr" \| "rtl"` | -      |
+| `disabled`     | `boolean`        | -      |
+| `modelValue`   | `string`         | -      |
+| `name`         | `string`         | -      |
+| `open`         | `boolean`        | -      |
+| `required`     | `boolean`        | -      |
 
-### Emits
+### 事件
 
-| Event               | Payload            |
+| 事件                | 参数               |
 | ------------------- | ------------------ |
 | `update:modelValue` | `[value: string]`  |
 | `update:open`       | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type      |
-| ------------ | --------- |
-| `modelValue` | `string`  |
-| `open`       | `boolean` |
+| 插槽         | 类型     |
+| ------------ | -------- |
+| `modelValue` | `string` |
+| `open`       | `boolean`|
 
 ## SelectTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -46,148 +46,148 @@ Dropdown selection with grouping
 
 ## SelectPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## SelectContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default |
-| ------------------------ | ------------------------------------------------------- | ------- |
-| `align`                  | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`            | `number`                                                | -       |
-| `arrowPadding`           | `number`                                                | -       |
+| 属性                     | 类型                                                    | 默认值 |
+| ------------------------ | ------------------------------------------------------- | ------ |
+| `align`                  | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`            | `number`                                                | -      |
+| `arrowPadding`           | `number`                                                | -      |
 | `as`                     | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                | `boolean`                                               | -       |
-| `avoidCollisions`        | `boolean`                                               | -       |
-| `bodyLock`               | `boolean`                                               | -       |
-| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `forceMount`             | `boolean`                                               | -       |
-| `hideWhenDetached`       | `boolean`                                               | -       |
-| `position`               | `"popper" \| "item-aligned"`                            | -       |
-| `prioritizePosition`     | `boolean`                                               | -       |
-| `side`                   | `"top" \| "right" \| "bottom" \| "left"`                | -       |
-| `sideOffset`             | `number`                                                | -       |
-| `sticky`                 | `"partial" \| "always"`                                 | -       |
-| `updatePositionStrategy` | `"always" \| "optimized"`                               | -       |
+| `asChild`                | `boolean`                                               | -      |
+| `avoidCollisions`        | `boolean`                                               | -      |
+| `bodyLock`               | `boolean`                                               | -      |
+| `collisionBoundary`      | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`       | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `forceMount`             | `boolean`                                               | -      |
+| `hideWhenDetached`       | `boolean`                                               | -      |
+| `position`               | `"popper" \| "item-aligned"`                            | -      |
+| `prioritizePosition`     | `boolean`                                               | -      |
+| `side`                   | `"top" \| "right" \| "bottom" \| "left"`                | -      |
+| `sideOffset`             | `number`                                                | -      |
+| `sticky`                 | `"partial" \| "always"`                                 | -      |
+| `updatePositionStrategy` | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                            |
-| -------------------- | ---------------------------------- |
-| `closeAutoFocus`     | `[event: Event]`                   |
-| `escapeKeyDown`      | `[event: KeyboardEvent]`           |
-| `pointerDownOutside` | `[event: PointerDownOutsideEvent]` |
+| 事件                 | 参数                                |
+| -------------------- | ----------------------------------- |
+| `closeAutoFocus`     | `[event: Event]`                    |
+| `escapeKeyDown`      | `[event: KeyboardEvent]`            |
+| `pointerDownOutside` | `[event: PointerDownOutsideEvent]`  |
 
 ## SelectViewport
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `nonce`   | `string`             | -       |
+| `asChild` | `boolean`            | -      |
+| `nonce`   | `string`             | -      |
 
 ## SelectItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
-| ----------- | -------------------- | ------- |
+| 属性        | 类型                 | 默认值 |
+| ----------- | -------------------- | ------ |
 | `as`        | `AsTag \| Component` | `"div"` |
-| `asChild`   | `boolean`            | -       |
-| `disabled`  | `boolean`            | -       |
-| `textValue` | `string`             | -       |
-| `value`\*   | `string`             | -       |
+| `asChild`   | `boolean`            | -      |
+| `disabled`  | `boolean`            | -      |
+| `textValue` | `string`             | -      |
+| `value`\*   | `string`             | -      |
 
 ## SelectItemText
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## SelectItemIndicator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## SelectGroup
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## SelectLabel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `for`     | `string`             | -       |
+| `asChild` | `boolean`            | -      |
+| `for`     | `string`             | -      |
 
 ## SelectSeparator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## SelectArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"svg"` |
-| `asChild` | `boolean`            | -       |
-| `height`  | `number`             | `5`     |
-| `width`   | `number`             | `10`    |
+| `asChild` | `boolean`            | -      |
+| `height`  | `number`             | `5`    |
+| `width`   | `number`             | `10`   |
 
 ## SelectScrollUpButton
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## SelectScrollDownButton
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## SelectValue
 
-### Props
+### 属性
 
-| Prop          | Type                 | Default  |
+| 属性          | 类型                 | 默认值   |
 | ------------- | -------------------- | -------- |
 | `as`          | `AsTag \| Component` | `"span"` |
 | `asChild`     | `boolean`            | -        |
@@ -195,9 +195,9 @@ Dropdown selection with grouping
 
 ## SelectIcon
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |

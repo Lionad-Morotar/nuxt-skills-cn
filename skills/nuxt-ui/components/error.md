@@ -1,17 +1,17 @@
-# Error
+# 错误
 
-A pre-built error component with NuxtError support.
+一个内置的错误组件，支持 NuxtError。
 
-## Key Props
+## 主要属性
 
-- `error`: to display an error message.
-- `clear`: to customize or hide the clear button (with `false` value).
-- `redirect`: to redirect the user to a different page when the clear button is clicked.
+- `error`：用于显示错误信息。
+- `clear`：用于自定义或隐藏清除按钮（设置为 `false` 值时）。
+- `redirect`：当点击清除按钮时，将用户重定向到不同页面。
 
-## Usage
+## 用法
 
 ```vue
 <UError
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

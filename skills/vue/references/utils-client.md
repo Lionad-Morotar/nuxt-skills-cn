@@ -1,33 +1,33 @@
-# Client Utilities
+# 客户端工具
 
-Pure functions for formatting, validation, transformation, and parsing.
+用于格式化、验证、转换和解析的纯函数。
 
-## Quick Reference
+## 快速参考
 
-| Category     | Examples                                      |
-| ------------ | --------------------------------------------- |
-| Formatters   | `formatCurrency`, `formatDate`, `formatBytes` |
-| Validators   | `isValidEmail`, `isValidUrl`, `isValidPhone`  |
-| Transformers | `slugify`, `truncate`, `capitalize`           |
-| Parsers      | `parseQuery`, `parseJSON`, `parseDate`        |
+| 类别       | 示例                                         |
+| ---------- | -------------------------------------------- |
+| 格式化器   | `formatCurrency`、`formatDate`、`formatBytes` |
+| 验证器     | `isValidEmail`、`isValidUrl`、`isValidPhone`  |
+| 转换器     | `slugify`、`truncate`、`capitalize`           |
+| 解析器     | `parseQuery`、`parseJSON`、`parseDate`        |
 
-## Rules
+## 规则
 
-**Pure functions:**
+**纯函数：**
 
-- Same input → same output
-- No side effects
-- No external state mutation
-- No API calls, no refs, no reactive
+- 相同输入 → 相同输出
+- 无副作用
+- 无外部状态变更
+- 无 API 调用、无引用、无响应式逻辑
 
-**When NOT to use utils:**
+**不使用工具函数的情况：**
 
-- Stateful logic → use composables
-- Vue-specific → use composables
-- Component logic → keep in component
-- API calls → use queries
+- 有状态逻辑 → 使用组合式函数
+- Vue 特定逻辑 → 使用组合式函数
+- 组件逻辑 → 保留在组件内
+- API 调用 → 使用查询函数
 
-## Structure
+## 结构
 
 ```ts
 // utils/formatters.ts
@@ -46,13 +46,13 @@ export function formatRelativeTime(date: Date): string {
 }
 ```
 
-**Naming:** Descriptive verbs (`formatCurrency`, `validateEmail`, `parseQuery`)
-**Organization:** Group by category (`formatters.ts`, `validators.ts`)
-**Exports:** Named exports only
+**命名：** 描述性动词（`formatCurrency`、`validateEmail`、`parseQuery`）  
+**组织：** 按类别分组（`formatters.ts`、`validators.ts`）  
+**导出：** 仅命名导出
 
-## Examples by Category
+## 按类别示例
 
-**Formatters:**
+**格式化器：**
 
 ```ts
 // utils/formatters.ts
@@ -60,7 +60,7 @@ export function formatBytes(bytes: number): string { ... }
 export function formatPhone(phone: string): string { ... }
 ```
 
-**Validators:**
+**验证器：**
 
 ```ts
 // utils/validators.ts
@@ -74,7 +74,7 @@ export function isValidUrl(url: string): boolean {
 }
 ```
 
-**Transformers:**
+**转换器：**
 
 ```ts
 // utils/transformers.ts
@@ -89,7 +89,7 @@ export function truncate(text: string, length: number): string {
 }
 ```
 
-**Parsers:**
+**解析器：**
 
 ```ts
 // utils/parsers.ts
@@ -103,37 +103,37 @@ export function parseJSON<T>(json: string, fallback: T): T {
 }
 ```
 
-## Common Mistakes
+## 常见错误
 
-**Side effects (not pure):**
+**副作用（非纯函数）：**
 
 ```ts
-// ❌ Wrong - mutates external state
+// ❌ 错误 —— 修改外部状态
 let count = 0
 export function increment() {
   count++
   return count
 }
 
-// ✅ Correct - pure
+// ✅ 正确 —— 纯函数
 export function add(a: number, b: number): number {
   return a + b
 }
 ```
 
-**Using utils for stateful logic:**
+**将工具函数用于有状态逻辑：**
 
 ```ts
-// ❌ Wrong - should be composable
+// ❌ 错误 —— 应使用组合式函数
 export function useCounter() { ... }
 
-// ✅ Correct - pure transformation
+// ✅ 正确 —— 纯转换函数
 export function formatCount(count: number): string { ... }
 ```
 
-## Organization
+## 组织方式
 
-**Flat for small projects:**
+**小型项目采用扁平结构：**
 
 ```
 utils/
@@ -142,7 +142,7 @@ utils/
 └── transformers.ts
 ```
 
-**Nested for large projects:**
+**大型项目采用嵌套结构：**
 
 ```
 utils/

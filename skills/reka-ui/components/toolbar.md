@@ -1,14 +1,14 @@
-# Toolbar
+# 工具栏
 
-Toolbar with buttons/toggles
+带有按钮/切换器的工具栏
 
-**Parts:** `ToolbarRoot`, `ToolbarButton`, `ToolbarLink`, `ToolbarToggleGroup`, `ToolbarToggleItem`, `ToolbarSeparator`
+**组件：** `ToolbarRoot`、`ToolbarButton`、`ToolbarLink`、`ToolbarToggleGroup`、`ToolbarToggleItem`、`ToolbarSeparator`
 
 ## ToolbarRoot
 
-### Props
+### 属性
 
-| Prop          | Type                         | Default        |
+| 属性          | 类型                         | 默认值        |
 | ------------- | ---------------------------- | -------------- |
 | `as`          | `AsTag \| Component`         | `"div"`        |
 | `asChild`     | `boolean`                    | -              |
@@ -18,9 +18,9 @@ Toolbar with buttons/toggles
 
 ## ToolbarButton
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值    |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -28,18 +28,18 @@ Toolbar with buttons/toggles
 
 ## ToolbarLink
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值 |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"a"`   |
 | `asChild` | `boolean`            | -       |
 
 ## ToolbarToggleGroup
 
-### Props
+### 属性
 
-| Prop           | Type                         | Default |
+| 属性           | 类型                         | 默认值 |
 | -------------- | ---------------------------- | ------- |
 | `as`           | `AsTag \| Component`         | `"div"` |
 | `asChild`      | `boolean`                    | -       |
@@ -52,17 +52,17 @@ Toolbar with buttons/toggles
 | `rovingFocus`  | `boolean`                    | -       |
 | `type`         | `"single" \| "multiple"`     | -       |
 
-### Emits
+### 事件
 
-| Event               | Payload                         |
+| 事件                | 参数                         |
 | ------------------- | ------------------------------- |
 | `update:modelValue` | `[payload: string \| string[]]` |
 
 ## ToolbarToggleItem
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default |
+| 属性       | 类型                 | 默认值 |
 | ---------- | -------------------- | ------- |
 | `as`       | `AsTag \| Component` | `"div"` |
 | `asChild`  | `boolean`            | -       |
@@ -71,9 +71,9 @@ Toolbar with buttons/toggles
 
 ## ToolbarSeparator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值 |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |

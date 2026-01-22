@@ -1,11 +1,11 @@
 # useUrlSearchParams
 
-Reactive URLSearchParams
+响应式 URL 查询参数
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useUrlSearchParams } from '@vueuse/core'
@@ -16,16 +16,16 @@ console.log(params.foo) // 'bar'
 
 params.foo = 'bar'
 params.vueuse = 'awesome'
-// url updated to `?foo=bar&vueuse=awesome`
+// URL 更新为 `?foo=bar&vueuse=awesome`
 ```
 
-## Options
+## 选项
 
-| Option              | Type      | Default | Description    |
-| ------------------- | --------- | ------- | -------------- |
-| removeNullishValues | `boolean` | true    | @default true  |
-| removeFalsyValues   | `boolean` | false   | @default false |
+| 选项                  | 类型      | 默认值  | 描述           |
+| --------------------- | --------- | ------- | -------------- |
+| removeNullishValues   | `boolean` | true    | @default true  |
+| removeFalsyValues     | `boolean` | false   | @default false |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useUrlSearchParams/)
+[VueUse 文档](https://vueuse.org/core/useUrlSearchParams/)

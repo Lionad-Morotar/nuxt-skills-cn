@@ -1,11 +1,11 @@
 # useTextDirection
 
-Reactive dir of the element's text.
+元素文本的响应式方向。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useTextDirection } from '@vueuse/core'
@@ -13,14 +13,14 @@ import { useTextDirection } from '@vueuse/core'
 const dir = useTextDirection() // Ref<'ltr' | 'rtl' | 'auto'>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                    | Default | Description                                                              |
+| 选项         | 类型                    | 默认值  | 描述                                                                     |
 | ------------ | ----------------------- | ------- | ------------------------------------------------------------------------ |
-| selector     | `string`                | html    | CSS Selector for the target element applying to                          |
-| observe      | `boolean`               | false   | Observe `document.querySelector(selector)` changes using MutationObserve |
-| initialValue | `UseTextDirectionValue` | ltr     | Initial value                                                            |
+| selector     | `string`                | html    | 应用于目标元素的 CSS 选择器                                              |
+| observe      | `boolean`               | false   | 使用 MutationObserver 监听 `document.querySelector(selector)` 的变化      |
+| initialValue | `UseTextDirectionValue` | ltr     | 初始值                                                                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTextDirection/)
+[VueUse 文档](https://vueuse.org/core/useTextDirection/)

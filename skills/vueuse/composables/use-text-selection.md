@@ -1,11 +1,11 @@
 # useTextSelection
 
-Reactively track user text selection based on .
+基于 `@vueuse/core` 的 Reactivity 文本选择跟踪器。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包:** `@vueuse/core`  
+**分类:** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -19,15 +19,15 @@ const state = useTextSelection()
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name      | Type                                  |
+| 名称      | 类型                                  |
 | --------- | ------------------------------------- |
 | text      | `computed`                            |
 | rects     | `computed`                            |
-| ranges    | `computed&lt;Range[]&gt;`             |
-| selection | `shallowRef&lt;Selection \| null&gt;` |
+| ranges    | `computed<Range[]>`                   |
+| selection | `shallowRef<Selection \| null>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTextSelection/)
+[VueUse 文档](https://vueuse.org/core/useTextSelection/)

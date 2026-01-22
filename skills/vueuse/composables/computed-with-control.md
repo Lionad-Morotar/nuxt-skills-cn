@@ -1,11 +1,11 @@
 # computedWithControl
 
-Explicitly define the dependencies of computed.
+显式定义 computed 的依赖项。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 // @include: main
@@ -21,6 +21,6 @@ source.value = 'bar'
 console.log(computedRef.value) // 1
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/computedWithControl/)
+[VueUse 文档](https://vueuse.org/core/computedWithControl/)

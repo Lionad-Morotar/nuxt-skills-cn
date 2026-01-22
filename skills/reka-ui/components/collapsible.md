@@ -1,47 +1,47 @@
-# Collapsible
+# 可折叠面板
 
-Single collapsible panel
+单一可折叠面板
 
-**Parts:** `CollapsibleRoot`, `CollapsibleTrigger`, `CollapsibleContent`
+**组件：** `CollapsibleRoot`、`CollapsibleTrigger`、`CollapsibleContent`
 
 ## CollapsibleRoot
 
-### Props
+### 属性
 
-| Prop          | Type                 | Default |
-| ------------- | -------------------- | ------- |
-| `as`          | `AsTag \| Component` | `"div"` |
-| `asChild`     | `boolean`            | -       |
-| `defaultOpen` | `boolean`            | `false` |
-| `disabled`    | `boolean`            | -       |
-| `open`        | `boolean`            | -       |
+| 属性          | 类型                 | 默认值   |
+| ------------- | -------------------- | -------- |
+| `as`          | `AsTag \| Component` | `"div"`  |
+| `asChild`     | `boolean`            | -        |
+| `defaultOpen` | `boolean`            | `false`  |
+| `disabled`    | `boolean`            | -        |
+| `open`        | `boolean`            | -        |
 
-### Emits
+### 事件
 
-| Event         | Payload            |
+| 事件          | 参数               |
 | ------------- | ------------------ |
 | `update:open` | `[value: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## CollapsibleTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## CollapsibleContent
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
+| 属性         | 类型                 | 默认值  |
 | ------------ | -------------------- | ------- |
 | `as`         | `AsTag \| Component` | `"div"` |
 | `asChild`    | `boolean`            | -       |

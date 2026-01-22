@@ -1,20 +1,20 @@
-# User
+# 用户
 
-Display user information with name, description and avatar.
+显示用户信息，包括姓名、描述和头像。
 
-## Key Props
+## 主要属性
 
-- `name`: to display a name for the user.
-- `description`: to display a description for the user.
-- `avatar`: to display an [Avatar](/docs/components/avatar) component.
-- `chip`: to display a [Chip](/docs/components/chip) component.
-- `size`: to change the size of the user avatar and text.
-- `orientation`: to change the orientation.
+- `name`：用于显示用户的姓名。
+- `description`：用于显示用户的描述。
+- `avatar`：用于显示 [Avatar](/docs/components/avatar) 组件。
+- `chip`：用于显示 [Chip](/docs/components/chip) 组件。
+- `size`：用于更改用户头像和文本的尺寸。
+- `orientation`：用于更改方向。
 
-## Usage
+## 用法
 
 ```vue
 <UUser
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

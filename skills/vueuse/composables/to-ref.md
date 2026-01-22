@@ -1,11 +1,11 @@
 # toRef
 
-Normalize value/ref/getter to or .
+将 value/ref/getter 统一规范化为 ref。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { toRef } from '@vueuse/core'
@@ -17,6 +17,6 @@ const b = toRef(foo) // Ref<string>
 const c = toRef(() => 'hi') // ComputedRef<string>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/toRef/)
+[VueUse 文档](https://vueuse.org/core/toRef/)

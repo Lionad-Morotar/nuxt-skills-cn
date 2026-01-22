@@ -1,8 +1,8 @@
-# Motion Composables
+# 动效组合项
 
 ## useMotionValue
 
-Create a motion value for performant animations that bypass Vue's reactivity:
+创建用于高性能动画的动效值，绕过 Vue 的响应式系统：
 
 ```vue
 <script setup>
@@ -10,13 +10,13 @@ import { Motion, useMotionValue } from 'motion-v'
 
 const x = useMotionValue(0)
 
-// Read/write value
+// 读/写值
 console.log(x.get())
 x.set(100)
 
-// Subscribe to changes
+// 订阅变更
 const unsubscribe = x.on('change', (latest) => {
-  console.log('x changed to', latest)
+  console.log('x 变更为', latest)
 })
 </script>
 
@@ -27,7 +27,7 @@ const unsubscribe = x.on('change', (latest) => {
 
 ## useSpring
 
-Create spring-animated motion value:
+创建弹簧动画的动效值：
 
 ```vue
 <script setup>
@@ -40,7 +40,7 @@ const springX = useSpring(x, {
   mass: 1,
 })
 
-// springX follows x with spring physics
+// springX 跟随 x，采用弹簧物理效果
 x.set(100)
 </script>
 
@@ -51,7 +51,7 @@ x.set(100)
 
 ## useTransform
 
-Derive motion values from other motion values:
+从其他动效值中派生动效值：
 
 ```vue
 <script setup>
@@ -59,16 +59,16 @@ import { useMotionValue, useTransform } from 'motion-v'
 
 const x = useMotionValue(0)
 
-// Map x: 0-100 to opacity: 1-0
+// 映射 x：0-100 到 opacity：1-0
 const opacity = useTransform(x, [0, 100], [1, 0])
 
-// Map x: 0-100 to scale: 1-2
+// 映射 x：0-100 到 scale：1-2
 const scale = useTransform(x, [0, 100], [1, 2])
 
-// Custom transform function
+// 自定义转换函数
 const rotate = useTransform(x, (value) => `${value}deg`)
 
-// Combine multiple values
+// 组合多个值
 const combined = useTransform([x, opacity], ([x, opacity]) => {
   return x * opacity
 })
@@ -79,7 +79,7 @@ const combined = useTransform([x, opacity], ([x, opacity]) => {
 </template>
 ```
 
-### Easing in useTransform
+### useTransform 中的缓动函数
 
 ```ts
 import { easeInOut } from 'motion-v'
@@ -89,7 +89,7 @@ const opacity = useTransform(x, [0, 100], [0, 1], { ease: easeInOut })
 
 ## useMotionTemplate
 
-Create template strings from motion values:
+从动效值创建模板字符串：
 
 ```vue
 <script setup>
@@ -98,10 +98,10 @@ import { useMotionValue, useMotionTemplate } from 'motion-v'
 const x = useMotionValue(0)
 const y = useMotionValue(0)
 
-// Creates "translateX(0px) translateY(0px)"
+// 创建 "translateX(0px) translateY(0px)"
 const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px)`
 
-// For gradients, shadows, etc.
+// 用于渐变、阴影等
 const blur = useMotionValue(5)
 const filter = useMotionTemplate`blur(${blur}px)`
 </script>
@@ -109,29 +109,29 @@ const filter = useMotionTemplate`blur(${blur}px)`
 
 ## useScroll
 
-Track scroll progress of window or element:
+追踪窗口或元素的滚动进度：
 
 ```vue
 <script setup>
 import { useScroll, useTransform, Motion } from 'motion-v'
 
-// Window scroll
+// 窗口滚动
 const { scrollX, scrollY, scrollXProgress, scrollYProgress } = useScroll()
 
-// Element scroll
+// 元素滚动
 const containerRef = ref<HTMLElement>()
 const { scrollYProgress: containerProgress } = useScroll({
   container: containerRef,
 })
 
-// Element in viewport progress
+// 视口内元素的进度
 const targetRef = ref<HTMLElement>()
 const { scrollYProgress: targetProgress } = useScroll({
   target: targetRef,
-  offset: ['start end', 'end start'],  // When tracking starts/ends
+  offset: ['start end', 'end start'],  // 跟踪开始/结束时
 })
 
-// Transform scroll to animation values
+// 将滚动转换为动画值
 const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1])
 const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
 </script>
@@ -141,22 +141,22 @@ const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
 </template>
 ```
 
-### Scroll Offset Options
+### 滚动偏移选项
 
 ```ts
 offset: ['start end', 'end start']
-// First: target position relative to container
-// Second: container position relative to viewport
+// 第一个：目标位置相对于容器
+// 第二个：容器位置相对于视口
 
-// Common patterns:
-['start end', 'end start']     // Element enters bottom, exits top
-['start start', 'end start']   // Pin at top while scrolling
-['center center', 'end start'] // Centered animation
+// 常见模式：
+['start end', 'end start']     // 元素从底部进入，顶部退出
+['start start', 'end start']   // 滚动时固定在顶部
+['center center', 'end start'] // 居中动画
 ```
 
 ## useInView
 
-Detect element visibility in viewport:
+检测元素在视口中的可见性：
 
 ```vue
 <script setup>
@@ -164,24 +164,24 @@ import { useInView } from 'motion-v'
 
 const ref = ref<HTMLElement>()
 const isInView = useInView(ref, {
-  once: true,           // Only trigger once
-  amount: 0.5,          // 50% visible to trigger
-  margin: '-100px',     // Shrink viewport detection
+  once: true,           // 仅触发一次
+  amount: 0.5,          // 50% 可见时触发
+  margin: '-100px',     // 缩小视口检测区域
 })
 
 watch(isInView, (inView) => {
-  if (inView) console.log('Element visible')
+  if (inView) console.log('元素可见')
 })
 </script>
 
 <template>
-  <div ref="ref">Tracked element</div>
+  <div ref="ref">追踪元素</div>
 </template>
 ```
 
 ## useAnimationFrame
 
-Run callback every frame with delta time:
+每帧执行回调并传入时间差：
 
 ```vue
 <script setup>
@@ -190,40 +190,40 @@ import { useMotionValue, useAnimationFrame } from 'motion-v'
 const rotation = useMotionValue(0)
 
 useAnimationFrame((time, delta) => {
-  // time: total elapsed ms
-  // delta: ms since last frame
+  // time：总流逝毫秒数
+  // delta：自上一帧起的毫秒数
   rotation.set(rotation.get() + delta * 0.1)
 })
 </script>
 
 <template>
-  <Motion.div :style="{ rotate: rotation }">Spinning</Motion.div>
+  <Motion.div :style="{ rotate: rotation }">旋转中</Motion.div>
 </template>
 ```
 
 ## animate()
 
-Imperative animation function:
+命令式动画函数：
 
 ```ts
 import { animate } from 'motion-v'
 
-// Animate value
+// 动画值
 const controls = animate(0, 100, {
   duration: 0.5,
   onUpdate: (latest) => console.log(latest),
-  onComplete: () => console.log('done'),
+  onComplete: () => console.log('完成'),
 })
 
-// Control animation
+// 控制动画
 controls.stop()
-controls.time = 0.25  // Seek to 25%
+controls.time = 0.25  // 跳转到 25%
 
-// Animate motion value
+// 动画动效值
 const x = useMotionValue(0)
 animate(x, 100, { type: 'spring' })
 
-// Animate object
+// 动画对象
 animate(
   { x: 0, y: 0 },
   { x: 100, y: 100 },
@@ -234,23 +234,23 @@ animate(
 )
 ```
 
-### Sequence Animations
+### 序列动画
 
 ```ts
 import { animate, stagger } from 'motion-v'
 
-// Animate elements in sequence
+// 按顺序动画元素
 const elements = document.querySelectorAll('.item')
 
 animate(elements, { opacity: 1, y: 0 }, {
-  delay: stagger(0.1),  // 0.1s between each
+  delay: stagger(0.1),  // 每个间隔 0.1s
   duration: 0.5,
 })
 
-// Custom stagger
+// 自定义交错延迟
 animate(elements, { opacity: 1 }, {
   delay: stagger(0.1, {
-    start: 0.5,           // Start delay
+    start: 0.5,           // 开始延迟
     from: 'center',       // 'first' | 'last' | 'center' | number
     ease: 'easeOut',
   }),
@@ -259,7 +259,7 @@ animate(elements, { opacity: 1 }, {
 
 ## useVelocity
 
-Track velocity of motion value:
+追踪动效值的速度：
 
 ```vue
 <script setup>
@@ -268,14 +268,14 @@ import { useMotionValue, useVelocity, useTransform } from 'motion-v'
 const x = useMotionValue(0)
 const xVelocity = useVelocity(x)
 
-// Skew based on velocity
+// 基于速度的倾斜
 const skewX = useTransform(xVelocity, [-1000, 0, 1000], [-25, 0, 25])
 </script>
 ```
 
 ## useReducedMotion
 
-Respect user's motion preferences:
+尊重用户的动画偏好设置：
 
 ```vue
 <script setup>

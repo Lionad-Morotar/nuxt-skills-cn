@@ -1,95 +1,95 @@
 ---
 name: document-writer
-description: Use when writing blog posts or documentation markdown files - provides writing style guide (active voice, present tense), content structure patterns, and MDC component usage. Overrides brevity rules for proper grammar. Use nuxt-content for MDC syntax, nuxt-ui for component props.
+description: 用于撰写博客文章或文档 Markdown 文件——提供写作风格指南（主动语态、现在时态）、内容结构模式以及 MDC 组件用法。覆盖简洁性规则以确保语法正确。使用 nuxt-content 进行 MDC 语法处理，使用 nuxt-ui 处理组件属性。
 license: MIT
 ---
 
-# Documentation Writer for Nuxt Ecosystem
+# Nuxt 生态系统的文档撰写者
 
-Writing guidance for blog posts and documentation following patterns from official Nuxt websites.
+撰写博客文章和文档的指导原则，遵循官方 Nuxt 网站中的模式。
 
-## When to Use
+## 使用场景
 
-- Writing blog posts for Nuxt ecosystem projects
-- Creating or editing documentation pages
-- Ensuring consistent writing style across content
+- 为 Nuxt 生态系统项目撰写博客文章
+- 创建或编辑文档页面
+- 确保内容中写作风格的一致性
 
-## Writing Standard
+## 写作标准
 
-**Override**: When writing documentation, maintain proper grammar and complete sentences. The "sacrifice grammar for brevity" rule does NOT apply here.
+**覆盖规则**：撰写文档时，需保持语法正确和句子完整。此处不适用“为简洁牺牲语法”的规则。
 
-Documentation must be:
+文档必须：
 
-- Grammatically correct
-- Clear and unambiguous
-- Properly punctuated
-- Complete sentences (not fragments)
+- 语法正确
+- 表达清晰且无歧义
+- 标点符号使用得当
+- 使用完整句子（而非片段）
 
-Brevity is still valued, but never at the cost of clarity or correctness.
+简洁性仍然重要，但绝不以牺牲清晰度或准确性为代价。
 
-## Related Skills
+## 相关技能
 
-For component and syntax details, use these skills:
+如需了解组件与语法详情，请使用以下技能：
 
-| Skill            | Use For                                         |
-| ---------------- | ----------------------------------------------- |
-| **nuxt-content** | MDC syntax, prose components, code highlighting |
-| **nuxt-ui**      | Component props, theming, UI patterns           |
+| 技能             | 用途                                             |
+| ---------------- | ------------------------------------------------ |
+| **nuxt-content** | MDC 语法、叙述性组件、代码高亮                   |
+| **nuxt-ui**      | 组件属性、主题设置、UI 模式                      |
 
-## Available References
+## 可用参考资料
 
-| Reference                                                            | Purpose                                         |
-| -------------------------------------------------------------------- | ----------------------------------------------- |
-| **[references/writing-style.md](references/writing-style.md)**       | Voice, tone, sentence structure                 |
-| **[references/content-patterns.md](references/content-patterns.md)** | Blog frontmatter, structure, component patterns |
+| 资料                                                                | 目的                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------ |
+| **[references/writing-style.md](references/writing-style.md)**      | 语调、语气、句式结构                             |
+| **[references/content-patterns.md](references/content-patterns.md)** | 博客 frontmatter、结构、组件模式                 |
 
-**Load based on context:**
+**根据上下文加载：**
 
-- Writing prose → [references/writing-style.md](references/writing-style.md)
-- Blog structure and patterns → [references/content-patterns.md](references/content-patterns.md)
+- 撰写叙述性文本 → [references/writing-style.md](references/writing-style.md)
+- 博客结构与模式 → [references/content-patterns.md](references/content-patterns.md)
 
-## Quick Reference
+## 快速参考
 
-### Writing Patterns
+### 写作模式
 
-| Pattern       | Example                                            |
-| ------------- | -------------------------------------------------- |
-| Subject-first | "The `useFetch` composable handles data fetching." |
-| Imperative    | "Add the following to `nuxt.config.ts`."           |
-| Contextual    | "When using authentication, configure..."          |
+| 模式         | 示例                                               |
+| ------------ | -------------------------------------------------- |
+| 主语优先     | “`useFetch` 可组合函数处理数据获取。”              |
+| 命令式       | “将以下内容添加到 `nuxt.config.ts`。”              |
+| 上下文相关   | “在使用认证时，应配置……”                           |
 
-### Modal Verbs
+### 情态动词
 
-| Verb     | Meaning     |
-| -------- | ----------- |
-| `can`    | Optional    |
-| `should` | Recommended |
-| `must`   | Required    |
+| 动词     | 含义         |
+| -------- | ------------ |
+| `can`    | 可选         |
+| `should` | 建议         |
+| `must`   | 必须         |
 
-### Component Patterns (WHEN to use)
+### 组件模式（何时使用）
 
-| Need              | Component                         |
+| 需求              | 组件                              |
 | ----------------- | --------------------------------- |
-| Info aside        | `::note`                          |
-| Suggestion        | `::tip`                           |
-| Caution           | `::warning`                       |
-| Required          | `::important`                     |
-| CTA               | `:u-button{to="..." label="..."}` |
-| Multi-source code | `::code-group`                    |
+| 信息旁注          | `::note`                          |
+| 建议              | `::tip`                           |
+| 警告              | `::warning`                       |
+| 必备项            | `::important`                     |
+| 行动号召          | `:u-button{to="..." label="..."}` |
+| 多源代码块        | `::code-group`                    |
 
-> For component props: see **nuxt-ui** skill
+> 组件属性详情请参阅 **nuxt-ui** 技能
 
-## Headings
+## 标题
 
-- **H1 (`#`)**: No backticks — they don't render properly
-- **H2-H4**: Backticks work fine
+- **H1 (`#`)**：不使用反引号——它们无法正常渲染
+- **H2 至 H4**：反引号可以正常使用
 
-## Checklist
+## 检查清单
 
-- [ ] Active voice (85%+)
-- [ ] Present tense
-- [ ] 2-4 sentences per paragraph
-- [ ] Explanation before code
-- [ ] File path labels on code blocks
-- [ ] Appropriate callout types
-- [ ] No backticks in H1 headings
+- [ ] 主动语态（85%以上）
+- [ ] 现在时态
+- [ ] 每段 2–4 句话
+- [ ] 先解释再写代码
+- [ ] 代码块中标注文件路径
+- [ ] 使用恰当的提示类型
+- [ ] H1 标题中不使用反引号

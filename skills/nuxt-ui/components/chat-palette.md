@@ -1,11 +1,11 @@
 # ChatPalette
 
-A chat palette to create a chatbot interface inside an overlay.
+用于在覆盖层内创建聊天机器人界面的聊天调色板。
 
-## Usage
+## 使用方法
 
 ```vue
 <UChatPalette
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

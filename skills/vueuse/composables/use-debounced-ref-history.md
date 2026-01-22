@@ -1,11 +1,11 @@
 # useDebouncedRefHistory
 
-Shorthand for with debounced filter.
+用于带防抖过滤器的简写。
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`
+**分类：** 状态
 
-## Usage
+## 用法
 
 ```ts
 import { useDebouncedRefHistory } from '@vueuse/core'
@@ -15,6 +15,6 @@ const counter = shallowRef(0)
 const { history, undo, redo } = useDebouncedRefHistory(counter, { deep: true, debounce: 1000 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDebouncedRefHistory/)
+[VueUse 文档](https://vueuse.org/core/useDebouncedRefHistory/)

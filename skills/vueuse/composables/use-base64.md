@@ -1,11 +1,11 @@
 # useBase64
 
-Reactive base64 transforming. Supports plain text, buffer, files, canvas, objects, maps, sets and images.
+响应式 Base64 转换。支持纯文本、缓冲区、文件、画布、对象、映射、集合和图像。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`  
+**类别：** 工具
 
-## Usage
+## 用法
 
 ```ts
 import { useBase64 } from '@vueuse/core'
@@ -16,20 +16,20 @@ const text = shallowRef('')
 const { base64 } = useBase64(text)
 ```
 
-## Options
+## 选项
 
-| Option  | Type      | Default | Description               |
-| ------- | --------- | ------- | ------------------------- |
-| dataUrl | `boolean` | true    | Output as Data URL format |
+| 选项    | 类型      | 默认值  | 描述                     |
+| ------- | --------- | ------- | ------------------------ |
+| dataUrl | `boolean` | true    | 以 Data URL 格式输出     |
 
-## Returns
+## 返回值
 
-| Name    | Type         |
+| 名称    | 类型         |
 | ------- | ------------ |
 | base64  | `shallowRef` |
 | promise | `Ref`        |
 | execute | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useBase64/)
+[VueUse 文档](https://vueuse.org/core/useBase64/)

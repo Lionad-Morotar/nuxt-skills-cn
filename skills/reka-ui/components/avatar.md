@@ -1,40 +1,40 @@
-# Avatar
+# 头像
 
-User image with fallback
+带后备选项的用户图像
 
-**Parts:** `AvatarRoot`, `AvatarImage`, `AvatarFallback`
+**组件：** `AvatarRoot`、`AvatarImage`、`AvatarFallback`
 
 ## AvatarRoot
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## AvatarImage
 
-### Props
+### 属性
 
-| Prop             | Type                                                   | Default |
-| ---------------- | ------------------------------------------------------ | ------- |
+| 属性             | 类型                                                   | 默认值 |
+| ---------------- | ------------------------------------------------------ | ------ |
 | `as`             | `AsTag \| Component`                                   | `"img"` |
-| `asChild`        | `boolean`                                              | -       |
-| `referrerPolicy` | `"" \| "no-referrer" \| "no-referrer-when-downgrad...` | -       |
-| `src`\*          | `string`                                               | -       |
+| `asChild`        | `boolean`                                              | -      |
+| `referrerPolicy` | `"" \| "no-referrer" \| "no-referrer-when-downgrad...` | -      |
+| `src`\*          | `string`                                               | -      |
 
-### Emits
+### 事件
 
-| Event                 | Payload                       |
-| --------------------- | ----------------------------- |
+| 事件                  | 参数                       |
+| --------------------- | -------------------------- |
 | `loadingStatusChange` | `[value: ImageLoadingStatus]` |
 
 ## AvatarFallback
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |

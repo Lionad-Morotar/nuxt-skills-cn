@@ -1,11 +1,11 @@
 # usePointerLock
 
-Reactive pointer lock.
+响应式指针锁定。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { usePointerLock } from '@vueuse/core'
@@ -19,9 +19,9 @@ const {
 } = usePointerLock()
 ```
 
-## Returns
+## 返回值
 
-| Name           | Type                             |
+| 名称           | 类型                             |
 | -------------- | -------------------------------- |
 | isSupported    | `useSupported`                   |
 | element        | `shallowRef&lt;MaybeElement&gt;` |
@@ -29,6 +29,6 @@ const {
 | lock           | `Ref`                            |
 | unlock         | `Ref`                            |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePointerLock/)
+[VueUse 文档](https://vueuse.org/core/usePointerLock/)

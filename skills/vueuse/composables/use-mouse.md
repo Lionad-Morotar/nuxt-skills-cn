@@ -1,11 +1,11 @@
 # useMouse
 
-Reactive mouse position
+响应式鼠标位置
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <template>
@@ -16,25 +16,25 @@ Reactive mouse position
 </template>
 ```
 
-## Options
+## 选项
 
-| Option           | Type                                                                 | Default | Description                                                                    |
+| 选项             | 类型                                                                 | 默认值  | 描述                                                                           |
 | ---------------- | -------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------ |
-| type             | `UseMouseCoordType \| UseMouseEventExtractor`                        | page    | Mouse position based by page, client, screen, or relative to previous position |
-| target           | `MaybeRefOrGetter&lt;Window \| EventTarget \| null \| undefined&gt;` | Window  | Listen events on `target` element                                              |
-| touch            | `boolean`                                                            | true    | Listen to `touchmove` events                                                   |
-| scroll           | `boolean`                                                            | true    | Listen to `scroll` events on window, only effective on type `page`             |
-| resetOnTouchEnds | `boolean`                                                            | false   | Reset to initial value when `touchend` event fired                             |
-| initialValue     | `Position`                                                           | -       | Initial values                                                                 |
+| type             | `UseMouseCoordType \| UseMouseEventExtractor`                        | page    | 鼠标位置基于页面、客户端、屏幕，或相对于前一位置                                |
+| target           | `MaybeRefOrGetter<Window \| EventTarget \| null \| undefined>`       | Window  | 在 `target` 元素上监听事件                                                     |
+| touch            | `boolean`                                                            | true    | 监听 `touchmove` 事件                                                          |
+| scroll           | `boolean`                                                            | true    | 在窗口上监听 `scroll` 事件，仅在类型为 `page` 时有效                           |
+| resetOnTouchEnds | `boolean`                                                            | false   | 当触发 `touchend` 事件时重置为初始值                                          |
+| initialValue     | `Position`                                                           | -       | 初始值                                                                         |
 
-## Returns
+## 返回值
 
-| Name       | Type                                   |
+| 名称       | 类型                                   |
 | ---------- | -------------------------------------- |
 | x          | `shallowRef`                           |
 | y          | `shallowRef`                           |
-| sourceType | `shallowRef&lt;UseMouseSourceType&gt;` |
+| sourceType | `shallowRef<UseMouseSourceType>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMouse/)
+[VueUse 文档](https://vueuse.org/core/useMouse/)

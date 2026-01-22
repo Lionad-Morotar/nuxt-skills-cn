@@ -1,11 +1,11 @@
 # whenever
 
-Shorthand for watching value to be truthy.
+用于监听值变为真值的简写形式。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**分类：** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { useAsyncState, whenever } from '@vueuse/core'
@@ -18,12 +18,12 @@ const { state, isReady } = useAsyncState(
 whenever(isReady, () => console.log(state))
 ```
 
-## Options
+## 选项
 
-| Option | Type      | Default | Description                                 |
-| ------ | --------- | ------- | ------------------------------------------- |
-| once   | `boolean` | false   | Only trigger once when the condition is met |
+| 选项 | 类型      | 默认值 | 描述                                   |
+| ---- | --------- | ------ | -------------------------------------- |
+| once | `boolean` | false  | 条件满足时仅触发一次                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/whenever/)
+[VueUse 文档](https://vueuse.org/core/whenever/)

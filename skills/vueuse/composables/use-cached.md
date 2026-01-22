@@ -1,11 +1,11 @@
 # useCached
 
-Cache a ref with a custom comparator.
+使用自定义比较器缓存 ref。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`  
+**类别：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useCached } from '@vueuse/core'
@@ -34,6 +34,6 @@ source.value = {
 console.log(cached.value) // { value: 43, extra: 1 }
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCached/)
+[VueUse 文档](https://vueuse.org/core/useCached/)

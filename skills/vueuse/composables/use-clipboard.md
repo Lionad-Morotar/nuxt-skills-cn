@@ -1,11 +1,11 @@
 # useClipboard
 
-Reactive Clipboard API. Provides the ability to respond to clipboard commands (cut, copy, and paste) as well as to asynchronously read from and write to the system clipboard. Access to the contents of the clipboard is gated behind the Permissions API. Without user permission, reading or altering the clipboard contents is not permitted.
+响应式剪贴板 API。提供对剪贴板命令（剪切、复制和粘贴）的响应能力，以及异步读取和写入系统剪贴板的功能。对剪贴板内容的访问受权限 API 限制。未经用户许可，不得读取或更改剪贴板内容。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -18,36 +18,36 @@ const { text, copy, copied, isSupported } = useClipboard({ source })
 <template>
   <div v-if="isSupported">
     <button @click="copy(source)">
-      <!-- by default, `copied` will be reset in 1.5s -->
+      <!-- 默认情况下，`copied` 将在 1.5 秒后重置 -->
       <span v-if="!copied">Copy</span>
       <span v-else>Copied!</span>
     </button>
-    <p>Current copied: <code>{{ text || 'none' }}</code></p>
+    <p>当前已复制：<code>{{ text || 'none' }}</code></p>
   </div>
   <p v-else>
-    Your browser does not support Clipboard API
+    您的浏览器不支持剪贴板 API
   </p>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type      | Default | Description                                                                 |
-| ------------ | --------- | ------- | --------------------------------------------------------------------------- |
-| read         | `boolean` | false   | Enabled reading for clipboard                                               |
-| source       | `Source`  | -       | Copy source                                                                 |
-| copiedDuring | `number`  | 1500    | Milliseconds to reset state of `copied` ref                                 |
-| legacy       | `boolean` | false   | Whether fallback to document.execCommand('copy') if clipboard is undefined. |
+| 选项         | 类型      | 默认值  | 描述                                                         |
+| ------------ | --------- | ------- | ------------------------------------------------------------ |
+| read         | `boolean` | false   | 启用剪贴板读取功能                                           |
+| source       | `Source`  | -       | 复制源                                                       |
+| copiedDuring | `number`  | 1500    | 重置 `copied` 引用状态的毫秒数                               |
+| legacy       | `boolean` | false   | 如果剪贴板未定义，是否回退到使用 document.execCommand('copy') |
 
-## Returns
+## 返回值
 
-| Name        | Type         |
+| 名称        | 类型         |
 | ----------- | ------------ |
 | isSupported | `computed`   |
 | text        | `shallowRef` |
 | copied      | `shallowRef` |
 | copy        | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useClipboard/)
+[VueUse 文档](https://vueuse.org/core/useClipboard/)

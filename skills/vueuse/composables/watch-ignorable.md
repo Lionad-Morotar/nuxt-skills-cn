@@ -1,11 +1,11 @@
 # watchIgnorable
 
-Ignorable watch
+可忽略的监听器
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包名:** `@vueuse/shared`  
+**分类:** 监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchIgnorable } from '@vueuse/core'
@@ -19,32 +19,32 @@ const { stop, ignoreUpdates } = watchIgnorable(
 )
 
 source.value = 'bar'
-await nextTick() // logs: Changed to bar!
+await nextTick() // 输出: Changed to bar!
 
 ignoreUpdates(() => {
   source.value = 'foobar'
 })
-await nextTick() // (nothing happened)
+await nextTick() // (无输出)
 
 source.value = 'hello'
-await nextTick() // logs: Changed to hello!
+await nextTick() // 输出: Changed to hello!
 
 ignoreUpdates(() => {
   source.value = 'ignored'
 })
 source.value = 'logged'
 
-await nextTick() // logs: Changed to logged!
+await nextTick() // 输出: Changed to logged!
 ```
 
-## Returns
+## 返回值
 
-| Name                   | Type  |
+| 名称                   | 类型  |
 | ---------------------- | ----- |
 | stop                   | `Ref` |
 | ignoreUpdates          | `Ref` |
 | ignorePrevAsyncUpdates | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchIgnorable/)
+[VueUse 文档](https://vueuse.org/core/watchIgnorable/)

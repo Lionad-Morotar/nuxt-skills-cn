@@ -1,5 +1,5 @@
-# Presence
+# 存在性
 
-Animation presence control
+动画存在性控制
 
-**Parts:** `Presence`
+**组件：** `Presence`

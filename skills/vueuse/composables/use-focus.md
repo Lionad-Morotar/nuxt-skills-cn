@@ -1,11 +1,11 @@
 # useFocus
 
-Reactive utility to track or set the focus state of a DOM element. State changes to reflect whether the target element is the focused element. Setting reactive value from the outside will trigger and events for and values respectively.
+用于跟踪或设置 DOM 元素焦点状态的响应式工具。状态变更用于反映目标元素是否为当前获得焦点的元素。从外部设置响应式值将分别触发 `focus` 和 `blur` 事件。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useFocus } from '@vueuse/core'
@@ -20,20 +20,20 @@ watch(focused, (focused) => {
 })
 ```
 
-## Options
+## 选项
 
-| Option        | Type      | Default | Description                                                      |
-| ------------- | --------- | ------- | ---------------------------------------------------------------- |
-| initialValue  | `boolean` | false   | Initial value. If set true, then focus will be set on the target |
-| focusVisible  | `boolean` | false   | Replicate the :focus-visible behavior of CSS                     |
-| preventScroll | `boolean` | false   | Prevent scrolling to the element when it is focused.             |
+| 选项           | 类型      | 默认值  | 描述                                                             |
+| -------------- | --------- | ------- | ---------------------------------------------------------------- |
+| initialValue   | `boolean` | false   | 初始值。若设为 true，则会在目标元素上设置焦点                   |
+| focusVisible   | `boolean` | false   | 复现 CSS 中的 `:focus-visible` 行为                             |
+| preventScroll  | `boolean` | false   | 当元素获得焦点时，防止页面滚动至该元素                          |
 
-## Returns
+## 返回值
 
-| Name    | Type       |
+| 名称    | 类型       |
 | ------- | ---------- |
 | focused | `computed` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useFocus/)
+[VueUse 文档](https://vueuse.org/core/useFocus/)

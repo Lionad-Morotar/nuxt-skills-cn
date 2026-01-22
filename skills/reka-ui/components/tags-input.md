@@ -1,14 +1,14 @@
-# Tags Input
+# 标签输入
 
-Multiple tag entry and management
+多标签输入与管理
 
-**Parts:** `TagsInputRoot`, `TagsInputInput`, `TagsInputItem`, `TagsInputItemText`, `TagsInputItemDelete`, `TagsInputClear`
+**组件：** `TagsInputRoot`、`TagsInputInput`、`TagsInputItem`、`TagsInputItemText`、`TagsInputItemDelete`、`TagsInputClear`
 
 ## TagsInputRoot
 
-### Props
+### 属性
 
-| Prop           | Type                                        | Default            |
+| 属性           | 类型                                        | 默认值             |
 | -------------- | ------------------------------------------- | ------------------ |
 | `addOnBlur`    | `boolean`                                   | -                  |
 | `addOnPaste`   | `boolean`                                   | -                  |
@@ -28,24 +28,24 @@ Multiple tag entry and management
 | `name`         | `string`                                    | -                  |
 | `required`     | `boolean`                                   | -                  |
 
-### Emits
+### 事件
 
-| Event               | Payload                             |
-| ------------------- | ----------------------------------- |
-| `invalid`           | `[payload: AcceptableInputValue]`   |
+| 事件                | 参数                              |
+| ------------------- | --------------------------------- |
+| `invalid`           | `[payload: AcceptableInputValue]` |
 | `update:modelValue` | `[payload: AcceptableInputValue[]]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                            |
+| 插槽         | 类型                            |
 | ------------ | ------------------------------- |
 | `modelValue` | `string \| Record<string, any>` |
 
 ## TagsInputInput
 
-### Props
+### 属性
 
-| Prop          | Type                 | Default   |
+| 属性          | 类型                 | 默认值    |
 | ------------- | -------------------- | --------- |
 | `as`          | `AsTag \| Component` | `"input"` |
 | `asChild`     | `boolean`            | -         |
@@ -55,9 +55,9 @@ Multiple tag entry and management
 
 ## TagsInputItem
 
-### Props
+### 属性
 
-| Prop       | Type                            | Default |
+| 属性       | 类型                            | 默认值  |
 | ---------- | ------------------------------- | ------- |
 | `as`       | `AsTag \| Component`            | `"div"` |
 | `asChild`  | `boolean`                       | -       |
@@ -66,27 +66,27 @@ Multiple tag entry and management
 
 ## TagsInputItemText
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## TagsInputItemDelete
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## TagsInputClear
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |

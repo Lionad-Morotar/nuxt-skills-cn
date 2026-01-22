@@ -1,28 +1,28 @@
-# Vue Components
+# Vue 组件
 
-Patterns for Vue 3 components using Composition API with `<script setup>`.
+使用 Composition API 和 `<script setup>` 的 Vue 3 组件模式。
 
-## Quick Reference
+## 快速参考
 
-| Pattern               | Syntax                                                          |
+| 模式                  | 语法                                                            |
 | --------------------- | --------------------------------------------------------------- |
-| Props (destructured)  | `const { name = 'default' } = defineProps<{ name?: string }>()` |
-| Props (template-only) | `defineProps<{ name: string }>()`                               |
+| Props（解构）         | `const { name = 'default' } = defineProps<{ name?: string }>()` |
+| Props（仅模板）       | `defineProps<{ name: string }>()`                               |
 | Emits                 | `const emit = defineEmits<{ click: [id: number] }>()`           |
-| Two-way binding       | `const model = defineModel<string>()`                           |
-| Slots shorthand       | `<template #header>` not `<template v-slot:header>`             |
+| 双向绑定              | `const model = defineModel<string>()`                           |
+| Slots 简写            | `<template #header>` 而非 `<template v-slot:header>`             |
 
-## Naming
+## 命名
 
-**Files:** PascalCase (`UserProfile.vue`) OR kebab-case (`user-profile.vue`) - be consistent
+**文件命名：** PascalCase（`UserProfile.vue`）或 kebab-case（`user-profile.vue`）——保持一致
 
-**Component names in code:** Always PascalCase
+**代码中的组件名称：** 始终使用 PascalCase
 
-**Composition:** General → Specific: `SearchButtonClear.vue` not `ClearSearchButton.vue`
+**组合方式：** 通用 → 具体：`SearchButtonClear.vue` 而非 `ClearSearchButton.vue`
 
 ## Props
 
-**Destructure with defaults (Vue 3.5+)** when used in script or need defaults:
+**在脚本中使用或需要默认值时，使用带默认值的解构（Vue 3.5+）：**
 
 ```ts
 const { count = 0, message = 'Hello' } = defineProps<{
@@ -31,71 +31,71 @@ const { count = 0, message = 'Hello' } = defineProps<{
   required: boolean
 }>()
 
-// Use directly - maintains reactivity
+// 直接使用 —— 维持响应性
 console.log(count + 1)
 
-// ⚠️ When passing to watchers/functions, wrap in getter:
-watch(() => count, (newVal) => { ... }) // ✅ Correct
-watch(count, (newVal) => { ... })        // ❌ Won't work
+// ⚠️ 传递给监听器/函数时，需包裹在 getter 中：
+watch(() => count, (newVal) => { ... }) // ✅ 正确
+watch(count, (newVal) => { ... })        // ❌ 不生效
 ```
 
-**Non-destructured** only if props ONLY used in template:
+**若 Props 仅用于模板，则不进行解构：**
 
 ```ts
 defineProps<{ count: number }>()
-// Template: {{ count }}
+// 模板中使用：{{ count }}
 ```
 
-**Same-name shorthand (Vue 3.4+):** `:count` instead of `:count="count"`
+**同名简写（Vue 3.4+）：** 使用 `:count` 而非 `:count="count"`
 
 ```vue
 <MyComponent :count :user :items />
-<!-- Same as: :count="count" :user="user" :items="items" -->
+<!-- 等同于：:count="count" :user="user" :items="items" -->
 ```
 
-[Reactive destructuring docs](https://vuejs.org/guide/components/props#reactive-props-destructure)
+[响应式解构文档](https://vuejs.org/guide/components/props#reactive-props-destructure)
 
 ## Emits
 
-Type-safe event definitions:
+类型安全的事件定义：
 
 ```ts
 const emit = defineEmits<{
-  update: [id: number, value: string] // multiple args
-  close: [] // no args
+  update: [id: number, value: string] // 多参数
+  close: [] // 无参数
 }>()
 
-// Usage
+// 使用方式
 emit('update', 123, 'new value')
 emit('close')
 ```
 
-**Template syntax:** kebab-case (`@update-item`) vs camelCase in script (`updateItem`)
+**模板语法：** kebab-case（`@update-item`）与脚本中 camelCase（`updateItem`）一致
 
 ## Slots
 
-**Always use shorthand:** `<template #header>` not `<template v-slot:header>`
+**始终使用简写：** `<template #header>` 而非 `<template v-slot:header>`
 
-**Always explicit `<template>` tags** for all slots
+**所有 slot 始终使用显式的 `<template>` 标签**
 
 ```vue
 <template>
   <Card>
     <template #header>
-      <h2>Title</h2>
+      <h2>标题</h2>
     </template>
     <template #default>
-      Content
+      内容
     </template>
   </Card>
 </template>
 ```
 
-## defineModel() - Two-Way Binding
+## defineModel() - 双向绑定
 
-Replaces manual `modelValue` prop + `update:modelValue` emit.
+替代手动设置 `modelValue` prop 和 `update:modelValue` emit。
 
-### Basic
+### 基本用法
 
 ```vue
 <script setup lang="ts">
@@ -107,7 +107,7 @@ const title = defineModel<string>()
 </template>
 ```
 
-### With Options
+### 带选项
 
 ```vue
 <script setup lang="ts">
@@ -125,11 +125,11 @@ const [title, modifiers] = defineModel<string>({
 </script>
 ```
 
-**⚠️ Warning:** When using `default` without parent providing a value, parent and child can de-sync (parent `undefined`, child has default). Always provide matching defaults in parent or make prop required.
+**⚠️ 注意：** 使用 `default` 但父组件未提供值时，父组件和子组件可能不同步（父组件为 `undefined`，子组件使用默认值）。请在父组件提供匹配的默认值或设为必需属性。
 
-### Multiple Models
+### 多个模型
 
-Default assumes `modelValue` prop. For multiple bindings, use explicit names:
+默认假定 `modelValue` prop。多个绑定时，请使用显式名称：
 
 ```vue
 <script setup lang="ts">
@@ -137,15 +137,15 @@ const firstName = defineModel<string>('firstName')
 const age = defineModel<number>('age')
 </script>
 
-<!-- Usage -->
+<!-- 使用方式 -->
 <UserForm v-model:first-name="user.firstName" v-model:age="user.age" />
 ```
 
-[v-model modifiers docs](https://vuejs.org/guide/components/v-model#handling-v-model-modifiers)
+[v-model 修饰符文档](https://vuejs.org/guide/components/v-model#handling-v-model-modifiers)
 
-## Reusable Templates
+## 可复用模板
 
-For typed, scoped template snippets within a component:
+为组件内的类型化、作用域模板片段创建可复用模板：
 
 ```vue
 <script setup lang="ts">
@@ -166,14 +166,14 @@ const [DefineItem, UseItem] = createReusableTemplate<{
     </div>
   </DefineItem>
 
-  <!-- Reuse multiple times -->
+  <!-- 多次复用 -->
   <UseItem v-for="item in items" :key="item.id" :item :icon="getIcon(item)" />
 </template>
 ```
 
-## Template Refs (Vue 3.5+)
+## 模板引用（Vue 3.5+）
 
-Use `useTemplateRef()` for type-safe template references with IDE support:
+使用 `useTemplateRef()` 获取类型安全的模板引用，支持 IDE 提示：
 
 ```vue
 <script setup lang="ts">
@@ -191,22 +191,22 @@ onMounted(() => {
 </template>
 ```
 
-**Benefits over `ref()`:**
+**相比 `ref()` 的优势：**
 
-- Type-safe with generics
-- Better IDE autocomplete and refactoring
-- Explicit ref name as string literal
+- 类型安全，支持泛型
+- 更好的 IDE 自动补全与重构支持
+- 显式引用名称作为字符串字面量
 
-**Dynamic refs:**
+**动态引用：**
 
 ```vue
 <script setup lang="ts">
 const items = ref(['a', 'b', 'c'])
 const itemRefs = useTemplateRef<HTMLElement>('item')
 
-// Access refs after mount
+// 挂载后访问引用
 onMounted(() => {
-  console.log(itemRefs.value) // Array of elements
+  console.log(itemRefs.value) // 元素数组
 })
 </script>
 
@@ -217,16 +217,16 @@ onMounted(() => {
 </template>
 ```
 
-## SSR Hydration (Vue 3.5+)
+## SSR 水合（Vue 3.5+）
 
-**Suppress hydration mismatches** for values that differ between server/client:
+**忽略水合不匹配：** 对于服务端与客户端之间不同的值：
 
 ```vue
 <template>
-  <!-- Client-side only values -->
+  <!-- 仅客户端显示的值 -->
   <span data-allow-mismatch>{{ new Date().toLocaleString() }}</span>
 
-  <!-- Specific mismatch types -->
+  <!-- 明确的不匹配类型 -->
   <span data-allow-mismatch="text">{{ timestamp }}</span>
   <span data-allow-mismatch="children">
     <ClientOnly>...</ClientOnly>
@@ -237,57 +237,57 @@ onMounted(() => {
 </template>
 ```
 
-**Generate SSR-stable IDs:**
+**生成 SSR 稳定的 ID：**
 
 ```vue
 <script setup lang="ts">
 import { useId } from 'vue'
 
-const id = useId() // Stable across server/client renders
+const id = useId() // 在服务端和客户端保持一致
 </script>
 
 <template>
-  <label :for="id">Name</label>
+  <label :for="id">名称</label>
   <input :id="id">
 </template>
 ```
 
-## Deferred Teleport (Vue 3.5+)
+## 延迟传送（Vue 3.5+）
 
-Teleport to elements rendered later in the same cycle:
+将内容传送到当前循环中稍后渲染的元素：
 
 ```vue
 <template>
-  <!-- This renders first -->
+  <!-- 先渲染 -->
   <Teleport defer to="#late-div">
-    <span>Deferred content</span>
+    <span>延迟内容</span>
   </Teleport>
 
-  <!-- This renders after, but Teleport waits -->
+  <!-- 后渲染，但 Teleport 等待 -->
   <div id="late-div"></div>
 </template>
 ```
 
-Without `defer`, teleport to `#late-div` would fail since it doesn't exist yet.
+不使用 `defer` 时，若 `#late-div` 尚未存在，则传送会失败。
 
-## Common Mistakes
+## 常见错误
 
-**Using `const props =` with destructured values:**
+**使用 `const props =` 进行解构：**
 
 ```ts
-// ❌ Wrong
+// ❌ 错误
 const props = defineProps<{ count: number }>()
-const { count } = props // Loses reactivity
+const { count } = props // 失去响应性
 ```
 
-**Forgetting TypeScript types:**
+**忘记 TypeScript 类型定义：**
 
 ```ts
-// ❌ Wrong
+// ❌ 错误
 const emit = defineEmits(['update'])
 
-// ✅ Correct
+// ✅ 正确
 const emit = defineEmits<{ update: [id: number] }>()
 ```
 
-**Components >300 lines:** Split into smaller components or extract logic to composables
+**组件超过 300 行：** 应拆分为更小的组件或提取逻辑到组合式函数中

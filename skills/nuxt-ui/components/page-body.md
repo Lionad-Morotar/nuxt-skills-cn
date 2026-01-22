@@ -1,11 +1,11 @@
-# PageBody
+# 页面主体
 
-The main content of your page.
+页面的主要内容。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageBody
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

@@ -1,43 +1,42 @@
 # useIDBKeyval
 
-Wrapper for .
+`.`
+**包：** `@vueuse/integrations`  
+**分类：** '@Integrations'
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
-
-## Usage
+## 用法
 
 ```ts
 import { useIDBKeyval } from '@vueuse/integrations/useIDBKeyval'
 
-// bind object
+// 绑定对象
 const { data: storedObject, isFinished } = useIDBKeyval('my-idb-keyval-store', { hello: 'hi', greeting: 'Hello' })
 
-// update object
+// 更新对象
 storedObject.value.hello = 'hola'
 
-// bind boolean
-const flag = useIDBKeyval('my-flag', true) // returns Ref<boolean>
+// 绑定布尔值
+const flag = useIDBKeyval('my-flag', true) // 返回 Ref<boolean>
 
-// bind number
-const count = useIDBKeyval('my-count', 0) // returns Ref<number>
+// 绑定数字
+const count = useIDBKeyval('my-count', 0) // 返回 Ref<number>
 
-// awaiting IDB transaction
+// 等待 IDB 事务完成
 await count.set(10)
-console.log('IDB transaction finished!')
+console.log('IDB 事务已完成!')
 
-// delete data from idb storage
+// 从 IDB 存储中删除数据
 storedObject.value = null
 ```
 
-## Returns
+## 返回值
 
-| Name       | Type         |
+| 名称       | 类型         |
 | ---------- | ------------ |
 | set        | `Ref`        |
 | isFinished | `shallowRef` |
 | data       | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useIDBKeyval/)
+[VueUse 文档](https://vueuse.org/core/useIDBKeyval/)

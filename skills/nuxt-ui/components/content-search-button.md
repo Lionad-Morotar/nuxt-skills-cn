@@ -1,16 +1,16 @@
 # ContentSearchButton
 
-A pre-styled Button to open the ContentSearch modal.
+一个预设样式的按钮，用于打开 ContentSearch 模态框。
 
-## Key Props
+## 主要属性
 
-- `collapsed`: to show the button's label and [kbds](#kbds).
-- `kbds`: to display keyboard keys in the button.
+- `collapsed`：显示按钮标签和 [kbds](#kbds)。
+- `kbds`：在按钮中显示键盘按键。
 
-## Usage
+## 用法
 
 ```vue
 <UContentSearchButton
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

@@ -1,9 +1,9 @@
 # useVirtualList
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包:** `@vueuse/core`  
+**分类:** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { useVirtualList } from '@vueuse/core'
@@ -11,29 +11,29 @@ import { useVirtualList } from '@vueuse/core'
 const { list, containerProps, wrapperProps } = useVirtualList(
   Array.from(Array.from({ length: 99999 }).keys()),
   {
-    // Keep `itemHeight` in sync with the item's row.
+    // 保持 `itemHeight` 与项的行高同步。
     itemHeight: 22,
   },
 )
 ```
 
-## Options
+## 选项
 
-| Option   | Type     | Default | Description                                     |
-| -------- | -------- | ------- | ----------------------------------------------- |
-| overscan | `number` | 5       | the extra buffer items outside of the view area |
+| 选项     | 类型     | 默认值  | 描述                                       |
+| -------- | -------- | ------- | ------------------------------------------ |
+| overscan | `number` | 5       | 视图区域外额外缓冲的项数                   |
 
-## Returns
+## 返回值
 
-| Name           | Type                                    |
+| 名称           | 类型                                    |
 | -------------- | --------------------------------------- |
 | calculateRange | `createCalculateRange`                  |
 | scrollTo       | `createScrollTo`                        |
 | containerStyle | `Ref`                                   |
 | wrapperProps   | `computed`                              |
 | currentList    | `Ref`                                   |
-| containerRef   | `shallowRef&lt;HTMLElement \| null&gt;` |
+| containerRef   | `shallowRef<HTMLElement \| null>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useVirtualList/)
+[VueUse 文档](https://vueuse.org/core/useVirtualList/)

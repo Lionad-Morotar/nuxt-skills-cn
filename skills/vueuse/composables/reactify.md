@@ -1,22 +1,22 @@
 # reactify
 
-Converts plain functions into reactive functions. The converted function accepts refs as its arguments and returns a ComputedRef, with proper typing.
+将普通函数转换为响应式函数。转换后的函数接受 refs 作为参数并返回一个 ComputedRef，具备正确的类型标注。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包名：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { reactify } from '@vueuse/core'
 import { shallowRef } from 'vue'
 
-// a plain function
+// 一个普通函数
 function add(a: number, b: number): number {
   return a + b
 }
 
-// now it accept refs and returns a computed ref
+// 现在它接受 refs 并返回一个计算型 ref
 // (a: number | Ref<number>, b: number | Ref<number>) => ComputedRef<number>
 const reactiveAdd = reactify(add)
 
@@ -31,12 +31,12 @@ a.value = 5
 console.log(sum.value) // 7
 ```
 
-## Options
+## 选项
 
-| Option         | Type | Default | Description                                    |
-| -------------- | ---- | ------- | ---------------------------------------------- |
-| computedGetter | `T`  | true    | Accept passing a function as a reactive getter |
+| 选项           | 类型 | 默认值  | 描述                                       |
+| -------------- | ---- | ------- | ------------------------------------------ |
+| computedGetter | `T`  | true    | 支持传递一个函数作为响应式 getter         |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/reactify/)
+[VueUse 文档](https://vueuse.org/core/reactify/)

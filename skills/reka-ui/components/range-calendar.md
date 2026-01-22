@@ -1,14 +1,14 @@
-# Range Calendar
+# 范围日历
 
-Calendar for date ranges (alpha)
+用于日期范围的日历（alpha）
 
-**Parts:** `RangeCalendarRoot`, `RangeCalendarHeader`, `RangeCalendarHeading`, `RangeCalendarGrid`, `RangeCalendarCell`, `RangeCalendarCellTrigger`, `RangeCalendarNext`, `RangeCalendarPrev`
+**组件：** `RangeCalendarRoot`、`RangeCalendarHeader`、`RangeCalendarHeading`、`RangeCalendarGrid`、`RangeCalendarCell`、`RangeCalendarCellTrigger`、`RangeCalendarNext`、`RangeCalendarPrev`
 
 ## RangeCalendarRoot
 
-### Props
+### 属性
 
-| Prop                 | Type                                      | Default                                |
+| 属性                 | 类型                                      | 默认值                                 |
 | -------------------- | ----------------------------------------- | -------------------------------------- |
 | `as`                 | `AsTag \| Component`                      | `"div"`                                |
 | `asChild`            | `boolean`                                 | -                                      |
@@ -35,17 +35,17 @@ Calendar for date ranges (alpha)
 | `weekdayFormat`      | `"narrow" \| "short" \| "long"`           | `"narrow"`                             |
 | `weekStartsOn`       | `0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`         | `0`                                    |
 
-### Emits
+### 事件
 
-| Event                | Payload             |
+| 事件                 | 参数                |
 | -------------------- | ------------------- |
 | `update:modelValue`  | `[date: DateRange]` |
 | `update:placeholder` | `[date: DateValue]` |
 | `update:startValue`  | `[date: DateValue]` |
 
-### Slots
+### 插槽
 
-| Slot           | Type                              |
+| 插槽           | 类型                              |
 | -------------- | --------------------------------- |
 | `date`         | `DateValue`                       |
 | `grid`         | `Grid<DateValue>[]`               |
@@ -56,69 +56,69 @@ Calendar for date ranges (alpha)
 
 ## RangeCalendarHeader
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## RangeCalendarHeading
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
-### Slots
+### 插槽
 
-| Slot           | Type     |
+| 插槽           | 类型     |
 | -------------- | -------- |
 | `headingValue` | `string` |
 
 ## RangeCalendarGrid
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"table"` |
 | `asChild` | `boolean`            | -         |
 
 ## RangeCalendarCell
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"td"`  |
-| `asChild` | `boolean`            | -       |
-| `date`\*  | `DateValue`          | -       |
+| `asChild` | `boolean`            | -      |
+| `date`\*  | `DateValue`          | -      |
 
 ## RangeCalendarCellTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `day`\*   | `DateValue`          | -       |
-| `month`\* | `DateValue`          | -       |
+| `asChild` | `boolean`            | -      |
+| `day`\*   | `DateValue`          | -      |
+| `month`\* | `DateValue`          | -      |
 
-### Slots
+### 插槽
 
-| Slot       | Type     |
+| 插槽       | 类型     |
 | ---------- | -------- |
 | `dayValue` | `string` |
 
 ## RangeCalendarNext
 
-### Props
+### 属性
 
-| Prop       | Type                                      | Default    |
+| 属性       | 类型                                      | 默认值     |
 | ---------- | ----------------------------------------- | ---------- |
 | `as`       | `AsTag \| Component`                      | `"button"` |
 | `asChild`  | `boolean`                                 | -          |
@@ -127,9 +127,9 @@ Calendar for date ranges (alpha)
 
 ## RangeCalendarPrev
 
-### Props
+### 属性
 
-| Prop       | Type                                      | Default    |
+| 属性       | 类型                                      | 默认值     |
 | ---------- | ----------------------------------------- | ---------- |
 | `as`       | `AsTag \| Component`                      | `"button"` |
 | `asChild`  | `boolean`                                 | -          |

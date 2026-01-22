@@ -1,21 +1,21 @@
 # useChangeCase
 
-Reactive wrapper for .
+. 的响应式封装。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包：** `@vueuse/integrations`
+**类别：** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 import { useChangeCase } from '@vueuse/integrations/useChangeCase'
 
-// `changeCase` will be a computed
+// `changeCase` 将是一个计算属性
 const changeCase = useChangeCase('hello world', 'camelCase')
 changeCase.value // helloWorld
 changeCase.value = 'vue use'
 changeCase.value // vueUse
-// Supported methods
+// 支持的方法
 // export {
 //   camelCase,
 //   capitalCase,
@@ -31,6 +31,6 @@ changeCase.value // vueUse
 // } from 'change-case'
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useChangeCase/)
+[VueUse 文档](https://vueuse.org/core/useChangeCase/)

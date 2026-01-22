@@ -1,30 +1,30 @@
-# PageSection
+# 页面板块
 
-A responsive section for your pages.
+用于页面的响应式板块。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the section.
-- `description`: to set the description of the section.
-- `headline`: to set the headline of the section.
-- `icon`: to set the icon of the section.
-- `features`: to display a list of [PageFeature](/docs/components/page-feature) under the description as an array of objects with the following properties:
+- `title`：用于设置板块的标题。
+- `description`：用于设置板块的描述。
+- `headline`：用于设置板块的标题语。
+- `icon`：用于设置板块的图标。
+- `features`：在描述下方显示 [PageFeature](/docs/components/page-feature) 列表，格式为对象数组，包含以下属性：
 
-- `title?: string`{lang="ts-type"}
-- `description?: string`{lang="ts-type"}
-- `icon?: string`{lang="ts-type"}
-- `orientation?: 'horizontal' | 'vertical'`{lang="ts-type"}
+  - `title?: string`{lang="ts-type"}
+  - `description?: string`{lang="ts-type"}
+  - `icon?: string`{lang="ts-type"}
+  - `orientation?: 'horizontal' | 'vertical'`{lang="ts-type"}
 
-You can pass any property from the [Link](/docs/components/link#props) component such as `to`, `target`, etc.
+你可以传递 [Link](/docs/components/link#props) 组件的任意属性，例如 `to`、`target` 等。
 
-- `links`: to display a list of [Button](/docs/components/button) under the description.
-- `orientation`: to change the orientation with the default slot.
-- `reverse`: to reverse the orientation of the default slot.
+- `links`：在描述下方显示 [Button](/docs/components/button) 列表。
+- `orientation`：用于更改默认插槽的方向。
+- `reverse`：用于反转默认插槽的方向。
 
-## Usage
+## 用法
 
 ```vue
 <UPageSection
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

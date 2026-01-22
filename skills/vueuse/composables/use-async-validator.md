@@ -1,24 +1,24 @@
 # useAsyncValidator
 
-Wrapper for .
+用于异步验证的封装函数。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包名：** `@vueuse/integrations`
+**分类：** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 import { useAsyncValidator } from '@vueuse/integrations/useAsyncValidator'
 ```
 
-## Options
+## 配置项
 
-| Option         | Type             | Default | Description                                                         |
+| 配置项         | 类型             | 默认值  | 描述                                                                |
 | -------------- | ---------------- | ------- | ------------------------------------------------------------------- |
 | validateOption | `ValidateOption` | -       | @see https://github.com/yiminghe/async-validator#options            |
-| immediate      | `boolean`        | true    | The validation will be triggered right away for the first time.     |
-| manual         | `boolean`        | -       | If set to true, the validation will not be triggered automatically. |
+| immediate      | `boolean`        | true    | 首次调用时将立即触发验证。                                          |
+| manual         | `boolean`        | -       | 若设为 true，则不会自动触发验证。                                   |
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/useAsyncValidator/)
+[VueUse 文档](https://vueuse.org/core/useAsyncValidator/)

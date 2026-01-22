@@ -1,11 +1,11 @@
 # ColorModeSwitch
 
-A switch to toggle between light and dark mode.
+用于在浅色模式与深色模式之间切换的组件。
 
-## Usage
+## 用法
 
 ```vue
 <UColorModeSwitch
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

@@ -1,11 +1,11 @@
 # useColorMode
 
-Reactive color mode (dark / light / customs) with auto data persistence.
+响应式颜色模式（深色/浅色/自定义），支持自动数据持久化。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useColorMode } from '@vueuse/core'
@@ -13,21 +13,21 @@ import { useColorMode } from '@vueuse/core'
 const mode = useColorMode() // Ref<'dark' | 'light'>
 ```
 
-## Options
+## 选项
 
-| Option            | Type                                                                                               | Default             | Description                                               |
+| 选项              | 类型                                                                                               | 默认值              | 描述                                                      |
 | ----------------- | -------------------------------------------------------------------------------------------------- | ------------------- | --------------------------------------------------------- |
-| selector          | `string \| MaybeElementRef`                                                                        | html                | CSS Selector for the target element applying to           |
-| attribute         | `string`                                                                                           | class               | HTML attribute applying the target element                |
-| initialValue      | `MaybeRefOrGetter&lt;T \| BasicColorSchema&gt;`                                                    | auto                | The initial color mode                                    |
-| modes             | `Partial&lt;Record&lt;T \| BasicColorSchema, string&gt;&gt;`                                       | -                   | Prefix when adding value to the attribute                 |
-| onChanged         | `(mode: T \| BasicColorMode, defaultHandler: ((mode: T \| BasicColorMode) =&gt; void)) =&gt; void` | undefined           | A custom handler for handle the updates.                  |
-| storageRef        | `Ref&lt;T \| BasicColorSchema&gt;`                                                                 | -                   | Custom storage ref                                        |
-| storageKey        | `string \| null`                                                                                   | vueuse-color-scheme | Key to persist the data into localStorage/sessionStorage. |
-| storage           | `StorageLike`                                                                                      | localStorage        | Storage object, can be localStorage or sessionStorage     |
-| emitAuto          | `boolean`                                                                                          | undefined           | Emit `auto` mode from state                               |
-| disableTransition | `boolean`                                                                                          | true                | Disable transition on switch                              |
+| selector          | `string \| MaybeElementRef`                                                                        | html                | 应用于目标元素的 CSS 选择器                               |
+| attribute         | `string`                                                                                           | class               | 目标元素应用的 HTML 属性                                  |
+| initialValue      | `MaybeRefOrGetter<T \| BasicColorSchema>`                                                          | auto                | 初始颜色模式                                              |
+| modes             | `Partial<Record<T \| BasicColorSchema, string>>`                                                   | -                   | 向属性添加值时使用的前缀                                  |
+| onChanged         | `(mode: T \| BasicColorMode, defaultHandler: ((mode: T \| BasicColorMode) => void)) => void`       | undefined           | 自定义处理程序，用于处理更新                              |
+| storageRef        | `Ref<T \| BasicColorSchema>`                                                                       | -                   | 自定义存储引用                                            |
+| storageKey        | `string \| null`                                                                                   | vueuse-color-scheme | 持久化数据到 localStorage/sessionStorage 的键             |
+| storage           | `StorageLike`                                                                                      | localStorage        | 存储对象，可以是 localStorage 或 sessionStorage           |
+| emitAuto          | `boolean`                                                                                          | undefined           | 从状态中发出 `auto` 模式                                  |
+| disableTransition | `boolean`                                                                                          | true                | 切换时禁用过渡效果                                        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useColorMode/)
+[VueUse 文档](https://vueuse.org/core/useColorMode/)

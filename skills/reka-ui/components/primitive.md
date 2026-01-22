@@ -1,5 +1,5 @@
-# Primitive
+# 原语
 
-Base element wrapper
+基础元素包装器
 
-**Parts:** `Primitive`, `Slot`
+**组件：** `Primitive`、`Slot`

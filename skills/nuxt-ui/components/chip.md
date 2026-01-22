@@ -1,20 +1,20 @@
-# Chip
+# 芯片
 
-An indicator of a numeric value or a state.
+表示数值或状态的指示器。
 
-## Key Props
+## 主要属性
 
-- `color`: to change the color of the Chip.
-- `size`: to change the size of the Chip.
-- `text`: to set the text of the Chip.
-- `position`: to change the position of the Chip.
-- `inset`: to display the Chip inside the component.
-- `standalone`: alongside the `inset` prop to display the Chip inline.
+- `color`：用于更改芯片的颜色。
+- `size`：用于更改芯片的尺寸。
+- `text`：用于设置芯片的文本。
+- `position`：用于更改芯片的位置。
+- `inset`：用于在组件内部显示芯片。
+- `standalone`：与 `inset` 属性配合使用，以内联方式显示芯片。
 
-## Usage
+## 用法
 
 ```vue
 <UChip
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

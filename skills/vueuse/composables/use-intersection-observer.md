@@ -1,11 +1,11 @@
 # useIntersectionObserver
 
-Detects that a target element's visibility.
+检测目标元素的可见性。
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -30,22 +30,22 @@ const { stop } = useIntersectionObserver(
 </template>
 ```
 
-## Options
+## 选项
 
-| Option     | Type                                  | Default | Description                                                                                                 |
-| ---------- | ------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------- |
-| immediate  | `boolean`                             | true    | Start the IntersectionObserver immediately on creation                                                      |
-| root       | `MaybeComputedElementRef \| Document` | -       | The Element or Document whose bounds are used as the bounding box when testing for intersection.            |
-| rootMargin | `MaybeRefOrGetter&lt;string&gt;`      | -       | A string which specifies a set of offsets to add to the root's bounding_box when calculating intersections. |
-| threshold  | `number \| number[]`                  | 0       | Either a single number or an array of numbers between 0.0 and 1.                                            |
+| 选项       | 类型                                  | 默认值  | 描述                                                                                                         |
+| ---------- | ------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------ |
+| immediate  | `boolean`                             | true    | 创建时立即启动 IntersectionObserver                                                                          |
+| root       | `MaybeComputedElementRef \| Document` | -       | 测试相交时用作边界框的元素或文档。                                                                           |
+| rootMargin | `MaybeRefOrGetter<string>`            | -       | 用于在计算相交时添加到根元素边界框的一组偏移量字符串。                                                       |
+| threshold  | `number \| number[]`                  | 0       | 一个介于 0.0 和 1.0 之间的数字，或该范围内的数字数组。                                                       |
 
-## Returns
+## 返回值
 
-| Name        | Type           |
+| 名称        | 类型           |
 | ----------- | -------------- |
 | isSupported | `useSupported` |
 | isActive    | `shallowRef`   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useIntersectionObserver/)
+[VueUse 文档](https://vueuse.org/core/useIntersectionObserver/)

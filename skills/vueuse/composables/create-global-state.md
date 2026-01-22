@@ -1,11 +1,11 @@
 # createGlobalState
 
-Keep states in the global scope to be reusable across Vue instances.
+将状态保留在全局作用域中，以便在多个 Vue 实例间复用。
 
-**Package:** `@vueuse/shared`
-**Category:** State
+**包:** `@vueuse/shared`  
+**类别:** 状态
 
-## Usage
+## 用法
 
 ```ts
 // store.ts
@@ -20,6 +20,6 @@ export const useGlobalState = createGlobalState(
 )
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createGlobalState/)
+[VueUse 文档](https://vueuse.org/core/createGlobalState/)

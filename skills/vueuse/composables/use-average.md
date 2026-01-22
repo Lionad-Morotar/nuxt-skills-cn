@@ -1,11 +1,11 @@
 # useAverage
 
-Get the average of an array reactively.
+以响应方式获取数组的平均值。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**类别：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useAverage } from '@vueuse/math'
@@ -14,6 +14,6 @@ const list = ref([1, 2, 3])
 const averageValue = useAverage(list) // Ref<2>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAverage/)
+[VueUse 文档](https://vueuse.org/core/useAverage/)

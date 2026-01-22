@@ -1,11 +1,11 @@
 # usePointerSwipe
 
-Reactive swipe detection based on PointerEvents.
+基于 PointerEvents 的响应式滑动手势检测。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -18,34 +18,34 @@ const { isSwiping, direction } = usePointerSwipe(el)
 
 <template>
   <div ref="el">
-    Swipe here
+    在此处滑动
   </div>
 </template>
 ```
 
-## Options
+## 配置项
 
-| Option            | Type                                                         | Default | Description                      |
-| ----------------- | ------------------------------------------------------------ | ------- | -------------------------------- |
-| threshold         | `number`                                                     | 50      | @default 50                      |
-| onSwipeStart      | `(e: PointerEvent) =&gt; void`                               | -       | Callback on swipe start.         |
-| onSwipe           | `(e: PointerEvent) =&gt; void`                               | -       | Callback on swipe move.          |
-| onSwipeEnd        | `(e: PointerEvent, direction: UseSwipeDirection) =&gt; void` | -       | Callback on swipe end.           |
-| pointerTypes      | `PointerType[]`                                              | [       | Pointer types to listen to.      |
-| disableTextSelect | `boolean`                                                    | false   | Disable text selection on swipe. |
+| 配置项            | 类型                                                         | 默认值  | 描述                         |
+| ----------------- | ------------------------------------------------------------ | ------- | ---------------------------- |
+| threshold         | `number`                                                     | 50      | @default 50                  |
+| onSwipeStart      | `(e: PointerEvent) =&gt; void`                               | -       | 滑动手势开始时的回调函数。   |
+| onSwipe           | `(e: PointerEvent) =&gt; void`                               | -       | 滑动手势移动时的回调函数。   |
+| onSwipeEnd        | `(e: PointerEvent, direction: UseSwipeDirection) =&gt; void` | -       | 滑动手势结束时的回调函数。   |
+| pointerTypes      | `PointerType[]`                                              | [       | 监听的指针类型。             |
+| disableTextSelect | `boolean`                                                    | false   | 滑动时禁用文本选择。         |
 
-## Returns
+## 返回值
 
-| Name      | Type                       |
-| --------- | -------------------------- |
-| isSwiping | `shallowRef`               |
-| direction | `computed`                 |
-| posStart  | `reactive&lt;Position&gt;` |
-| posEnd    | `reactive&lt;Position&gt;` |
-| distanceX | `computed`                 |
-| distanceY | `computed`                 |
-| stop      | `Ref`                      |
+| 名称        | 类型                       |
+| ----------- | -------------------------- |
+| isSwiping   | `shallowRef`               |
+| direction   | `computed`                 |
+| posStart    | `reactive&lt;Position&gt;` |
+| posEnd      | `reactive&lt;Position&gt;` |
+| distanceX   | `computed`                 |
+| distanceY   | `computed`                 |
+| stop        | `Ref`                      |
 
-## Reference
+## 参考资料
 
-[VueUse Docs](https://vueuse.org/core/usePointerSwipe/)
+[VueUse 文档](https://vueuse.org/core/usePointerSwipe/)

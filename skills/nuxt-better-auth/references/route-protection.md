@@ -1,10 +1,10 @@
-# Route Protection
+# 路由保护
 
-Three layers of protection: route rules, page meta, and server middleware.
+三层保护机制：路由规则、页面元数据和服务器中间件。
 
-## Route Rules (Global)
+## 路由规则（全局）
 
-Define auth requirements in `nuxt.config.ts`:
+在 `nuxt.config.ts` 中定义认证要求：
 
 ```ts
 export default defineNuxtConfig({
@@ -17,29 +17,29 @@ export default defineNuxtConfig({
 })
 ```
 
-## Auth Modes
+## 认证模式
 
-| Mode              | Behavior                                               |
+| 模式              | 行为                                                   |
 | ----------------- | ------------------------------------------------------ |
-| `'user'`          | Requires authenticated user                            |
-| `'guest'`         | Only unauthenticated users (redirects logged-in users) |
-| `{ user: {...} }` | Requires user matching specific properties             |
-| `false`           | No protection                                          |
+| `'user'`          | 需要已认证用户                                         |
+| `'guest'`         | 仅限未认证用户（将已登录用户重定向）                   |
+| `{ user: {...} }` | 需要匹配特定属性的用户                                 |
+| `false`           | 无保护                                                 |
 
-## Page Meta (Per-Page)
+## 页面元数据（按页面）
 
-Override or define auth for specific pages:
+覆盖或为特定页面定义认证：
 
 ```vue
 <script setup>
-// Require authentication
+// 要求认证
 definePageMeta({ auth: 'user' })
 </script>
 ```
 
 ```vue
 <script setup>
-// Require admin role
+// 要求管理员角色
 definePageMeta({
   auth: { user: { role: 'admin' } }
 })
@@ -48,58 +48,58 @@ definePageMeta({
 
 ```vue
 <script setup>
-// Guest-only (login page)
+// 仅限访客（登录页面）
 definePageMeta({ auth: 'guest' })
 </script>
 ```
 
-## User Property Matching
+## 用户属性匹配
 
 ```ts
-// Single value
+// 单个值
 { auth: { user: { role: 'admin' } } }
 
-// OR logic (array)
+// 或逻辑（数组）
 { auth: { user: { role: ['admin', 'moderator'] } } }
 
-// AND logic (multiple fields)
+// 与逻辑（多个字段）
 { auth: { user: { role: 'admin', verified: true } } }
 ```
 
-## Redirect Configuration
+## 重定向配置
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   auth: {
     redirects: {
-      login: '/login',    // Where to redirect unauthenticated users
-      guest: '/dashboard' // Where to redirect logged-in users from guest pages
+      login: '/login',    // 未认证用户重定向地址
+      guest: '/dashboard' // 已登录用户从访客页面重定向地址
     }
   }
 })
 ```
 
-## Server Middleware
+## 服务器中间件
 
-Auth middleware runs on all `/api/**` routes matching `routeRules`.
+认证中间件会在所有匹配 `routeRules` 的 `/api/**` 路由上运行。
 
-For custom API protection, use `requireUserSession()`:
+对于自定义 API 保护，请使用 `requireUserSession()`：
 
 ```ts
 // server/api/admin/[...].ts
 export default defineEventHandler(async (event) => {
   await requireUserSession(event, { user: { role: 'admin' } })
-  // Handle request
+  // 处理请求
 })
 ```
 
-## Priority Order
+## 优先级顺序
 
-1. `definePageMeta({ auth })` - highest priority
-2. `routeRules` patterns - matched by path
-3. Default: no protection
+1. `definePageMeta({ auth })` —— 最高优先级
+2. `routeRules` 模式 —— 根据路径匹配
+3. 默认：无保护
 
-## Prerendered Pages
+## 预渲染页面
 
-Auth checks skip during prerender hydration. Session fetched client-side after hydration completes.
+在预渲染水合过程中跳过认证检查。水合完成后从客户端获取会话。

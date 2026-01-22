@@ -1,11 +1,10 @@
 # useCookies
 
-Wrapper for .
+`@vueuse/integrations` 的封装库。
+**包：** `@vueuse/integrations`
+**分类：** '@Integrations'
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
-
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -29,6 +28,6 @@ const cookies = useCookies(['locale'])
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCookies/)
+[VueUse 文档](https://vueuse.org/core/useCookies/)

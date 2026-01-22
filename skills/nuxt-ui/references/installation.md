@@ -1,6 +1,6 @@
-# Installation
+# 安装
 
-## Nuxt Installation
+## Nuxt 安装
 
 ```bash
 pnpm add @nuxt/ui
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 @import '@nuxt/ui';
 ```
 
-**Critical**: Wrap app in UApp for Toast, Tooltip, and overlays to work:
+**关键**：为使 Toast、Tooltip 和叠加层正常工作，请将应用程序包装在 UApp 中：
 
 ```vue
 <!-- app.vue -->
@@ -31,14 +31,14 @@ export default defineNuxtConfig({
 </template>
 ```
 
-### pnpm Gotcha
+### pnpm 注意事项
 
-If using pnpm, either:
+如果使用 pnpm，请执行以下操作之一：
 
-1. Add `shamefully-hoist=true` to `.npmrc`, OR
-2. Install tailwindcss explicitly: `pnpm add tailwindcss`
+1. 在 `.npmrc` 中添加 `shamefully-hoist=true`，或
+2. 显式安装 tailwindcss：`pnpm add tailwindcss`
 
-## Vue Installation (Vite)
+## Vue 安装（Vite）
 
 ```bash
 pnpm add @nuxt/ui
@@ -73,7 +73,7 @@ app.mount('#app')
 @import '@nuxt/ui';
 ```
 
-**Critical**: Add `isolate` class to root for overlay stacking:
+**关键**：为叠加层堆叠添加 `isolate` 类到根元素：
 
 ```vue
 <!-- App.vue -->
@@ -86,51 +86,51 @@ app.mount('#app')
 </template>
 ```
 
-### Auto-imports
+### 自动导入
 
-Vue generates `auto-imports.d.ts` and `components.d.ts`. Add to `.gitignore`:
+Vue 会生成 `auto-imports.d.ts` 和 `components.d.ts`。请将其添加到 `.gitignore`：
 
 ```gitignore
 auto-imports.d.ts
 components.d.ts
 ```
 
-## Module Options
+## 模块选项
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['@nuxt/ui'],
   ui: {
-    prefix: 'U', // Component prefix (default 'U')
-    fonts: true, // Enable @nuxt/fonts
-    colorMode: true, // Enable @nuxtjs/color-mode
+    prefix: 'U', // 组件前缀（默认为 'U'）
+    fonts: true, // 启用 @nuxt/fonts
+    colorMode: true, // 启用 @nuxtjs/color-mode
     theme: {
       colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'neutral'],
-      transitions: true, // transition-colors on components
+      transitions: true, // 组件上的 transition-colors
       defaultVariants: {
         color: 'primary',
         size: 'md'
       },
-      prefix: '' // Tailwind CSS prefix (v4.2+) - ensures prefixed utilities work
+      prefix: '' // Tailwind CSS 前缀（v4.2+）——确保带前缀的工具类正常工作
     },
-    mdc: false, // Force Prose components
-    content: false, // Force UContent* components
+    mdc: false, // 强制 Prose 组件
+    content: false, // 强制 UContent* 组件
     experimental: {
-      componentDetection: false // Tree-shake unused components (v4.1+) - auto-generates CSS only for used components
+      componentDetection: false // 树摇未使用的组件（v4.1+）——仅自动生成已使用组件的 CSS
     }
   }
 })
 ```
 
-## Vue Vite Options
+## Vue Vite 选项
 
 ```ts
 // vite.config.ts
 ui({
   prefix: 'U',
   colorMode: true,
-  inertia: true, // Inertia.js support
+  inertia: true, // Inertia.js 支持
   theme: {
     colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'neutral'],
     transitions: true,
@@ -138,39 +138,39 @@ ui({
     prefix: ''
   },
   ui: {
-    colors: { primary: 'green' }, // Runtime color config
-    button: { /* theme overrides */ }
+    colors: { primary: 'green' }, // 运行时颜色配置
+    button: { /* 主题覆盖 */ }
   }
 })
 ```
 
-## Auto-installed Modules
+## 自动安装的模块
 
-Nuxt UI automatically installs:
+Nuxt UI 自动安装：
 
-- `@nuxt/icon` - Icon system
-- `@nuxt/fonts` - Web fonts (if `fonts: true`)
-- `@nuxtjs/color-mode` - Dark mode (if `colorMode: true`)
+- `@nuxt/icon` - 图标系统
+- `@nuxt/fonts` - 网络字体（如果 `fonts: true`）
+- `@nuxtjs/color-mode` - 深色模式（如果 `colorMode: true`）
 
-## Common Issues
+## 常见问题
 
-| Issue                     | Solution                                           |
+| 问题                     | 解决方案                                           |
 | ------------------------- | -------------------------------------------------- |
-| Tailwind not found (pnpm) | Add `shamefully-hoist=true` or install tailwindcss |
-| Overlays not showing      | Wrap app in `<UApp>`                               |
-| Vue overlays broken       | Add `isolate` class to root element                |
-| Icons not loading         | Check @nuxt/icon is installed                      |
-| Dark mode not working     | Ensure `colorMode: true` in config                 |
+| Tailwind 未找到（pnpm）   | 添加 `shamefully-hoist=true` 或安装 tailwindcss |
+| 叠加层不显示              | 将应用程序包装在 `<UApp>` 中                       |
+| Vue 叠加层出错            | 将 `isolate` 类添加到根元素                        |
+| 图标未加载                | 检查是否安装了 @nuxt/icon                          |
+| 深色模式未工作            | 确保在配置中启用了 `colorMode: true`              |
 
-## Performance Features (v4.1+)
+## 性能特性（v4.1+）
 
-### Component Virtualization
+### 组件虚拟化
 
-Large datasets in CommandPalette, InputMenu, SelectMenu, Table, and Tree automatically use virtualization for better performance.
+CommandPalette、InputMenu、SelectMenu、Table 和 Tree 中的大数据集自动使用虚拟化以提升性能。
 
-### Experimental Component Detection
+### 实验性组件检测
 
-Enable `experimental.componentDetection` to auto-generate CSS only for components you actually use:
+启用 `experimental.componentDetection` 以仅自动生成实际使用的组件的 CSS：
 
 ```ts
 // nuxt.config.ts
@@ -183,32 +183,32 @@ export default defineNuxtConfig({
 })
 ```
 
-**Benefits:** Smaller CSS bundle, faster builds, reduced unused styles.
+**优势**：更小的 CSS 包、更快的构建速度、减少未使用的样式。
 
-### Tailwind CSS Prefix Support (v4.2+)
+### Tailwind CSS 前缀支持（v4.2+）
 
-Avoid style conflicts in complex apps:
+在复杂应用程序中避免样式冲突：
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   ui: {
     theme: {
-      prefix: 'ui-' // Prefixes all Tailwind utilities
+      prefix: 'ui-' // 为所有 Tailwind 工具类添加前缀
     }
   }
 })
 ```
 
-**Result:** Components use `ui-bg-primary` instead of `bg-primary`.
+**结果**：组件使用 `ui-bg-primary` 而非 `bg-primary`。
 
-## Best Practices
+## 最佳实践
 
-| Do                         | Don't                     |
+| 应该                       | 不应该                    |
 | -------------------------- | ------------------------- |
-| Wrap in UApp first         | Forget UApp wrapper       |
-| Use semantic colors        | Hardcode color values     |
-| Import CSS correctly       | Skip @nuxt/ui import      |
-| Check pnpm hoisting        | Ignore tailwindcss errors |
-| Use component detection    | Ship unused component CSS |
-| Use prefix in complex apps | Risk style conflicts      |
+| 首先包装在 UApp 中         | 忘记 UApp 包装符          |
+| 使用语义化颜色             | 硬编码颜色值              |
+| 正确导入 CSS               | 跳过 @nuxt/ui 的导入       |
+| 检查 pnpm 提升             | 忽略 tailwindcss 错误     |
+| 使用组件检测               | 发送未使用的组件 CSS      |
+| 在复杂应用程序中使用前缀   | 风险样式冲突              |

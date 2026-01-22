@@ -1,6 +1,6 @@
-# TypeScript Configuration
+# TypeScript 配置
 
-## Library Base Config
+## 库基础配置
 
 ```json
 {
@@ -24,22 +24,22 @@
 }
 ```
 
-## Key Options Explained
+## 关键选项说明
 
-| Option                 | Value   | Why                                              |
-| ---------------------- | ------- | ------------------------------------------------ |
-| `target`               | ESNext  | Modern output, bundlers downgrade                |
-| `module`               | ESNext  | ESM output                                       |
-| `moduleResolution`     | Bundler | Works with modern bundlers, allows no extensions |
-| `strict`               | true    | Catch errors early                               |
-| `noEmit`               | true    | Build tool handles emit                          |
-| `isolatedDeclarations` | true    | Faster DTS generation                            |
-| `verbatimModuleSyntax` | true    | Explicit `import type` required                  |
-| `skipLibCheck`         | true    | Faster builds                                    |
+| 选项                   | 值       | 原因                                             |
+| ---------------------- | -------- | ------------------------------------------------ |
+| `target`               | ESNext   | 现代化输出，打包工具会降级处理                   |
+| `module`               | ESNext   | ESM 输出                                         |
+| `moduleResolution`     | Bundler  | 与现代打包工具兼容，支持无扩展导入               |
+| `strict`               | true     | 早期捕获错误                                     |
+| `noEmit`               | true     | 构建工具负责输出                                 |
+| `isolatedDeclarations` | true     | 更快的 DTS 生成                                  |
+| `verbatimModuleSyntax` | true     | 明确要求使用 `import type`                       |
+| `skipLibCheck`         | true     | 更快的构建                                       |
 
-## Monorepo Config
+## 单仓库配置
 
-### Root tsconfig.json
+### 根目录 tsconfig.json
 
 ```json
 {
@@ -55,7 +55,7 @@
 }
 ```
 
-### Package tsconfig.json
+### 包级 tsconfig.json
 
 ```json
 {
@@ -71,9 +71,9 @@
 }
 ```
 
-## Path Aliases
+## 路径别名
 
-For internal imports in monorepos:
+用于单仓库中的内部导入：
 
 ```json
 {
@@ -87,58 +87,58 @@ For internal imports in monorepos:
 }
 ```
 
-## Bundler vs Node Resolution
+## 打包工具与 Node 解析
 
-**Use `Bundler`** for libraries consumed by bundlers (Vite, webpack, etc.):
+**使用 `Bundler`** 来适配由打包工具（如 Vite、webpack 等）消费的库：
 
-- Allows importing without extensions
-- Supports `exports` field in package.json
-- Modern, simpler setup
+- 支持无扩展导入
+- 支持 package.json 中的 `exports` 字段
+- 现代、简洁设置
 
-**Use `Node16/NodeNext`** for Node.js-only libraries:
+**使用 `Node16/NodeNext`** 用于仅 Node.js 的库：
 
-- Requires explicit extensions (`.js`)
-- Stricter, matches Node.js behavior exactly
+- 需要显式扩展名（如 `.js`）
+- 更严格，与 Node.js 行为完全一致
 
-## Type Declarations
+## 类型声明
 
-Let build tool generate declarations:
+让构建工具生成类型声明：
 
 ```typescript
 // tsdown.config.ts
 export default defineConfig({
-  dts: true,                    // Generate .d.ts
-  dts: { resolve: ['@antfu/utils'] }  // Inline specific types
+  dts: true,                    // 生成 .d.ts
+  dts: { resolve: ['@antfu/utils'] }  // 内联特定类型
 })
 ```
 
-Or with unbuild:
+或使用 unbuild：
 
 ```typescript
 // build.config.ts
 export default defineBuildConfig({
-  declaration: 'node16',        // For Node.js compatibility
-  declaration: true,            // For bundler resolution
+  declaration: 'node16',        // 兼容 Node.js
+  declaration: true,            // 打包工具解析用
 })
 ```
 
-## Common Issues
+## 常见问题
 
-### Module not found errors
+### 模块未找到错误
 
-Check `moduleResolution` matches your target:
+检查 `moduleResolution` 是否与目标一致：
 
-- Bundler: `"Bundler"`
-- Node.js: `"Node16"` or `"NodeNext"`
+- Bundler：`"Bundler"`
+- Node.js：`"Node16"` 或 `"NodeNext"`
 
-### Type imports not working
+### 类型导入不工作
 
-Enable `verbatimModuleSyntax` and use explicit:
+启用 `verbatimModuleSyntax` 并显式使用：
 
 ```typescript
 import type { Foo } from './types'
 ```
 
-### Slow type checking
+### 类型检查缓慢
 
-Enable `skipLibCheck: true` and `isolatedDeclarations: true`.
+启用 `skipLibCheck: true` 和 `isolatedDeclarations: true`。

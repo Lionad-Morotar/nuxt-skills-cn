@@ -1,11 +1,11 @@
 # useCssVar
 
-Manipulate CSS variables
+操作 CSS 变量
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useCssVar } from '@vueuse/core'
@@ -22,12 +22,12 @@ const someEl = useTemplateRef('someEl')
 const color2 = useCssVar('--color', someEl, { initialValue: '#eee' })
 ```
 
-## Options
+## 选项
 
-| Option  | Type      | Default | Description                                      |
-| ------- | --------- | ------- | ------------------------------------------------ |
-| observe | `boolean` | false   | Use MutationObserver to monitor variable changes |
+| 选项    | 类型      | 默认值  | 描述                                         |
+| ------- | --------- | ------- | -------------------------------------------- |
+| observe | `boolean` | false   | 使用 MutationObserver 监控变量变化           |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCssVar/)
+[VueUse 文档](https://vueuse.org/core/useCssVar/)

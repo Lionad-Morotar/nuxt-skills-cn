@@ -1,11 +1,11 @@
-# Main
+# 主要内容
 
-A main element that fills the available viewport height.
+一个填充可用视口高度的主要元素。
 
-## Usage
+## 用法
 
 ```vue
 <UMain
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

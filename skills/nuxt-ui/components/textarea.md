@@ -1,24 +1,24 @@
-# Textarea
+# 文本域
 
-A textarea element to input multi-line text.
+用于输入多行文本的 textarea 元素。
 
-## Key Props
+## 主要属性
 
-- `rows`: to set the number of rows.
-- `placeholder`: to set a placeholder text.
-- `autoresize`: to enable autoresizing the height of the Textarea.
-- `maxrows`: to set the maximum number of rows when autoresizing.
-- `color`: to change the ring color when the Textarea is focused.
-- `variant`: to change the variant of the Textarea.
-- `size`: to change the size of the Textarea.
-- `icon`: to show an [Icon](/docs/components/icon) inside the Textarea.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the Textarea.
-- `loading`: to show a loading icon on the Textarea.
+- `rows`：用于设置行数。
+- `placeholder`：用于设置占位文本。
+- `autoresize`：用于启用文本域高度的自动调整。
+- `maxrows`：用于设置自动调整高度时的最大行数。
+- `color`：用于在文本域获得焦点时更改边框颜色。
+- `variant`：用于更改文本域的变体样式。
+- `size`：用于更改文本域的尺寸。
+- `icon`：用于在文本域内显示一个 [图标](/docs/components/icon)。
+- `avatar`：用于在文本域内显示一个 [头像](/docs/components/avatar)。
+- `loading`：用于在文本域内显示一个加载图标。
 
-## Usage
+## 使用方法
 
 ```vue
 <UTextarea
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

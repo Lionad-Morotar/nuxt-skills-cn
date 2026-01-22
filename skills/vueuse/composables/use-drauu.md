@@ -1,11 +1,11 @@
 # useDrauu
 
-Reactive instance for drauu.
+drauu 的响应式实例。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包：** `@vueuse/integrations`  
+**分类：** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -23,9 +23,9 @@ const { color, size } = toRefs(brush)
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name          | Type                   |
+| 名称          | 类型                   |
 | ------------- | ---------------------- |
 | drauuInstance | `deepRef&lt;Drauu&gt;` |
 | load          | `Ref`                  |
@@ -43,6 +43,6 @@ const { color, size } = toRefs(brush)
 | onEnd         | `Ref`                  |
 | onCanceled    | `Ref`                  |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDrauu/)
+[VueUse 文档](https://vueuse.org/core/useDrauu/)

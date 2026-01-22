@@ -1,11 +1,11 @@
 # useTimeoutFn
 
-Wrapper for with controls.
+带控制功能的封装。
 
-**Package:** `@vueuse/shared`
-**Category:** Animation
+**包：** `@vueuse/shared`  
+**分类：** 动画
 
-## Usage
+## 用法
 
 ```ts
 import { useTimeoutFn } from '@vueuse/core'
@@ -15,21 +15,21 @@ const { isPending, start, stop } = useTimeoutFn(() => {
 }, 3000)
 ```
 
-## Options
+## 选项
 
-| Option            | Type      | Default | Description                                            |
-| ----------------- | --------- | ------- | ------------------------------------------------------ |
-| immediate         | `boolean` | true    | Start the timer immediately                            |
-| immediateCallback | `boolean` | false   | Execute the callback immediately after calling `start` |
+| 选项              | 类型      | 默认值  | 描述                                       |
+| ----------------- | --------- | ------- | ------------------------------------------ |
+| immediate         | `boolean` | true    | 立即启动计时器                             |
+| immediateCallback | `boolean` | false   | 调用 `start` 后立即执行回调函数            |
 
-## Returns
+## 返回值
 
-| Name      | Type         |
+| 名称      | 类型         |
 | --------- | ------------ |
 | isPending | `shallowRef` |
 | start     | `Ref`        |
 | stop      | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTimeoutFn/)
+[VueUse 文档](https://vueuse.org/core/useTimeoutFn/)

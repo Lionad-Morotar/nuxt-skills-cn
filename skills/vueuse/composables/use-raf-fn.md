@@ -1,11 +1,11 @@
 # useRafFn
 
-Call function on every . With controls of pausing and resuming.
+在每次 . 上调用函数。提供暂停和恢复控制。
 
-**Package:** `@vueuse/core`
-**Category:** Animation
+**包：** `@vueuse/core`  
+**类别：** 动画
 
-## Usage
+## 用法
 
 ```ts
 import { useRafFn } from '@vueuse/core'
@@ -19,22 +19,22 @@ const { pause, resume } = useRafFn(() => {
 })
 ```
 
-## Options
+## 选项
 
-| Option    | Type                             | Default   | Description                                                                           |
-| --------- | -------------------------------- | --------- | ------------------------------------------------------------------------------------- |
-| immediate | `boolean`                        | true      | Start the requestAnimationFrame loop immediately on creation                          |
-| fpsLimit  | `MaybeRefOrGetter&lt;number&gt;` | undefined | The maximum frame per second to execute the function.                                 |
-| once      | `boolean`                        | false     | After the requestAnimationFrame loop executed once, it will be automatically stopped. |
+| 选项      | 类型                             | 默认值    | 描述                                                                                   |
+| --------- | -------------------------------- | --------- | -------------------------------------------------------------------------------------- |
+| immediate | `boolean`                        | true      | 创建时立即启动 requestAnimationFrame 循环                                              |
+| fpsLimit  | `MaybeRefOrGetter&lt;number&gt;` | undefined | 函数执行的最大帧率。                                                                   |
+| once      | `boolean`                        | false     | requestAnimationFrame 循环执行一次后将自动停止。                                       |
 
-## Returns
+## 返回值
 
-| Name     | Type         |
+| 名称     | 类型         |
 | -------- | ------------ |
 | isActive | `shallowRef` |
 | pause    | `Ref`        |
 | resume   | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useRafFn/)
+[VueUse 文档](https://vueuse.org/core/useRafFn/)

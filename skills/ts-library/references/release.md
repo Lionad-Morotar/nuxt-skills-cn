@@ -1,14 +1,14 @@
-# Release Workflow
+# 发布工作流
 
-## Tools
+## 工具
 
-| Tool        | Purpose                           |
-| ----------- | --------------------------------- |
-| bumpp       | Interactive version bumping       |
-| changelogen | Changelog generation from commits |
-| pkg-pr-new  | PR preview packages               |
+| 工具        | 目的                           |
+| ----------- | ------------------------------ |
+| bumpp       | 交互式版本升级                 |
+| changelogen | 从提交生成变更日志             |
+| pkg-pr-new  | PR 预览包                      |
 
-## bumpp (Version Bumping)
+## bumpp（版本升级）
 
 ```bash
 pnpm add -D bumpp
@@ -22,7 +22,7 @@ pnpm add -D bumpp
 }
 ```
 
-Interactive prompt for patch/minor/major. Options:
+交互式提示补丁/次版本/主版本。选项：
 
 ```json
 {
@@ -32,14 +32,14 @@ Interactive prompt for patch/minor/major. Options:
 }
 ```
 
-For monorepos:
+对于单体仓库：
 
 ```bash
-bumpp -r    # Recursive
-bumpp packages/*/package.json  # Specific packages
+bumpp -r    # 递归处理
+bumpp packages/*/package.json  # 指定包
 ```
 
-## changelogen (Changelog)
+## changelogen（变更日志）
 
 ```bash
 pnpm add -D changelogen
@@ -53,7 +53,7 @@ pnpm add -D changelogen
 }
 ```
 
-Combined workflow:
+组合工作流：
 
 ```json
 {
@@ -63,7 +63,7 @@ Combined workflow:
 }
 ```
 
-## Full Release Flow
+## 完整发布流程
 
 ```json
 {
@@ -73,11 +73,11 @@ Combined workflow:
 }
 ```
 
-CI publishes to npm on tag push.
+CI 在推送标签时发布到 npm。
 
-## pkg-pr-new (PR Previews)
+## pkg-pr-new（PR 预览）
 
-For publishable packages. Creates install links on PRs.
+适用于可发布的包。在 PR 上创建安装链接。
 
 ```yaml
 # .github/workflows/pkg-pr-new.yml
@@ -99,32 +99,32 @@ jobs:
       - run: pnpm dlx pkg-pr-new publish --compact --pnpm
 ```
 
-For monorepos:
+对于单体仓库：
 
 ```bash
 pnpm dlx pkg-pr-new publish --compact --pnpm './packages/*'
 ```
 
-PR comment shows:
+PR 评论显示：
 
 ```
 pnpm add https://pkg.pr.new/your-org/your-package@123
 ```
 
-## Conventional Commits
+## 约定式提交
 
-For changelogen to work:
+为了让 changelogen 正常工作：
 
 ```
-feat: add dark mode support
-fix: resolve memory leak in parser
-docs: update README
-chore: update dependencies
+feat: 添加深色模式支持
+fix: 修复解析器中的内存泄漏
+docs: 更新 README
+chore: 更新依赖项
 ```
 
-## npm Publishing
+## npm 发布
 
-### Token-based (legacy)
+### 基于令牌（传统）
 
 ```yaml
 - run: pnpm publish --access public --no-git-checks
@@ -132,36 +132,36 @@ chore: update dependencies
     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-### OIDC (Recommended)
+### OIDC（推荐）
 
-No token needed. See ci-workflows.md for full setup.
+无需令牌。请参见 ci-workflows.md 了解完整设置。
 
 ```yaml
 - run: pnpm publish --access public --no-git-checks --provenance
 ```
 
-## Monorepo Publishing
+## 单体仓库发布
 
-With pnpm:
+使用 pnpm：
 
 ```bash
 pnpm -r publish --access public
 ```
 
-With bumpp:
+使用 bumpp：
 
 ```bash
 bumpp -r && pnpm -r publish
 ```
 
-## Pre-release Versions
+## 预发布版本
 
 ```bash
 bumpp --preid beta   # 1.0.0 -> 1.0.1-beta.0
 bumpp --preid alpha  # 1.0.0 -> 1.0.1-alpha.0
 ```
 
-## Package.json Requirements
+## Package.json 要求
 
 ```json
 {
@@ -177,4 +177,4 @@ bumpp --preid alpha  # 1.0.0 -> 1.0.1-alpha.0
 }
 ```
 
-`repository` required for npm provenance.
+`repository` 是 npm provenance 所必需的。

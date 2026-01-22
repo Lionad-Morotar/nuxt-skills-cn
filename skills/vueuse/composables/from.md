@@ -1,10 +1,10 @@
 # from
 
-Wrappers around RxJS's and to allow them to accept s.
+RxJS 的包装器，以允许它们接受 s。
 
-**Package:** `@vueuse/rxjs`
-**Category:** '@RxJS'
+**包：** `@vueuse/rxjs`
+**类别：** '@RxJS'
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/from/)
+[VueUse 文档](https://vueuse.org/core/from/)

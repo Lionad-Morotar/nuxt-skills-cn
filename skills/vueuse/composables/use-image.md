@@ -1,11 +1,11 @@
 # useImage
 
-Reactive load an image in the browser, you can wait the result to display it or show a fallback.
+在浏览器中响应式加载图片，您可以等待结果后再显示图片或显示备用图片。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -21,9 +21,9 @@ const { isLoading } = useImage({ src: avatarUrl })
 </template>
 ```
 
-## Options
+## 选项
 
-| Option         | Type                                 | Default | Description |
+| 选项           | 类型                                 | 默认值  | 描述        |
 | -------------- | ------------------------------------ | ------- | ----------- |
 | src            | `string`                             | -       |             |
 | srcset         | `string`                             | -       |             |
@@ -40,6 +40,6 @@ const { isLoading } = useImage({ src: avatarUrl })
 | ismap          | `HTMLImageElement['isMap']`          | -       |             |
 | usemap         | `HTMLImageElement['useMap']`         | -       |             |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useImage/)
+[VueUse 文档](https://vueuse.org/core/useImage/)

@@ -1,11 +1,11 @@
 # get
 
-Shorthand for accessing
+用于访问的简写
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包：** `@vueuse/shared`  
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { get } from '@vueuse/core'
@@ -15,6 +15,6 @@ const a = ref(42)
 console.log(get(a)) // 42
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/get/)
+[VueUse 文档](https://vueuse.org/core/get/)

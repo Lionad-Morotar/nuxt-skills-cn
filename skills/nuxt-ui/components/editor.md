@@ -1,16 +1,16 @@
-# Editor
+# 编辑器
 
-A rich text editor component based on TipTap with support for markdown, HTML, and JSON content types.
+一个基于 TipTap 的富文本编辑器组件，支持 Markdown、HTML 和 JSON 内容类型。
 
-## Key Props
+## 主要属性
 
-- `placeholder`: to set a placeholder text that shows in empty paragraphs.
-- `handlers`: to extend or override the default handlers.
+- `placeholder`：用于设置空段落中显示的占位符文本。
+- `handlers`：用于扩展或覆盖默认处理器。
 
-## Usage
+## 用法
 
 ```vue
 <UEditor
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

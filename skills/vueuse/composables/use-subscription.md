@@ -1,10 +1,10 @@
 # useSubscription
 
-Use an RxJS without worrying about unsubscribing from it or creating memory leaks.
+在不需手动取消订阅或导致内存泄漏的情况下使用 RxJS。
 
-**Package:** `@vueuse/rxjs`
-**Category:** '@RxJS'
+**包：** `@vueuse/rxjs`  
+**分类：** '@RxJS'
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSubscription/)
+[VueUse 文档](https://vueuse.org/core/useSubscription/)

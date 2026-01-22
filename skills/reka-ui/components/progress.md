@@ -1,14 +1,14 @@
-# Progress
+# 进度
 
-Progress indicator
+进度指示器
 
-**Parts:** `ProgressRoot`, `ProgressIndicator`
+**组件：** `ProgressRoot`、`ProgressIndicator`
 
 ## ProgressRoot
 
-### Props
+### 属性
 
-| Prop            | Type                                       | Default                                       |
+| 属性            | 类型                                       | 默认值                                        |
 | --------------- | ------------------------------------------ | --------------------------------------------- |
 | `as`            | `AsTag \| Component`                       | `"div"`                                       |
 | `asChild`       | `boolean`                                  | -                                             |
@@ -16,24 +16,24 @@ Progress indicator
 | `max`           | `number`                                   | `DEFAULT_MAX`                                 |
 | `modelValue`    | `number \| null`                           | -                                             |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
-| ------------------- | ------------------- |
-| `update:max`        | `[value: number]`   |
+| 事件                | 参数              |
+| ------------------- | ----------------- |
+| `update:max`        | `[value: number]` |
 | `update:modelValue` | `[value: string[]]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type                          |
+| 插槽         | 类型                          |
 | ------------ | ----------------------------- |
 | `modelValue` | `number \| null \| undefined` |
 
 ## ProgressIndicator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |

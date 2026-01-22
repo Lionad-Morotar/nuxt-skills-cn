@@ -1,25 +1,25 @@
-# Popover
+# 气泡框
 
-A non-modal dialog that floats around a trigger element.
+一种浮动在触发元素周围的非模态对话框。
 
-> Based on [Reka UI Popover](https://reka-ui.com/docs/components/hover-card)
+> 基于 [Reka UI 气泡框](https://reka-ui.com/docs/components/hover-card)
 
-## Key Props
+## 主要属性
 
-- `mode`: to change the mode of the Popover.
-- `content`: to control how the Popover content is rendered, like its `align` or `side` for example.
-- `arrow`: to display an arrow on the Popover.
-- `modal`: to control whether the Popover blocks interaction with outside content.
-- `dismissible`: to control whether the Popover is dismissible when clicking outside of it or pressing escape.
+- `mode`：用于更改气泡框的模式。
+- `content`：用于控制气泡框内容的渲染方式，例如其 `align` 或 `side`。
+- `arrow`：用于在气泡框上显示箭头。
+- `modal`：用于控制气泡框是否阻止与外部内容的交互。
+- `dismissible`：用于控制点击气泡框外部或按下 Escape 键时是否关闭气泡框。
 
-## Usage
+## 用法
 
 ```vue
 <UPopover
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`

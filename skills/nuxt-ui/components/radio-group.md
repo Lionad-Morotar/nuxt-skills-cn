@@ -1,12 +1,12 @@
 # RadioGroup
 
-A set of radio buttons to select a single option from a list.
+一组单选按钮，用于从列表中选择一个选项。
 
-> Based on [Reka UI RadioGroup](https://reka-ui.com/docs/components/radio-group)
+> 基于 [Reka UI RadioGroup](https://reka-ui.com/docs/components/radio-group)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of strings or numbers:
+- `items`：字符串或数字数组：
 
 ## ::component-code
 
@@ -24,9 +24,7 @@ ignore:
 
 ---
 
-::
-
-You can also pass an array of objects with the following properties:
+您也可以传递一个对象数组，包含以下属性：
 
 - `label?: string`{lang="ts-type"}
 - `description?: string`{lang="ts-type"}
@@ -49,19 +47,19 @@ ignore:
   props:
   modelValue: 'system'
   items: - label: 'System'
-  description: 'This is the first option.
-- `legend`: to set the legend of the RadioGroup.
-- `color`: to change the color of the RadioGroup.
-- `variant`: to change the variant of the RadioGroup.
-- `size`: to change the size of the RadioGroup.
-- `orientation`: to change the orientation of the RadioGroup.
-- `indicator`: to change the position or hide the indicator.
-- `disabled`: to disable the RadioGroup.
+  description: '这是第一个选项。
+- `legend`：设置 RadioGroup 的标题。
+- `color`：更改 RadioGroup 的颜色。
+- `variant`：更改 RadioGroup 的变体。
+- `size`：更改 RadioGroup 的尺寸。
+- `orientation`：更改 RadioGroup 的方向。
+- `indicator`：更改指示器的位置或隐藏它。
+- `disabled`：禁用 RadioGroup。
 
-## Usage
+## 使用方法
 
 ```vue
 <URadioGroup
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```

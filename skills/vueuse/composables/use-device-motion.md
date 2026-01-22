@@ -1,11 +1,11 @@
 # useDeviceMotion
 
-Reactive DeviceMotionEvent. Provide web developers with information about the speed of changes for the device's position and orientation.
+响应式 DeviceMotionEvent。为 Web 开发者提供有关设备位置和方向变化速度的信息。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useDeviceMotion } from '@vueuse/core'
@@ -18,9 +18,9 @@ const {
 } = useDeviceMotion()
 ```
 
-## Returns
+## 返回值
 
-| Name                         | Type           |
+| 名称                         | 类型           |
 | ---------------------------- | -------------- |
 | acceleration                 | `Ref`          |
 | accelerationIncludingGravity | `Ref`          |
@@ -31,6 +31,6 @@ const {
 | ensurePermissions            | `Ref`          |
 | permissionGranted            | `shallowRef`   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDeviceMotion/)
+[VueUse 文档](https://vueuse.org/core/useDeviceMotion/)

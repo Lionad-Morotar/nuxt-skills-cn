@@ -1,11 +1,11 @@
 # onKeyStroke
 
-Listen for keyboard keystrokes.
+监听键盘按键。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { onKeyStroke } from '@vueuse/core'
@@ -15,12 +15,12 @@ onKeyStroke('ArrowDown', (e) => {
 })
 ```
 
-## Options
+## 选项
 
-| Option | Type                              | Default | Description                                                              |
+| 选项   | 类型                              | 默认值  | 描述                                                                     |
 | ------ | --------------------------------- | ------- | ------------------------------------------------------------------------ |
-| dedupe | `MaybeRefOrGetter&lt;boolean&gt;` | false   | Set to `true` to ignore repeated events when the key is being held down. |
+| dedupe | `MaybeRefOrGetter<boolean>`       | false   | 设置为 `true` 以在按键被持续按下时忽略重复事件。                         |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/onKeyStroke/)
+[VueUse 文档](https://vueuse.org/core/onKeyStroke/)

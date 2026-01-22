@@ -1,11 +1,11 @@
 # useBluetooth
 
-Reactive Web Bluetooth API. Provides the ability to connect and interact with Bluetooth Low Energy peripherals.
+响应式 Web Bluetooth API。提供连接和交互蓝牙低功耗外设的能力。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,25 +24,25 @@ const {
 
 <template>
   <button @click="requestDevice()">
-    Request Bluetooth Device
+    请求蓝牙设备
   </button>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option           | Type      | Default | Description                                                                       |
-| ---------------- | --------- | ------- | --------------------------------------------------------------------------------- |
-| acceptAllDevices | `boolean` | false   | \* A boolean value indicating that the requesting script can accept all Bluetooth |
+| 选项             | 类型      | 默认值  | 描述                                                                               |
+| ---------------- | --------- | ------- | ---------------------------------------------------------------------------------- |
+| acceptAllDevices | `boolean` | false   | \* 一个布尔值，表示请求脚本可以接受所有蓝牙设备                                   |
 
-## Returns
+## 返回值
 
-| Name          | Type           |
+| 名称          | 类型           |
 | ------------- | -------------- |
 | isSupported   | `useSupported` |
 | isConnected   | `shallowRef`   |
 | requestDevice | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useBluetooth/)
+[VueUse 文档](https://vueuse.org/core/useBluetooth/)

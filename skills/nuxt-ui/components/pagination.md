@@ -1,22 +1,22 @@
-# Pagination
+# 分页
 
-A list of buttons or links to navigate through pages.
+一组用于在页面间导航的按钮或链接。
 
-> Based on [Reka UI Pagination](https://reka-ui.com/docs/components/pagination)
+> 基于 [Reka UI 分页](https://reka-ui.com/docs/components/pagination)
 
-## Key Props
+## 主要属性
 
-- `total`: to set the total number of items in the list.
-- `color`: to set the color of the inactive controls.
-- `variant`: to set the variant of the inactive controls.
-- `size`: to set the size of the controls.
-- `disabled`: to disable the pagination controls.
-- `to`: to transform buttons into links.
+- `total`：用于设置列表中项目的总数。
+- `color`：用于设置非活动控件的颜色。
+- `variant`：用于设置非活动控件的变体。
+- `size`：用于设置控件的大小。
+- `disabled`：用于禁用分页控件。
+- `to`：用于将按钮转换为链接。
 
-## Usage
+## 用法
 
 ```vue
 <UPagination
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

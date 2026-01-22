@@ -1,23 +1,23 @@
-# Focus Scope
+# 聚焦范围
 
-Focus trap container
+聚焦陷阱容器
 
-**Parts:** `FocusScope`
+**组成部分：** `FocusScope`
 
 ## FocusScope
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 | `loop`    | `boolean`            | `false` |
 | `trapped` | `boolean`            | `false` |
 
-### Emits
+### 事件
 
-| Event              | Payload          |
+| 事件               | 参数             |
 | ------------------ | ---------------- |
 | `mountAutoFocus`   | `[event: Event]` |
 | `unmountAutoFocus` | `[event: Event]` |

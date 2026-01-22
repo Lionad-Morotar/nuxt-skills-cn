@@ -1,21 +1,21 @@
 # ScrollArea
 
-Creates scrollable containers with optional virtualization for large lists.
+创建可滚动容器，支持为大型列表启用虚拟化。
 
-> Based on [Reka UI ScrollArea](https://reka-ui.com/docs/components/scroll-area)
+> 基于 [Reka UI ScrollArea](https://reka-ui.com/docs/components/scroll-area)
 
-## Key Props
+## 主要属性
 
-- `orientation`: to control scroll direction (`'vertical'` or `'horizontal'`).
-- `items`: array of data to render within the scrollable area.
-- `virtualize`: enables performance optimization for large datasets (renders only visible items). Supports `estimateSize`, `lanes`, `gap`.
-- `as`: specifies the underlying HTML element or component (defaults to `'div'`).
-- `ui`: customization object for styling root, viewport, and items.
+- `orientation`：控制滚动方向（`'vertical'` 或 `'horizontal'`）。
+- `items`：要在可滚动区域内渲染的数据数组。
+- `virtualize`：启用大型数据集的性能优化（仅渲染可见项）。支持 `estimateSize`、`lanes` 和 `gap`。
+- `as`：指定底层 HTML 元素或组件（默认为 `'div'`）。
+- `ui`：用于自定义根元素、视口和项样式的对象。
 
-## Usage
+## 使用方法
 
 ```vue
 <UScrollArea
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

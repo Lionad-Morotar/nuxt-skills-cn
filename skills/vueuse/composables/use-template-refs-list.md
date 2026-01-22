@@ -1,11 +1,11 @@
 # useTemplateRefsList
 
-Shorthand for binding refs to template elements and components inside .
+用于将 ref 绑定到模板元素和组件内部的简写形式。
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`  
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,6 +24,6 @@ onUpdated(() => {
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useTemplateRefsList/)
+[VueUse 文档](https://vueuse.org/core/useTemplateRefsList/)

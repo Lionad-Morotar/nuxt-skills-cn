@@ -6,7 +6,7 @@ license: MIT
 
 # VueUse
 
-Collection of essential Vue Composition utilities. Check VueUse before writing custom composables - most patterns already implemented.
+Essential Vue Composition utilities collection. Check VueUse before writing custom composables - most patterns already implemented.
 
 **Current stable:** VueUse 14.x for Vue 3.5+
 

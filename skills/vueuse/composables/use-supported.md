@@ -1,11 +1,11 @@
 # useSupported
 
-SSR compatibility
+SSR 兼容性
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useSupported } from '@vueuse/core'
@@ -13,11 +13,11 @@ import { useSupported } from '@vueuse/core'
 const isSupported = useSupported(() => navigator && 'getBattery' in navigator)
 
 if (isSupported.value) {
-  // do something
+  // 执行某些操作
   navigator.getBattery
 }
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSupported/)
+[VueUse 文档](https://vueuse.org/core/useSupported/)

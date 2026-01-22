@@ -1,11 +1,11 @@
 # ChatPromptSubmit
 
-A Button for submitting chat prompts with automatic status handling.
+用于提交聊天提示并自动处理状态的按钮。
 
-## Usage
+## 用法
 
 ```vue
 <UChatPromptSubmit
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

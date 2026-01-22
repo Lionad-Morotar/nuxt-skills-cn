@@ -1,25 +1,25 @@
 # useRouteQuery
 
-Shorthand for a reactive .
+响应式路由查询参数的简写形式。
 
-**Package:** `@vueuse/router`
-**Category:** '@Router'
+**包：** `@vueuse/router`  
+**分类：** '@Router'
 
-## Usage
+## 用法
 
 ```ts
 import { useRouteQuery } from '@vueuse/router'
 
 const search = useRouteQuery('search')
 
-const search = useRouteQuery('search', 'foo') // or with a default value
+const search = useRouteQuery('search', 'foo') // 或带有默认值
 
-const page = useRouteQuery('page', '1', { transform: Number }) // or transforming value
+const page = useRouteQuery('page', '1', { transform: Number }) // 或转换值
 
 console.log(search.value) // route.query.search
 search.value = 'foobar' // router.replace({ query: { search: 'foobar' } })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useRouteQuery/)
+[VueUse 文档](https://vueuse.org/core/useRouteQuery/)

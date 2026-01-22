@@ -1,11 +1,11 @@
 # toReactive
 
-Converts ref to reactive. Also made possible to create a "swapable" reactive object.
+将 ref 转换为响应式对象。同时也支持创建“可替换”的响应式对象。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包:** `@vueuse/shared`  
+**分类:** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { toReactive } from '@vueuse/core'
@@ -25,13 +25,13 @@ console.log(state.foo) // => undefined
 console.log(state.bar) // => 'foo'
 ```
 
-## Returns
+## 返回值
 
-| Name         | Type  |
+| 名称         | 类型  |
 | ------------ | ----- |
 | enumerable   | `Ref` |
 | configurable | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/toReactive/)
+[VueUse 文档](https://vueuse.org/core/toReactive/)

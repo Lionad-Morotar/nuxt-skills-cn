@@ -1,11 +1,11 @@
 # useNetwork
 
-Reactive Network status. The Network Information API provides information about the system's connection in terms of general connection type (e.g., 'wifi', 'cellular', etc.). This can be used to select high definition content or low definition content based on the user's connection. The entire API consists of the addition of the NetworkInformation interface and a single property to the Navigator interface: Navigator.connection.
+响应式网络状态。网络信息 API 提供有关系统连接的信息，以通用连接类型（例如“wifi”、“cellular”等）为准。这可用于根据用户的连接选择高清内容或标清内容。整个 API 由 NetworkInformation 接口的添加以及 Navigator 接口上的一个属性组成：Navigator.connection。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包名：** `@vueuse/core`  
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useNetwork } from '@vueuse/core'
@@ -15,21 +15,21 @@ const { isOnline, offlineAt, downlink, downlinkMax, effectiveType, saveData, typ
 console.log(isOnline.value)
 ```
 
-## Returns
+## 返回值
 
-| Name          | Type                                     |
+| 名称          | 类型                                     |
 | ------------- | ---------------------------------------- |
 | isSupported   | `useSupported`                           |
 | isOnline      | `shallowRef`                             |
 | saveData      | `shallowRef`                             |
-| offlineAt     | `shallowRef&lt;number \| undefined&gt;`  |
-| onlineAt      | `shallowRef&lt;number \| undefined&gt;`  |
-| downlink      | `shallowRef&lt;number \| undefined&gt;`  |
-| downlinkMax   | `shallowRef&lt;number \| undefined&gt;`  |
-| effectiveType | `shallowRef&lt;NetworkEffectiveType&gt;` |
-| rtt           | `shallowRef&lt;number \| undefined&gt;`  |
-| type          | `shallowRef&lt;NetworkType&gt;`          |
+| offlineAt     | `shallowRef<number \| undefined>`        |
+| onlineAt      | `shallowRef<number \| undefined>`        |
+| downlink      | `shallowRef<number \| undefined>`        |
+| downlinkMax   | `shallowRef<number \| undefined>`        |
+| effectiveType | `shallowRef<NetworkEffectiveType>`       |
+| rtt           | `shallowRef<number \| undefined>`        |
+| type          | `shallowRef<NetworkType>`                |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useNetwork/)
+[VueUse 文档](https://vueuse.org/core/useNetwork/)

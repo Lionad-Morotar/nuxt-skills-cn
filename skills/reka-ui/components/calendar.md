@@ -1,14 +1,14 @@
-# Calendar
+# 日历
 
-Date selection grid (alpha)
+日期选择网格（alpha）
 
-**Parts:** `CalendarRoot`, `CalendarHeader`, `CalendarHeading`, `CalendarGrid`, `CalendarGridHead`, `CalendarGridBody`, `CalendarGridRow`, `CalendarCell`, `CalendarCellTrigger`, `CalendarHeadCell`, `CalendarNext`, `CalendarPrev`
+**组件：** `CalendarRoot`、`CalendarHeader`、`CalendarHeading`、`CalendarGrid`、`CalendarGridHead`、`CalendarGridBody`、`CalendarGridRow`、`CalendarCell`、`CalendarCellTrigger`、`CalendarHeadCell`、`CalendarNext`、`CalendarPrev`
 
 ## CalendarRoot
 
-### Props
+### 属性
 
-| Prop                 | Type                                      | Default    |
+| 属性                 | 类型                                      | 默认值     |
 | -------------------- | ----------------------------------------- | ---------- |
 | `as`                 | `AsTag \| Component`                      | `"div"`    |
 | `asChild`            | `boolean`                                 | -          |
@@ -36,16 +36,16 @@ Date selection grid (alpha)
 | `weekdayFormat`      | `"narrow" \| "short" \| "long"`           | `"narrow"` |
 | `weekStartsOn`       | `0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`         | `0`        |
 
-### Emits
+### 事件
 
-| Event                | Payload             |
+| 事件                 | 参数                |
 | -------------------- | ------------------- |
 | `update:modelValue`  | `[date: DateValue]` |
 | `update:placeholder` | `[date: DateValue]` |
 
-### Slots
+### 插槽
 
-| Slot           | Type                              |
+| 插槽           | 类型                              |
 | -------------- | --------------------------------- |
 | `date`         | `DateValue`                       |
 | `grid`         | `Grid<DateValue>[]`               |
@@ -56,69 +56,69 @@ Date selection grid (alpha)
 
 ## CalendarHeader
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## CalendarHeading
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
-### Slots
+### 插槽
 
-| Slot           | Type     |
+| 插槽           | 类型     |
 | -------------- | -------- |
 | `headingValue` | `string` |
 
 ## CalendarGrid
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"table"` |
 | `asChild` | `boolean`            | -         |
 
 ## CalendarGridHead
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"thead"` |
 | `asChild` | `boolean`            | -         |
 
 ## CalendarGridBody
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"tbody"` |
 | `asChild` | `boolean`            | -         |
 
 ## CalendarGridRow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"tr"`  |
 | `asChild` | `boolean`            | -       |
 
 ## CalendarCell
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"td"`  |
 | `asChild` | `boolean`            | -       |
@@ -126,35 +126,35 @@ Date selection grid (alpha)
 
 ## CalendarCellTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 | `day`\*   | `DateValue`          | -       |
 | `month`\* | `DateValue`          | -       |
 
-### Slots
+### 插槽
 
-| Slot       | Type     |
+| 插槽       | 类型     |
 | ---------- | -------- |
 | `dayValue` | `string` |
 
 ## CalendarHeadCell
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"th"`  |
 | `asChild` | `boolean`            | -       |
 
 ## CalendarNext
 
-### Props
+### 属性
 
-| Prop       | Type                                      | Default    |
+| 属性       | 类型                                      | 默认值     |
 | ---------- | ----------------------------------------- | ---------- |
 | `as`       | `AsTag \| Component`                      | `"button"` |
 | `asChild`  | `boolean`                                 | -          |
@@ -163,9 +163,9 @@ Date selection grid (alpha)
 
 ## CalendarPrev
 
-### Props
+### 属性
 
-| Prop       | Type                                      | Default    |
+| 属性       | 类型                                      | 默认值     |
 | ---------- | ----------------------------------------- | ---------- |
 | `as`       | `AsTag \| Component`                      | `"button"` |
 | `asChild`  | `boolean`                                 | -          |

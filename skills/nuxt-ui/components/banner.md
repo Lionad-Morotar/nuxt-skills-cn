@@ -1,19 +1,19 @@
-# Banner
+# 横幅
 
-Display a banner at the top of your website to inform users about important information.
+在网站顶部显示横幅，以通知用户有关重要信息。
 
-## Key Props
+## 关键属性
 
-- `title`: to display a title on the Banner.
-- `icon`: to display an icon on the Banner.
-- `color`: to change the color of the Banner.
-- `close`: to display a [Button](/docs/components/button) to dismiss the Banner.
-- `actions`: to add some [Button](/docs/components/button) actions to the Banner.
+- `title`：用于在横幅上显示标题。
+- `icon`：用于在横幅上显示图标。
+- `color`：用于更改横幅的颜色。
+- `close`：用于显示一个[按钮](/docs/components/button)以关闭横幅。
+- `actions`：用于向横幅添加一些[按钮](/docs/components/button)操作。
 
-## Usage
+## 使用方法
 
 ```vue
 <UBanner
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

@@ -1,18 +1,18 @@
-# Header
+# 页眉
 
-A responsive header component.
+一个响应式页眉组件。
 
-## Key Props
+## 主要属性
 
-- `title`: to change the title of the header.
-- `to`: to change the link of the title.
-- `mode`: to change the mode of the header menu.
-- `toggle`: to customize the toggle button displayed on mobile.
+- `title`：用于更改页眉的标题。
+- `to`：用于更改标题的链接。
+- `mode`：用于更改页眉菜单的模式。
+- `toggle`：用于自定义在移动设备上显示的切换按钮。
 
-## Usage
+## 用法
 
 ```vue
 <UHeader
-  <!-- props here -->
+  <!-- 在此处填写属性 -->
 />
 ```

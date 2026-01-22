@@ -1,11 +1,11 @@
 # useMemory
 
-Reactive Memory Info.
+响应式内存信息。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useMemory } from '@vueuse/core'
@@ -13,13 +13,13 @@ import { useMemory } from '@vueuse/core'
 const { isSupported, memory } = useMemory()
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type                        |
+| 名称        | 类型                        |
 | ----------- | --------------------------- |
 | isSupported | `useSupported`              |
-| memory      | `deepRef&lt;MemoryInfo&gt;` |
+| memory      | `deepRef<MemoryInfo>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMemory/)
+[VueUse 文档](https://vueuse.org/core/useMemory/)

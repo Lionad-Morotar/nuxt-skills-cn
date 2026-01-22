@@ -1,11 +1,11 @@
 # computedInject
 
-Combine computed and inject
+组合计算属性与注入
 
-**Package:** `@vueuse/core`
-**Category:** Component
+**包：** `@vueuse/core`
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 // @filename: provider.ts
@@ -22,6 +22,6 @@ const computedArray = computedInject(ArrayKey, (source) => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/computedInject/)
+[VueUse 文档](https://vueuse.org/core/computedInject/)

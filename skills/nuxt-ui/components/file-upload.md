@@ -1,28 +1,28 @@
-# FileUpload
+# 文件上传
 
-An input element to upload files.
+一个用于上传文件的输入组件。
 
-## Key Props
+## 主要属性
 
-- `multiple`: to allow multiple files to be selected.
-- `dropzone`: to enable/disable the droppable area.
-- `interactive`: to enable/disable the clickable area.
-- `accept`: to specify the allowed file types for the input.
-- `label`: to set the label of the FileUpload.
-- `description`: to set the description of the FileUpload.
-- `icon`: to set the icon of the FileUpload.
-- `color`: to change the color of the FileUpload.
-- `variant`: to change the variant of the FileUpload.
-- `size`: to change the size of the FileUpload.
+- `multiple`：允许选择多个文件。
+- `dropzone`：启用或禁用拖拽区域。
+- `interactive`：启用或禁用可点击区域。
+- `accept`：指定输入允许的文件类型。
+- `label`：设置文件上传组件的标签。
+- `description`：设置文件上传组件的描述。
+- `icon`：设置文件上传组件的图标。
+- `color`：更改文件上传组件的颜色。
+- `variant`：更改文件上传组件的变体。
+- `size`：更改文件上传组件的尺寸。
 
-## Usage
+## 使用方法
 
 ```vue
 <UFileUpload
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#actions`

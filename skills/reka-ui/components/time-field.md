@@ -1,5 +1,5 @@
-# Time Field
+# 时间字段
 
-Time input field (alpha)
+时间输入框（alpha）
 
-**Parts:** `TimeFieldRoot`, `TimeFieldInput`
+**组件：** `TimeFieldRoot`, `TimeFieldInput`

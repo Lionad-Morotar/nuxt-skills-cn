@@ -1,20 +1,20 @@
 # useSSRWidth
 
-Used to set a global viewport width which will be used when rendering SSR components that rely on the viewport width like or
+用于设置全局视口宽度，该宽度将在渲染依赖于视口宽度的 SSR 组件（如 or）时使用。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { provideSSRWidth } from '@vueuse/core'
 
-const app = createApp(App)
+const app = CreateApp(App)
 
 provideSSRWidth(500, app)
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSSRWidth/)
+[VueUse 文档](https://vueuse.org/core/useSSRWidth/)

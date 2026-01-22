@@ -1,21 +1,21 @@
-# Collapsible
+# 可折叠组件
 
-A collapsible element to toggle visibility of its content.
+用于切换其内容可见性的可折叠元素。
 
-> Based on [Reka UI Collapsible](https://reka-ui.com/docs/components/collapsible)
+> 基于 [Reka UI 可折叠组件](https://reka-ui.com/docs/components/collapsible)
 
-## Key Props
+## 主要属性
 
-- `disabled`: to disable the Collapsible.
+- `disabled`：用于禁用可折叠组件。
 
-## Usage
+## 使用方法
 
 ```vue
 <UCollapsible
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`

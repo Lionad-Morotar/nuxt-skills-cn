@@ -1,29 +1,29 @@
-# Context Menu
+# 上下文菜单
 
-Right-click context menu
+右键上下文菜单
 
-**Parts:** `ContextMenuRoot`, `ContextMenuTrigger`, `ContextMenuPortal`, `ContextMenuContent`, `ContextMenuItem`, `ContextMenuCheckboxItem`, `ContextMenuRadioGroup`, `ContextMenuRadioItem`, `ContextMenuItemIndicator`, `ContextMenuLabel`, `ContextMenuGroup`, `ContextMenuSeparator`, `ContextMenuSub`, `ContextMenuSubTrigger`, `ContextMenuSubContent`, `ContextMenuArrow`
+**组件：** `ContextMenuRoot`、`ContextMenuTrigger`、`ContextMenuPortal`、`ContextMenuContent`、`ContextMenuItem`、`ContextMenuCheckboxItem`、`ContextMenuRadioGroup`、`ContextMenuRadioItem`、`ContextMenuItemIndicator`、`ContextMenuLabel`、`ContextMenuGroup`、`ContextMenuSeparator`、`ContextMenuSub`、`ContextMenuSubTrigger`、`ContextMenuSubContent`、`ContextMenuArrow`
 
 ## ContextMenuRoot
 
-### Props
+### 属性
 
-| Prop    | Type             | Default |
-| ------- | ---------------- | ------- |
-| `dir`   | `"ltr" \| "rtl"` | -       |
-| `modal` | `boolean`        | `true`  |
+| 属性    | 类型             | 默认值 |
+| ------- | ---------------- | ------ |
+| `dir`   | `"ltr" \| "rtl"` | -      |
+| `modal` | `boolean`        | `true` |
 
-### Emits
+### 事件
 
-| Event         | Payload              |
+| 事件          | 参数                 |
 | ------------- | -------------------- |
 | `update:open` | `[payload: boolean]` |
 
 ## ContextMenuTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default  |
+| 属性       | 类型                 | 默认值   |
 | ---------- | -------------------- | -------- |
 | `as`       | `AsTag \| Component` | `"span"` |
 | `asChild`  | `boolean`            | -        |
@@ -31,19 +31,19 @@ Right-click context menu
 
 ## ContextMenuPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## ContextMenuContent
 
-### Props
+### 属性
 
-| Prop                 | Type                                                    | Default     |
+| 属性                 | 类型                                                    | 默认值      |
 | -------------------- | ------------------------------------------------------- | ----------- |
 | `alignOffset`        | `number`                                                | `0`         |
 | `as`                 | `AsTag \| Component`                                    | `"div"`     |
@@ -57,9 +57,9 @@ Right-click context menu
 | `prioritizePosition` | `boolean`                                               | -           |
 | `sticky`             | `"partial" \| "always"`                                 | `"partial"` |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `closeAutoFocus`     | `[event: Event]`                                      |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
@@ -69,26 +69,26 @@ Right-click context menu
 
 ## ContextMenuItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
+| 属性        | 类型                 | 默认值  |
 | ----------- | -------------------- | ------- |
 | `as`        | `AsTag \| Component` | `"div"` |
 | `asChild`   | `boolean`            | -       |
 | `disabled`  | `boolean`            | -       |
 | `textValue` | `string`             | -       |
 
-### Emits
+### 事件
 
-| Event    | Payload          |
-| -------- | ---------------- |
-| `select` | `[event: Event]` |
+| 事件     | 参数               |
+| -------- | ------------------ |
+| `select` | `[event: Event]`   |
 
 ## ContextMenuCheckboxItem
 
-### Props
+### 属性
 
-| Prop        | Type                               | Default |
+| 属性        | 类型                               | 默认值  |
 | ----------- | ---------------------------------- | ------- |
 | `as`        | `AsTag \| Component`               | `"div"` |
 | `asChild`   | `boolean`                          | -       |
@@ -96,34 +96,34 @@ Right-click context menu
 | `disabled`  | `boolean`                          | -       |
 | `textValue` | `string`                           | -       |
 
-### Emits
+### 事件
 
-| Event            | Payload              |
+| 事件             | 参数                 |
 | ---------------- | -------------------- |
 | `select`         | `[event: Event]`     |
 | `update:checked` | `[payload: boolean]` |
 
 ## ContextMenuRadioGroup
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
+| 属性         | 类型                 | 默认值  |
 | ------------ | -------------------- | ------- |
 | `as`         | `AsTag \| Component` | `"div"` |
 | `asChild`    | `boolean`            | -       |
 | `modelValue` | `string`             | -       |
 
-### Emits
+### 事件
 
-| Event               | Payload             |
+| 事件                | 参数                |
 | ------------------- | ------------------- |
 | `update:modelValue` | `[payload: string]` |
 
 ## ContextMenuRadioItem
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
+| 属性        | 类型                 | 默认值  |
 | ----------- | -------------------- | ------- |
 | `as`        | `AsTag \| Component` | `"div"` |
 | `asChild`   | `boolean`            | -       |
@@ -131,17 +131,17 @@ Right-click context menu
 | `textValue` | `string`             | -       |
 | `value`\*   | `string`             | -       |
 
-### Emits
+### 事件
 
-| Event    | Payload          |
-| -------- | ---------------- |
-| `select` | `[event: Event]` |
+| 事件     | 参数               |
+| -------- | ------------------ |
+| `select` | `[event: Event]`   |
 
 ## ContextMenuItemIndicator
 
-### Props
+### 属性
 
-| Prop         | Type                 | Default |
+| 属性         | 类型                 | 默认值  |
 | ------------ | -------------------- | ------- |
 | `as`         | `AsTag \| Component` | `"div"` |
 | `asChild`    | `boolean`            | -       |
@@ -149,57 +149,57 @@ Right-click context menu
 
 ## ContextMenuLabel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ContextMenuGroup
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ContextMenuSeparator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ContextMenuSub
 
-### Props
+### 属性
 
-| Prop          | Type      | Default |
-| ------------- | --------- | ------- |
-| `defaultOpen` | `boolean` | -       |
-| `open`        | `boolean` | -       |
+| 属性          | 类型      | 默认值 |
+| ------------- | --------- | ------ |
+| `defaultOpen` | `boolean` | -      |
+| `open`        | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload              |
+| 事件          | 参数                 |
 | ------------- | -------------------- |
 | `update:open` | `[payload: boolean]` |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## ContextMenuSubTrigger
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default |
+| 属性        | 类型                 | 默认值  |
 | ----------- | -------------------- | ------- |
 | `as`        | `AsTag \| Component` | `"div"` |
 | `asChild`   | `boolean`            | -       |
@@ -208,9 +208,9 @@ Right-click context menu
 
 ## ContextMenuSubContent
 
-### Props
+### 属性
 
-| Prop                     | Type                                                    | Default |
+| 属性                     | 类型                                                    | 默认值  |
 | ------------------------ | ------------------------------------------------------- | ------- |
 | `alignOffset`            | `number`                                                | -       |
 | `arrowPadding`           | `number`                                                | -       |
@@ -227,9 +227,9 @@ Right-click context menu
 | `sticky`                 | `"partial" \| "always"`                                 | -       |
 | `updatePositionStrategy` | `"always" \| "optimized"`                               | -       |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `closeAutoFocus`     | `[event: Event]`                                      |
 | `entryFocus`         | `[event: Event]`                                      |
@@ -241,9 +241,9 @@ Right-click context menu
 
 ## ContextMenuArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"svg"` |
 | `asChild` | `boolean`            | -       |

@@ -1,10 +1,10 @@
 # EditorToolbar
 
-A customizable toolbar for editor actions that can be displayed as fixed, bubble, or floating menu.
+一个可自定义的编辑器操作工具栏，可显示为固定、气泡或浮动菜单。
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：作为包含以下属性的对象数组：
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -23,14 +23,14 @@ A customizable toolbar for editor actions that can be displayed as fixed, bubble
 - `items?: EditorToolbarItem[] | EditorToolbarItem[][]`{lang="ts-type"}
 - `class?: any`{lang="ts-type"}
 
-You can pass any property from the [Button](/docs/components/button#props) component such as `color`, `variant`, `size`, etc.
+您可以传递 [Button](/docs/components/button#props) 组件的任意属性，例如 `color`、`variant`、`size` 等。
 
-- `layout`: to change how the toolbar is displayed.
+- `layout`：用于更改工具栏的显示方式。
 
-## Usage
+## 使用方法
 
 ```vue
 <UEditorToolbar
-  <!-- props here -->
+  <!-- 在此处传入属性 -->
 />
 ```

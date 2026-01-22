@@ -1,11 +1,11 @@
 # useDeviceOrientation
 
-Reactive DeviceOrientationEvent. Provide web developers with information from the physical orientation of the device running the web page.
+响应式 DeviceOrientationEvent。为网页开发者提供设备物理方向信息。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useDeviceOrientation } from '@vueuse/core'
@@ -18,9 +18,9 @@ const {
 } = useDeviceOrientation()
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type           |
+| 名称        | 类型           |
 | ----------- | -------------- |
 | isSupported | `useSupported` |
 | isAbsolute  | `shallowRef`   |
@@ -28,6 +28,6 @@ const {
 | beta        | `Ref`          |
 | gamma       | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDeviceOrientation/)
+[VueUse 文档](https://vueuse.org/core/useDeviceOrientation/)

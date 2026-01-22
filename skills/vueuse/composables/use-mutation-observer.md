@@ -1,11 +1,11 @@
 # useMutationObserver
 
-Watch for changes being made to the DOM tree. MutationObserver MDN
+监听 DOM 树发生的变更。MutationObserver MDN
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -30,14 +30,14 @@ useMutationObserver(el, (mutations) => {
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type           |
+| 名称        | 类型           |
 | ----------- | -------------- |
 | isSupported | `useSupported` |
 | stop        | `Ref`          |
 | takeRecords | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useMutationObserver/)
+[VueUse 文档](https://vueuse.org/core/useMutationObserver/)

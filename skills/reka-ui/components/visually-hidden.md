@@ -1,14 +1,14 @@
-# Visually Hidden
+# 视觉隐藏
 
-Screen reader only content
+仅屏幕阅读器内容
 
-**Parts:** `VisuallyHidden`
+**组件:** `VisuallyHidden`
 
 ## VisuallyHidden
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |

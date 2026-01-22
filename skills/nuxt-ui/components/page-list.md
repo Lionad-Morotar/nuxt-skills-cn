@@ -1,15 +1,15 @@
-# PageList
+# 页面列表
 
-A vertical list layout for displaying content in a stacked format.
+一种用于以堆叠格式显示内容的垂直列表布局。
 
-## Key Props
+## 主要属性
 
-- `divide`: to add a divider between each child element.
+- `divide`：在每个子元素之间添加分隔线。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageList
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

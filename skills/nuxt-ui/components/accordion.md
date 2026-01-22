@@ -1,12 +1,12 @@
-# Accordion
+# 手风琴组件
 
-A stacked set of collapsible panels.
+一组堆叠的可折叠面板。
 
-> Based on [Reka UI Accordion](https://reka-ui.com/docs/components/accordion)
+> 基于 [Reka UI 手风琴](https://reka-ui.com/docs/components/accordion)
 
-## Key Props
+## 关键属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：由以下属性组成的对象数组：
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -20,7 +20,7 @@ A stacked set of collapsible panels.
 
 ## ::component-code
 
-ignore:
+忽略：
 
 - items
   external:
@@ -31,21 +31,21 @@ ignore:
 - class
   props:
   class: 'px-4'
-  items: - label: 'Icons'
+  items: - label: '图标'
   icon: 'i-lucide-smile'
-  content: 'You have nothing to do, @nuxt/icon will handle it automatically.
+  content: '您无需执行任何操作，@nuxt/icon 将自动处理。
 - `disabled`:
 - `slot`:
 
-## Usage
+## 用法
 
 ```vue
 <UAccordion
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#body`
 - `#content`

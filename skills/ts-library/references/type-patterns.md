@@ -1,49 +1,49 @@
-# Type Patterns
+# 类型模式
 
-## Utility Types
+## 实用类型
 
-Common helpers used across libraries:
+在各库中通用的辅助类型：
 
 ```typescript
-// Promise or sync
+// 异步或同步
 export type Awaitable<T> = T | Promise<T>
 
-// Single or array
+// 单个或数组
 export type Arrayable<T> = T | T[]
 
-// Nullable
+// 可为空
 export type Nullable<T> = T | null | undefined
 
-// Deep partial
+// 深度可选
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]
 }
 
-// Simplify intersection for better IDE display
+// 简化交集以获得更好的 IDE 显示效果
 export type Simplify<T> = { [K in keyof T]: T[K] } & {}
 
-// Prevent inference in specific position
+// 防止在特定位置进行类型推断
 export type NoInfer<T> = [T][T extends any ? 0 : never]
 ```
 
-## Conditional Extraction
+## 条件提取
 
-Extract types from structures:
+从结构中提取类型：
 
 ```typescript
-// Extract input type from schema
+// 从模式中提取输入类型
 export type Input<T> = T extends { _input: infer U } ? U : unknown
 
-// Extract output type
+// 提取输出类型
 export type Output<T> = T extends { _output: infer U } ? U : unknown
 
-// Extract from nested property
+// 从嵌套属性中提取
 export type InferContext<T> = T extends { context: infer C } ? C : never
 ```
 
-## Brand Types
+## 品牌类型
 
-Nominal typing for primitives:
+原始类型的名义类型：
 
 ```typescript
 declare const brand: unique symbol
@@ -53,15 +53,15 @@ export type Brand<T, B> = T & { readonly [brand]: B }
 export type UserId = Brand<string, 'UserId'>
 export type PostId = Brand<string, 'PostId'>
 
-// Can't mix them up
+// 无法混淆它们
 function getUser(id: UserId) { /* ... */ }
-getUser('abc' as UserId)  // OK
-getUser('abc' as PostId)  // Error!
+getUser('abc' as UserId)  // 正确
+getUser('abc' as PostId)  // 错误！
 ```
 
-## Type Accumulation (Builders)
+## 类型累积（构建器）
 
-Each method updates generic parameters:
+每个方法更新泛型参数：
 
 ```typescript
 interface ProcedureBuilder<TContext, TInput, TOutput> {
@@ -70,26 +70,26 @@ interface ProcedureBuilder<TContext, TInput, TOutput> {
   query(fn: (opts: { ctx: TContext; input: TInput }) => TOutput): Procedure
 }
 
-// Types flow through the chain
+// 类型在链中流动
 const proc = builder
   .input(z.object({ id: z.string() }))  // TInput = { id: string }
   .output(z.object({ name: z.string() })) // TOutput = { name: string }
   .query(({ input }) => ({ name: input.id }))
 ```
 
-## Module Augmentation
+## 模块增强
 
-Allow users to extend library types:
+允许用户扩展库类型：
 
 ```typescript
-// Library code
+// 库代码
 export interface Register {}
 
 export type DefaultError = Register extends { defaultError: infer E }
   ? E
   : Error
 
-// User code
+// 用户代码
 declare module 'my-lib' {
   interface Register {
     defaultError: MyCustomError
@@ -97,9 +97,9 @@ declare module 'my-lib' {
 }
 ```
 
-## Data Tagging
+## 数据标记
 
-Attach type metadata with symbols:
+使用符号附加类型元数据：
 
 ```typescript
 declare const dataTagSymbol: unique symbol
@@ -110,13 +110,13 @@ export type DataTag<TType, TData, TError> = TType & {
   [errorTagSymbol]: TError
 }
 
-// Extract tagged types
+// 提取标记类型
 export type InferData<T> = T extends { [dataTagSymbol]: infer D } ? D : unknown
 ```
 
-## Mapped Type Modifications
+## 映射类型修改
 
-Column builder pattern (drizzle):
+列构建器模式（drizzle）：
 
 ```typescript
 type NotNull<T extends ColumnBuilder> = T & { _: { notNull: true } }
@@ -135,9 +135,9 @@ class ColumnBuilder<T extends ColumnConfig> {
 }
 ```
 
-## Compile-Time Errors
+## 编译时错误
 
-Return readable error messages:
+返回可读的错误信息：
 
 ```typescript
 type TypeError<Message extends string> = { __error: Message }
@@ -146,12 +146,12 @@ type ValidateInput<T> = T extends string
   ? T
   : TypeError<'Input must be a string'>
 
-// Shows: Type 'TypeError<"Input must be a string">' is not assignable...
+// 显示：Type 'TypeError<"Input must be a string">' is not assignable...
 ```
 
-## Function Overloads
+## 函数重载
 
-Multiple signatures for different inputs:
+多种签名用于不同的输入：
 
 ```typescript
 export function useEventListener<E extends keyof WindowEventMap>(
@@ -166,13 +166,13 @@ export function useEventListener<E extends keyof DocumentEventMap>(
 ): void
 
 export function useEventListener(...args: any[]) {
-  // Implementation
+  // 实现
 }
 ```
 
-## Distributive Conditionals
+## 分布式条件
 
-Apply to each union member:
+对每个联合成员应用：
 
 ```typescript
 type ToArray<T> = T extends any ? T[] : never
@@ -181,7 +181,7 @@ type Result = ToArray<string | number>
 // Result = string[] | number[]
 ```
 
-Disable distribution with tuple:
+通过元组禁用分布：
 
 ```typescript
 type ToArrayNonDist<T> = [T] extends [any] ? T[] : never

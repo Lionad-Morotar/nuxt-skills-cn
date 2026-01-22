@@ -1,11 +1,11 @@
 # useParentElement
 
-Get parent element of the given element
+获取指定元素的父级元素
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -19,6 +19,6 @@ onMounted(() => {
 </script>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useParentElement/)
+[VueUse 文档](https://vueuse.org/core/useParentElement/)

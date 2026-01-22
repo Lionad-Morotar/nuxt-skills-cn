@@ -1,14 +1,14 @@
-# Number Field
+# 数字字段
 
-Numeric input with increment/decrement
+带增/减功能的数值输入框
 
-**Parts:** `NumberFieldRoot`, `NumberFieldInput`, `NumberFieldIncrement`, `NumberFieldDecrement`
+**组件结构：** `NumberFieldRoot`、`NumberFieldInput`、`NumberFieldIncrement`、`NumberFieldDecrement`
 
 ## NumberFieldRoot
 
-### Props
+### 属性
 
-| Prop            | Type                  | Default   |
+| 属性            | 类型                  | 默认值    |
 | --------------- | --------------------- | --------- |
 | `as`            | `AsTag \| Component`  | `"div"`   |
 | `asChild`       | `boolean`             | -         |
@@ -24,33 +24,33 @@ Numeric input with increment/decrement
 | `required`      | `boolean`             | -         |
 | `step`          | `number`              | `1`       |
 
-### Emits
+### 事件
 
-| Event               | Payload         |
+| 事件                | 参数            |
 | ------------------- | --------------- |
 | `update:modelValue` | `[val: number]` |
 
-### Slots
+### 插槽
 
-| Slot         | Type     |
+| 插槽         | 类型     |
 | ------------ | -------- |
 | `modelValue` | `number` |
 | `textValue`  | `string` |
 
 ## NumberFieldInput
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default   |
+| 属性      | 类型                 | 默认值    |
 | --------- | -------------------- | --------- |
 | `as`      | `AsTag \| Component` | `"input"` |
 | `asChild` | `boolean`            | -         |
 
 ## NumberFieldIncrement
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -58,9 +58,9 @@ Numeric input with increment/decrement
 
 ## NumberFieldDecrement
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |

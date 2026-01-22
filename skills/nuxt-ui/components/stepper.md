@@ -1,22 +1,22 @@
-# Stepper
+# 步骤条
 
-A set of steps that are used to indicate progress through a multi-step process.
+一组用于指示多步骤流程进度的步骤。
 
-> Based on [Reka UI Stepper](https://reka-ui.com/docs/components/stepper)
+> 基于 [Reka UI 步骤条](https://reka-ui.com/docs/components/stepper)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：作为包含以下属性的对象数组：
 
-- `title?: string`{lang="ts-type"}
-- `description?: AvatarProps`{lang="ts-type"}
-- `content?: string`{lang="ts-type"}
-- `icon?: string`{lang="ts-type"}
-- `value?: string | number`{lang="ts-type"}
-- `disabled?: boolean`{lang="ts-type"}
-- [`slot?: string`{lang="ts-type"}](#with-custom-slot)
-- `class?: any`{lang="ts-type"}
-- `ui?: { item?: ClassNameValue, container?: ClassNameValue, trigger?: ClassNameValue, indicator?: ClassNameValue, icon?: ClassNameValue, separator?: ClassNameValue, wrapper?: ClassNameValue, title?: ClassNameValue, description?: ClassNameValue }`{lang="ts-type"}
+  - `title?: string`{lang="ts-type"}
+  - `description?: AvatarProps`{lang="ts-type"}
+  - `content?: string`{lang="ts-type"}
+  - `icon?: string`{lang="ts-type"}
+  - `value?: string | number`{lang="ts-type"}
+  - `disabled?: boolean`{lang="ts-type"}
+  - [`slot?: string`{lang="ts-type"}](#with-custom-slot)
+  - `class?: any`{lang="ts-type"}
+  - `ui?: { item?: ClassNameValue, container?: ClassNameValue, trigger?: ClassNameValue, indicator?: ClassNameValue, icon?: ClassNameValue, separator?: ClassNameValue, wrapper?: ClassNameValue, title?: ClassNameValue, description?: ClassNameValue }`{lang="ts-type"}
 
 ## ::component-code
 
@@ -29,12 +29,12 @@ ignore:
   externalTypes:
 - StepperItem[]
   props:
-  items: - title: 'Address'
-  description: 'Add your address here'
-  icon: 'i-lucide-house' - title: 'Shipping'
-  description: 'Set your preferred shipping method'
-  icon: 'i-lucide-truck' - title: 'Checkout'
-  description: 'Confirm your order'
+  items: - title: '地址'
+  description: '在此添加您的地址'
+  icon: 'i-lucide-house' - title: '配送'
+  description: '设置您偏好的配送方式'
+  icon: 'i-lucide-truck' - title: '结账'
+  description: '确认您的订单'
   class: 'w-full'
 
 ---
@@ -42,22 +42,22 @@ ignore:
 ::
 
 ::note
-Click on the items to navigate through the steps.
+点击项目以在步骤间导航。
 
-- `color`: to change the color of the Stepper.
-- `size`: to change the size of the Stepper.
-- `orientation`: to change the orientation of the Stepper.
-- `disabled`: to disable navigation through the steps.
+- `color`：更改步骤条的颜色。
+- `size`：更改步骤条的尺寸。
+- `orientation`：更改步骤条的方向。
+- `disabled`：禁用步骤间的导航。
 - `slot`:
 
-## Usage
+## 用法
 
 ```vue
 <UStepper
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`

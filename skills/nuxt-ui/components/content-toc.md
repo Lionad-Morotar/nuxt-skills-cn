@@ -1,18 +1,18 @@
-# ContentToc
+# 内容目录
 
-A sticky Table of Contents with automatic active anchor link highlighting.
+一个带有自动激活锚点链接高亮的固定内容目录。
 
-## Key Props
+## 主要属性
 
-- `links`: with the `page?.
-- `title`: to change the title of the Table of Contents.
-- `color`: to change the color of the links.
-- `highlight`: to display a highlighted border for the active item.
+- `links`：用于设置页面中的链接。
+- `title`：用于更改内容目录的标题。
+- `color`：用于更改链接的颜色。
+- `highlight`：用于为当前项显示高亮边框。
 
-## Usage
+## 使用方法
 
 ```vue
 <UContentToc
-  <!-- props here -->
+  <!-- 在此处设置属性 -->
 />
 ```

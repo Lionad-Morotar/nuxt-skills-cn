@@ -1,11 +1,11 @@
 # useElementSize
 
-Reactive size of an HTML element. ResizeObserver MDN
+HTML 元素的响应式尺寸。ResizeObserver MDN
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -24,14 +24,14 @@ const { width, height } = useElementSize(el)
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name   | Type         |
+| 名称   | 类型         |
 | ------ | ------------ |
 | width  | `shallowRef` |
 | height | `shallowRef` |
 | stop   | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useElementSize/)
+[VueUse 文档](https://vueuse.org/core/useElementSize/)

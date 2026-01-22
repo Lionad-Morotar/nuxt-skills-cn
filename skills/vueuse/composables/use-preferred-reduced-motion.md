@@ -1,11 +1,11 @@
 # usePreferredReducedMotion
 
-Reactive prefers-reduced-motion media query.
+响应式 prefers-reduced-motion 媒体查询。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { usePreferredReducedMotion } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { usePreferredReducedMotion } from '@vueuse/core'
 const preferredMotion = usePreferredReducedMotion()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePreferredReducedMotion/)
+[VueUse 文档](https://vueuse.org/core/usePreferredReducedMotion/)

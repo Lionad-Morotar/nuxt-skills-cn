@@ -1,29 +1,29 @@
 # Slideover
 
-A dialog that slides in from any side of the screen.
+从屏幕任意一侧滑入的对话框。
 
-> Based on [Reka UI Slideover](https://reka-ui.com/docs/components/dialog)
+> 基于 [Reka UI Slideover](https://reka-ui.com/docs/components/dialog)
 
-## Key Props
+## 关键属性
 
-- `title`: to set the title of the Slideover's header.
-- `description`: to set the description of the Slideover's header.
-- `close`: to customize or hide the close button (with `false` value) displayed in the Slideover's header.
-- `side`: to set the side of the screen where the Slideover will slide in from.
-- `transition`: to control whether the Slideover is animated or not.
-- `overlay`: to control whether the Slideover has an overlay or not.
-- `modal`: to control whether the Slideover blocks interaction with outside content.
-- `dismissible`: to control whether the Slideover is dismissible when clicking outside of it or pressing escape.
+- `title`：用于设置 Slideover 标题栏的标题。
+- `description`：用于设置 Slideover 标题栏的描述。
+- `close`：用于自定义或隐藏显示在 Slideover 标题栏中的关闭按钮（使用 `false` 值可隐藏）。
+- `side`：用于设置 Slideover 从屏幕的哪一侧滑入。
+- `transition`：用于控制 Slideover 是否具有动画效果。
+- `overlay`：用于控制 Slideover 是否具有遮罩层。
+- `modal`：用于控制 Slideover 是否阻止与外部内容的交互。
+- `dismissible`：用于控制点击 Slideover 外部或按下 Esc 键时是否可关闭。
 
-## Usage
+## 使用方法
 
 ```vue
 <USlideover
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`
 - `#header`

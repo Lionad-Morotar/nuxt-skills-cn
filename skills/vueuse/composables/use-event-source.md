@@ -1,11 +1,11 @@
 # useEventSource
 
-An EventSource or Server-Sent-Events instance opens a persistent connection to an HTTP server, which sends events in text/event-stream format.
+EventSource 或 Server-Sent-Events 实例与 HTTP 服务器建立持久连接，服务器以 text/event-stream 格式发送事件。
 
-**Package:** `@vueuse/core`
-**Category:** Network
+**包：** `@vueuse/core`  
+**类别：** 网络
 
-## Usage
+## 用法
 
 ```ts
 import { useEventSource } from '@vueuse/core'
@@ -13,28 +13,28 @@ import { useEventSource } from '@vueuse/core'
 const { status, data, error, close } = useEventSource('https://event-source-url')
 ```
 
-## Options
+## 选项
 
-| Option        | Type                           | Default | Description                          |
-| ------------- | ------------------------------ | ------- | ------------------------------------ |
-| autoReconnect | `boolean \| {`                 | false   | Enabled auto reconnect               |
-| retries       | `number \| (() =&gt; boolean)` | -1      | Maximum retry times.                 |
-| delay         | `number`                       | 1000    | Delay for reconnect, in milliseconds |
-| onFailed      | `Fn`                           | -       | On maximum retry times reached.      |
+| 选项          | 类型                           | 默认值  | 描述                             |
+| ------------- | ------------------------------ | ------- | -------------------------------- |
+| autoReconnect | `boolean \| {`                 | false   | 启用自动重连                     |
+| retries       | `number \| (() =&gt; boolean)` | -1      | 最大重试次数。                   |
+| delay         | `number`                       | 1000    | 重连延迟，单位为毫秒             |
+| onFailed      | `Fn`                           | -       | 达到最大重试次数时的回调函数。   |
 
-## Returns
+## 返回值
 
-| Name        | Type                                  |
-| ----------- | ------------------------------------- |
-| eventSource | `deepRef&lt;EventSource \| null&gt;`  |
-| event       | `Ref`                                 |
-| data        | `Ref`                                 |
-| status      | `shallowRef&lt;EventSourceStatus&gt;` |
-| error       | `shallowRef&lt;Event \| null&gt;`     |
-| open        | `Ref`                                 |
-| close       | `Ref`                                 |
-| lastEventId | `shallowRef&lt;string \| null&gt;`    |
+| 名称          | 类型                                  |
+| ------------- | ------------------------------------- |
+| eventSource   | `deepRef&lt;EventSource \| null&gt;`  |
+| event         | `Ref`                                 |
+| data          | `Ref`                                 |
+| status        | `shallowRef&lt;EventSourceStatus&gt;` |
+| error         | `shallowRef&lt;Event \| null&gt;`     |
+| open          | `Ref`                                 |
+| close         | `Ref`                                 |
+| lastEventId   | `shallowRef&lt;string \| null&gt;`    |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useEventSource/)
+[VueUse 文档](https://vueuse.org/core/useEventSource/)

@@ -1,16 +1,16 @@
-# Form
+# 表单
 
-A form component with built-in validation and submission handling.
+一个内置验证和提交处理功能的表单组件。
 
-## Key Props
+## 主要属性
 
-- `validate`: to apply your own validation logic.
-- `nested`: to nest multiple Form components and link their validation functions.
+- `validate`：用于应用您自己的验证逻辑。
+- `nested`：用于嵌套多个表单组件并链接它们的验证函数。
 
-## Usage
+## 用法
 
 ```vue
 <UForm
-  <!-- props here -->
+  <!-- 这里是属性 -->
 />
 ```

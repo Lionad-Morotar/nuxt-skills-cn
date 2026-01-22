@@ -1,18 +1,18 @@
-# TypeScript Types
+# TypeScript 类型
 
-## Module Alias
+## 模块别名
 
-Import types from the module alias:
+从模块别名导入类型：
 
 ```ts
 import type { AuthUser, AuthSession, ServerAuthContext, AppAuthClient } from '#nuxt-better-auth'
 ```
 
-## Core Types
+## 核心类型
 
 ### AuthUser
 
-User object returned by `useUserSession()` and `requireUserSession()`:
+由 `useUserSession()` 和 `requireUserSession()` 返回的用户对象：
 
 ```ts
 interface AuthUser {
@@ -23,70 +23,70 @@ interface AuthUser {
   emailVerified: boolean
   createdAt: Date
   updatedAt: Date
-  // Plus any fields from plugins (role, etc.)
+  // 加上插件中的任何字段（角色等）
 }
 ```
 
 ### AuthSession
 
-Session object:
+会话对象：
 
 ```ts
 interface AuthSession {
   id: string
   userId: string
   expiresAt: Date
-  // token is filtered from exposed data
+  // token 从暴露的数据中过滤掉
 }
 ```
 
-## Type Inference
+## 类型推断
 
-Types are automatically inferred from your server config. The module uses `InferUser` and `InferSession` from Better Auth:
+类型会自动从服务器配置中推断。该模块使用 Better Auth 中的 `InferUser` 和 `InferSession`：
 
 ```ts
-// Inferred from server/auth.config.ts
+// 从 server/auth.config.ts 推断
 type AuthUser = InferUser<typeof authConfig>
 type AuthSession = InferSession<typeof authConfig>
 ```
 
-## Plugin Type Augmentation
+## 插件类型扩展
 
-When using plugins, types extend automatically:
+使用插件时，类型会自动扩展：
 
 ```ts
-// With admin plugin
+// 使用 admin 插件
 interface AuthUser {
-  // ... base fields
+  // ... 基础字段
   role: 'user' | 'admin'
 }
 
-// With 2FA plugin
+// 使用双因素认证插件
 interface AuthUser {
-  // ... base fields
+  // ... 基础字段
   twoFactorEnabled: boolean
 }
 ```
 
 ## ServerAuthContext
 
-Available in `defineServerAuth()` callback:
+在 `defineServerAuth()` 回调中可用：
 
 ```ts
 interface ServerAuthContext {
   runtimeConfig: RuntimeConfig
-  db?: DrizzleDatabase  // When NuxtHub enabled
+  db?: DrizzleDatabase  // 当启用 NuxtHub 时
 }
 ```
 
-## Using Types in Components
+## 在组件中使用类型
 
 ```vue
 <script setup lang="ts">
 import type { AuthUser } from '#nuxt-better-auth'
 
 const { user } = useUserSession()
-// user is Ref<AuthUser | null>
+// user 是 Ref<AuthUser | null>
 
 function greet(u: AuthUser) {
   return `Hello, ${u.name}`
@@ -94,7 +94,7 @@ function greet(u: AuthUser) {
 </script>
 ```
 
-## Using Types in Server
+## 在服务器中使用类型
 
 ```ts
 // server/utils/helpers.ts
@@ -105,9 +105,9 @@ export function isAdmin(user: AuthUser): boolean {
 }
 ```
 
-## Custom User Fields
+## 自定义用户字段
 
-Extend user type via Better Auth config:
+通过 Better Auth 配置扩展用户类型：
 
 ```ts
 // server/auth.config.ts
@@ -121,22 +121,22 @@ export default defineServerAuth(() => ({
 }))
 ```
 
-Types automatically include these fields:
+类型会自动包含这些字段：
 
 ```ts
-// AuthUser now includes:
+// AuthUser 现在包括：
 interface AuthUser {
-  // ... base fields
+  // ... 基础字段
   plan: string
   credits: number
 }
 ```
 
-## Type-Safe User Matching
+## 类型安全的用户匹配
 
 ```ts
-// Fully typed
+// 完全类型化
 await requireUserSession(event, {
-  user: { role: 'admin' }  // TypeScript knows valid fields
+  user: { role: 'admin' }  // TypeScript 知道有效的字段
 })
 ```

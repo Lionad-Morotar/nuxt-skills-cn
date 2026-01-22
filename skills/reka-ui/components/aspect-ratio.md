@@ -1,21 +1,21 @@
-# Aspect Ratio
+# 宽高比
 
-Maintain aspect ratio
+保持宽高比
 
-**Parts:** `AspectRatio`
+**组件：** `AspectRatio`
 
 ## AspectRatio
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 | `ratio`   | `number`             | `1`     |
 
-### Slots
+### 插槽
 
-| Slot     | Type     |
+| 插槽     | 类型     |
 | -------- | -------- |
 | `aspect` | `number` |

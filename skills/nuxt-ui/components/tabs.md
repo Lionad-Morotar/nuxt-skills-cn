@@ -1,52 +1,54 @@
-# Tabs
+# 标签页
 
-A set of tab panels that are displayed one at a time.
+一组标签面板，一次仅显示一个。
 
-> Based on [Reka UI Tabs](https://reka-ui.com/docs/components/tabs)
+> 基于 [Reka UI Tabs](https://reka-ui.com/docs/components/tabs)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of objects with the following properties:
+- `items`：作为包含以下属性的对象数组：
 
-- `label?: string`{lang="ts-type"}
-- `icon?: string`{lang="ts-type"}
-- `avatar?: AvatarProps`{lang="ts-type"}
-- `badge?: string | number | BadgeProps`{lang="ts-type"}
-- `content?: string`{lang="ts-type"}
-- `value?: string | number`{lang="ts-type"}
-- `disabled?: boolean`{lang="ts-type"}
-- [`slot?: string`{lang="ts-type"}](#with-custom-slot)
-- `class?: any`{lang="ts-type"}
-- `ui?: { trigger?: ClassNameValue, leadingIcon?: ClassNameValue, leadingAvatar?: ClassNameValue, leadingAvatarSize?: ClassNameValue, label?: ClassNameValue, trailingBadge?: ClassNameValue, trailingBadgeSize?: ClassNameValue, content?: ClassNameValue }`{lang="ts-type"}
+  - `label?: string`{lang="ts-type"}
+  - `icon?: string`{lang="ts-type"}
+  - `avatar?: AvatarProps`{lang="ts-type"}
+  - `badge?: string | number | BadgeProps`{lang="ts-type"}
+  - `content?: string`{lang="ts-type"}
+  - `value?: string | number`{lang="ts-type"}
+  - `disabled?: boolean`{lang="ts-type"}
+  - [`slot?: string`{lang="ts-type"}](#with-custom-slot)
+  - `class?: any`{lang="ts-type"}
+  - `ui?: { trigger?: ClassNameValue, leadingIcon?: ClassNameValue, leadingAvatar?: ClassNameValue, leadingAvatarSize?: ClassNameValue, label?: ClassNameValue, trailingBadge?: ClassNameValue, trailingBadgeSize?: ClassNameValue, content?: ClassNameValue }`{lang="ts-type"}
 
 ## ::component-code
 
-ignore:
+忽略：
 
 - items
 - class
-  external:
+
+外部类型：
+
 - items
-  externalTypes:
+  外部类型：
 - TabsItem[]
-  props:
+  属性：
   items: - label: Account
   icon: 'i-lucide-user'
-  content: 'This is the account content.
-- `color`: to change the color of the Tabs.
-- `variant`: to change the variant of the Tabs.
-- `size`: to change the size of the Tabs.
-- `orientation`: to change the orientation of the Tabs.
-- `slot`:
+  content: '这是账户内容。
+- `color`：用于更改标签页的颜色。
+- `variant`：用于更改标签页的变体。
+- `size`：用于更改标签页的尺寸。
+- `orientation`：用于更改标签页的方向。
+- `slot`：
 
-## Usage
+## 用法
 
 ```vue
 <UTabs
-  <!-- props here -->
+  <!-- 在此处添加属性 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#content`

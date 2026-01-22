@@ -1,11 +1,11 @@
 # useManualRefHistory
 
-Manually track the change history of a ref when the using calls , also provides undo and redo functionality
+当使用调用时，手动追踪 ref 的变更历史记录，并提供撤销与重做功能
 
-**Package:** `@vueuse/core`
-**Category:** State
+**包：** `@vueuse/core`  
+**分类：** 状态
 
-## Usage
+## 用法
 
 ```ts
 // @include: usage
@@ -15,19 +15,19 @@ undo()
 console.log(counter.value) // 0
 ```
 
-## Options
+## 选项
 
-| Option    | Type                                          | Default | Description                                                                         |
-| --------- | --------------------------------------------- | ------- | ----------------------------------------------------------------------------------- |
-| capacity  | `number`                                      | -       | Maximum number of history to be kept. Default to unlimited.                         |
-| clone     | `boolean \| CloneFn&lt;Raw&gt;`               | false   | Clone when taking a snapshot, shortcut for dump: JSON.parse(JSON.stringify(value)). |
-| dump      | `(v: Raw) =&gt; Serialized`                   | -       | Serialize data into the history                                                     |
-| parse     | `(v: Serialized) =&gt; Raw`                   | -       | Deserialize data from the history                                                   |
-| setSource | `(source: Ref&lt;Raw&gt;, v: Raw) =&gt; void` | -       | set data source                                                                     |
+| 选项      | 类型                                          | 默认值  | 描述                                                                               |
+| --------- | --------------------------------------------- | ------- | ---------------------------------------------------------------------------------- |
+| capacity  | `number`                                      | -       | 要保留的历史记录最大数量。默认为无限制。                                           |
+| clone     | `boolean \| CloneFn<Raw>`                     | false   | 快照时克隆数据，简化写法为 dump: JSON.parse(JSON.stringify(value))。               |
+| dump      | `(v: Raw) => Serialized`                      | -       | 将数据序列化至历史记录中                                                           |
+| parse     | `(v: Serialized) => Raw`                      | -       | 从历史记录中反序列化数据                                                           |
+| setSource | `(source: Ref<Raw>, v: Raw) => void`          | -       | 设置数据源                                                                         |
 
-## Returns
+## 返回值
 
-| Name      | Type       |
+| 名称      | 类型       |
 | --------- | ---------- |
 | source    | `Ref`      |
 | undoStack | `Ref`      |
@@ -42,6 +42,6 @@ console.log(counter.value) // 0
 | undo      | `Ref`      |
 | redo      | `Ref`      |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useManualRefHistory/)
+[VueUse 文档](https://vueuse.org/core/useManualRefHistory/)

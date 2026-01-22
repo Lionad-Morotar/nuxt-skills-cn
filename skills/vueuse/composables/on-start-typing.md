@@ -1,11 +1,11 @@
 # onStartTyping
 
-Fires when users start typing on non-editable elements.
+当用户在不可编辑元素上开始输入时触发。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -21,10 +21,10 @@ onStartTyping(() => {
 </script>
 
 <template>
-  <input ref="input" type="text" placeholder="Start typing to focus">
+  <input ref="input" type="text" placeholder="开始输入以获得焦点">
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/onStartTyping/)
+[VueUse 文档](https://vueuse.org/core/onStartTyping/)

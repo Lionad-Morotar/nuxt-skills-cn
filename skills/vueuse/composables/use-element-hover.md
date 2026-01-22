@@ -1,11 +1,11 @@
 # useElementHover
 
-Reactive element's hover state.
+响应式元素的悬停状态。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -23,6 +23,6 @@ const isHovered = useElementHover(myHoverableElement)
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useElementHover/)
+[VueUse 文档](https://vueuse.org/core/useElementHover/)

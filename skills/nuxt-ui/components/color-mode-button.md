@@ -1,11 +1,11 @@
 # ColorModeButton
 
-A Button to switch between light and dark mode.
+用于在浅色模式与深色模式之间切换的按钮。
 
-## Usage
+## 用法
 
 ```vue
 <UColorModeButton
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

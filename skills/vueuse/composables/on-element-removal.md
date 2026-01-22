@@ -1,10 +1,10 @@
 # onElementRemoval
 
-Fires when the element or any element containing it is removed.
+当元素或包含该元素的任何元素被移除时触发。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`  
+**分类：** 传感器
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/onElementRemoval/)
+[VueUse 文档](https://vueuse.org/core/onElementRemoval/)

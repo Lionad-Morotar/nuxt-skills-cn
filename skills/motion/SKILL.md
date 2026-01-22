@@ -1,36 +1,36 @@
 ---
 name: motion
-description: Use when adding animations with Motion Vue (motion-v) - provides motion component API, gesture animations, scroll-linked effects, layout transitions, and composables for Vue 3/Nuxt
+description: 用于添加使用 Motion Vue（motion-v）的动画——提供动画组件 API、手势动画、滚动关联效果、布局过渡和适用于 Vue 3/Nuxt 的组合式函数
 license: MIT
 ---
 
 # Motion Vue (motion-v)
 
-Animation library for Vue 3 and Nuxt. Production-ready, hardware-accelerated animations with minimal bundle size.
+适用于 Vue 3 和 Nuxt 的动画库。生产就绪、硬件加速的动画，具有最小的包大小。
 
-**Current stable:** motion-v 1.x - Vue port of Motion (formerly Framer Motion)
+**当前稳定版本：** motion-v 1.x - Motion（前身为 Framer Motion）的 Vue 版本
 
-## Overview
+## 概述
 
-Progressive reference for Motion Vue animations. Load only files relevant to current task (~200 tokens base, 500-1500 per sub-file).
+Motion Vue 动画的渐进式参考。仅加载与当前任务相关的文件（基础约 200 个 token，每个子文件 500–1500 个 token）。
 
-## When to Use
+## 使用场景
 
-**Use Motion Vue for:**
+**使用 Motion Vue 的情况包括：**
 
-- Simple declarative animations (fade, slide, scale)
-- Gesture-based interactions (hover, tap, drag)
-- Scroll-linked animations
-- Layout animations and shared element transitions
-- Spring physics animations
+- 简单的声明式动画（淡入淡出、滑动、缩放）
+- 基于手势的交互（悬停、点击、拖拽）
+- 滚动关联动画
+- 布局动画和共享元素过渡
+- 弹簧物理动画
 
-**Consider alternatives:**
+**考虑替代方案：**
 
-- **GSAP** - Complex timelines, SVG morphing, scroll-triggered sequences
-- **@vueuse/motion** - Simpler API, less features, smaller bundle
-- **CSS animations** - Simple transitions without JS
+- **GSAP** - 复杂的时间轴、SVG 变形、滚动触发序列
+- **@vueuse/motion** - 更简单的 API，功能较少，包体积更小
+- **CSS 动画** - 不依赖 JavaScript 的简单过渡
 
-## Installation
+## 安装
 
 ```bash
 # Vue 3
@@ -41,33 +41,33 @@ pnpm add motion-v @vueuse/nuxt
 ```
 
 ```ts
-// nuxt.config.ts - Nuxt 3 setup
+// nuxt.config.ts - Nuxt 3 设置
 export default defineNuxtConfig({
   modules: ['motion-v/nuxt'],
 })
 ```
 
-## Quick Reference
+## 快速参考
 
-| Working on...                | Load file                 |
+| 正在处理...                  | 加载文件                  |
 | ---------------------------- | ------------------------- |
-| Motion component, gestures   | references/components.md  |
-| useMotionValue, useScroll    | references/composables.md |
-| Animation examples, patterns | references/examples.md    |
+| Motion 组件、手势            | references/components.md  |
+| useMotionValue、useScroll    | references/composables.md |
+| 动画示例、模式               | references/examples.md    |
 
-## Loading Files
+## 加载文件
 
-**Load one file at a time based on context:**
+**根据上下文逐个加载文件：**
 
-- Component animations → [references/components.md](references/components.md)
-- Composables, motion values → [references/composables.md](references/composables.md)
-- Examples, inspiration → [references/examples.md](references/examples.md)
+- 组件动画 → [references/components.md](references/components.md)
+- 组合式函数、动画值 → [references/composables.md](references/composables.md)
+- 示例、灵感 → [references/examples.md](references/examples.md)
 
-## Core Concepts
+## 核心概念
 
-### Motion Component
+### Motion 组件
 
-Render any HTML/SVG element with animation capabilities:
+渲染任何 HTML/SVG 元素并支持动画：
 
 ```vue
 <script setup lang="ts">
@@ -81,12 +81,12 @@ import { Motion } from 'motion-v'
     :exit="{ opacity: 0, y: -20 }"
     :transition="{ duration: 0.3 }"
   >
-    Animated content
+    动画内容
   </Motion.div>
 </template>
 ```
 
-### Gesture Animations
+### 手势动画
 
 ```vue
 <Motion.button
@@ -94,11 +94,11 @@ import { Motion } from 'motion-v'
   :whilePress="{ scale: 0.95 }"
   :transition="{ type: 'spring', stiffness: 400 }"
 >
-  Click me
+  点击我
 </Motion.button>
 ```
 
-### Scroll Animations
+### 滚动动画
 
 ```vue
 <Motion.div
@@ -106,14 +106,14 @@ import { Motion } from 'motion-v'
   :whileInView="{ opacity: 1 }"
   :viewport="{ once: true, margin: '-100px' }"
 >
-  Appears on scroll
+  滚动时出现
 </Motion.div>
 ```
 
-## Available Guidance
+## 可用指导
 
-**[references/components.md](references/components.md)** - Motion component variants, animation props, gesture props, layout animations, transition configuration
+**[references/components.md](references/components.md)** - Motion 组件变体、动画属性、手势属性、布局动画、过渡配置
 
-**[references/composables.md](references/composables.md)** - useMotionValue, useSpring, useTransform, useScroll, useInView, animate()
+**[references/composables.md](references/composables.md)** - useMotionValue、useSpring、useTransform、useScroll、useInView、animate()
 
-**[references/examples.md](references/examples.md)** - External resources, component libraries, animation patterns and inspiration
+**[references/examples.md](references/examples.md)** - 外部资源、组件库、动画模式和灵感

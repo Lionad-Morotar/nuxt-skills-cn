@@ -1,11 +1,11 @@
 # useSwipe
 
-Reactive swipe detection based on .
+基于 的响应式滑动检测。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -18,24 +18,24 @@ const { isSwiping, direction } = useSwipe(el)
 
 <template>
   <div ref="el">
-    Swipe here
+    在此处滑动
   </div>
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                                       | Default | Description                |
-| ------------ | ---------------------------------------------------------- | ------- | -------------------------- |
-| passive      | `boolean`                                                  | true    | Register events as passive |
-| threshold    | `number`                                                   | 50      | @default 50                |
-| onSwipeStart | `(e: TouchEvent) =&gt; void`                               | -       | Callback on swipe start    |
-| onSwipe      | `(e: TouchEvent) =&gt; void`                               | -       | Callback on swipe moves    |
-| onSwipeEnd   | `(e: TouchEvent, direction: UseSwipeDirection) =&gt; void` | -       | Callback on swipe ends     |
+| 选项         | 类型                                                       | 默认值  | 描述                     |
+| ------------ | ---------------------------------------------------------- | ------- | ------------------------ |
+| passive      | `boolean`                                                  | true    | 将事件注册为被动事件     |
+| threshold    | `number`                                                   | 50      | @default 50              |
+| onSwipeStart | `(e: TouchEvent) =&gt; void`                               | -       | 滑动开始时的回调函数     |
+| onSwipe      | `(e: TouchEvent) =&gt; void`                               | -       | 滑动过程中的回调函数     |
+| onSwipeEnd   | `(e: TouchEvent, direction: UseSwipeDirection) =&gt; void` | -       | 滑动结束时的回调函数     |
 
-## Returns
+## 返回值
 
-| Name        | Type                       |
+| 名称        | 类型                       |
 | ----------- | -------------------------- |
 | isSwiping   | `shallowRef`               |
 | direction   | `computed`                 |
@@ -45,6 +45,6 @@ const { isSwiping, direction } = useSwipe(el)
 | lengthY     | `Ref`                      |
 | stop        | `Ref`                      |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSwipe/)
+[VueUse 文档](https://vueuse.org/core/useSwipe/)

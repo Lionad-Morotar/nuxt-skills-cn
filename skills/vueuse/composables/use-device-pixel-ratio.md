@@ -1,11 +1,11 @@
 # useDevicePixelRatio
 
-Reactively track
+响应式跟踪
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**分类：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { useDevicePixelRatio } from '@vueuse/core'
@@ -13,13 +13,13 @@ import { useDevicePixelRatio } from '@vueuse/core'
 const { pixelRatio } = useDevicePixelRatio()
 ```
 
-## Returns
+## 返回值
 
-| Name       | Type         |
+| 名称       | 类型         |
 | ---------- | ------------ |
 | pixelRatio | `shallowRef` |
 | stop       | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useDevicePixelRatio/)
+[VueUse 文档](https://vueuse.org/core/useDevicePixelRatio/)

@@ -1,11 +1,11 @@
 # provideLocal
 
-Extended with ability to call to obtain the value in the same component.
+扩展功能，允许调用以在同一组件中获取值。
 
-**Package:** `@vueuse/shared`
-**Category:** State
+**包：** `@vueuse/shared`  
+**类别：** 状态
 
-## Usage
+## 用法
 
 ```ts
 <script setup>
@@ -16,6 +16,6 @@ const injectedValue = injectLocal('MyInjectionKey') // injectedValue === 1
 </script>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/provideLocal/)
+[VueUse 文档](https://vueuse.org/core/provideLocal/)

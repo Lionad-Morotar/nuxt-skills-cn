@@ -1,15 +1,15 @@
 # LocaleSelect
 
-A Select to switch between locales.
+用于在不同语言环境之间切换的选择器。
 
-## Key Props
+## 主要属性
 
-- `locales`: with an array of locales from `@nuxt/ui/locale`.
+- `locales`：包含来自 `@nuxt/ui/locale` 的语言环境数组。
 
-## Usage
+## 用法
 
 ```vue
 <ULocaleSelect
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

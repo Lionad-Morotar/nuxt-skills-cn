@@ -1,11 +1,11 @@
 # useSortable
 
-Wrapper for .
+用于 `@vueuse/integrations` 的封装组件。
 
-**Package:** `@vueuse/integrations`
-**Category:** '@Integrations'
+**包:** `@vueuse/integrations`
+**分类:** '@Integrations'
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -27,20 +27,20 @@ useSortable(el, list)
 </template>
 ```
 
-## Options
+## 配置项
 
-| Option       | Type      | Default | Description                                                                     |
-| ------------ | --------- | ------- | ------------------------------------------------------------------------------- |
-| watchElement | `boolean` | false   | Watch the element reference for changes and automatically reinitialize Sortable |
+| 配置项       | 类型      | 默认值  | 描述                                                                           |
+| ------------ | --------- | ------- | ------------------------------------------------------------------------------ |
+| watchElement | `boolean` | false   | 监听元素引用的变化并自动重新初始化 Sortable                                  |
 
-## Returns
+## 返回值
 
-| Name   | Type  |
+| 名称   | 类型  |
 | ------ | ----- |
 | stop   | `Ref` |
 | start  | `Ref` |
 | option | `Ref` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useSortable/)
+[VueUse 文档](https://vueuse.org/core/useSortable/)

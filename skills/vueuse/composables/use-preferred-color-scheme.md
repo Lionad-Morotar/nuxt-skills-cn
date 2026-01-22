@@ -1,11 +1,11 @@
 # usePreferredColorScheme
 
-Reactive prefers-color-scheme media query.
+响应式 prefers-color-scheme 媒体查询。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { usePreferredColorScheme } from '@vueuse/core'
@@ -13,6 +13,6 @@ import { usePreferredColorScheme } from '@vueuse/core'
 const preferredColor = usePreferredColorScheme()
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePreferredColorScheme/)
+[VueUse 文档](https://vueuse.org/core/usePreferredColorScheme/)

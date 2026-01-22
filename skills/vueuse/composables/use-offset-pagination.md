@@ -1,11 +1,11 @@
 # useOffsetPagination
 
-Reactive offset pagination.
+响应式偏移分页。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useOffsetPagination } from '@vueuse/core'
@@ -33,17 +33,17 @@ const {
 })
 ```
 
-## Options
+## 选项
 
-| Option            | Type                                                                             | Default | Description                              |
+| 选项              | 类型                                                                             | 默认值  | 描述                                     |
 | ----------------- | -------------------------------------------------------------------------------- | ------- | ---------------------------------------- |
-| total             | `MaybeRefOrGetter&lt;number&gt;`                                                 | -       | Total number of items.                   |
-| pageSize          | `MaybeRefOrGetter&lt;number&gt;`                                                 | 10      | The number of items to display per page. |
-| page              | `MaybeRef&lt;number&gt;`                                                         | 1       | The current page number.                 |
-| onPageChange      | `(returnValue: UnwrapNestedRefs&lt;UseOffsetPaginationReturn&gt;) =&gt; unknown` | -       | Callback when the `page` change.         |
-| onPageSizeChange  | `(returnValue: UnwrapNestedRefs&lt;UseOffsetPaginationReturn&gt;) =&gt; unknown` | -       | Callback when the `pageSize` change.     |
-| onPageCountChange | `(returnValue: UnwrapNestedRefs&lt;UseOffsetPaginationReturn&gt;) =&gt; unknown` | -       | Callback when the `pageCount` change.    |
+| total             | `MaybeRefOrGetter&lt;number&gt;`                                                 | -       | 项目总数。                               |
+| pageSize          | `MaybeRefOrGetter&lt;number&gt;`                                                 | 10      | 每页显示的项目数量。                     |
+| page              | `MaybeRef&lt;number&gt;`                                                         | 1       | 当前页码。                               |
+| onPageChange      | `(returnValue: UnwrapNestedRefs&lt;UseOffsetPaginationReturn&gt;) =&gt; unknown` | -       | 当 `page` 变化时的回调函数。             |
+| onPageSizeChange  | `(returnValue: UnwrapNestedRefs&lt;UseOffsetPaginationReturn&gt;) =&gt; unknown` | -       | 当 `pageSize` 变化时的回调函数。         |
+| onPageCountChange | `(returnValue: UnwrapNestedRefs&lt;UseOffsetPaginationReturn&gt;) =&gt; unknown` | -       | 当 `pageCount` 变化时的回调函数。        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useOffsetPagination/)
+[VueUse 文档](https://vueuse.org/core/useOffsetPagination/)

@@ -1,14 +1,14 @@
 # useGamepad
 
-Provides reactive bindings for the Gamepad API.
+为 Gamepad API 提供响应式绑定。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useGamepad } from '@vueuse/core'
 import { computed } from 'vue'
 
@@ -23,18 +23,18 @@ const gamepad = computed(() => gamepads.value.find(g => g.mapping === 'standard'
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name           | Type                       |
-| -------------- | -------------------------- |
-| isSupported    | `useSupported`             |
-| onConnected    | `Ref`                      |
-| onDisconnected | `Ref`                      |
-| gamepads       | `deepRef&lt;Gamepad[]&gt;` |
-| pause          | `Ref`                      |
-| resume         | `Ref`                      |
-| isActive       | `Ref`                      |
+| 名称             | 类型                       |
+| ---------------- | -------------------------- |
+| isSupported      | `useSupported`             |
+| onConnected      | `Ref`                      |
+| onDisconnected   | `Ref`                      |
+| gamepads         | `deepRef<Gamepad[]>`       |
+| pause            | `Ref`                      |
+| resume           | `Ref`                      |
+| isActive         | `Ref`                      |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useGamepad/)
+[VueUse 文档](https://vueuse.org/core/useGamepad/)

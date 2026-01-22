@@ -1,164 +1,164 @@
-# Nuxt File-Based Routing
+# 基于文件的 Nuxt 路由
 
-## When to Use
+## 何时使用
 
-Working with `pages/` or `layouts/` directories, file-based routing, navigation.
+在处理 `pages/` 或 `layouts/` 目录时，基于文件的路由和导航。
 
-## File-Based Routing Basics
+## 基于文件的路由基础
 
-`pages/` folder structure directly maps to routes. File names determine URLs.
+`pages/` 文件夹结构直接映射到路由。文件名决定 URL。
 
-## Naming Conventions
+## 命名约定
 
-**Key principles:**
+**关键原则：**
 
-- **ALWAYS use descriptive params:** `[userId].vue` NOT `[id].vue`
-- **Use `.` for path segments:** `users.edit.vue` → `/users/edit`
-- **Optional params:** `[[paramName]].vue`
-- **Catch-all:** `[...path].vue`
-- **Route groups for organization:** `(folder)/` groups files without affecting URLs
+- **始终使用描述性参数：** `[userId].vue` 而非 `[id].vue`
+- **使用 `.` 表示路径段：** `users.edit.vue` → `/users/edit`
+- **可选参数：** `[[paramName]].vue`
+- **通配符路由：** `[...path].vue`
+- **路由分组用于组织：** `(folder)/` 将文件分组，但不影响 URL
 
-## Red Flags - Stop and Check Skill
+## 警告信号 —— 停止并检查技能
 
-If you're thinking any of these, STOP and re-read this skill:
+如果你在思考以下任何一项，请停止并重新阅读本技能：
 
-- "String paths are simpler than typed routes"
-- "Generic param names like [id] are fine"
-- "I remember how Nuxt 3 worked"
+- “字符串路径比类型化路由更简单”
+- “通用参数名如 [id] 没问题”
+- “我记得 Nuxt 3 是怎么工作的”
 
-All of these mean: You're about to use outdated patterns. Use Nuxt 4 patterns instead.
+以上所有意味着：你即将使用过时的模式。请改用 Nuxt 4 模式。
 
-## File Structure Example
+## 文件结构示例
 
 ```
 pages/
 ├── index.vue               # /
 ├── about.vue               # /about
-├── [...slug].vue           # catch-all for 404
-├── users.edit.vue          # /users/edit - breaks out of nesting
-├── users.vue               # parent route (layout for /users/*)
+├── [...slug].vue           # 用于 404 的通配符路径
+├── users.edit.vue          # /users/edit - 突破嵌套结构
+├── users.vue               # 父路由（/users/* 的布局）
 └── users/
     ├── index.vue           # /users
     └── [userId].vue        # /users/:userId
 ```
 
-## Route Groups for Organization
+## 路由分组用于组织
 
-Route groups organize files WITHOUT affecting URLs. Wrap folder names in parentheses:
+路由分组对文件进行组织，但不影响 URL。将文件夹名称用括号包围：
 
 ```
 pages/
-├── (marketing)/            # group folder (ignored in URL)
-│   ├── about.vue           # /about (not /marketing/about)
+├── (marketing)/            # 分组文件夹（URL 中忽略）
+│   ├── about.vue           # /about（而非 /marketing/about）
 │   └── pricing.vue         # /pricing
-└── (admin)/                # group folder (ignored in URL)
+└── (admin)/                # 分组文件夹（URL 中忽略）
     ├── dashboard.vue       # /dashboard
     └── settings.vue        # /settings
 ```
 
-**Use route groups to:**
+**使用路由分组来：**
 
-- Organize pages by feature/team
-- Group related routes without affecting URLs
-- Keep large projects maintainable
+- 按功能/团队组织页面
+- 对相关路由进行分组，但不影响 URL
+- 保持大型项目的可维护性
 
-## Parent Routes (Layouts)
+## 父路由（布局）
 
-Parent route = layout for nested routes:
+父路由 = 嵌套路由的布局：
 
 ```vue
 <!-- pages/users.vue -->
 <template>
   <div class="users-layout">
     <nav>
-      <NuxtLink to="/users">All Users</NuxtLink>
-      <NuxtLink to="/users/create">Create User</NuxtLink>
+      <NuxtLink to="/users">所有用户</NuxtLink>
+      <NuxtLink to="/users/create">创建用户</NuxtLink>
     </nav>
     <NuxtPage />
   </div>
 </template>
 ```
 
-Child routes:
+子路由：
 
 ```
 pages/
-├── users.vue           # Parent route with <NuxtPage />
+├── users.vue           # 父路由，包含 <NuxtPage />
 └── users/
     ├── index.vue       # /users
     ├── [userId].vue    # /users/:userId
     └── create.vue      # /users/create
 ```
 
-## definePage() for Route Customization
+## 使用 definePage 自定义路由
 
 ```vue
 <script setup lang="ts">
 definePage({
   name: 'user-profile',
-  path: '/profile/:userId',  // Override default path
+  path: '/profile/:userId',  // 覆盖默认路径
   alias: ['/me', '/profile'],
   meta: {
     requiresAuth: true,
-    title: 'User Profile',
+    title: '用户资料',
     roles: ['user', 'admin']
   }
 })
 </script>
 
 <template>
-  <div>Profile content</div>
+  <div>资料内容</div>
 </template>
 ```
 
-## Typed Router
+## 类型化路由
 
-**ALWAYS use typed routes for navigation:**
+**始终使用类型化的路由进行导航：**
 
 ```ts
-// ✅ Type-safe with route name
+// ✅ 使用路由名称，类型安全
 await navigateTo({ name: '/users/[userId]', params: { userId: '123' } })
 
-// ❌ String-based (not type-safe, avoid)
+// ❌ 字符串路径（无类型安全，避免使用）
 await navigateTo('/users/123')
 ```
 
-**REQUIRED: Check `typed-router.d.ts` for available route names and params before navigating.**
+**必须：在导航前检查 `typed-router.d.ts` 以获取可用的路由名称和参数。**
 
-## useRoute with Types
+## 使用 useRoute 并配合类型
 
-Pass route name for stricter typing:
+传递路由名称以获得更严格的类型：
 
 ```ts
-// Generic route
+// 通用路由
 const route = useRoute()
 
-// Typed route (preferred)
+// 类型化的路由（推荐）
 const route = useRoute('/users/[userId]')
-// route.params.userId is now typed correctly
+// 此时 route.params.userId 已正确打上类型
 ```
 
-## Navigation
+## 导航
 
 ```ts
-// Navigate to route
+// 导航到路由
 await navigateTo('/about')
 await navigateTo({ name: '/users/[userId]', params: { userId: '123' } })
 
-// Navigate with query
+// 带查询参数的导航
 await navigateTo({ path: '/search', query: { q: 'nuxt' } })
 
-// External redirect
+// 外部重定向
 await navigateTo('https://nuxt.com', { external: true })
 
-// Replace history
+// 替换历史记录
 await navigateTo('/login', { replace: true })
 
-// Open in new tab
+// 在新标签页中打开
 await navigateTo('/docs', { open: { target: '_blank' } })
 ```
 
-## Route Meta & Middleware
+## 路由元数据与中间件
 
 ```vue
 <script setup lang="ts">
@@ -172,48 +172,48 @@ definePageMeta({
 </script>
 ```
 
-## Dynamic Routes Patterns
+## 动态路由模式
 
 ```
 [userId].vue              # /users/123
-[[slug]].vue              # /blog or /blog/post (optional)
-[...path].vue             # /a/b/c (catch-all)
-[[...path]].vue           # / or /a/b/c (optional catch-all)
+[[slug]].vue              # /blog 或 /blog/post（可选）
+[...path].vue             # /a/b/c（通配符）
+[[...path]].vue           # / 或 /a/b/c（可选通配符）
 ```
 
-## Breaking Out of Nested Routing
+## 突破嵌套路由
 
-Use `.` to create routes at parent level:
+使用 `.` 在父级创建路由：
 
 ```
 pages/
-├── users.vue               # /users layout
+├── users.vue               # /users 布局
 ├── users/
 │   └── [userId].vue        # /users/123
-└── users.settings.vue      # /users/settings (NOT nested under layout)
+└── users.settings.vue      # /users/settings（不嵌套在布局下）
 ```
 
-## Best Practices
+## 最佳实践
 
-- **`index.vue` for index routes** - valid and correct for creating default routes
-- **Route groups `(folder)/` for organization** - group files without affecting URLs
-- **Descriptive param names** - `[userId]` not `[id]`, `[postSlug]` not `[slug]`
-- **Type-safe navigation** - use route names, not strings
-- **Check typed-router.d.ts** for available routes
-- **Parent routes for layouts** - `users.vue` with `<NuxtPage />`
-- **Use definePage** for custom paths/aliases
-- **Catch-all for 404** - `[...path].vue` or `[...slug].vue`
+- **`index.vue` 用于首页路由** - 合法且正确，用于创建默认路由
+- **使用路由分组 `(folder)/` 进行组织** - 分组文件，不影响 URL
+- **使用描述性参数名** - `[userId]` 而非 `[id]`，`[postSlug]` 而非 `[slug]`
+- **类型安全的导航** - 使用路由名称，而非字符串
+- **检查 typed-router.d.ts 获取可用路由**
+- **父路由用于布局** - `users.vue` 包含 `<NuxtPage />`
+- **使用 definePage 自定义路径/别名**
+- **通配符用于 404** - `[...path].vue` 或 `[...slug].vue`
 
-## Common Mistakes
+## 常见错误
 
-| ❌ Wrong                     | ✅ Right                                                          |
+| ❌ 错误                      | ✅ 正确                                                           |
 | ---------------------------- | ----------------------------------------------------------------- |
-| `[id].vue`                   | `[userId].vue` or `[postId].vue`                                  |
+| `[id].vue`                   | `[userId].vue` 或 `[postId].vue`                                  |
 | `navigateTo('/users/' + id)` | `navigateTo({ name: '/users/[userId]', params: { userId: id } })` |
 | `<Nuxt />`                   | `<NuxtPage />`                                                    |
-| Separate layouts/ folder     | Parent routes with `<NuxtPage />`                                 |
+| 分离的 layouts/ 文件夹       | 使用父路由与 `<NuxtPage />`                                       |
 
-## Resources
+## 资源
 
-- Nuxt routing: https://nuxt.com/docs/guide/directory-structure/pages
-- File-based routing: https://nuxt.com/docs/getting-started/routing
+- Nuxt 路由：https://nuxt.com/docs/guide/directory-structure/pages
+- 基于文件的路由：https://nuxt.com/docs/getting-started/routing

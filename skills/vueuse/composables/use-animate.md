@@ -1,11 +1,11 @@
 # useAnimate
 
-Reactive Web Animations API.
+响应式 Web 动画 API。
 
-**Package:** `@vueuse/core`
-**Category:** Animation
+**包：** `@vueuse/core`
+**分类：** 动画
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -17,14 +17,14 @@ const {
   isSupported,
   animate,
 
-  // actions
+  // 操作
   play,
   pause,
   reverse,
   finish,
   cancel,
 
-  // states
+  // 状态
   pending,
   playState,
   replaceState,
@@ -40,19 +40,19 @@ const {
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type                              | Default | Description                                                                            |
+| 选项         | 类型                              | 默认值  | 描述                                                                                   |
 | ------------ | --------------------------------- | ------- | -------------------------------------------------------------------------------------- |
-| immediate    | `boolean`                         | true    | Will automatically run play when `useAnimate` is used                                  |
-| commitStyles | `boolean`                         | false   | Whether to commits the end styling state of an animation to the element being animated |
-| persist      | `boolean`                         | false   | Whether to persists the animation                                                      |
-| onReady      | `(animate: Animation) =&gt; void` | -       | Executed after animation initialization                                                |
-| onError      | `(e: unknown) =&gt; void`         | -       | Callback when error is caught.                                                         |
+| immediate    | `boolean`                         | true    | 在使用 `useAnimate` 时自动运行 play                                                    |
+| commitStyles | `boolean`                         | false   | 是否将动画结束时的样式状态提交到被动画化的元素                                         |
+| persist      | `boolean`                         | false   | 是否保留动画                                                                           |
+| onReady      | `(animate: Animation) =&gt; void` | -       | 动画初始化后执行                                                                       |
+| onError      | `(e: unknown) =&gt; void`         | -       | 捕获错误时的回调函数                                                                   |
 
-## Returns
+## 返回值
 
-| Name         | Type                                             |
+| 名称         | 类型                                             |
 | ------------ | ------------------------------------------------ |
 | isSupported  | `useSupported`                                   |
 | animate      | `shallowRef&lt;Animation \| undefined&gt;`       |
@@ -67,6 +67,6 @@ const {
 | timeline     | `computed`                                       |
 | playbackRate | `computed`                                       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useAnimate/)
+[VueUse 文档](https://vueuse.org/core/useAnimate/)

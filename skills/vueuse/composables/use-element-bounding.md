@@ -1,11 +1,11 @@
 # useElementBounding
 
-Reactive bounding box of an HTML element
+HTML 元素的响应式边界框
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -21,18 +21,18 @@ const { x, y, top, right, bottom, left, width, height } = useElementBounding(el)
 </template>
 ```
 
-## Options
+## 选项
 
-| Option       | Type      | Default | Description                                  |
-| ------------ | --------- | ------- | -------------------------------------------- |
-| reset        | `boolean` | true    | Reset values to 0 on component unmounted     |
-| windowResize | `boolean` | true    | Listen to window resize event                |
-| windowScroll | `boolean` | true    | Listen to window scroll event                |
-| immediate    | `boolean` | true    | Immediately call update on component mounted |
+| 选项         | 类型      | 默认值  | 描述                                       |
+| ------------ | --------- | ------- | ------------------------------------------ |
+| reset        | `boolean` | true    | 组件卸载时将值重置为 0                                     |
+| windowResize | `boolean` | true    | 监听窗口大小调整事件                                   |
+| windowScroll | `boolean` | true    | 监听窗口滚动事件                                     |
+| immediate    | `boolean` | true    | 组件挂载时立即调用更新                                   |
 
-## Returns
+## 返回值
 
-| Name   | Type         |
+| 名称   | 类型         |
 | ------ | ------------ |
 | height | `shallowRef` |
 | bottom | `shallowRef` |
@@ -44,6 +44,6 @@ const { x, y, top, right, bottom, left, width, height } = useElementBounding(el)
 | y      | `shallowRef` |
 | update | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useElementBounding/)
+[VueUse 文档](https://vueuse.org/core/useElementBounding/)

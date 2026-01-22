@@ -1,11 +1,11 @@
 # useActiveElement
 
-Reactive
+响应式
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**类别：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -20,13 +20,13 @@ watch(activeElement, (el) => {
 </script>
 ```
 
-## Options
+## 选项
 
-| Option           | Type      | Default | Description                                         |
+| 选项             | 类型      | 默认值  | 描述                                                |
 | ---------------- | --------- | ------- | --------------------------------------------------- |
-| deep             | `boolean` | true    | Search active element deeply inside shadow dom      |
-| triggerOnRemoval | `boolean` | false   | Track active element when it's removed from the DOM |
+| deep             | `boolean` | true    | 在 shadow dom 内深度搜索活动元素                    |
+| triggerOnRemoval | `boolean` | false   | 当活动元素从 DOM 中移除时跟踪其状态                 |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useActiveElement/)
+[VueUse 文档](https://vueuse.org/core/useActiveElement/)

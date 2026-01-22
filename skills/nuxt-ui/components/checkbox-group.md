@@ -1,12 +1,12 @@
-# CheckboxGroup
+# 复选框组
 
-A set of checklist buttons to select multiple option from a list.
+一组用于从列表中选择多个选项的复选框按钮。
 
-> Based on [Reka UI CheckboxGroup](https://reka-ui.com/docs/components/checkbox#group-root)
+> 基于 [Reka UI 复选框组](https://reka-ui.com/docs/components/checkbox#group-root)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of strings or numbers:
+- `items`：作为字符串或数字数组：
 
 ## ::component-code
 
@@ -24,9 +24,7 @@ ignore:
 
 ---
 
-::
-
-You can also pass an array of objects with the following properties:
+您也可以传递一个对象数组，包含以下属性：
 
 - `label?: string`{lang="ts-type"}
 - `description?: string`{lang="ts-type"}
@@ -49,19 +47,19 @@ ignore:
   props:
   modelValue: - 'system'
   items: - label: 'System'
-  description: 'This is the first option.
-- `legend`: to set the legend of the CheckboxGroup.
-- `color`: to change the color of the CheckboxGroup.
-- `variant`: to change the variant of the CheckboxGroup.
-- `size`: to change the size of the CheckboxGroup.
-- `orientation`: to change the orientation of the CheckboxGroup.
-- `indicator`: to change the position or hide the indicator.
-- `disabled`: to disable the CheckboxGroup.
+  description: '这是第一个选项。
+- `legend`：设置复选框组的标题。
+- `color`：更改复选框组的颜色。
+- `variant`：更改复选框组的变体。
+- `size`：更改复选框组的尺寸。
+- `orientation`：更改复选框组的方向。
+- `indicator`：更改指示器的位置或隐藏它。
+- `disabled`：禁用复选框组。
 
-## Usage
+## 使用方法
 
 ```vue
 <UCheckboxGroup
-  <!-- props here -->
+  <!-- 这里传入属性 -->
 />
 ```

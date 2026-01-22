@@ -1,21 +1,21 @@
 # InputNumber
 
-An input for numerical values with a customizable range.
+用于输入数值的组件，支持自定义取值范围。
 
-## Key Props
+## 主要属性
 
-- `step`: to set the step value of the InputNumber.
-- `orientation`: to change the orientation of the InputNumber.
-- `placeholder`: to set a placeholder text.
-- `color`: to change the ring color when the InputNumber is focused.
-- `variant`: to change the variant of the InputNumber.
-- `size`: to change the size of the InputNumber.
-- `disabled`: to disable the InputNumber.
+- `step`：设置 InputNumber 的步长值。
+- `orientation`：更改 InputNumber 的方向。
+- `placeholder`：设置占位符文本。
+- `color`：当 InputNumber 获得焦点时更改环形颜色。
+- `variant`：更改 InputNumber 的变体样式。
+- `size`：更改 InputNumber 的尺寸大小。
+- `disabled`：禁用 InputNumber。
 
-## Usage
+## 使用方法
 
 ```vue
 <UInputNumber
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

@@ -1,11 +1,11 @@
 # useRouteHash
 
-Shorthand for a reactive .
+响应式路由哈希的简写。
 
-**Package:** `@vueuse/router`
-**Category:** '@Router'
+**包：** `@vueuse/router`  
+**分类：** '@Router'
 
-## Usage
+## 用法
 
 ```ts
 import { useRouteHash } from '@vueuse/router'
@@ -16,6 +16,6 @@ console.log(search.value) // route.hash
 search.value = 'foobar' // router.replace({ hash: 'foobar' })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useRouteHash/)
+[VueUse 文档](https://vueuse.org/core/useRouteHash/)

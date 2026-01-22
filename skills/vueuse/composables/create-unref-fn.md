@@ -1,11 +1,11 @@
 # createUnrefFn
 
-Make a plain function accepting ref and raw values as arguments. Returns the same value the unconverted function returns, with proper typing.
+创建一个普通函数，接受 ref 和原始值作为参数。返回与未转换函数相同的值，并具有正确的类型。
 
-**Package:** `@vueuse/core`
-**Category:** Utilities
+**包：** `@vueuse/core`  
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { createUnrefFn } from '@vueuse/core'
@@ -19,10 +19,10 @@ function post(url, data) {
 }
 const unrefPost = createUnrefFn(post)
 
-post(url, data) /* ❌ Will throw an error because the arguments are refs */
-unrefPost(url, data) /* ✔️ Will Work because the arguments will be auto unref */
+post(url, data) /* ❌ 由于参数为 ref，将抛出错误 */
+unrefPost(url, data) /* ✔️ 将正常工作，因为参数将被自动解引用 */
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/createUnrefFn/)
+[VueUse 文档](https://vueuse.org/core/createUnrefFn/)

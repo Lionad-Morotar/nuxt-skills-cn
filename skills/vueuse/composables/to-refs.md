@@ -1,11 +1,11 @@
 # toRefs
 
-Extended that also accepts refs of an object.
+扩展功能，也可接受对象的引用。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**分类：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { toRefs } from '@vueuse/core'
@@ -24,12 +24,12 @@ const { a, b } = toRefs(obj)
 const [a, b] = toRefs(arr)
 ```
 
-## Options
+## 选项
 
-| Option     | Type                              | Default | Description                                              |
+| 选项       | 类型                              | 默认值  | 描述                                                     |
 | ---------- | --------------------------------- | ------- | -------------------------------------------------------- |
-| replaceRef | `MaybeRefOrGetter&lt;boolean&gt;` | true    | Replace the original ref with a copy on property update. |
+| replaceRef | `MaybeRefOrGetter<boolean>`       | true    | 在属性更新时，使用副本替换原始引用。                     |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/toRefs/)
+[VueUse 文档](https://vueuse.org/core/toRefs/)

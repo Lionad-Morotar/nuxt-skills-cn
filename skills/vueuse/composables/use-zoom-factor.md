@@ -1,23 +1,23 @@
 # useZoomFactor
 
-Reactive WebFrame zoom factor.
+响应式 WebFrame 缩放因子。
 
-**Package:** `@vueuse/electron`
-**Category:** '@Electron'
+**包：** `@vueuse/electron`
+**分类：** '@Electron'
 
-## Usage
+## 用法
 
 ```ts
 import { useZoomFactor } from '@vueuse/electron'
 
-// enable nodeIntegration if you don't provide webFrame explicitly
-// see: https://www.electronjs.org/docs/api/webview-tag#nodeintegration
-// Ref result will return
+// 如果未显式提供 webFrame，请启用 nodeIntegration
+// 参见：https://www.electronjs.org/docs/api/webview-tag#nodeintegration
+// Ref 结果将返回
 const factor = useZoomFactor()
-console.log(factor.value) // print current zoom factor
-factor.value = 2 // change current zoom factor
+console.log(factor.value) // 打印当前缩放因子
+factor.value = 2 // 更改当前缩放因子
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useZoomFactor/)
+[VueUse 文档](https://vueuse.org/core/useZoomFactor/)

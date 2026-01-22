@@ -1,8 +1,8 @@
-# API Design Patterns
+# API 设计模式
 
-## Options Pattern
+## 选项模式
 
-User-facing options with internal resolved version:
+面向用户的选项及其内部解析版本：
 
 ```typescript
 export interface Options {
@@ -25,9 +25,9 @@ function resolveOptions(options: Options = {}): ResolvedOptions {
 }
 ```
 
-## Factory Functions
+## 工厂函数
 
-Create configured instances:
+创建已配置的实例：
 
 ```typescript
 export function createContext(options: Options = {}) {
@@ -42,14 +42,14 @@ export function createContext(options: Options = {}) {
   }
 }
 
-// Usage
+// 使用方式
 const ctx = createContext({ verbose: true })
 await ctx.scanDirs()
 ```
 
-## Builder Pattern
+## 构建器模式
 
-Chainable API with type accumulation:
+支持链式调用的 API 并累积类型：
 
 ```typescript
 export function createBuilder<TContext = unknown>() {
@@ -67,16 +67,16 @@ export function createBuilder<TContext = unknown>() {
   }
 }
 
-// Usage - types flow through chain
+// 使用方式 —— 类型在链中流动
 const procedure = createBuilder()
   .context<{ user: User }>()
   .input(z.object({ id: z.string() }))
   .build()
 ```
 
-## Plugin Pattern (unplugin)
+## 插件模式（unplugin）
 
-Universal plugin from single implementation:
+基于单一实现的通用插件：
 
 ```typescript
 import { createUnplugin } from 'unplugin'
@@ -96,9 +96,9 @@ export default createUnplugin<Options>((options) => {
       return ctx.transform(code, id)
     },
 
-    // Bundler-specific hooks
+    // 打包工具特定钩子
     vite: {
-      configResolved(config) { /* Vite-specific */ },
+      configResolved(config) { /* Vite 特定 */ },
     },
     webpack(compiler) {
       compiler.hooks.watchRun.tap('my-plugin', () => { /* ... */ })
@@ -107,7 +107,7 @@ export default createUnplugin<Options>((options) => {
 })
 ```
 
-Export per-bundler entries:
+按打包工具导出入口：
 
 ```typescript
 // src/vite.ts
@@ -119,9 +119,9 @@ import unplugin from '.'
 export default unplugin.webpack
 ```
 
-## Lazy Getters (Tree-shaking)
+## 惰性获取（Tree-shaking）
 
-Defer bundler-specific code until accessed:
+延迟执行特定打包工具的代码直到被访问：
 
 ```typescript
 export function createPlugin<T>(factory: PluginFactory<T>) {
@@ -133,11 +133,11 @@ export function createPlugin<T>(factory: PluginFactory<T>) {
 }
 ```
 
-Only the accessed getter runs, rest is tree-shaken.
+仅执行被访问的 getter，其余代码会被 tree-shaken。
 
-## Smart Defaults
+## 智能默认值
 
-Detect environment instead of requiring config:
+检测环境而非要求配置：
 
 ```typescript
 import { isPackageExists } from 'local-pkg'
@@ -151,9 +151,9 @@ function resolveOptions(options: Options) {
 }
 ```
 
-## Resolver Pattern
+## 解析器模式
 
-Flexible resolution with function or object:
+灵活的解析方式，支持函数或对象：
 
 ```typescript
 export type Resolver = ResolverFunction | ResolverObject
@@ -172,9 +172,9 @@ export function ElementPlusResolver(): Resolver[] {
 }
 ```
 
-## Fluent API (Validation)
+## 流式 API（验证）
 
-Method chaining with clone for immutability:
+方法链式调用并克隆以确保不可变性：
 
 ```typescript
 class Schema<T> {
@@ -193,13 +193,13 @@ class Schema<T> {
   }
 }
 
-// Usage
+// 使用方式
 const schema = z.string().min(5).max(10).optional()
 ```
 
-## Barrel Exports
+## 条件导出
 
-Clean public API:
+清晰的公共 API：
 
 ```typescript
 // src/index.ts

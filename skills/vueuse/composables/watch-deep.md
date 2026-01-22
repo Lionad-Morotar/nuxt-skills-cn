@@ -1,11 +1,11 @@
 # watchDeep
 
-Shorthand for watching value with
+`watchDeep` 的简写形式，用于监听值的变化。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包：** `@vueuse/shared`  
+**类别：** 监听（Watch）
 
-## Usage
+## 用法
 
 ```ts
 import { watchDeep } from '@vueuse/core'
@@ -21,6 +21,6 @@ onMounted(() => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchDeep/)
+[VueUse 文档](https://vueuse.org/core/watchDeep/)

@@ -1,28 +1,28 @@
-# Forms
+# 表单
 
-## Form Components
+## 表单组件
 
-| Component        | Purpose             | Key Props                                     | Version |
-| ---------------- | ------------------- | --------------------------------------------- | ------- |
-| `UInput`         | Text input          | `type`, `placeholder`, `icon`, `loading`      |         |
-| `UTextarea`      | Multi-line text     | `rows`, `autoresize`, `maxrows`               |         |
-| `USelect`        | Native select       | `options`, `placeholder`                      |         |
-| `USelectMenu`    | Custom select       | `options`, `searchable`, `multiple`           |         |
-| `UInputMenu`     | Autocomplete        | `options`, `searchable`                       |         |
-| `UCheckbox`      | Single checkbox     | `label`, `description`                        |         |
-| `UCheckboxGroup` | Multiple checkboxes | `items`, `orientation`                        |         |
-| `URadioGroup`    | Radio options       | `items`, `orientation`                        |         |
-| `USwitch`        | Toggle switch       | `label`, `description`, `on-icon`, `off-icon` |         |
-| `USlider`        | Range slider        | `min`, `max`, `step`                          |         |
-| `UPinInput`      | Code/OTP input      | `length`, `type`, `mask`                      |         |
-| `UInputNumber`   | Number input        | `min`, `max`, `step`, `format-options`        |         |
-| `UInputDate`     | Date picker         | `mode`, `range`, `locale`                     | v4.2+   |
-| `UInputTime`     | Time picker         | `hour-cycle`, `minute-step`                   | v4.2+   |
-| `UInputTags`     | Tag input           | `max`, `placeholder`                          |         |
-| `UColorPicker`   | Color selection     | `format`, `swatches`                          |         |
-| `UFileUpload`    | File upload         | `accept`, `multiple`, `max-files`             |         |
+| 组件        | 目的             | 关键属性                                     | 版本 |
+| ----------- | ---------------- | -------------------------------------------- | ---- |
+| `UInput`    | 文本输入         | `type`、`placeholder`、`icon`、`loading`     |      |
+| `UTextarea` | 多行文本         | `rows`、`autoresize`、`maxrows`              |      |
+| `USelect`   | 原生选择器       | `options`、`placeholder`                     |      |
+| `USelectMenu` | 自定义选择器   | `options`、`searchable`、`multiple`          |      |
+| `UInputMenu` | 自动补全输入框   | `options`、`searchable`                      |      |
+| `UCheckbox` | 单个复选框       | `label`、`description`                       |      |
+| `UCheckboxGroup` | 多个复选框   | `items`、`orientation`                       |      |
+| `URadioGroup` | 单选选项组     | `items`、`orientation`                       |      |
+| `USwitch`   | 切换开关         | `label`、`description`、`on-icon`、`off-icon` |      |
+| `USlider`   | 范围滑块         | `min`、`max`、`step`                         |      |
+| `UPinInput` | 验证码/OTP 输入 | `length`、`type`、`mask`                     |      |
+| `UInputNumber` | 数字输入框    | `min`、`max`、`step`、`format-options`       |      |
+| `UInputDate` | 日期选择器      | `mode`、`range`、`locale`                    | v4.2+ |
+| `UInputTime` | 时间选择器      | `hour-cycle`、`minute-step`                  | v4.2+ |
+| `UInputTags` | 标签输入框      | `max`、`placeholder`                         |      |
+| `UColorPicker` | 颜色选择器    | `format`、`swatches`                         |      |
+| `UFileUpload` | 文件上传        | `accept`、`multiple`、`max-files`            |      |
 
-## Basic Input Examples
+## 基础输入示例
 
 ```vue
 <script setup>
@@ -32,21 +32,21 @@ const country = ref('')
 </script>
 
 <template>
-  <!-- Text input -->
+  <!-- 文本输入框 -->
   <UInput v-model="email" type="email" placeholder="Email" icon="i-heroicons-envelope" />
 
-  <!-- With validation state -->
+  <!-- 带验证状态 -->
   <UInput v-model="email" :color="emailError ? 'error' : undefined" />
 
-  <!-- Textarea -->
+  <!-- 多行文本输入框 -->
   <UTextarea v-model="bio" placeholder="Bio" :rows="3" autoresize />
 
-  <!-- Select -->
+  <!-- 选择器 -->
   <USelect v-model="country" :options="['USA', 'Canada', 'Mexico']" placeholder="Country" />
 </template>
 ```
 
-## SelectMenu (Custom Dropdown)
+## SelectMenu（自定义下拉菜单）
 
 ```vue
 <script setup>
@@ -67,7 +67,7 @@ const options = [
 </template>
 ```
 
-## Checkbox & Radio
+## 复选框与单选按钮
 
 ```vue
 <script setup>
@@ -77,10 +77,10 @@ const features = ref([])
 </script>
 
 <template>
-  <!-- Single checkbox -->
+  <!-- 单个复选框 -->
   <UCheckbox v-model="agreed" label="I agree to terms" description="Required" />
 
-  <!-- Radio group -->
+  <!-- 单选按钮组 -->
   <URadioGroup
     v-model="plan"
     :items="[
@@ -89,7 +89,7 @@ const features = ref([])
     ]"
   />
 
-  <!-- Checkbox group -->
+  <!-- 复选框组 -->
   <UCheckboxGroup
     v-model="features"
     :items="[
@@ -100,11 +100,11 @@ const features = ref([])
 </template>
 ```
 
-## Form Validation
+## 表单验证
 
-Uses Standard Schema (Zod, Valibot, Yup, Joi, etc.)
+使用标准模式（Zod、Valibot、Yup、Joi 等）
 
-### With Zod
+### 使用 Zod
 
 ```vue
 <script setup lang="ts">
@@ -126,7 +126,7 @@ const form = ref()
 
 async function onSubmit() {
   await form.value.validate()
-  // Submit logic
+  // 提交逻辑
 }
 </script>
 
@@ -145,7 +145,7 @@ async function onSubmit() {
 </template>
 ```
 
-### With Valibot
+### 使用 Valibot
 
 ```vue
 <script setup lang="ts">
@@ -166,27 +166,27 @@ const state = reactive<Partial<Schema>>({
 
 <template>
   <UForm :schema="schema" :state="state" @submit="onSubmit">
-    <!-- Same as above -->
+    <!-- 与上述相同 -->
   </UForm>
 </template>
 ```
 
-## UFormField Props
+## UFormField 属性
 
 ```vue
 <UFormField
-  name="email"              <!-- Field name (matches state key) -->
-  label="Email"             <!-- Label text -->
-  description="Your email"  <!-- Help text -->
-  hint="Optional"           <!-- Right-aligned hint -->
-  required                  <!-- Shows asterisk -->
-  :help="error?.message"    <!-- Error message -->
+  name="email"              <!-- 字段名称（与状态键匹配） -->
+  label="Email"             <!-- 标签文本 -->
+  description="Your email"  <!-- 帮助文本 -->
+  hint="Optional"           <!-- 右对齐提示 -->
+  required                  <!-- 显示星号 -->
+  :help="error?.message"    <!-- 错误信息 -->
 >
   <UInput v-model="state.email" />
 </UFormField>
 ```
 
-## UFieldGroup (Group Fields)
+## UFieldGroup（字段组）
 
 ```vue
 <UFieldGroup label="Name">
@@ -195,23 +195,23 @@ const state = reactive<Partial<Schema>>({
 </UFieldGroup>
 ```
 
-## Input States
+## 输入状态
 
 ```vue
-<!-- Disabled -->
+<!-- 禁用 -->
 <UInput disabled placeholder="Disabled" />
 
-<!-- Loading -->
+<!-- 加载中 -->
 <UInput :loading="true" placeholder="Loading..." />
 
-<!-- With icon -->
+<!-- 带图标 -->
 <UInput icon="i-heroicons-magnifying-glass" placeholder="Search" />
 
-<!-- Trailing icon -->
+<!-- 尾部图标 -->
 <UInput trailing-icon="i-heroicons-x-mark" placeholder="Clearable" />
 ```
 
-## File Upload
+## 文件上传
 
 ```vue
 <script setup>
@@ -225,9 +225,9 @@ const { files, open, reset } = useFileUpload()
 </template>
 ```
 
-## Date & Time Pickers (v4.2+)
+## 日期与时间选择器（v4.2+）
 
-### Date Picker
+### 日期选择器
 
 ```vue
 <script setup>
@@ -236,18 +236,18 @@ const range = ref({ start: new Date(), end: new Date() })
 </script>
 
 <template>
-  <!-- Single date -->
+  <!-- 单个日期 -->
   <UInputDate v-model="date" />
 
-  <!-- Date range -->
+  <!-- 日期范围 -->
   <UInputDate v-model="range" mode="range" />
 
-  <!-- With locale -->
+  <!-- 带本地化 -->
   <UInputDate v-model="date" locale="es" />
 </template>
 ```
 
-### Time Picker
+### 时间选择器
 
 ```vue
 <script setup>
@@ -257,20 +257,20 @@ const time = ref(new Time(12, 0))
 </script>
 
 <template>
-  <!-- Basic time picker -->
+  <!-- 基础时间选择器 -->
   <UInputTime v-model="time" />
 
-  <!-- 24-hour format -->
+  <!-- 24小时格式 -->
   <UInputTime v-model="time" hour-cycle="24" />
 
-  <!-- Custom step (minutes) -->
+  <!-- 自定义步长（分钟） -->
   <UInputTime v-model="time" :minute-step="15" />
 </template>
 ```
 
-## Common Patterns
+## 常见模式
 
-### Login Form
+### 登录表单
 
 ```vue
 <UForm :schema="loginSchema" :state="state" @submit="login">
@@ -284,7 +284,7 @@ const time = ref(new Time(12, 0))
 </UForm>
 ```
 
-### Settings Form
+### 设置表单
 
 ```vue
 <UForm :state="settings" @submit="save">
@@ -298,12 +298,12 @@ const time = ref(new Time(12, 0))
 </UForm>
 ```
 
-## Best Practices
+## 最佳实践
 
-| Do                                | Don't                      |
-| --------------------------------- | -------------------------- |
-| Use UForm + UFormField            | Build custom form wrappers |
-| Use Standard Schema (Zod/Valibot) | Write custom validation    |
-| Use v-model on form inputs        | Manually sync form state   |
-| Use `required` prop for asterisks | Add asterisks manually     |
-| Use `description` for help text   | Use separate help elements |
+| 做法                             | 不做法                      |
+| -------------------------------- | --------------------------- |
+| 使用 UForm + UFormField          | 构建自定义表单包装器        |
+| 使用标准模式（Zod/Valibot）     | 编写自定义验证逻辑          |
+| 在表单输入框中使用 v-model       | 手动同步表单状态            |
+| 使用 `required` 属性显示星号     | 手动添加星号                |
+| 使用 `description` 提供帮助文本  | 使用独立的帮助元素          |

@@ -1,28 +1,28 @@
 # useWebWorkerFn
 
-Run expensive functions without blocking the UI, using a simple syntax that makes use of Promise. A port of alewin/useWorker.
+在不阻塞 UI 的情况下运行耗时函数，使用简单的语法并利用 Promise。这是 alewin/useWorker 的移植版本。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useWebWorkerFn } from '@vueuse/core'
 
 const { workerFn } = useWebWorkerFn(() => {
-  // some heavy works to do in web worker
+  // 在 Web Worker 中执行的一些繁重工作
 })
 ```
 
-## Returns
+## 返回值
 
-| Name            | Type                                |
+| 名称            | 类型                                |
 | --------------- | ----------------------------------- |
 | workerFn        | `Ref`                               |
-| workerStatus    | `shallowRef&lt;WebWorkerStatus&gt;` |
+| workerStatus    | `shallowRef<WebWorkerStatus>`       |
 | workerTerminate | `Ref`                               |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWebWorkerFn/)
+[VueUse 文档](https://vueuse.org/core/useWebWorkerFn/)

@@ -1,53 +1,53 @@
-# Combobox
+# 组合框
 
-Searchable dropdown with filtering
+可搜索的下拉筛选框
 
-**Parts:** `ComboboxRoot`, `ComboboxInput`, `ComboboxAnchor`, `ComboboxTrigger`, `ComboboxContent`, `ComboboxViewport`, `ComboboxItem`, `ComboboxItemIndicator`, `ComboboxGroup`, `ComboboxLabel`, `ComboboxEmpty`, `ComboboxSeparator`, `ComboboxArrow`, `ComboboxPortal`, `ComboboxCancel`, `ComboboxVirtualizer`
+**组件结构：** `ComboboxRoot`、`ComboboxInput`、`ComboboxAnchor`、`ComboboxTrigger`、`ComboboxContent`、`ComboboxViewport`、`ComboboxItem`、`ComboboxItemIndicator`、`ComboboxGroup`、`ComboboxLabel`、`ComboboxEmpty`、`ComboboxSeparator`、`ComboboxArrow`、`ComboboxPortal`、`ComboboxCancel`、`ComboboxVirtualizer`
 
 ## ComboboxRoot
 
-### Props
+### 属性
 
-| Prop                      | Type                                                     | Default |
-| ------------------------- | -------------------------------------------------------- | ------- |
+| 属性                      | 类型                                                     | 默认值 |
+| ------------------------- | -------------------------------------------------------- | ------ |
 | `as`                      | `AsTag \| Component`                                     | `"div"` |
-| `asChild`                 | `boolean`                                                | -       |
-| `defaultOpen`             | `boolean`                                                | -       |
-| `defaultValue`            | `AcceptableValue \| AcceptableValue[]`                   | -       |
-| `dir`                     | `"ltr" \| "rtl"`                                         | -       |
-| `disabled`                | `boolean`                                                | -       |
-| `displayValue`            | `((val: AcceptableValue) => string)`                     | -       |
-| `filterFunction`          | `((val: string[] \| number[] \| false[] \| true[] \|...` | -       |
-| `modelValue`              | `AcceptableValue \| AcceptableValue[]`                   | -       |
-| `multiple`                | `boolean`                                                | -       |
-| `name`                    | `string`                                                 | -       |
-| `open`                    | `boolean`                                                | -       |
-| `resetSearchTermOnBlur`   | `boolean`                                                | `true`  |
-| `resetSearchTermOnSelect` | `boolean`                                                | `true`  |
-| `searchTerm`              | `string`                                                 | -       |
-| `selectedValue`           | `AcceptableValue`                                        | -       |
+| `asChild`                 | `boolean`                                                | -      |
+| `defaultOpen`             | `boolean`                                                | -      |
+| `defaultValue`            | `AcceptableValue \| AcceptableValue[]`                   | -      |
+| `dir`                     | `"ltr" \| "rtl"`                                         | -      |
+| `disabled`                | `boolean`                                                | -      |
+| `displayValue`            | `((val: AcceptableValue) => string)`                     | -      |
+| `filterFunction`          | `((val: string[] \| number[] \| false[] \| true[] \|...` | -      |
+| `modelValue`              | `AcceptableValue \| AcceptableValue[]`                   | -      |
+| `multiple`                | `boolean`                                                | -      |
+| `name`                    | `string`                                                 | -      |
+| `open`                    | `boolean`                                                | -      |
+| `resetSearchTermOnBlur`   | `boolean`                                                | `true` |
+| `resetSearchTermOnSelect` | `boolean`                                                | `true` |
+| `searchTerm`              | `string`                                                 | -      |
+| `selectedValue`           | `AcceptableValue`                                        | -      |
 
-### Emits
+### 事件
 
-| Event                  | Payload                    |
-| ---------------------- | -------------------------- |
-| `update:modelValue`    | `[value: AcceptableValue]` |
-| `update:open`          | `[value: boolean]`         |
-| `update:searchTerm`    | `[value: string]`          |
-| `update:selectedValue` | `[value: AcceptableValue]` |
+| 事件                   | 参数                         |
+| ---------------------- | ---------------------------- |
+| `update:modelValue`    | `[value: AcceptableValue]`   |
+| `update:open`          | `[value: boolean]`           |
+| `update:searchTerm`    | `[value: string]`            |
+| `update:selectedValue` | `[value: AcceptableValue]`   |
 
-### Slots
+### 插槽
 
-| Slot         | Type                                   |
-| ------------ | -------------------------------------- |
-| `open`       | `boolean`                              |
-| `modelValue` | `AcceptableValue \| AcceptableValue[]` |
+| 插槽         | 类型                                     |
+| ------------ | ---------------------------------------- |
+| `open`       | `boolean`                                |
+| `modelValue` | `AcceptableValue \| AcceptableValue[]`   |
 
 ## ComboboxInput
 
-### Props
+### 属性
 
-| Prop        | Type                 | Default   |
+| 属性        | 类型                 | 默认值    |
 | ----------- | -------------------- | --------- |
 | `as`        | `AsTag \| Component` | `"input"` |
 | `asChild`   | `boolean`            | -         |
@@ -57,18 +57,18 @@ Searchable dropdown with filtering
 
 ## ComboboxAnchor
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## ComboboxTrigger
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default    |
+| 属性       | 类型                 | 默认值     |
 | ---------- | -------------------- | ---------- |
 | `as`       | `AsTag \| Component` | `"button"` |
 | `asChild`  | `boolean`            | -          |
@@ -76,33 +76,33 @@ Searchable dropdown with filtering
 
 ## ComboboxContent
 
-### Props
+### 属性
 
-| Prop                          | Type                                                    | Default |
-| ----------------------------- | ------------------------------------------------------- | ------- |
-| `align`                       | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`                 | `number`                                                | -       |
-| `arrowPadding`                | `number`                                                | -       |
+| 属性                          | 类型                                                    | 默认值 |
+| ----------------------------- | ------------------------------------------------------- | ------ |
+| `align`                       | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`                 | `number`                                                | -      |
+| `arrowPadding`                | `number`                                                | -      |
 | `as`                          | `AsTag \| Component`                                    | `"div"` |
-| `asChild`                     | `boolean`                                               | -       |
-| `avoidCollisions`             | `boolean`                                               | -       |
-| `bodyLock`                    | `boolean`                                               | -       |
-| `collisionBoundary`           | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`            | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `disableOutsidePointerEvents` | `boolean`                                               | -       |
-| `dismissable`                 | `boolean`                                               | -       |
-| `forceMount`                  | `boolean`                                               | -       |
-| `hideWhenDetached`            | `boolean`                                               | -       |
-| `position`                    | `"inline" \| "popper"`                                  | -       |
-| `prioritizePosition`          | `boolean`                                               | -       |
-| `side`                        | `"top" \| "right" \| "bottom" \| "left"`                | -       |
-| `sideOffset`                  | `number`                                                | -       |
-| `sticky`                      | `"partial" \| "always"`                                 | -       |
-| `updatePositionStrategy`      | `"always" \| "optimized"`                               | -       |
+| `asChild`                     | `boolean`                                               | -      |
+| `avoidCollisions`             | `boolean`                                               | -      |
+| `bodyLock`                    | `boolean`                                               | -      |
+| `collisionBoundary`           | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`            | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `disableOutsidePointerEvents` | `boolean`                                               | -      |
+| `dismissable`                 | `boolean`                                               | -      |
+| `forceMount`                  | `boolean`                                               | -      |
+| `hideWhenDetached`            | `boolean`                                               | -      |
+| `position`                    | `"inline" \| "popper"`                                  | -      |
+| `prioritizePosition`          | `boolean`                                               | -      |
+| `side`                        | `"top" \| "right" \| "bottom" \| "left"`                | -      |
+| `sideOffset`                  | `number`                                                | -      |
+| `sticky`                      | `"partial" \| "always"`                                 | -      |
+| `updatePositionStrategy`      | `"always" \| "optimized"`                               | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                                               |
+| 事件                 | 参数                                                  |
 | -------------------- | ----------------------------------------------------- |
 | `escapeKeyDown`      | `[event: KeyboardEvent]`                              |
 | `focusOutside`       | `[event: FocusOutsideEvent]`                          |
@@ -111,103 +111,103 @@ Searchable dropdown with filtering
 
 ## ComboboxViewport
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `nonce`   | `string`             | -       |
+| `asChild` | `boolean`            | -      |
+| `nonce`   | `string`             | -      |
 
 ## ComboboxItem
 
-### Props
+### 属性
 
-| Prop       | Type                 | Default |
-| ---------- | -------------------- | ------- |
+| 属性       | 类型                 | 默认值 |
+| ---------- | -------------------- | ------ |
 | `as`       | `AsTag \| Component` | `"div"` |
-| `asChild`  | `boolean`            | -       |
-| `disabled` | `boolean`            | -       |
-| `value`\*  | `AcceptableValue`    | -       |
+| `asChild`  | `boolean`            | -      |
+| `disabled` | `boolean`            | -      |
+| `value`\*  | `AcceptableValue`    | -      |
 
-### Emits
+### 事件
 
-| Event    | Payload                                 |
-| -------- | --------------------------------------- |
+| 事件     | 参数                                   |
+| -------- | -------------------------------------- |
 | `select` | `[event: SelectEvent<AcceptableValue>]` |
 
 ## ComboboxItemIndicator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default  |
+| 属性      | 类型                 | 默认值   |
 | --------- | -------------------- | -------- |
 | `as`      | `AsTag \| Component` | `"span"` |
 | `asChild` | `boolean`            | -        |
 
 ## ComboboxGroup
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## ComboboxLabel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
-| `for`     | `string`             | -       |
+| `asChild` | `boolean`            | -      |
+| `for`     | `string`             | -      |
 
 ## ComboboxEmpty
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## ComboboxSeparator
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"div"` |
-| `asChild` | `boolean`            | -       |
+| `asChild` | `boolean`            | -      |
 
 ## ComboboxArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
-| --------- | -------------------- | ------- |
+| 属性      | 类型                 | 默认值 |
+| --------- | -------------------- | ------ |
 | `as`      | `AsTag \| Component` | `"svg"` |
-| `asChild` | `boolean`            | -       |
-| `height`  | `number`             | `5`     |
-| `width`   | `number`             | `10`    |
+| `asChild` | `boolean`            | -      |
+| `height`  | `number`             | `5`    |
+| `width`   | `number`             | `10`   |
 
 ## ComboboxPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## ComboboxCancel
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |

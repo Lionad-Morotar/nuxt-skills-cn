@@ -1,11 +1,11 @@
 # useArrayEvery
 
-Reactive
+响应式
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**分类：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayEvery } from '@vueuse/core'
@@ -22,6 +22,6 @@ item1.value = 1
 // result.value: false
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayEvery/)
+[VueUse 文档](https://vueuse.org/core/useArrayEvery/)

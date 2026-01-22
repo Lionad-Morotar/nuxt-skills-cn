@@ -1,14 +1,14 @@
 # Splitter
 
-Resizable split panels
+可调整大小的分割面板
 
-**Parts:** `SplitterGroup`, `SplitterPanel`, `SplitterResizeHandle`
+**组件：** `SplitterGroup`、`SplitterPanel`、`SplitterResizeHandle`
 
 ## SplitterGroup
 
-### Props
+### 属性
 
-| Prop               | Type                         | Default          |
+| 属性               | 类型                         | 默认值           |
 | ------------------ | ---------------------------- | ---------------- |
 | `as`               | `AsTag \| Component`         | `"div"`          |
 | `asChild`          | `boolean`                    | -                |
@@ -18,64 +18,64 @@ Resizable split panels
 | `keyboardResizeBy` | `number \| null`             | `10`             |
 | `storage`          | `PanelGroupStorage`          | `defaultStorage` |
 
-### Emits
+### 事件
 
-| Event    | Payload           |
+| 事件     | 参数              |
 | -------- | ----------------- |
 | `layout` | `[val: number[]]` |
 
-### Slots
+### 插槽
 
-| Slot     | Type       |
+| 插槽     | 类型       |
 | -------- | ---------- |
 | `layout` | `number[]` |
 
 ## SplitterPanel
 
-### Props
+### 属性
 
-| Prop            | Type                 | Default |
-| --------------- | -------------------- | ------- |
-| `as`            | `AsTag \| Component` | `"div"` |
-| `asChild`       | `boolean`            | -       |
-| `collapsedSize` | `number`             | -       |
-| `collapsible`   | `boolean`            | -       |
-| `defaultSize`   | `number`             | -       |
-| `id`            | `string`             | -       |
-| `maxSize`       | `number`             | -       |
-| `minSize`       | `number`             | -       |
-| `order`         | `number`             | -       |
+| 属性              | 类型                 | 默认值  |
+| ----------------- | -------------------- | ------- |
+| `as`              | `AsTag \| Component` | `"div"` |
+| `asChild`         | `boolean`            | -       |
+| `collapsedSize`   | `number`             | -       |
+| `collapsible`     | `boolean`            | -       |
+| `defaultSize`     | `number`             | -       |
+| `id`              | `string`             | -       |
+| `maxSize`         | `number`             | -       |
+| `minSize`         | `number`             | -       |
+| `order`           | `number`             | -       |
 
-### Emits
+### 事件
 
-| Event      | Payload                            |
-| ---------- | ---------------------------------- |
-| `collapse` | `[]`                               |
-| `expand`   | `[]`                               |
-| `resize`   | `[size: number, prevSize: number]` |
+| 事件       | 参数                                 |
+| ---------- | ------------------------------------ |
+| `collapse` | `[]`                                 |
+| `expand`   | `[]`                                 |
+| `resize`   | `[size: number, prevSize: number]`   |
 
-### Slots
+### 插槽
 
-| Slot          | Type      |
-| ------------- | --------- |
-| `isCollapsed` | `boolean` |
-| `isExpanded`  | `boolean` |
+| 插槽           | 类型      |
+| -------------- | --------- |
+| `isCollapsed`  | `boolean` |
+| `isExpanded`   | `boolean` |
 
 ## SplitterResizeHandle
 
-### Props
+### 属性
 
-| Prop             | Type                    | Default |
-| ---------------- | ----------------------- | ------- |
-| `as`             | `AsTag \| Component`    | `"div"` |
-| `asChild`        | `boolean`               | -       |
-| `disabled`       | `boolean`               | -       |
-| `hitAreaMargins` | `PointerHitAreaMargins` | -       |
-| `id`             | `string`                | -       |
-| `tabindex`       | `number`                | `0`     |
+| 属性               | 类型                    | 默认值  |
+| ------------------ | ----------------------- | ------- |
+| `as`               | `AsTag \| Component`    | `"div"` |
+| `asChild`          | `boolean`               | -       |
+| `disabled`         | `boolean`               | -       |
+| `hitAreaMargins`   | `PointerHitAreaMargins` | -       |
+| `id`               | `string`                | -       |
+| `tabindex`         | `number`                | `0`     |
 
-### Emits
+### 事件
 
-| Event      | Payload                 |
-| ---------- | ----------------------- |
-| `dragging` | `[isDragging: boolean]` |
+| 事件       | 参数                        |
+| ---------- | --------------------------- |
+| `dragging` | `[isDragging: boolean]`     |

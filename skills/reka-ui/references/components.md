@@ -1,106 +1,106 @@
-# Components
+# 组件
 
-> Auto-generated. Run `npx tsx skills/reka-ui/scripts/generate-components.ts` to update.
+> 自动生成。运行 `npx tsx skills/reka-ui/scripts/generate-components.ts` 以更新。
 
-## Form
+## 表单
 
-| Component       | Description                                 | File                         |
-| --------------- | ------------------------------------------- | ---------------------------- |
-| **checkbox**    | Selection control with indeterminate state  | `components/checkbox.md`     |
-| **combobox**    | Searchable dropdown with filtering          | `components/combobox.md`     |
-| **editable**    | Inline text editing with preview/edit modes | `components/editable.md`     |
-| **label**       | Accessible form label                       | `components/label.md`        |
-| **listbox**     | Accessible list selection                   | `components/listbox.md`      |
-| **numberField** | Numeric input with increment/decrement      | `components/number-field.md` |
-| **pinInput**    | Multi-character code entry (OTP)            | `components/pin-input.md`    |
-| **radioGroup**  | Mutually exclusive selection                | `components/radio-group.md`  |
-| **select**      | Dropdown selection with grouping            | `components/select.md`       |
-| **slider**      | Range input control                         | `components/slider.md`       |
-| **switch**      | Toggle between two states                   | `components/switch.md`       |
-| **tagsInput**   | Multiple tag entry and management           | `components/tags-input.md`   |
-| **toggle**      | Single state button toggle                  | `components/toggle.md`       |
-| **toggleGroup** | Multiple toggles with group behavior        | `components/toggle-group.md` |
+| 组件           | 描述                                       | 文件                          |
+| -------------- | ------------------------------------------ | ----------------------------- |
+| **checkbox**   | 具有不确定状态的选择控件                   | `components/checkbox.md`      |
+| **combobox**   | 可搜索的下拉框，支持过滤                   | `components/combobox.md`      |
+| **editable**   | 内联文本编辑，支持预览/编辑模式            | `components/editable.md`      |
+| **label**      | 可访问的表单标签                           | `components/label.md`         |
+| **listbox**    | 可访问的列表选择                           | `components/listbox.md`       |
+| **numberField**| 数值输入框，支持递增/递减                  | `components/number-field.md`  |
+| **pinInput**   | 多字符代码输入（OTP）                      | `components/pin-input.md`     |
+| **radioGroup** | 互斥选择                                   | `components/radio-group.md`   |
+| **select**     | 分组下拉选择                               | `components/select.md`        |
+| **slider**     | 范围输入控件                               | `components/slider.md`        |
+| **switch**     | 在两种状态之间切换                         | `components/switch.md`        |
+| **tagsInput**  | 多标签输入与管理                           | `components/tags-input.md`    |
+| **toggle**     | 单状态按钮切换                             | `components/toggle.md`        |
+| **toggleGroup**| 具有组行为的多个切换项                     | `components/toggle-group.md`  |
 
-## Date
+## 日期
 
-| Component           | Description                       | File                              |
-| ------------------- | --------------------------------- | --------------------------------- |
-| **calendar**        | Date selection grid (alpha)       | `components/calendar.md`          |
-| **dateField**       | Date input field (alpha)          | `components/date-field.md`        |
-| **datePicker**      | Date picker with calendar (alpha) | `components/date-picker.md`       |
-| **dateRangeField**  | Date range input (alpha)          | `components/date-range-field.md`  |
-| **dateRangePicker** | Date range picker (alpha)         | `components/date-range-picker.md` |
-| **rangeCalendar**   | Calendar for date ranges (alpha)  | `components/range-calendar.md`    |
-| **timeField**       | Time input field (alpha)          | `components/time-field.md`        |
+| 组件                | 描述                           | 文件                            |
+| ------------------- | ------------------------------ | ------------------------------- |
+| **calendar**        | 日期选择网格（alpha）          | `components/calendar.md`        |
+| **dateField**       | 日期输入字段（alpha）          | `components/date-field.md`      |
+| **datePicker**      | 带日历的日期选择器（alpha）    | `components/date-picker.md`     |
+| **dateRangeField**  | 日期范围输入（alpha）          | `components/date-range-field.md`|
+| **dateRangePicker** | 日期范围选择器（alpha）        | `components/date-range-picker.md`|
+| **rangeCalendar**   | 日期范围日历（alpha）          | `components/range-calendar.md`  |
+| **timeField**       | 时间输入字段（alpha）          | `components/time-field.md`      |
 
-## Disclosure
+## 折叠
 
-| Component       | Description                  | File                        |
-| --------------- | ---------------------------- | --------------------------- |
-| **accordion**   | Collapsible content sections | `components/accordion.md`   |
-| **collapsible** | Single collapsible panel     | `components/collapsible.md` |
+| 组件           | 描述                       | 文件                         |
+| -------------- | -------------------------- | ---------------------------- |
+| **accordion**  | 可折叠的内容部分           | `components/accordion.md`    |
+| **collapsible**| 单个可折叠面板             | `components/collapsible.md`  |
 
-## Overlay
+## 覆盖层
 
-| Component       | Description                   | File                         |
-| --------------- | ----------------------------- | ---------------------------- |
-| **alertDialog** | Modal dialog requiring action | `components/alert-dialog.md` |
-| **dialog**      | Modal dialog                  | `components/dialog.md`       |
-| **hoverCard**   | Card shown on hover           | `components/hover-card.md`   |
-| **popover**     | Floating content panel        | `components/popover.md`      |
-| **tooltip**     | Informational hover tip       | `components/tooltip.md`      |
-| **toast**       | Temporary notifications       | `components/toast.md`        |
+| 组件             | 描述                         | 文件                           |
+| ---------------- | ---------------------------- | ------------------------------ |
+| **alertDialog**  | 需要操作的模态对话框         | `components/alert-dialog.md`   |
+| **dialog**       | 模态对话框                   | `components/dialog.md`         |
+| **hoverCard**    | 悬停显示的卡片               | `components/hover-card.md`     |
+| **popover**      | 浮动内容面板                 | `components/popover.md`        |
+| **tooltip**      | 信息提示悬停工具             | `components/tooltip.md`        |
+| **toast**        | 临时通知                     | `components/toast.md`          |
 
-## Menu
+## 菜单
 
-| Component          | Description              | File                            |
-| ------------------ | ------------------------ | ------------------------------- |
-| **contextMenu**    | Right-click context menu | `components/context-menu.md`    |
-| **dropdownMenu**   | Dropdown action menu     | `components/dropdown-menu.md`   |
-| **menubar**        | Horizontal menu bar      | `components/menubar.md`         |
-| **navigationMenu** | Site navigation menu     | `components/navigation-menu.md` |
+| 组件               | 描述                           | 文件                              |
+| ------------------ | ------------------------------ | --------------------------------- |
+| **contextMenu**    | 右键上下文菜单                 | `components/context-menu.md`      |
+| **dropdownMenu**   | 下拉操作菜单                   | `components/dropdown-menu.md`     |
+| **menubar**        | 水平菜单栏                     | `components/menubar.md`           |
+| **navigationMenu** | 网站导航菜单                   | `components/navigation-menu.md`   |
 
-## Data
+## 数据
 
-| Component      | Description                   | File                        |
-| -------------- | ----------------------------- | --------------------------- |
-| **avatar**     | User image with fallback      | `components/avatar.md`      |
-| **pagination** | Page navigation               | `components/pagination.md`  |
-| **progress**   | Progress indicator            | `components/progress.md`    |
-| **scrollArea** | Custom scrollbar container    | `components/scroll-area.md` |
-| **separator**  | Visual divider                | `components/separator.md`   |
-| **splitter**   | Resizable split panels        | `components/splitter.md`    |
-| **stepper**    | Multi-step progress indicator | `components/stepper.md`     |
-| **tabs**       | Tabbed content panels         | `components/tabs.md`        |
-| **tree**       | Hierarchical tree view        | `components/tree.md`        |
+| 组件             | 描述                           | 文件                           |
+| ---------------- | ------------------------------ | ------------------------------ |
+| **avatar**       | 用户图像，支持降级显示         | `components/avatar.md`         |
+| **pagination**   | 页面导航                       | `components/pagination.md`     |
+| **progress**     | 进度指示器                     | `components/progress.md`       |
+| **scrollArea**   | 自定义滚动条容器               | `components/scroll-area.md`    |
+| **separator**    | 视觉分隔符                     | `components/separator.md`      |
+| **splitter**     | 可调整大小的分割面板           | `components/splitter.md`       |
+| **stepper**      | 多步骤进度指示器               | `components/stepper.md`        |
+| **tabs**         | 标签内容面板                   | `components/tabs.md`           |
+| **tree**         | 层次结构树形视图               | `components/tree.md`           |
 
-## Layout
+## 布局
 
-| Component       | Description                  | File                         |
-| --------------- | ---------------------------- | ---------------------------- |
-| **aspectRatio** | Maintain aspect ratio        | `components/aspect-ratio.md` |
-| **toolbar**     | Toolbar with buttons/toggles | `components/toolbar.md`      |
+| 组件             | 描述                         | 文件                            |
+| ---------------- | ---------------------------- | ------------------------------- |
+| **aspectRatio**  | 维持宽高比                   | `components/aspect-ratio.md`    |
+| **toolbar**      | 带按钮/切换项的工具栏        | `components/toolbar.md`         |
 
-## Utility
+## 工具
 
-| Component          | Description                | File                            |
-| ------------------ | -------------------------- | ------------------------------- |
-| **configProvider** | Global config context      | `components/config-provider.md` |
-| **focusScope**     | Focus trap container       | `components/focus-scope.md`     |
-| **presence**       | Animation presence control | `components/presence.md`        |
-| **primitive**      | Base element wrapper       | `components/primitive.md`       |
-| **visuallyHidden** | Screen reader only content | `components/visually-hidden.md` |
+| 组件                 | 描述                           | 文件                              |
+| -------------------- | ------------------------------ | --------------------------------- |
+| **configProvider**   | 全局配置上下文                 | `components/config-provider.md`   |
+| **focusScope**       | 焦点陷阱容器                   | `components/focus-scope.md`       |
+| **presence**         | 动画显示控制                   | `components/presence.md`          |
+| **primitive**        | 基础元素包装器                 | `components/primitive.md`         |
+| **visuallyHidden**   | 仅屏幕阅读器内容               | `components/visually-hidden.md`   |
 
-## Composables
+## 组合式函数
 
-| Composable             | Description                                                        |
-| ---------------------- | ------------------------------------------------------------------ |
-| `useEmitAsProps`       | Convert emit functions to props for passing to child components    |
-| `useFilter`            | Filter items based on search query with customizable matching      |
-| `useForwardProps`      | Forward props to child components while filtering out handled ones |
-| `useForwardPropsEmits` | Combine useForwardProps and useEmitAsProps                         |
-| `useForwardExpose`     | Forward exposed methods/refs from child components                 |
-| `useId`                | Generate unique IDs for accessibility attributes                   |
-| `useDateFormatter`     | Format dates with locale support                                   |
-| `useDirection`         | Get/set text direction (ltr/rtl)                                   |
-| `useLocale`            | Get/set locale for internationalization                            |
+| 组合式函数              | 描述                                                             |
+| ----------------------- | ---------------------------------------------------------------- |
+| `useEmitAsProps`        | 将 emit 函数转换为 props，用于传递给子组件                       |
+| `useFilter`             | 根据搜索查询过滤项目，支持自定义匹配逻辑                         |
+| `useForwardProps`       | 将 props 转发给子组件，同时过滤已处理的项                        |
+| `useForwardPropsEmits`  | 结合 useForwardProps 和 useEmitAsProps                           |
+| `useForwardExpose`      | 将子组件暴露的方法/引用转发                                      |
+| `useId`                 | 生成唯一 ID 用于无障碍属性                                       |
+| `useDateFormatter`      | 支持本地化的日期格式化                                           |
+| `useDirection`          | 获取/设置文本方向（ltr/rtl）                                     |
+| `useLocale`             | 获取/设置国际化区域设置                                          |

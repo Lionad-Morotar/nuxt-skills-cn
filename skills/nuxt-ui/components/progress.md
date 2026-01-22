@@ -1,23 +1,23 @@
-# Progress
+# 进度条
 
-An indicator showing the progress of a task.
+显示任务进度的指示器。
 
-> Based on [Reka UI Progress](https://reka-ui.com/docs/components/progress)
+> 基于 [Reka UI Progress](https://reka-ui.com/docs/components/progress)
 
-## Key Props
+## 主要属性
 
-- `max`: to set the maximum value of the Progress.
-- `status`: to display the current Progress value above the bar.
-- `animation`: to change the animation of the Progress to an inverse carousel, a swinging bar or an elastic bar.
-- `orientation`: to change the orientation of the Progress.
-- `color`: to change the color of the Slider.
-- `size`: to change the size of the Slider.
-- `inverted`: to visually invert the Progress.
+- `max`：设置进度条的最大值。
+- `status`：在进度条上方显示当前进度值。
+- `animation`：更改进度条动画效果，可选逆向轮播、摆动条或弹性条。
+- `orientation`：更改进度条的方向。
+- `color`：更改滑块的颜色。
+- `size`：更改滑块的尺寸。
+- `inverted`：视觉上反转进度条。
 
-## Usage
+## 使用方法
 
 ```vue
 <UProgress
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

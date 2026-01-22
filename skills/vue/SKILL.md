@@ -1,71 +1,71 @@
 ---
 name: vue
-description: Use when editing .vue files, creating Vue 3 components, writing composables, or testing Vue code - provides Composition API patterns, props/emits best practices, VueUse integration, and reactive destructuring guidance
+description: 用于编辑 .vue 文件、创建 Vue 3 组件、编写组合式函数或测试 Vue 代码时使用——提供组合式 API 模式、props/emits 最佳实践、VueUse 集成及响应式解构指导
 license: MIT
 ---
 
-# Vue 3 Development
+# Vue 3 开发
 
-Reference for Vue 3 Composition API patterns, component architecture, and testing practices.
+Vue 3 组合式 API 模式、组件架构和测试实践的参考指南。
 
-**Current stable:** Vue 3.5+ with enhanced reactivity performance (-56% memory, 10x faster array tracking), new SSR features, and improved developer experience.
+**当前稳定版本：** Vue 3.5+，具备增强的响应式性能（内存减少 56%，数组追踪速度提升 10 倍）、新的 SSR 功能以及改进的开发者体验。
 
-## Overview
+## 概述
 
-Progressive reference system for Vue 3 projects. Load only files relevant to current task to minimize context usage (~250 tokens base, 500-1500 per sub-file).
+Vue 3 项目的渐进式参考体系。仅加载当前任务相关的文件以减少上下文使用量（基础约 250 tokens，子文件 500–1500 tokens）。
 
-## When to Use
+## 使用场景
 
-**Use this skill when:**
+**使用此技能当：**
 
-- Writing `.vue` components
-- Creating composables (`use*` functions)
-- Building client-side utilities
-- Testing Vue components/composables
+- 编写 `.vue` 组件
+- 创建组合式函数（`use*` 函数）
+- 构建客户端工具函数
+- 测试 Vue 组件/组合式函数
 
-**Use `nuxt` skill instead for:**
+**对于以下内容，请改用 `nuxt` 技能：**
 
-- Server routes, API endpoints
-- File-based routing, middleware
-- Nuxt-specific patterns
+- 服务端路由、API 端点
+- 基于文件的路由、中间件
+- Nuxt 特定模式
 
-**For styled UI components:** use `nuxt-ui` skill
-**For headless accessible components:** use `reka-ui` skill
-**For VueUse composables:** use `vueuse` skill
+**对于带样式的 UI 组件：** 使用 `nuxt-ui` 技能  
+**对于无头且可访问的组件：** 使用 `reka-ui` 技能  
+**对于 VueUse 组合式函数：** 使用 `vueuse` 技能
 
-## Quick Reference
+## 快速参考
 
-| Working on...            | Load file                  |
+| 工作内容                 | 加载文件                   |
 | ------------------------ | -------------------------- |
-| `.vue` in `components/`  | references/components.md   |
-| File in `composables/`   | references/composables.md  |
-| File in `utils/`         | references/utils-client.md |
-| `.spec.ts` or `.test.ts` | references/testing.md      |
+| `components/` 中的 `.vue` | references/components.md   |
+| `composables/` 中的文件   | references/composables.md  |
+| `utils/` 中的文件         | references/utils-client.md |
+| `.spec.ts` 或 `.test.ts`  | references/testing.md      |
 
-## Loading Files
+## 加载文件
 
-**Load one file at a time based on file context:**
+**根据文件上下文一次只加载一个文件：**
 
-- Component work → [references/components.md](references/components.md)
-- Composable work → [references/composables.md](references/composables.md)
-- Utils work → [references/utils-client.md](references/utils-client.md)
-- Testing → [references/testing.md](references/testing.md)
+- 组件开发 → [references/components.md](references/components.md)  
+- 组合式函数开发 → [references/composables.md](references/composables.md)  
+- 工具函数开发 → [references/utils-client.md](references/utils-client.md)  
+- 测试 → [references/testing.md](references/testing.md)
 
-**DO NOT load all files at once** - wastes context on irrelevant patterns.
+**请勿一次性加载所有文件** —— 这会浪费上下文中的无关模式。
 
-## Available Guidance
+## 可用指导
 
-**[references/components.md](references/components.md)** - Props with reactive destructuring, emits patterns, defineModel for v-model, slots shorthand
+**[references/components.md](references/components.md)** —— 带响应式解构的 Props、emits 模式、defineModel 用于 v-model、slots 简写
 
-**[references/composables.md](references/composables.md)** - Composition API structure, VueUse integration, lifecycle hooks, async patterns
+**[references/composables.md](references/composables.md)** —— 组合式 API 结构、VueUse 集成、生命周期钩子、异步模式
 
-**[references/utils-client.md](references/utils-client.md)** - Pure functions, formatters, validators, transformers, when NOT to use utils
+**[references/utils-client.md](references/utils-client.md)** —— 纯函数、格式化器、验证器、转换器，以及何时不使用工具函数
 
-**[references/testing.md](references/testing.md)** - Vitest + @vue/test-utils, component testing, composable testing, mocking patterns
+**[references/testing.md](references/testing.md)** —— Vitest + @vue/test-utils，组件测试、组合式函数测试、模拟模式
 
-## Examples
+## 示例
 
-Working examples in `resources/examples/`:
+`resources/examples/` 中包含实际示例：
 
-- `component-example.vue` - Full component with all patterns
-- `composable-example.ts` - Reusable composition function
+- `component-example.vue` —— 包含所有模式的完整组件  
+- `composable-example.ts` —— 可复用的组合函数

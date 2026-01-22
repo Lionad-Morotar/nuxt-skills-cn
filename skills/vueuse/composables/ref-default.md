@@ -1,11 +1,11 @@
 # refDefault
 
-Apply default value to a ref.
+将默认值应用于 ref。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { refDefault, useStorage } from '@vueuse/core'
@@ -20,6 +20,6 @@ raw.value = undefined
 console.log(state.value) // default
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/refDefault/)
+[VueUse 文档](https://vueuse.org/core/refDefault/)

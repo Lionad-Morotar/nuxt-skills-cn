@@ -1,22 +1,22 @@
 # InputTime
 
-An input for selecting a time.
+用于选择时间的输入组件。
 
-> Based on [Reka UI InputTime](https://reka-ui.com/docs/components/time-field)
+> 基于 [Reka UI InputTime](https://reka-ui.com/docs/components/time-field)
 
-## Key Props
+## 主要属性
 
-- `color`: to change the color of the InputTime.
-- `variant`: to change the variant of the InputTime.
-- `size`: to change the size of the InputTime.
-- `icon`: to show an [Icon](/docs/components/icon) inside the InputTime.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the InputTime.
-- `disabled`: to disable the InputTime.
+- `color`：用于更改 InputTime 的颜色。
+- `variant`：用于更改 InputTime 的变体。
+- `size`：用于更改 InputTime 的尺寸。
+- `icon`：用于在 InputTime 内部显示 [Icon](/docs/components/icon)。
+- `avatar`：用于在 InputTime 内部显示 [Avatar](/docs/components/avatar)。
+- `disabled`：用于禁用 InputTime。
 
-## Usage
+## 使用方法
 
 ```vue
 <UInputTime
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

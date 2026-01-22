@@ -1,18 +1,18 @@
-# PricingPlans
+# 定价计划
 
-Display a list of pricing plans in a responsive grid layout.
+以响应式网格布局显示定价计划列表。
 
-## Key Props
+## 主要属性
 
-- `plans`: as an array of objects with the properties of the [PricingPlan](/docs/components/pricing-plan#props) component.
-- `orientation`: to change the orientation of the PricingPlans.
-- `compact`: to reduce the padding between the plans when one of the plans is scaled for a better visual balance.
-- `scale`: to adjust the spacing between the plans when one of the plans is scaled for a better visual balance.
+- `plans`：作为包含 [PricingPlan](/docs/components/pricing-plan#props) 组件属性的对象数组。
+- `orientation`：用于更改定价计划的布局方向。
+- `compact`：当其中一个计划被缩放以实现更好的视觉平衡时，减少计划间的内边距。
+- `scale`：当其中一个计划被缩放以实现更好的视觉平衡时，调整计划间的间距。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPricingPlans
-  <!-- props here -->
+  <!-- 这里放置属性 -->
 />
 ```

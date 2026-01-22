@@ -1,11 +1,11 @@
 # refAutoReset
 
-A ref which will be reset to the default value after some time.
+一个在经过一段时间后会重置为默认值的引用。
 
-**Package:** `@vueuse/shared`
-**Category:** Reactivity
+**包：** `@vueuse/shared`  
+**类别：** 响应式
 
-## Usage
+## 用法
 
 ```ts
 import { refAutoReset } from '@vueuse/core'
@@ -13,11 +13,11 @@ import { refAutoReset } from '@vueuse/core'
 const message = refAutoReset('default message', 1000)
 
 function setMessage() {
-  // here the value will change to 'message has set' but after 1000ms, it will change to 'default message'
+  // 此处值将更改为 'message has set'，但在 1000 毫秒后会变回 'default message'
   message.value = 'message has set'
 }
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/refAutoReset/)
+[VueUse 文档](https://vueuse.org/core/refAutoReset/)

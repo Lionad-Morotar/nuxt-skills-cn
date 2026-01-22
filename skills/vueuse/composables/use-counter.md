@@ -1,11 +1,11 @@
 # useCounter
 
-Basic counter with utility functions.
+带有工具函数的基本计数器。
 
-**Package:** `@vueuse/shared`
-**Category:** Utilities
+**包：** `@vueuse/shared`  
+**分类：** 工具函数
 
-## Usage
+## 用法
 
 ```ts
 import { useCounter } from '@vueuse/core'
@@ -13,9 +13,9 @@ import { useCounter } from '@vueuse/core'
 const { count, inc, dec, set, reset } = useCounter()
 ```
 
-## Returns
+## 返回值
 
-| Name  | Type         |
+| 名称  | 类型         |
 | ----- | ------------ |
 | count | `shallowRef` |
 | inc   | `Ref`        |
@@ -24,6 +24,6 @@ const { count, inc, dec, set, reset } = useCounter()
 | set   | `Ref`        |
 | reset | `Ref`        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useCounter/)
+[VueUse 文档](https://vueuse.org/core/useCounter/)

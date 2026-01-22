@@ -1,11 +1,11 @@
 # useWakeLock
 
-Reactive Screen Wake Lock API. Provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
+响应式屏幕唤醒锁 API。提供一种方法，使应用程序在需要持续运行时能够防止设备屏幕变暗或锁定。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useWakeLock } from '@vueuse/core'
@@ -13,17 +13,17 @@ import { useWakeLock } from '@vueuse/core'
 const { isSupported, isActive, forceRequest, request, release } = useWakeLock()
 ```
 
-## Returns
+## 返回值
 
-| Name         | Type                                         |
+| 名称         | 类型                                         |
 | ------------ | -------------------------------------------- |
-| sentinel     | `shallowRef&lt;WakeLockSentinel \| null&gt;` |
+| sentinel     | `shallowRef<WakeLockSentinel \| null>`       |
 | isSupported  | `useSupported`                               |
 | isActive     | `computed`                                   |
 | request      | `Ref`                                        |
 | forceRequest | `Ref`                                        |
 | release      | `Ref`                                        |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWakeLock/)
+[VueUse 文档](https://vueuse.org/core/useWakeLock/)

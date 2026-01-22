@@ -1,14 +1,14 @@
-# Scroll Area
+# 滚动区域
 
-Custom scrollbar container
+自定义滚动条容器
 
-**Parts:** `ScrollAreaRoot`, `ScrollAreaViewport`, `ScrollAreaScrollbar`, `ScrollAreaThumb`, `ScrollAreaCorner`
+**组件：** `ScrollAreaRoot`、`ScrollAreaViewport`、`ScrollAreaScrollbar`、`ScrollAreaThumb`、`ScrollAreaCorner`
 
 ## ScrollAreaRoot
 
-### Props
+### 属性
 
-| Prop              | Type                                        | Default   |
+| 属性              | 类型                                        | 默认值    |
 | ----------------- | ------------------------------------------- | --------- |
 | `as`              | `AsTag \| Component`                        | `"div"`   |
 | `asChild`         | `boolean`                                   | -         |
@@ -18,9 +18,9 @@ Custom scrollbar container
 
 ## ScrollAreaViewport
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
@@ -28,9 +28,9 @@ Custom scrollbar container
 
 ## ScrollAreaScrollbar
 
-### Props
+### 属性
 
-| Prop          | Type                         | Default      |
+| 属性          | 类型                         | 默认值       |
 | ------------- | ---------------------------- | ------------ |
 | `as`          | `AsTag \| Component`         | `"div"`      |
 | `asChild`     | `boolean`                    | -            |
@@ -39,18 +39,18 @@ Custom scrollbar container
 
 ## ScrollAreaThumb
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |
 
 ## ScrollAreaCorner
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"div"` |
 | `asChild` | `boolean`            | -       |

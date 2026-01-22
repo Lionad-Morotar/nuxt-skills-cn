@@ -1,11 +1,11 @@
 # usePerformanceObserver
 
-Observe performance metrics.
+观察性能指标。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { usePerformanceObserver } from '@vueuse/core'
@@ -18,14 +18,14 @@ usePerformanceObserver({
 })
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type           |
+| 名称        | 类型           |
 | ----------- | -------------- |
 | isSupported | `useSupported` |
 | start       | `Ref`          |
 | stop        | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePerformanceObserver/)
+[VueUse 文档](https://vueuse.org/core/usePerformanceObserver/)

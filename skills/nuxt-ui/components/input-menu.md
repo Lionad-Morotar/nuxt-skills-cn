@@ -1,12 +1,12 @@
 # InputMenu
 
-An autocomplete input with real-time suggestions.
+一个支持实时建议的自动补全输入框。
 
-> Based on [Reka UI InputMenu](https://reka-ui.com/docs/components/combobox)
+> 基于 [Reka UI InputMenu](https://reka-ui.com/docs/components/combobox)
 
-## Key Props
+## 主要属性
 
-- `items`: as an array of strings, numbers or booleans:
+- `items`：作为字符串、数字或布尔值的数组：
 
 ## ::component-code
 
@@ -26,7 +26,7 @@ ignore:
 
 ::
 
-You can also pass an array of objects with the following properties:
+你也可以传递一个对象数组，包含以下属性：
 
 - `label?: string`{lang="ts-type"}
 - [`type?: "label" | "separator" | "item"`{lang="ts-type"}](#with-items-type)
@@ -43,24 +43,24 @@ You can also pass an array of objects with the following properties:
 ignore:
 
 - modelValue.
-- `multiple`: to allow multiple selections, the selected items will be displayed as tags.
-- `placeholder`: to set a placeholder text.
-- `content`: to control how the InputMenu content is rendered, like its `align` or `side` for example.
-- `arrow`: to display an arrow on the InputMenu.
-- `color`: to change the ring color when the InputMenu is focused.
-- `variant`: to change the variant of the InputMenu.
-- `size`: to change the size of the InputMenu.
-- `icon`: to show an [Icon](/docs/components/icon) inside the InputMenu.
-- `avatar`: to show an [Avatar](/docs/components/avatar) inside the InputMenu.
+- `multiple`：允许多选，所选项将以标签形式显示。
+- `placeholder`：设置占位文本。
+- `content`：控制 InputMenu 内容的渲染方式，例如其 `align` 或 `side`。
+- `arrow`：在 InputMenu 上显示箭头。
+- `color`：当 InputMenu 获得焦点时更改边框颜色。
+- `variant`：更改 InputMenu 的变体样式。
+- `size`：更改 InputMenu 的尺寸大小。
+- `icon`：在 InputMenu 中显示 [Icon](/docs/components/icon)。
+- `avatar`：在 InputMenu 中显示 [Avatar](/docs/components/avatar)。
 
-## Usage
+## 使用方法
 
 ```vue
 <UInputMenu
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```
 
-## Slots
+## 插槽
 
 - `#leading`

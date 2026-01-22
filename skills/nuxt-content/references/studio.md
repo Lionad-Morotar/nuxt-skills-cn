@@ -1,19 +1,19 @@
-# NuxtStudio & Preview Mode
+# NuxtStudio 与预览模式
 
-## When to Use
+## 使用场景
 
-Setting up NuxtStudio integration, enabling preview mode, or configuring live content editing.
+设置 NuxtStudio 集成、启用预览模式或配置实时内容编辑。
 
-## NuxtStudio Overview
+## NuxtStudio 概述
 
-NuxtStudio is a visual editor for Nuxt Content sites. It provides:
+NuxtStudio 是用于 Nuxt Content 网站的可视化编辑器。它提供：
 
-- Visual WYSIWYG editing
-- Real-time preview
-- Git-based workflow
-- Component editing
+- 可视化所见即所得编辑
+- 实时预览
+- 基于 Git 的工作流
+- 组件编辑
 
-## Enable Studio
+## 启用 Studio
 
 ```ts
 // nuxt.config.ts
@@ -27,17 +27,17 @@ export default defineNuxtConfig({
 })
 ```
 
-## Preview Mode
+## 预览模式
 
-Preview mode allows editing content before publishing.
+预览模式允许在发布前编辑内容。
 
-### Development Preview
+### 开发环境预览
 
-In development, content updates via WebSocket HMR automatically.
+开发环境中，通过 WebSocket HMR 自动更新内容。
 
-### Production Preview
+### 生产环境预览
 
-Enable production preview API:
+启用生产环境预览 API：
 
 ```ts
 // nuxt.config.ts
@@ -45,16 +45,16 @@ export default defineNuxtConfig({
   content: {
     preview: {
       enabled: true,
-      // Optional: custom API route
+      // 可选：自定义 API 路由
       api: '/__preview',
     },
   },
 })
 ```
 
-### Preview Token
+### 预览令牌
 
-Secure preview mode with a token:
+使用令牌保护预览模式：
 
 ```ts
 // nuxt.config.ts
@@ -68,9 +68,9 @@ export default defineNuxtConfig({
 })
 ```
 
-Access preview: `https://your-site.com?preview=your-token`
+访问预览：`https://your-site.com?preview=your-token`
 
-## Using Preview in Components
+## 在组件中使用预览
 
 ```vue
 <script setup lang="ts">
@@ -79,24 +79,24 @@ const { enabled: previewEnabled } = useContentPreview()
 
 <template>
   <div v-if="previewEnabled" class="preview-banner">
-    Preview Mode Active
+    预览模式已激活
   </div>
 </template>
 ```
 
-## Preview API Routes
+## 预览 API 路由
 
-Content exposes preview endpoints:
+内容暴露预览端点：
 
 ```
-POST /__preview/start   - Start preview session
-POST /__preview/stop    - End preview session
-GET  /__preview/status  - Check preview status
+POST /__preview/start   - 启动预览会话
+POST /__preview/stop    - 结束预览会话
+GET  /__preview/status  - 检查预览状态
 ```
 
-## Git Integration
+## Git 集成
 
-Studio uses Git for version control:
+Studio 使用 Git 进行版本控制：
 
 ```ts
 // nuxt.config.ts
@@ -105,7 +105,7 @@ export default defineNuxtConfig({
     studio: {
       enabled: true,
       git: {
-        // Branch for preview changes
+        // 预览更改的分支
         branch: 'content-preview',
       },
     },
@@ -113,9 +113,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Schema for Studio Editor
+## Studio 编辑器的模式
 
-Add editor hints to your schema:
+在你的模式中添加编辑提示：
 
 ```ts
 // content.config.ts
@@ -128,20 +128,20 @@ export default defineContentConfig({
       type: 'page',
       source: 'blog/**/*.md',
       schema: z.object({
-        title: z.string().describe('The post title'),
-        description: z.string().describe('SEO description'),
-        image: z.string().describe('Cover image URL'),
-        date: z.date().describe('Publication date'),
-        tags: z.array(z.string()).describe('Post tags'),
+        title: z.string().describe('文章标题'),
+        description: z.string().describe('SEO 描述'),
+        image: z.string().describe('封面图片 URL'),
+        date: z.date().describe('发布日期'),
+        tags: z.array(z.string()).describe('文章标签'),
       }),
     }),
   },
 })
 ```
 
-The `.describe()` method adds labels in Studio's editor UI.
+`.describe()` 方法会在 Studio 的编辑器界面中添加标签。
 
-## Studio Configuration
+## Studio 配置
 
 ```ts
 // nuxt.config.ts
@@ -149,16 +149,16 @@ export default defineNuxtConfig({
   content: {
     studio: {
       enabled: true,
-      // Custom Studio URL (for self-hosted)
+      // 自定义 Studio URL（用于自托管）
       url: 'https://studio.nuxt.com',
     },
   },
 })
 ```
 
-## Live Editing Components
+## 实时编辑组件
 
-Mark components as editable in Studio:
+在 Studio 中标记组件为可编辑：
 
 ```vue
 <!-- components/content/Hero.vue -->
@@ -177,7 +177,7 @@ defineProps<{
 </script>
 ```
 
-## Environment Setup
+## 环境设置
 
 ```bash
 # .env
@@ -186,25 +186,25 @@ NUXT_CONTENT_PREVIEW_ENABLED=true
 NUXT_CONTENT_PREVIEW_TOKEN=your-secret-token
 ```
 
-## WebSocket HMR (Development)
+## WebSocket HMR（开发环境）
 
-Content automatically syncs changes in development:
+内容在开发环境中自动同步更改：
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   content: {
     watch: {
-      // Watch for file changes
+      // 监听文件更改
       enabled: true,
-      // Debounce updates
+      // 延迟更新
       debounce: 500,
     },
   },
 })
 ```
 
-## Deployment Considerations
+## 部署注意事项
 
 ### Vercel
 
@@ -232,9 +232,9 @@ export default defineNuxtConfig({
 })
 ```
 
-## Common Patterns
+## 常见模式
 
-**Preview banner component:**
+**预览横幅组件：**
 
 ```vue
 <!-- components/PreviewBanner.vue -->
@@ -244,32 +244,32 @@ const { enabled } = useContentPreview()
 
 <template>
   <div v-if="enabled" class="fixed top-0 left-0 right-0 bg-yellow-500 text-center py-1 z-50">
-    Preview Mode - <button @click="navigateTo(useRoute().fullPath.replace('?preview', ''))">Exit</button>
+    预览模式 - <button @click="navigateTo(useRoute().fullPath.replace('?preview', ''))">退出</button>
   </div>
 </template>
 ```
 
-**Conditional preview logic:**
+**条件预览逻辑：**
 
 ```ts
 const { enabled } = useContentPreview()
 
 const posts = await queryCollection('blog')
-  .where('draft', '=', enabled ? undefined : false) // Show drafts in preview
+  .where('draft', '=', enabled ? undefined : false) // 预览中显示草稿
   .all()
 ```
 
-## Best Practices
+## 最佳实践
 
-| Do                                  | Don't                       |
-| ----------------------------------- | --------------------------- |
-| Use preview token in production     | Expose preview without auth |
-| Enable studio only in preview envs  | Enable studio in production |
-| Use `.describe()` for schema fields | Leave schema undocumented   |
-| Test preview mode before deploy     | Assume preview works        |
+| 做法                                | 不应做的                   |
+| ----------------------------------- | -------------------------- |
+| 在生产环境中使用预览令牌            | 不加认证暴露预览           |
+| 仅在预览环境中启用 Studio          | 在生产中启用 Studio        |
+| 使用 `.describe()` 为模式字段添加说明 | 不记录模式文档             |
+| 部署前测试预览模式                | 假设一切正常               |
 
-## Resources
+## 资源
 
 - NuxtStudio: https://nuxt.studio
-- Preview Mode: https://content.nuxt.com/docs/studio/preview
-- Studio Setup: https://content.nuxt.com/docs/studio/setup
+- 预览模式: https://content.nuxt.com/docs/studio/preview
+- Studio 设置: https://content.nuxt.com/docs/studio/setup

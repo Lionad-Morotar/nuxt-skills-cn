@@ -1,8 +1,8 @@
-# Better Auth Plugins
+# 更好的认证插件
 
-The module supports all Better Auth plugins. Configure in both server and client configs.
+该模块支持所有 Better Auth 插件。在服务器和客户端配置中进行设置。
 
-## Server Plugin Setup
+## 服务器插件设置
 
 ```ts
 // server/auth.config.ts
@@ -19,7 +19,7 @@ export default defineServerAuth(({ runtimeConfig }) => ({
 }))
 ```
 
-## Client Plugin Setup
+## 客户端插件设置
 
 ```ts
 // app/auth.config.ts
@@ -36,103 +36,103 @@ export default createAppAuthClient({
 })
 ```
 
-## Common Plugins
+## 常用插件
 
-### Admin
+### 管理员
 
-Role-based access control:
+基于角色的访问控制：
 
 ```ts
-// Server
+// 服务器端
 import { admin } from 'better-auth/plugins'
 plugins: [admin()]
 
-// Client
+// 客户端
 import { adminClient } from 'better-auth/client/plugins'
 plugins: [adminClient()]
 ```
 
-Usage:
+使用方法：
 
 ```ts
-// Protect route
+// 保护路由
 await requireUserSession(event, { user: { role: 'admin' } })
 
-// Client: set user role
+// 客户端：设置用户角色
 await client.admin.setRole({ userId: 'xxx', role: 'admin' })
 ```
 
-### Two-Factor (2FA)
+### 双因素认证（2FA）
 
 ```ts
-// Server
+// 服务器端
 import { twoFactor } from 'better-auth/plugins'
 plugins: [twoFactor({ issuer: 'MyApp' })]
 
-// Client
+// 客户端
 import { twoFactorClient } from 'better-auth/client/plugins'
 plugins: [twoFactorClient()]
 ```
 
-Usage:
+使用方法：
 
 ```ts
-// Enable 2FA
+// 启用 2FA
 const { totpURI } = await client.twoFactor.enable({ password: 'xxx' })
-// Show QR code with totpURI
+// 使用 totpURI 显示二维码
 
-// Verify OTP on login
+// 登录时验证 OTP
 await client.twoFactor.verifyTotp({ code: '123456' })
 ```
 
-### Passkey
+### 密钥（Passkey）
 
-WebAuthn/FIDO2 authentication:
+WebAuthn/FIDO2 认证：
 
 ```ts
-// Server
+// 服务器端
 import { passkey } from 'better-auth/plugins'
 plugins: [passkey()]
 
-// Client
+// 客户端
 import { passkeyClient } from 'better-auth/client/plugins'
 plugins: [passkeyClient()]
 ```
 
-Usage:
+使用方法：
 
 ```ts
-// Register passkey
+// 注册密钥
 await client.passkey.addPasskey()
 
-// Sign in with passkey
+// 使用密钥登录
 await signIn.passkey()
 ```
 
-### Multi-Session
+### 多会话
 
-Allow multiple concurrent sessions:
+允许多个并发会话：
 
 ```ts
-// Server
+// 服务器端
 import { multiSession } from 'better-auth/plugins'
 plugins: [multiSession()]
 
-// Client
+// 客户端
 import { multiSessionClient } from 'better-auth/client/plugins'
 plugins: [multiSessionClient()]
 ```
 
-Usage:
+使用方法：
 
 ```ts
-// List all sessions
+// 列出所有会话
 const sessions = await client.multiSession.listDeviceSessions()
 
-// Revoke specific session
+// 撤销特定会话
 await client.multiSession.revokeSession({ sessionId: 'xxx' })
 ```
 
-## Plugin Type Inference
+## 插件类型推断
 
-Types from plugins are automatically inferred. See [references/types.md](types.md) for type augmentation.
+插件中的类型将自动推断。有关类型增强，请参见 [references/types.md](types.md)。

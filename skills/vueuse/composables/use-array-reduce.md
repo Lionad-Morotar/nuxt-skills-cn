@@ -1,11 +1,11 @@
 # useArrayReduce
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**类别：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayReduce } from '@vueuse/core'
@@ -14,6 +14,6 @@ const sum = useArrayReduce([ref(1), ref(2), ref(3)], (sum, val) => sum + val)
 // sum.value: 6
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayReduce/)
+[VueUse 文档](https://vueuse.org/core/useArrayReduce/)

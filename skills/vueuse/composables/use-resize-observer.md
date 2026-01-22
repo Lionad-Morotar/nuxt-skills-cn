@@ -1,11 +1,11 @@
 # useResizeObserver
 
-Reports changes to the dimensions of an Element's content or the border-box
+报告元素内容尺寸或边框盒的更改
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -29,13 +29,13 @@ useResizeObserver(el, (entries) => {
 </template>
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type           |
+| 名称        | 类型           |
 | ----------- | -------------- |
 | isSupported | `useSupported` |
 | stop        | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useResizeObserver/)
+[VueUse 文档](https://vueuse.org/core/useResizeObserver/)

@@ -1,20 +1,20 @@
 # PageHero
 
-A responsive hero for your pages.
+适用于您页面的响应式英雄区域。
 
-## Key Props
+## 主要属性
 
-- `title`: to set the title of the hero.
-- `description`: to set the description of the hero.
-- `headline`: to set the headline of the hero.
-- `links`: to display a list of [Button](/docs/components/button) under the description.
-- `orientation`: to change the orientation with the default slot.
-- `reverse`: to reverse the orientation of the default slot.
+- `title`：用于设置英雄区域的标题。
+- `description`：用于设置英雄区域的描述。
+- `headline`：用于设置英雄区域的标题行。
+- `links`：用于在描述下方显示 [Button](/docs/components/button) 列表。
+- `orientation`：用于更改默认插槽的方向。
+- `reverse`：用于反转默认插槽的方向。
 
-## Usage
+## 使用方法
 
 ```vue
 <UPageHero
-  <!-- props here -->
+  <!-- 属性在此处 -->
 />
 ```

@@ -1,11 +1,11 @@
 # tryOnBeforeUnmount
 
-Safe . Call if it's inside a component lifecycle, if not, do nothing
+安全调用。若位于组件生命周期内则执行，否则不作任何操作。
 
-**Package:** `@vueuse/shared`
-**Category:** Component
+**包名：** `@vueuse/shared`  
+**分类：** 组件
 
-## Usage
+## 用法
 
 ```ts
 import { tryOnBeforeUnmount } from '@vueuse/core'
@@ -15,6 +15,6 @@ tryOnBeforeUnmount(() => {
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/tryOnBeforeUnmount/)
+[VueUse 文档](https://vueuse.org/core/tryOnBeforeUnmount/)

@@ -1,11 +1,11 @@
 # useWebWorker
 
-Simple Web Workers registration and communication.
+简单的 Web Workers 注册与通信。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`  
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useWebWorker } from '@vueuse/core'
@@ -13,15 +13,15 @@ import { useWebWorker } from '@vueuse/core'
 const { data, post, terminate, worker } = useWebWorker('/path/to/worker.js')
 ```
 
-## Returns
+## 返回值
 
-| Name      | Type                       |
+| 名称      | 类型                       |
 | --------- | -------------------------- |
 | data      | `Ref`                      |
 | post      | `Ref`                      |
 | terminate | `Ref`                      |
-| worker    | `shallowRef&lt;Worker&gt;` |
+| worker    | `shallowRef<Worker>`       |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWebWorker/)
+[VueUse 文档](https://vueuse.org/core/useWebWorker/)

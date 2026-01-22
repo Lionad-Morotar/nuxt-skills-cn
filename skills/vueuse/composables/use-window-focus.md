@@ -1,11 +1,11 @@
 # useWindowFocus
 
-Reactively track window focus with and events.
+使用事件实时跟踪窗口焦点状态。
 
-**Package:** `@vueuse/core`
-**Category:** Elements
+**包：** `@vueuse/core`  
+**分类：** 元素
 
-## Usage
+## 用法
 
 ```ts
 <script setup lang="ts">
@@ -19,6 +19,6 @@ const focused = useWindowFocus()
 </template>
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useWindowFocus/)
+[VueUse 文档](https://vueuse.org/core/useWindowFocus/)

@@ -1,49 +1,49 @@
-# Content Patterns
+# 内容模式
 
-Blog post structure, frontmatter, and component patterns for Nuxt ecosystem documentation.
+Nuxt 生态文档的博客文章结构、前置信息与组件模式。
 
-## Blog Post Frontmatter
+## 博客文章前置信息
 
 ```yaml
 ---
-title: Post Title
-description: Brief description for SEO and previews (under 160 chars)
+title: 文章标题
+description: 用于 SEO 和预览的简要描述（不超过 160 个字符）
 navigation: false
 image: /assets/blog/slug.png
 authors:
-  - name: Author Name
+  - name: 作者姓名
     avatar:
       src: https://github.com/username.png
     to: https://x.com/username
 date: 2025-11-05T10:00:00.000Z
-category: Release
+category: 发布
 ---
 ```
 
-**Categories**: `Release` (version announcements), `Article` (tutorials, guides)
+**分类**：`发布`（版本公告）、`文章`（教程、指南）
 
-**Author links**: GitHub, X/Twitter, Bluesky (`https://bsky.app/profile/...`)
+**作者链接**：GitHub、X/Twitter、Bluesky（`https://bsky.app/profile/...`）
 
-## Blog Post Structure
+## 博客文章结构
 
-1. **Opening** (1-2 paragraphs) - Announce what's new, why it matters
-2. **Key callout** - `::note` or `::callout` with requirements/prerequisites
-3. **Feature sections** - `## Emoji Feature Name` headers
-4. **Code examples** - With file path labels
-5. **Breaking changes** - If release post
-6. **Thank you** - Credit contributors
-7. **Resources** - Links to docs, repo
-8. **Release link** - `::read-more` to full changelog
+1. **引言**（1-2 段）—— 宣布新功能，说明其重要性
+2. **关键提示** —— 使用 `::note` 或 `::callout`，包含要求/前提条件
+3. **功能部分** —— 使用 `## Emoji 功能名称` 作为标题
+4. **代码示例** —— 包含文件路径标签
+5. **破坏性变更** —— 若为发布文章
+6. **致谢** —— 致敬贡献者
+7. **资源** —— 文档、仓库链接
+8. **发布链接** —— 使用 `::read-more` 链接到完整更新日志
 
-## Recommended Modules
+## 推荐模块
 
-For enhanced documentation features:
+用于增强文档功能：
 
-| Module                                                                    | Purpose                                                                 |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [`nuxt-content-twoslash`](https://github.com/antfu/nuxt-content-twoslash) | TwoSlash for Nuxt Content - inline TypeScript type hints in code blocks |
+| 模块                                                                        | 目的                                                              |
+|-----------------------------------------------------------------------------|-------------------------------------------------------------------|
+| [`nuxt-content-twoslash`](https://github.com/antfu/nuxt-content-twoslash)   | Nuxt Content 的 TwoSlash —— 在代码块中显示内联 TypeScript 类型提示 |
 
-### Installation
+### 安装
 
 ```bash
 pnpm add -D nuxt-content-twoslash
@@ -51,52 +51,52 @@ pnpm add -D nuxt-content-twoslash
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
-  modules: ['nuxt-content-twoslash', '@nuxt/content'] // twoslash before content
+  modules: ['nuxt-content-twoslash', '@nuxt/content'] // twoslash 在 content 之前
 })
 ```
 
-## Component Patterns
+## 组件模式
 
-Use the right component for the right purpose:
+根据用途选择正确的组件：
 
-| Need             | Component                         | When                       |
-| ---------------- | --------------------------------- | -------------------------- |
-| Background info  | `::note`                          | Supplementary context      |
-| Best practice    | `::tip`                           | Recommendations            |
-| Potential issue  | `::warning`                       | Things that could go wrong |
-| Must-know        | `::important`                     | Required actions           |
-| Danger           | `::caution`                       | Destructive operations     |
-| CTA button       | `:u-button{to="..." label="..."}` | Downloads, external links  |
-| Package managers | `::code-group{sync="pm"}`         | pnpm/npm/yarn variants     |
-| Expandable       | `::collapsible{title="..."}`      | Advanced details           |
-| Images           | `::carousel{items: [...]}`        | Multiple screenshots       |
-| Sequential steps | `::steps`                         | Multi-step instructions    |
+| 需求             | 组件                            | 使用场景                       |
+|------------------|---------------------------------|--------------------------------|
+| 背景信息         | `::note`                        | 补充上下文                     |
+| 最佳实践         | `::tip`                         | 建议                           |
+| 潜在问题         | `::warning`                     | 可能出错的内容                 |
+| 必须了解         | `::important`                   | 必要操作                       |
+| 危险             | `::caution`                     | 破坏性操作                     |
+| CTA 按钮         | `:u-button{to="..." label="..."}` | 下载、外部链接                 |
+| 包管理器         | `::code-group{sync="pm"}`       | pnpm/npm/yarn 变体             |
+| 可展开内容       | `::collapsible{title="..."}`    | 高级细节                       |
+| 图片             | `::carousel{items: [...]}`      | 多张截图                       |
+| 步骤说明         | `::steps`                       | 多步骤说明                     |
 
-> For component props/details: see **nuxt-ui** skill
+> 组件属性/详情：请参阅 **nuxt-ui** 技能
 
-## Steps Component
+## 步骤组件
 
-The `::steps` component auto-renders step numbers. **Do NOT include numbers in step titles** — they'll be duplicated.
+`::steps` 组件会自动渲染步骤编号。**请勿在步骤标题中包含数字** —— 它们将被重复。
 
 ```md
-<!-- ✅ Correct -->
+<!-- ✅ 正确 -->
 ::steps
-### Install the module
-### Configure nuxt.config.ts
-### Restart dev server
+### 安装模块
+### 配置 nuxt.config.ts
+### 重启开发服务器
 ::
 
-<!-- ❌ Wrong (numbers will duplicate) -->
+<!-- ❌ 错误（数字将重复） -->
 ::steps
-### 1. Install the module
-### 2) Configure nuxt.config.ts
-### Step 3: Restart dev server
+### 1. 安装模块
+### 2) 配置 nuxt.config.ts
+### Step 3: 重启开发服务器
 ::
 ```
 
-## Code Block Labels
+## 代码块标签
 
-Always include file path:
+始终包含文件路径：
 
 ````md
 ```ts [nuxt.config.ts]
@@ -116,9 +116,9 @@ pnpm add @nuxt/content
 ```
 ````
 
-## YAML Props Format
+## YAML 属性格式
 
-For components with multiple props, use YAML frontmatter:
+对于具有多个属性的组件，使用 YAML 前置信息：
 
 ```md
 ::read-more
@@ -127,7 +127,7 @@ icon: i-simple-icons-github
 target: _blank
 to: https://github.com/nuxt/nuxt/releases/tag/v4.0.0
 ---
-Read the full release notes.
+阅读完整发布说明。
 ::
 ```
 
@@ -141,27 +141,27 @@ items:
 ::
 ```
 
-## Cross-References
+## 跨引用
 
-Link to related content:
+链接到相关内容：
 
 ```md
-<!-- Inline link -->
-See the [configuration guide](/docs/getting-started/configuration).
+<!-- 内联链接 -->
+参见 [配置指南](/docs/getting-started/configuration)。
 
-<!-- Read-more block -->
+<!-- Read-more 块 -->
 ::read-more{to="/docs/api/composables/use-fetch"}
 ::
 
-<!-- With custom text and icon -->
+<!-- 自定义文本与图标 -->
 ::read-more
 ---
 icon: i-simple-icons-github
 to: https://github.com/nuxt/nuxt
 target: _blank
 ---
-View the source code.
+查看源代码。
 ::
 ```
 
-> For MDC syntax details: see **nuxt-content** skill (rendering.md)
+> 关于 MDC 语法详情：请参阅 **nuxt-content** 技能（rendering.md）

@@ -1,11 +1,11 @@
 # useEyeDropper
 
-Reactive EyeDropper API
+响应式 EyeDropper API
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**类别：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useEyeDropper } from '@vueuse/core'
@@ -13,20 +13,20 @@ import { useEyeDropper } from '@vueuse/core'
 const { isSupported, open, sRGBHex } = useEyeDropper()
 ```
 
-## Options
+## 选项
 
-| Option       | Type     | Default | Description      |
+| 选项         | 类型     | 默认值  | 描述             |
 | ------------ | -------- | ------- | ---------------- |
-| initialValue | `string` | -       | Initial sRGBHex. |
+| initialValue | `string` | -       | 初始 sRGBHex。   |
 
-## Returns
+## 返回值
 
-| Name        | Type           |
-| ----------- | -------------- |
-| isSupported | `useSupported` |
-| sRGBHex     | `shallowRef`   |
-| open        | `Ref`          |
+| 名称          | 类型           |
+| ------------- | -------------- |
+| isSupported   | `useSupported` |
+| sRGBHex       | `shallowRef`   |
+| open          | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useEyeDropper/)
+[VueUse 文档](https://vueuse.org/core/useEyeDropper/)

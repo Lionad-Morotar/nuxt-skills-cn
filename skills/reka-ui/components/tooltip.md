@@ -1,100 +1,100 @@
-# Tooltip
+# 工具提示
 
-Informational hover tip
+信息性悬停提示
 
-**Parts:** `TooltipProvider`, `TooltipRoot`, `TooltipTrigger`, `TooltipPortal`, `TooltipContent`, `TooltipArrow`
+**组件：** `TooltipProvider`、`TooltipRoot`、`TooltipTrigger`、`TooltipPortal`、`TooltipContent`、`TooltipArrow`
 
 ## TooltipProvider
 
-### Props
+### 属性
 
-| Prop                      | Type      | Default |
-| ------------------------- | --------- | ------- |
-| `delayDuration`           | `number`  | `700`   |
-| `disableClosingTrigger`   | `boolean` | -       |
-| `disabled`                | `boolean` | -       |
-| `disableHoverableContent` | `boolean` | `false` |
-| `ignoreNonKeyboardFocus`  | `boolean` | `false` |
-| `skipDelayDuration`       | `number`  | `300`   |
+| 属性                      | 类型      | 默认值 |
+| ------------------------- | --------- | ------ |
+| `delayDuration`           | `number`  | `700`  |
+| `disableClosingTrigger`   | `boolean` | -      |
+| `disabled`                | `boolean` | -      |
+| `disableHoverableContent` | `boolean` | `false`|
+| `ignoreNonKeyboardFocus`  | `boolean` | `false`|
+| `skipDelayDuration`       | `number`  | `300`  |
 
 ## TooltipRoot
 
-### Props
+### 属性
 
-| Prop                      | Type      | Default |
-| ------------------------- | --------- | ------- |
-| `defaultOpen`             | `boolean` | `false` |
-| `delayDuration`           | `number`  | -       |
-| `disableClosingTrigger`   | `boolean` | -       |
-| `disabled`                | `boolean` | -       |
-| `disableHoverableContent` | `boolean` | -       |
-| `ignoreNonKeyboardFocus`  | `boolean` | -       |
-| `open`                    | `boolean` | -       |
+| 属性                      | 类型      | 默认值 |
+| ------------------------- | --------- | ------ |
+| `defaultOpen`             | `boolean` | `false`|
+| `delayDuration`           | `number`  | -      |
+| `disableClosingTrigger`   | `boolean` | -      |
+| `disabled`                | `boolean` | -      |
+| `disableHoverableContent` | `boolean` | -      |
+| `ignoreNonKeyboardFocus`  | `boolean` | -      |
+| `open`                    | `boolean` | -      |
 
-### Emits
+### 事件
 
-| Event         | Payload            |
-| ------------- | ------------------ |
-| `update:open` | `[value: boolean]` |
+| 事件          | 参数                 |
+| ------------- | -------------------- |
+| `update:open` | `[value: boolean]`   |
 
-### Slots
+### 插槽
 
-| Slot   | Type      |
+| 插槽   | 类型      |
 | ------ | --------- |
 | `open` | `boolean` |
 
 ## TooltipTrigger
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default    |
+| 属性      | 类型                 | 默认值     |
 | --------- | -------------------- | ---------- |
 | `as`      | `AsTag \| Component` | `"button"` |
 | `asChild` | `boolean`            | -          |
 
 ## TooltipPortal
 
-### Props
+### 属性
 
-| Prop         | Type                    | Default |
-| ------------ | ----------------------- | ------- |
-| `disabled`   | `boolean`               | -       |
-| `forceMount` | `boolean`               | -       |
-| `to`         | `string \| HTMLElement` | -       |
+| 属性         | 类型                    | 默认值 |
+| ------------ | ----------------------- | ------ |
+| `disabled`   | `boolean`               | -      |
+| `forceMount` | `boolean`               | -      |
+| `to`         | `string \| HTMLElement` | -      |
 
 ## TooltipContent
 
-### Props
+### 属性
 
-| Prop                | Type                                                    | Default |
-| ------------------- | ------------------------------------------------------- | ------- |
-| `align`             | `"start" \| "center" \| "end"`                          | -       |
-| `alignOffset`       | `number`                                                | -       |
-| `ariaLabel`         | `string`                                                | -       |
-| `arrowPadding`      | `number`                                                | -       |
-| `as`                | `AsTag \| Component`                                    | `"div"` |
-| `asChild`           | `boolean`                                               | -       |
-| `avoidCollisions`   | `boolean`                                               | -       |
-| `collisionBoundary` | `Element \| (Element \| null)[] \| null`                | -       |
-| `collisionPadding`  | `number \| Partial<Record<"top" \| "right" \| "bott...` | -       |
-| `forceMount`        | `boolean`                                               | -       |
-| `hideWhenDetached`  | `boolean`                                               | -       |
-| `side`              | `"top" \| "right" \| "bottom" \| "left"`                | `"top"` |
-| `sideOffset`        | `number`                                                | -       |
-| `sticky`            | `"partial" \| "always"`                                 | -       |
+| 属性                | 类型                                                    | 默认值 |
+| ------------------- | ------------------------------------------------------- | ------ |
+| `align`             | `"start" \| "center" \| "end"`                          | -      |
+| `alignOffset`       | `number`                                                | -      |
+| `ariaLabel`         | `string`                                                | -      |
+| `arrowPadding`      | `number`                                                | -      |
+| `as`                | `AsTag \| Component`                                    | `"div"`|
+| `asChild`           | `boolean`                                               | -      |
+| `avoidCollisions`   | `boolean`                                               | -      |
+| `collisionBoundary` | `Element \| (Element \| null)[] \| null`                | -      |
+| `collisionPadding`  | `number \| Partial<Record<"top" \| "right" \| "bott...` | -      |
+| `forceMount`        | `boolean`                                               | -      |
+| `hideWhenDetached`  | `boolean`                                               | -      |
+| `side`              | `"top" \| "right" \| "bottom" \| "left"`                | `"top"`|
+| `sideOffset`        | `number`                                                | -      |
+| `sticky`            | `"partial" \| "always"`                                 | -      |
 
-### Emits
+### 事件
 
-| Event                | Payload                  |
+| 事件                 | 参数                     |
 | -------------------- | ------------------------ |
 | `escapeKeyDown`      | `[event: KeyboardEvent]` |
 | `pointerDownOutside` | `[event: Event]`         |
 
 ## TooltipArrow
 
-### Props
+### 属性
 
-| Prop      | Type                 | Default |
+| 属性      | 类型                 | 默认值  |
 | --------- | -------------------- | ------- |
 | `as`      | `AsTag \| Component` | `"svg"` |
 | `asChild` | `boolean`            | -       |

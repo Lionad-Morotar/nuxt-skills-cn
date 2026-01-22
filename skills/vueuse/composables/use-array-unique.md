@@ -1,11 +1,11 @@
 # useArrayUnique
 
-reactive unique array
+响应式唯一数组
 
-**Package:** `@vueuse/shared`
-**Category:** Array
+**包：** `@vueuse/shared`  
+**分类：** 数组
 
-## Usage
+## 用法
 
 ```ts
 import { useArrayUnique } from '@vueuse/core'
@@ -22,6 +22,6 @@ item5.value = 1
 // result.value: [0, 1, 2]
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useArrayUnique/)
+[VueUse 文档](https://vueuse.org/core/useArrayUnique/)

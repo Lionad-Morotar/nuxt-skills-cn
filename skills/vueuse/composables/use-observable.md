@@ -1,16 +1,16 @@
 # useObservable
 
-Use an RxJS , return a , and automatically unsubscribe from it when the component is unmounted.
+使用 RxJS 的 observable，返回一个值，并在组件卸载时自动取消订阅。
 
-**Package:** `@vueuse/rxjs`
-**Category:** '@RxJS'
+**包：** `@vueuse/rxjs`  
+**类别：** '@RxJS'
 
-## Options
+## 选项
 
-| Option       | Type             | Default | Description                                                     |
-| ------------ | ---------------- | ------- | --------------------------------------------------------------- |
-| initialValue | `I \| undefined` | -       | The value that should be set if the observable has not emitted. |
+| 选项           | 类型             | 默认值  | 描述                                                         |
+| -------------- | ---------------- | ------- | ------------------------------------------------------------ |
+| initialValue   | `I \| undefined` | -       | 如果 observable 尚未发出值，则应设置的值。                   |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useObservable/)
+[VueUse 文档](https://vueuse.org/core/useObservable/)

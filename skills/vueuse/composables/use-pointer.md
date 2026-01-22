@@ -1,11 +1,11 @@
 # usePointer
 
-Reactive pointer state.
+响应式指针状态。
 
-**Package:** `@vueuse/core`
-**Category:** Sensors
+**包：** `@vueuse/core`
+**类别：** 传感器
 
-## Usage
+## 用法
 
 ```ts
 import { usePointer } from '@vueuse/core'
@@ -13,20 +13,20 @@ import { usePointer } from '@vueuse/core'
 const { x, y, pressure, pointerType } = usePointer()
 ```
 
-## Options
+## 选项
 
-| Option       | Type                                                                     | Default | Description                   |
-| ------------ | ------------------------------------------------------------------------ | ------- | ----------------------------- |
-| pointerTypes | `PointerType[]`                                                          | [       | Pointer types that listen to. |
-| initialValue | `MaybeRef&lt;Partial&lt;UsePointerState&gt;&gt;`                         | -       | Initial values                |
-| target       | `MaybeRef&lt;EventTarget \| null \| undefined&gt; \| Document \| Window` | window  | @default window               |
+| 选项         | 类型                                                                     | 默认值  | 描述                         |
+| ------------ | ------------------------------------------------------------------------ | ------- | ---------------------------- |
+| pointerTypes | `PointerType[]`                                                          | [       | 要监听的指针类型。           |
+| initialValue | `MaybeRef<Partial<UsePointerState>>`                                     | -       | 初始值                       |
+| target       | `MaybeRef<EventTarget \| null \| undefined> \| Document \| Window`       | window  | @default window              |
 
-## Returns
+## 返回值
 
-| Name     | Type         |
+| 名称     | 类型         |
 | -------- | ------------ |
 | isInside | `shallowRef` |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/usePointer/)
+[VueUse 文档](https://vueuse.org/core/usePointer/)

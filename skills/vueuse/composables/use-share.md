@@ -1,11 +1,11 @@
 # useShare
 
-Reactive Web Share API. The Browser provides features that can share content in text or file.
+响应式 Web Share API。浏览器提供可分享文本或文件内容的功能。
 
-**Package:** `@vueuse/core`
-**Category:** Browser
+**包：** `@vueuse/core`
+**分类：** 浏览器
 
-## Usage
+## 用法
 
 ```ts
 import { useShare } from '@vueuse/core'
@@ -21,13 +21,13 @@ function startShare() {
 }
 ```
 
-## Returns
+## 返回值
 
-| Name        | Type           |
+| 名称        | 类型           |
 | ----------- | -------------- |
 | isSupported | `useSupported` |
 | share       | `Ref`          |
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useShare/)
+[VueUse 文档](https://vueuse.org/core/useShare/)

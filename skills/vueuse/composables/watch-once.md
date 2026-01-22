@@ -1,21 +1,21 @@
 # watchOnce
 
-Shorthand for watching value with . Once the callback fires once, the watcher will be stopped. See Vue's docs for full details.
+用于监听值变化的简写形式。一旦回调函数触发一次，监听器将被停止。详情请参见 Vue 文档。
 
-**Package:** `@vueuse/shared`
-**Category:** Watch
+**包**：`@vueuse/shared`  
+**类别**：监听
 
-## Usage
+## 用法
 
 ```ts
 import { watchOnce } from '@vueuse/core'
 
 watchOnce(source, () => {
-  // triggers only once
+  // 只会触发一次
   console.log('source changed!')
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/watchOnce/)
+[VueUse 文档](https://vueuse.org/core/watchOnce/)

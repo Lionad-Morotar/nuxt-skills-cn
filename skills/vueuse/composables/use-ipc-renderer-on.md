@@ -1,23 +1,23 @@
 # useIpcRendererOn
 
-Use ipcRenderer.on with ease and ipcRenderer.removeListener automatically on unmounted.
+轻松使用 ipcRenderer.on，并在组件卸载时自动移除 ipcRenderer.removeListener。
 
-**Package:** `@vueuse/electron`
-**Category:** '@Electron'
+**包名：** `@vueuse/electron`  
+**分类：** '@Electron'
 
-## Usage
+## 用法
 
 ```ts
 import { useIpcRendererOn } from '@vueuse/electron'
 
-// enable nodeIntegration if you don't provide ipcRenderer explicitly
-// see: https://www.electronjs.org/docs/api/webview-tag#nodeintegration
-// remove listener automatically on unmounted
+// 如果你不显式提供 ipcRenderer，请启用 nodeIntegration
+// 参见：https://www.electronjs.org/docs/api/webview-tag#nodeintegration
+// 在组件卸载时自动移除监听器
 useIpcRendererOn('custom-event', (event, ...args) => {
   console.log(args)
 })
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useIpcRendererOn/)
+[VueUse 文档](https://vueuse.org/core/useIpcRendererOn/)

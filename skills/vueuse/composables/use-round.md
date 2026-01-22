@@ -1,11 +1,11 @@
 # useRound
 
-Reactive .
+响应式。
 
-**Package:** `@vueuse/math`
-**Category:** '@Math'
+**包：** `@vueuse/math`  
+**类别：** '@Math'
 
-## Usage
+## 用法
 
 ```ts
 import { useRound } from '@vueuse/math'
@@ -14,6 +14,6 @@ const value = ref(20.49)
 const result = useRound(value) // 20
 ```
 
-## Reference
+## 参考
 
-[VueUse Docs](https://vueuse.org/core/useRound/)
+[VueUse 文档](https://vueuse.org/core/useRound/)

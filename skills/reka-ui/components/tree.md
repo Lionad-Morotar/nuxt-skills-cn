@@ -1,14 +1,14 @@
-# Tree
+# 树形结构
 
-Hierarchical tree view
+分层树形视图
 
-**Parts:** `TreeRoot`, `TreeItem`, `TreeVirtualizer`
+**组件构成：** `TreeRoot`、`TreeItem`、`TreeVirtualizer`
 
 ## TreeRoot
 
-### Props
+### 属性
 
-| Prop                | Type                                                 | Default        |
+| 属性                | 类型                                                 | 默认值         |
 | ------------------- | ---------------------------------------------------- | -------------- |
 | `as`                | `AsTag \| Component`                                 | `"ul"`         |
 | `asChild`           | `boolean`                                            | -              |
@@ -25,61 +25,61 @@ Hierarchical tree view
 | `propagateSelect`   | `boolean`                                            | -              |
 | `selectionBehavior` | `"toggle" \| "replace"`                              | `"toggle"`     |
 
-### Emits
+### 事件
 
-| Event               | Payload                      |
+| 事件                | 参数                         |
 | ------------------- | ---------------------------- |
 | `update:expanded`   | `[val: string[]]`            |
 | `update:modelValue` | `[val: Record<string, any>]` |
 
-### Slots
+### 插槽
 
-| Slot           | Type                                           |
-| -------------- | ---------------------------------------------- |
-| `flattenItems` | `FlattenedItem<Record<string, any>>[]`         |
-| `modelValue`   | `Record<string, any> \| Record<string, any>[]` |
-| `expanded`     | `string[]`                                     |
+| 插槽             | 类型                                             |
+| ---------------- | ------------------------------------------------ |
+| `flattenItems`   | `FlattenedItem<Record<string, any>>[]`           |
+| `modelValue`     | `Record<string, any> \| Record<string, any>[]`   |
+| `expanded`       | `string[]`                                       |
 
 ## TreeItem
 
-### Props
+### 属性
 
-| Prop      | Type                  | Default |
+| 属性      | 类型                  | 默认值  |
 | --------- | --------------------- | ------- |
 | `as`      | `AsTag \| Component`  | `"li"`  |
 | `asChild` | `boolean`             | -       |
 | `level`\* | `number`              | -       |
 | `value`\* | `Record<string, any>` | -       |
 
-### Emits
+### 事件
 
-| Event    | Payload                                     |
-| -------- | ------------------------------------------- |
-| `select` | `[event: SelectEvent<Record<string, any>>]` |
-| `toggle` | `[event: ToggleEvent<Record<string, any>>]` |
+| 事件     | 参数                                           |
+| -------- | ---------------------------------------------- |
+| `select` | `[event: SelectEvent<Record<string, any>>]`    |
+| `toggle` | `[event: ToggleEvent<Record<string, any>>]`    |
 
-### Slots
+### 插槽
 
-| Slot              | Type                   |
-| ----------------- | ---------------------- |
-| `isExpanded`      | `boolean`              |
-| `isSelected`      | `boolean`              |
-| `isIndeterminate` | `boolean \| undefined` |
-| `handleToggle`    | ``                     |
-| `handleSelect`    | ``                     |
+| 插槽              | 类型                                   |
+| ----------------- | -------------------------------------- |
+| `isExpanded`      | `boolean`                              |
+| `isSelected`      | `boolean`                              |
+| `isIndeterminate` | `boolean \| undefined`                 |
+| `handleToggle`    | ``                                     |
+| `handleSelect`    | ``                                     |
 
 ## TreeVirtualizer
 
-### Props
+### 属性
 
-| Prop           | Type                                      | Default |
-| -------------- | ----------------------------------------- | ------- |
-| `estimateSize` | `number`                                  | -       |
-| `textContent`  | `((item: Record<string, any>) => string)` | -       |
+| 属性             | 类型                                      | 默认值  |
+| ---------------- | ----------------------------------------- | ------- |
+| `estimateSize`   | `number`                                  | -       |
+| `textContent`    | `((item: Record<string, any>) => string)` | -       |
 
-### Slots
+### 插槽
 
-| Slot          | Type                                      |
+| 插槽          | 类型                                      |
 | ------------- | ----------------------------------------- |
 | `item`        | `FlattenedItem<Record<string, any>>`      |
 | `virtualizer` | `Virtualizer<Element \| Window, Element>` |
